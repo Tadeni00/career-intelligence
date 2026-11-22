@@ -64,6 +64,9 @@ jobs:
         run: ruff check apps packages tests
       - name: Backend tests (isolated PostgreSQL service)
         run: python -m pytest
+      - name: Read-only frozen-artifact fingerprints
+        if: always()
+        run: python deployment_checks/frozen_artifact_probe.py
 
   frontend:
     name: TypeScript build and focused routing tests
