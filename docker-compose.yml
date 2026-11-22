@@ -5,6 +5,8 @@
 #   api       -> 8011
 #   console   -> 4173 (the only non-5173 origin the API's CORS allows)
 #
+# SECURITY: Single-user without authentication: publish ports only on loopback.
+# See docs/LOCAL_SECURITY.md before deploying.
 # The api service hard-sets AI_PROVIDER=offline and does NOT read .env, so
 # live provider keys on the host can never leak into the container.
 services:
@@ -17,7 +19,7 @@ services:
       POSTGRES_DB: career
     ports:
       # 5433 by default so this does not clash with an existing local postgres.
-      - "${POSTGRES_PORT:-5433}:5432"
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
     volumes:
       - career_pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -45,7 +47,7 @@ services:
       ENVIRONMENT: development
       API_PREFIX: /api/v1
     ports:
-      - "8011:8011"
+      - "127.0.0.1:8011:8011"
     volumes:
       - career_storage:/srv/storage
     depends_on:
@@ -67,7 +69,7 @@ services:
       # the same machine, a VM, or an SSH tunnel -- no hostname guessing.
     container_name: career-console
     ports:
-      - "4173:4173"
+      - "127.0.0.1:4173:4173"
     depends_on:
       api:
         condition: service_healthy
