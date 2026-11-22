@@ -57,7 +57,10 @@ jobs:
           cache-dependency-path: pyproject.toml
       - name: Install backend and test dependencies
         run: python -m pip install -e ".[dev]"
-      - name: Ruff
+      - name: Lint CI deployment checks (blocking)
+        run: ruff check deployment_checks
+      - name: Audit existing application/test lint debt (non-blocking)
+        continue-on-error: true
         run: ruff check apps packages tests
       - name: Backend tests (isolated PostgreSQL service)
         run: python -m pytest
