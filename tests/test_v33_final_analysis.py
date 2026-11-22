@@ -22,8 +22,26 @@ sys.path.insert(0, str(ROOT / "apps/api"))
 
 ANALYSIS_JSON = ROOT / "docs/benchmark/v3_3_final_stability_analysis.json"
 LEDGER = ROOT / "docs/benchmark/v3_3c_extraction_reproducibility_runs.json"
-LEDGER_SHA = "6f8f6a1ee5f54acb1bd9d9270f89edf8c244c72118381c21931feb20740557c0"
-BENCHMARK_SHA_PREFIX = "4199f5d386e1"
+# Frozen historical evidence was hashed with CRLF line endings.
+# The initial GitHub import stores LF bytes. Pin both representations explicitly.
+LEDGER_HISTORICAL_CRLF_SHA = "6f8f6a1ee5f54acb1bd9d9270f89edf8c244c72118381c21931feb20740557c0"
+LEDGER_GIT_LF_SHA = "9badf91c013f440629c13c5cf051a3be9de30af3516aa5a255a0fcc0db4ae92d"
+BENCHMARK_HISTORICAL_CRLF_SHA = "4199f5d386e1fb8b9be1a6c053c0c9cc6f2e6e8afeadc31112e650c34f37345f"
+BENCHMARK_GIT_LF_SHA = "06356fffd260ab449562de1bc1f4ff45b37b00d244a6149b02bd01973cf8452f"
+
+
+def assert_imported_frozen_bytes(path: pathlib.Path, expected_lf: str, expected_crlf: str) -> None:
+    """Pin both the committed Git bytes and the original Windows representation.
+
+    The original hash must match after newline-only reconstruction; neither the
+    file nor its semantic content is rewritten or reserialized by this test.
+    """
+    raw = path.read_bytes()
+    assert b"\r" not in raw, "Git artifact unexpectedly contains carriage returns"
+    assert not raw.endswith(b"\n"), "Git artifact unexpectedly has a final newline"
+    assert b"\n" in raw, "Expected multi-line frozen JSON"
+    assert hashlib.sha256(raw).hexdigest() == expected_lf
+    assert hashlib.sha256(raw.replace(b"\n", b"\r\n")).hexdigest() == expected_crlf
 
 
 @pytest.fixture(scope="module")
@@ -53,12 +71,12 @@ def test_jaccard_values_on_known_sets():
 
 
 def test_ledger_untouched_by_analysis():
-    assert hashlib.sha256(LEDGER.read_bytes()).hexdigest() == LEDGER_SHA
+    assert_imported_frozen_bytes(LEDGER, LEDGER_GIT_LF_SHA, LEDGER_HISTORICAL_CRLF_SHA)
 
 
 def test_frozen_benchmark_untouched():
     b = ROOT / "docs/benchmark/matching_benchmark_v3.json"
-    assert hashlib.sha256(b.read_bytes()).hexdigest().startswith(BENCHMARK_SHA_PREFIX)
+    assert_imported_frozen_bytes(b, BENCHMARK_GIT_LF_SHA, BENCHMARK_HISTORICAL_CRLF_SHA)
 
 
 def test_human_labels_still_zero():
