@@ -1,0 +1,14 @@
+# V1.2 benchmark - 3 real jobs, unchanged candidate evidence
+
+job    human  rec                   before  after  hard  review  crit  safety  status
+VJ-01  MAYBE  SKIP                      16     13     6       7     0       0  VALIDATION_FAILED
+VJ-02  NO     SKIP                      10      9     3       6     0       0  VALIDATION_FAILED
+VJ-03  YES    APPLY_WITH_TAILORING      13     11     5       6     2       2  VALIDATION_FAILED
+
+average findings/document before : 13.0
+average findings/document after  : 11.0
+reduction                         : 15%
+ambiguity (review) findings      : 19
+hard failures                     : 14
+critical safety findings          : 2
+soft-signal gaps penalised        : 0

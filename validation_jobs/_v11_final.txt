@@ -1,0 +1,34 @@
+========================================================================
+VJ-01  Data Scientist @ Monzo
+  human baseline        : MAYBE
+  V1.1 recommendation   : 77.8 -> SKIP
+  components            : {'technical': 100.0, 'experience': 84.0, 'education': 70.0, 'location': 20.0, 'other': 51.9}
+  soft-signal gaps      : NONE
+  V1 status (first run) : VALIDATION_FAILED (16 issues)
+  FINAL re-validation   : VALIDATION_FAILED (16 issues)
+  safety-critical codes : none
+  all codes             : ['UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'CLAIM_STRENGTHENING', 'UNSUPPORTED_CLAIM', 'CLAIM_STRENGTHENING', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLIENT', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'CLAIM_STRENGTHENING', 'UNSUPPORTED_CLAIM']
+
+========================================================================
+VJ-02  Machine Learning Engineer II (Underwriting ML) @ Affirm
+  human baseline        : NO
+  V1.1 recommendation   : 54.4 -> SKIP
+  components            : {'technical': 19.8, 'experience': 100.0, 'education': 90.0, 'location': 20.0, 'other': 70.0}
+  soft-signal gaps      : NONE
+  V1 status (first run) : VALIDATION_FAILED (11 issues)
+  FINAL re-validation   : VALIDATION_FAILED (10 issues)
+  safety-critical codes : none
+  all codes             : ['ROLE_NOT_NAMED', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'CLAIM_STRENGTHENING', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'CLAIM_STRENGTHENING', 'CLAIM_STRENGTHENING', 'UNSUPPORTED_CLAIM']
+
+========================================================================
+VJ-03  Data Analyst @ SEAhub Asia
+  human baseline        : YES
+  V1.1 recommendation   : 79.3 -> APPLY_WITH_TAILORING
+  components            : {'technical': 77.5, 'experience': 100.0, 'education': 70.0, 'location': 55.0, 'other': 71.7}
+  soft-signal gaps      : NONE
+  V1 status (first run) : VALIDATION_FAILED (15 issues)
+  FINAL re-validation   : VALIDATION_FAILED (13 issues)
+  safety-critical codes : ['SUSPICIOUS_OUTPUT', 'SUSPICIOUS_OUTPUT']
+  all codes             : ['UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'UNSUPPORTED_CLAIM', 'SUSPICIOUS_OUTPUT', 'SUSPICIOUS_OUTPUT']
+      ! Document contains a base64-encoded IP address (decodes to 137.255.177.157).
+      ! Document contains a suspicious tracking/promotion marker ('BRIGHTEST').

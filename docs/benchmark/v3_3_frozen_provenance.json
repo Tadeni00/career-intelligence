@@ -1,0 +1,80 @@
+{
+  "artifact": "VJ-01..VJ-03 frozen regression provenance",
+  "method": "offline; no provider calls",
+  "evidence_classes_searched": {
+    "A_exact_source_text_artifact": [
+      "validation_jobs/VJ-01_job1.json",
+      "validation_jobs/VJ-02_job2.json",
+      "validation_jobs/VJ-03_job3.json"
+    ],
+    "B_prior_extraction_run_input": [],
+    "C_benchmark_embeds_source": {
+      "VJ-01": false,
+      "VJ-02": false,
+      "VJ-03": false
+    },
+    "D_database_snapshot": "accepted only where pinned byte-identically by an archive"
+  },
+  "governing_rule": "a current database row alone is never sufficient; it is accepted only when an independent immutable artifact pins the identical bytes",
+  "results": {
+    "VJ-01": {
+      "archive_path": "validation_jobs/VJ-01_job1.json",
+      "archive_retrieved": "2026-10-07",
+      "posting_updated": "2026-10-01T09:40:20-04:00",
+      "source_url": "https://job-boards.greenhouse.io/monzo/jobs/8242603",
+      "source_length": 8674,
+      "source_sha256": "9f16157c97d1cd4c1df43256601279050f6db6ff59b00a8e6dc676b57fdcddb7",
+      "identity_match_benchmark": true,
+      "db_rows_matching": 7,
+      "db_desc_sha_distinct": [
+        "9f16157c97d1cd4c1df43256601279050f6db6ff59b00a8e6dc676b57fdcddb7"
+      ],
+      "db_matches_archive": true,
+      "provenance_status": "VERIFIED",
+      "evidence": [
+        "A: exact source text artifact",
+        "D: database snapshot pinned by archive"
+      ]
+    },
+    "VJ-02": {
+      "archive_path": "validation_jobs/VJ-02_job2.json",
+      "archive_retrieved": "2026-10-07",
+      "posting_updated": "2026-08-12T15:12:11-04:00",
+      "source_url": "https://job-boards.greenhouse.io/affirm/jobs/7822387003",
+      "source_length": 5615,
+      "source_sha256": "a88b8bb9254710b9236612410b7a6afea23b9ee34af7ecfc2d9d2c4bdd2605f3",
+      "identity_match_benchmark": true,
+      "db_rows_matching": 3,
+      "db_desc_sha_distinct": [
+        "a88b8bb9254710b9236612410b7a6afea23b9ee34af7ecfc2d9d2c4bdd2605f3"
+      ],
+      "db_matches_archive": true,
+      "provenance_status": "VERIFIED",
+      "evidence": [
+        "A: exact source text artifact",
+        "D: database snapshot pinned by archive"
+      ]
+    },
+    "VJ-03": {
+      "archive_path": "validation_jobs/VJ-03_job3.json",
+      "archive_retrieved": "2026-10-07",
+      "posting_updated": "2026-08-04T14:20:29+00:00",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-data-analyst-seahub-asia-1136222",
+      "source_length": 3070,
+      "source_sha256": "45fb6961c84e22c6ec870609bf1cf70488323e5ed05151520eba8f4c4e95d383",
+      "identity_match_benchmark": true,
+      "db_rows_matching": 3,
+      "db_desc_sha_distinct": [
+        "45fb6961c84e22c6ec870609bf1cf70488323e5ed05151520eba8f4c4e95d383"
+      ],
+      "db_matches_archive": true,
+      "provenance_status": "VERIFIED",
+      "evidence": [
+        "A: exact source text artifact",
+        "D: database snapshot pinned by archive"
+      ]
+    }
+  },
+  "verified_count": 3,
+  "unresolved_count": 0
+}

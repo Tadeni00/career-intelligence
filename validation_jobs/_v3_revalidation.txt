@@ -1,0 +1,51 @@
+# V3 Phase 5 — Revalidation from frozen inputs
+
+Requirement extraction is LLM-driven and non-reproducible; the
+artifact's frozen requirement lists are used as the job-side input.
+
+| Job | Frozen rec | Rerun rec | Frozen score | Rerun score | Match | Audit |
+|---|---|---|---:|---:|---|---|
+| VJ-01 | SKIP | SKIP | 80.5 | 80.5 | yes | verified |
+| VJ-02 | SKIP | SKIP | 49.5 | 49.5 | yes | verified |
+| VJ-03 | APPLY_WITH_TAILORING | APPLY_WITH_TAILORING | 74.9 | 74.9 | yes | verified |
+| VJ-B01 | STRETCH | STRETCH | 55.9 | 55.9 | yes | verified |
+| VJ-B02 | STRETCH | STRETCH | 56.9 | 56.9 | yes | verified |
+| VJ-B03 | STRETCH | STRETCH | 51.6 | 51.6 | yes | verified |
+| VJ-B04 | STRETCH | STRETCH | 51.0 | 51.0 | yes | verified |
+| VJ-B05 | STRETCH | STRETCH | 50.4 | 50.4 | yes | verified |
+| VJ-B06 | SKIP | SKIP | 42.4 | 42.4 | yes | verified |
+| VJ-B07 | SKIP | SKIP | 47.0 | 47.0 | yes | verified |
+| VJ-B08 | SKIP | SKIP | 44.3 | 44.3 | yes | verified |
+| VJ-B09 | SKIP | SKIP | 49.3 | 49.3 | yes | verified |
+| VJ-B10 | SKIP | SKIP | 44.0 | 44.0 | yes | verified |
+| VJ-B11 | SKIP | SKIP | 41.8 | 41.8 | yes | verified |
+| VJ-B12 | SKIP | SKIP | 45.8 | 45.8 | yes | verified |
+| VJ-B13 | SKIP | SKIP | 49.4 | 49.4 | yes | verified |
+| VJ-B14 | STRETCH | STRETCH | 61.0 | 61.0 | yes | verified |
+| VJ-B15 | SKIP | SKIP | 37.0 | 37.0 | yes | verified |
+| VJ-B16 | STRETCH | STRETCH | 61.4 | 61.4 | yes | verified |
+| VJ-B17 | STRETCH | STRETCH | 57.5 | 57.5 | yes | verified |
+| VJ-B18 | SKIP | SKIP | 48.7 | 48.7 | yes | verified |
+| VJ-B19 | SKIP | SKIP | 36.3 | 36.3 | yes | verified |
+| VJ-B20 | APPLY_WITH_TAILORING | APPLY_WITH_TAILORING | 77.0 | 77.0 | yes | verified |
+| VJ-B21 | STRETCH | STRETCH | 52.6 | 52.6 | yes | verified |
+| VJ-B23 | SKIP | SKIP | 73.8 | 73.8 | yes | verified |
+| VJ-B28 | STRETCH | STRETCH | 51.8 | 51.8 | yes | verified |
+
+- cases: 26
+- recommendation + score reproduced from frozen inputs: 26/26
+- audits verified (score fully decomposed): 26/26
+- recommendation distribution: {'SKIP': 14, 'APPLY_WITH_TAILORING': 2, 'STRETCH': 10}
+
+## Decision metrics (human-labelled subset only)
+
+- VJ-01: human MAYBE / system SKIP (DISAGREEMENT)
+- VJ-02: human NO / system SKIP (agreement)
+- VJ-03: human YES / system APPLY_WITH_TAILORING (agreement)
+
+- exact agreement: 2/3
+- false skips: 0
+- false applies: 0
+- severe (YES<->NO): 0
+- near (MAYBE<->): 1
+- sample size 3: insufficient for any calibration decision

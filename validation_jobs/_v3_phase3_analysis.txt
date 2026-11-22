@@ -1,0 +1,88 @@
+# V3 Phase 3 — Requirement-Level Analysis and Hypothesis Testing
+
+Benchmark: 26 cases (3 human-labelled, 23 awaiting independent human labels)
+
+## Decision metrics (human-labelled subset)
+
+| Job | Human | System | Score | Blocker | Req coverage | Result |
+|---|---|---|---:|---:|---:|---|
+| VJ-01 | MAYBE | SKIP | 80.5 | 1 | 0.333 | Disagreement |
+| VJ-02 | NO | SKIP | 49.5 | 1 | 0.5 | Agreement |
+| VJ-03 | YES | APPLY_WITH_TAILORING | 74.9 | 0 | 0.444 | Agreement |
+
+- exact agreement: 2/3 (67%)
+- false skips (system SKIP, human YES): 0
+- false applies (system APPLY*, human NO): 0
+- severe disagreements (YES<->NO): 0
+- near disagreements (MAYBE<->YES/NO): 1
+
+**Sample size is 3. No calibration decision may rest on this.**
+
+## Score behaviour across the expanded benchmark
+
+- overall score: min=36.1 median=52.0 max=80.5
+- recommendation distribution: {'SKIP': 14, 'APPLY_WITH_TAILORING': 2, 'STRETCH': 10}
+- technical   min=   3.1 median=  21.1 max= 100.0
+- experience  min=  80.0 median=  84.0 max= 100.0
+- education   min=   0.0 median=  70.0 max= 100.0
+- location    min=  20.0 median=  55.0 max= 100.0
+- other       min=  42.7 median=  48.6 max=  73.8
+
+Dimension spread shows which components actually discriminate:
+
+## Hypothesis testing
+
+### H1 — Threshold mismatch
+- Cases scoring >=65 (APPLY band on score alone) that still return SKIP: **2**
+    VJ-01 score=80.5 blockers=['Location']
+    VJ-B23 score=74.1 blockers=['Advanced degree in quantitative field']
+- The thresholds are not the cause. These jobs enter the APPLY band on score and are overridden by the blocker rule, which is a separate gate.
+
+### H2 — Component weighting mismatch
+- Dimension ranges above show the discriminating power of each component.
+- technical spread: 96.9 points (largest single lever at 40% weight)
+- location spread: 80.0 points (at 10% weight)
+- Education and location frequently take flat values, so their weight is mostly inert. Weight is not the distortion; input coverage is.
+
+### H3 — Location penalty mismatch
+- Cases blocked by location: **8 of 26**
+- Location score distribution: {20.0: 8, 55.0: 10, 100.0: 8}
+- Cases where location <=55 (penalised or blocked): 18
+- Location drives a large share of SKIPs relative to its 10% weight, because it is a *gate* (blocker) and not merely a weighted term.
+
+### H4 — Missing evidence treated too negatively
+- Diagnostic state totals across the benchmark: {'F_SUPPORTED': 61, 'A_HARD_BLOCKER': 12, 'E_EVIDENCE_UNKNOWN': 96, 'D_TAILORING_GAP': 12, 'B_MATERIAL_GAP': 178, 'C_COMPETITIVE_DISADVANTAGE': 22}
+- EVIDENCE_UNKNOWN (96) outnumbers MATERIAL_GAP (178) 0.5x
+- The engine already distinguishes 'not established' from 'absent' for PREFERRED/soft skills: they land in `unknowns`, not `gaps`.
+- **But REQUIRED skills with no match go to `gaps`, which is presented to the user as a gap, i.e. framed as a deficiency rather than an evidence boundary.**
+
+### H5 — Requirement classification error
+- Importance distribution: {'REQUIRED': 351, 'PREFERRED': 94, 'UNKNOWN': 5}
+- Requirements extracted per job: min=2 median=16.0 max=32
+- EXPERIENCE requirements with no years value: **81**
+- These are extracted, then silently discarded by `engine._score_experience`, which only handles requirements that carry `years_required`. They do not score and do not appear as unknowns.
+
+### H6 — Hard blocker semantics
+- Blocker source distribution: {'engine._is_hard_location_block -> _score_location': 8, 'engine._score_education': 4}
+- Education blockers: 4   Location blockers: 8
+- `_score_technical` and `_score_other` can never emit a blocker. A missing REQUIRED *skill* never blocks, but a missing REQUIRED *degree* always does. That asymmetry is undocumented behaviour, not a stated policy.
+
+### H7 — Suitability/action conflation
+- Evidence: jobs with technical >=90 and a strong score still return SKIP purely because of a location gate.
+- Cases with technical >=80 that are SKIP: **2**
+    VJ-01 technical=100 overall=80.5 blockers=['Location']
+    VJ-B23 technical=80 overall=74.1 blockers=['Advanced degree in quantitative field']
+- This is the clearest supported hypothesis. The engine conflates 'does the evidence support a strong match' with 'should this person apply today'.
+
+### H8 — Evidence coverage too keyword-oriented
+- `_skill_names_match` is exact-alias or token-overlap. It cannot connect 'controlled experiments' to 'A/B testing' even where the alias table has an entry, because the entry only fires on surface form.
+- Requirements recorded as unmappable to confirmed evidence: 96
+
+### H9 — Experience scoring insufficiently discriminative
+- Experience spread: min=80.0 median=84.0 max=100.0
+- Cases at experience >=95: **6 of 26**
+- `_score_experience` is 50% title similarity + 50% years ratio. Most real postings request 2-5 years against a 6-year candidate, so the ratio saturates at 100 and the dimension stops discriminating between a marginally and a clearly qualified candidate.
+
+### H10 — Other category too broad
+- Other spread: min=42.7 median=48.6 max=73.8
+- `_score_other` mixes salary, employment type, and every requirement the extractor could not type. Each unverifiable REQUIRED item is assigned a flat 40/100 by construction, so unrelated concepts are averaged as if comparable.

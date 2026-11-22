@@ -1,0 +1,176 @@
+{
+  "id": 12,
+  "validation_status": "VALIDATION_FAILED",
+  "issues": [
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_TECHNOLOGY",
+      "message": "'Report Generation' appears in the skills section but is not supported by your confirmed profile.",
+      "detail": "Report Generation"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['stakeholder'].",
+      "detail": "Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['data analysis'].",
+      "detail": "Utilized Python libraries (Pandas, NumPy, Matplotlib, Seaborn) for data analysis and visualization."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLAIM",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' is not supported by confirmed evidence: terms absent from evidence: ['output', 'performed'].",
+      "detail": "Performed data retrieval, structured extraction, and deterministic validation to ensure output accuracy."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['support reproducibility'].",
+      "detail": "Produced technical documentation to support reproducibility and knowledge sharing."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['refine analytical'].",
+      "detail": "Collaborated with cross‑functional teams to refine analytical and technical workflows."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Science, AI & ML Mentor @ DSN / WESOnline' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['methodological soundness'].",
+      "detail": "Review analytical work for methodological soundness and clear communication."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Industrial Trainee @ Nigerian Institute for Social and Economic Research (NISER)' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['ensure data accuracy'].",
+      "detail": "Used SPSS and Excel to ensure data accuracy and consistency."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in the summary strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['strong communication'].",
+      "detail": "Skilled in Python, SQL, Excel, and statistical methods, with strong communication and documentation practices."
+    }
+  ],
+  "changes": [
+    "Re‑ordered experience to prioritize roles with data cleaning, validation, reporting, and dashboard development.",
+    "Condensed machine‑learning details to focus on data‑preparation and analytical deliverables relevant to a Data Analyst role.",
+    "Emphasized use of Python, SQL, Excel, and Power BI in bullet points.",
+    "Added statements highlighting documentation, cross‑functional collaboration, and clear communication of insights.",
+    "Removed unrelated teaching and customer‑service duties to keep the CV concise for the target position."
+  ],
+  "summary": "Data professional with 6 years of experience in data cleaning, validation, transformation, and analysis. Proven ability to build automated pipelines, develop Power BI dashboards, and generate clear reports that support business decisions. Skilled in Python, SQL, Excel, and statistical methods, with strong communication and documentation practices.",
+  "content": {
+    "summary": "Data professional with 6 years of experience in data cleaning, validation, transformation, and analysis. Proven ability to build automated pipelines, develop Power BI dashboards, and generate clear reports that support business decisions. Skilled in Python, SQL, Excel, and statistical methods, with strong communication and documentation practices.",
+    "skills": [
+      "Python",
+      "SQL",
+      "Microsoft Excel",
+      "Power BI",
+      "Data Cleaning",
+      "Data Validation",
+      "Data Transformation",
+      "Data Visualization",
+      "Dashboard Development",
+      "Report Generation",
+      "Statistical Analysis",
+      "Exploratory Data Analysis",
+      "Feature Engineering",
+      "Git",
+      "Technical Documentation",
+      "Cross‑Functional Collaboration",
+      "Mentoring & Training"
+    ],
+    "experience": [
+      {
+        "company": "Data Glacier",
+        "title": "Data Scientist & Machine Learning Engineer Intern",
+        "start_date": "Feb 2023",
+        "end_date": "Oct 2024",
+        "bullets": [
+          "Cleaned, transformed, and validated complex datasets to improve analytical quality.",
+          "Built automated data pipelines that supported repeatable data preparation and validation workflows.",
+          "Performed quantitative analysis for classification and regression use cases.",
+          "Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making.",
+          "Utilized Python libraries (Pandas, NumPy, Matplotlib, Seaborn) for data analysis and visualization."
+        ]
+      },
+      {
+        "company": "Youverify",
+        "title": "Data Scientist & Machine Learning Engineer Intern",
+        "start_date": "Dec 2025",
+        "end_date": "Jun 2026",
+        "bullets": [
+          "Constructed an AI‑assisted information extraction pipeline for regulatory compliance investigations.",
+          "Performed data retrieval, structured extraction, and deterministic validation to ensure output accuracy.",
+          "Produced technical documentation to support reproducibility and knowledge sharing.",
+          "Collaborated with cross‑functional teams to refine analytical and technical workflows."
+        ]
+      },
+      {
+        "company": "5Seas Consults",
+        "title": "Marketing Executive",
+        "start_date": "May 2021",
+        "end_date": "Nov 2023",
+        "bullets": [
+          "Collected, cleaned, and validated student recruitment data from field marketers across Nigeria.",
+          "Analyzed recruitment patterns, channel performance, and geographic opportunities using Excel, Power BI, and Python.",
+          "Prepared reports and actionable recommendations for senior stakeholders.",
+          "Delivered practical training sessions in Excel, Power BI, and Python for team members."
+        ]
+      },
+      {
+        "company": "DSN / WESOnline",
+        "title": "Data Science, AI & ML Mentor",
+        "start_date": "Jul 2026",
+        "end_date": "Present",
+        "bullets": [
+          "Mentor fellows through a fraud‑detection capstone, guiding data exploration, statistical analysis, and model evaluation.",
+          "Review analytical work for methodological soundness and clear communication.",
+          "Structure collaborative workflows using GitHub and modular development practices."
+        ]
+      },
+      {
+        "company": "Unique Success Academy",
+        "title": "Data Analytics Tutor",
+        "start_date": "Dec 2018",
+        "end_date": "Apr 2021",
+        "bullets": [
+          "Taught statistics and practical data‑analytics concepts to learners.",
+          "Conducted statistical analysis with SPSS and Excel and prepared analytical reports."
+        ]
+      },
+      {
+        "company": "Nigerian Institute for Social and Economic Research (NISER)",
+        "title": "Industrial Trainee",
+        "start_date": "Jun 2015",
+        "end_date": "Dec 2015",
+        "bullets": [
+          "Performed data collection, coding, entry, and statistical analysis for research projects.",
+          "Used SPSS and Excel to ensure data accuracy and consistency."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Federal University of Agriculture, Abeokuta",
+        "degree": "B.Sc.",
+        "field": "Statistics",
+        "end_date": ""
+      }
+    ],
+    "projects": [],
+    "changes_summary": [
+      "Re‑ordered experience to prioritize roles with data cleaning, validation, reporting, and dashboard development.",
+      "Condensed machine‑learning details to focus on data‑preparation and analytical deliverables relevant to a Data Analyst role.",
+      "Emphasized use of Python, SQL, Excel, and Power BI in bullet points.",
+      "Added statements highlighting documentation, cross‑functional collaboration, and clear communication of insights.",
+      "Removed unrelated teaching and customer‑service duties to keep the CV concise for the target position."
+    ]
+  }
+}

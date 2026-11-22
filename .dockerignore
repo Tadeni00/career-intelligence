@@ -1,0 +1,17 @@
+# Keep secrets and host-only bulk out of every image build context.
+.env
+.venv/
+venv/
+node_modules/
+dist/
+dist-smoke/
+.smoke/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.git/
+storage/uploads/
+storage/generated/
+*.db
+*.sqlite3

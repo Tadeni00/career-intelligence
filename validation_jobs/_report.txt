@@ -1,0 +1,222 @@
+==========================================================================
+VJ-01  Data Scientist @ Monzo (Cardiff, London or Remote (UK))
+url=https://job-boards.greenhouse.io/monzo/jobs/8242603  retrieved=2026-10-07
+==========================================================================
+REQUIREMENTS (10):
+   [SKILL     ] REQUIRED SQL
+   [SKILL     ] PREFERRED Python
+   [EXPERIENCE] REQUIRED Data science experience
+   [EXPERIENCE] REQUIRED A/B testing experience
+   [LOCATION  ] REQUIRED UK location
+   [OTHER     ] SOFT_SIGNAL Self‑starter mindset
+   [OTHER     ] SOFT_SIGNAL Impact driven
+   [OTHER     ] SOFT_SIGNAL Commercially minded
+   [OTHER     ] SOFT_SIGNAL Team player
+   [OTHER     ] REQUIRED Work authorization
+MATCH 77.8 -> SKIP (conf 0.95)
+   components {'technical': 100.0, 'experience': 84.0, 'education': 70.0, 'location': 20.0, 'other': 51.9}
+   matched  ['SQL', 'Python']
+   gaps     ['Location', 'Work authorization']
+   blockers ['Location']
+   unknowns ['Work mode', 'Salary', 'Self‑starter mindset', 'Impact driven', 'Commercially minded', 'Team player']
+   explanation: Data Scientist at Monzo scores 78/100 overall, which maps to SKIP. A hard blocker is present (Location), so the recommendation is SKIP regardless of the numeric score. Review the blockers below.
+TAILORED-CV http=200
+   status=VALIDATION_FAILED  issues=10
+      [error] UNSUPPORTED_CLIENT: Claim in 'Self-Directed Professional Development @ Independent AI & Data Science Development' strengthens or invents detail beyond evidence: introduces uneviden
+      [error] UNSUPPORTED_CLIENT: Claim in 'Self-Directed Professional Development @ Independent AI & Data Science Development' strengthens or invents detail beyond evidence: introduces uneviden
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: [
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: [
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: [
+      [error] UNSUPPORTED_CLIENT: Claim in 'Industrial Trainee @ Nigerian Institute for Social and Economic Research (NISER)' strengthens or invents detail beyond evidence: introduces unevidence
+      [error] UNSUPPORTED_CLIENT: Claim in the summary strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['both technical', 'engineering'].
+      [error] UNSUPPORTED_CLAIM: Claim in the summary is not supported by confirmed evidence: terms absent from evidence: ['background', 'promoting'].
+   summary: Data professional with 6+ years of experience in quantitative and statistical analysis, data management, reporting, visualization, and applied machine learning. Skilled in Python, SQL, Excel, Power BI
+   SKILLS: ['Anomaly Identification', 'Cross-Functional Collaboration', 'Dashboard Development', 'Data Analysis', 'Data Cleaning', 'Data Collection', 'Data Transformation', 'Data Validation', 'Data Visualization', 'Descriptive Statistics', 'Exploratory Data Analysis', 'Feature Engineering', 'Git', 'Hypothesis Testing', 'Inferential Statistics', 'Machine Learning', 'Matplotlib', 'Mentoring & Training', 'Microsoft Excel', 'NumPy', 'Pandas', 'Performance Analysis', 'Power BI', 'Python', 'Regression', 'Reproducible Analysis', 'Seaborn', 'SPSS', 'SQL', 'Stakeholder Reporting', 'Statistical Analysis', 'Technical Documentation', 'Trend Analysis']
+   EXP Independent AI & Data Science Development | Self-Directed Professional Development
+       - Completed structured hands‑on projects in Python, data science, statistical analysis, machine learning, and AI/LLM engineering
+       - Applied analytical and software‑engineering practices through practical projects and technical study
+   EXP Data Glacier | Data Scientist & Machine Learning Engineer Intern
+       - Performed quantitative analysis for classification and regression use cases
+       - Cleaned, transformed, and engineered datasets to improve analytical outcomes
+       - Applied statistical and machine learning techniques to generate predictive insights
+       - Built automated data pipelines supporting repeatable data preparation, analysis, and validation
+       - Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making
+       - Utilized Python, Pandas, NumPy, Matplotlib, and Seaborn for analysis and visualization
+   EXP 5Seas Consults | Marketing Executive
+       - Collected and consolidated field‑collected student recruitment data across all Nigerian states
+       - Processed, cleaned, validated, and analyzed data using Excel, Power BI, and Python
+       - Identified recruitment patterns, channel performance, and geographic opportunities
+       - Translated findings into actionable recommendations for leadership
+       - Delivered practical training in Excel, Power BI, and Python to non‑technical staff
+COVER-LETTER http=200
+   status=VALIDATION_FAILED  issues=16
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['express', 'monzo', 'position', 'writing'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['engineering'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['support classification'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['monitor performance'].
+      [error] CLAIM_STRENGTHENING: Claim strengthens or invents detail beyond evidence: scope escalations not evidenced: ['heavily'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['documenting', 'guarantee', 'integrating', 'required'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['engineering', 'engineers', 'product owners'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['capacity', 'demonstrates', 'further', 'raw', 'strategic'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['analyses', 'audiences', 'non', 'performed', 'presented'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['mentorship'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['emphasizing', 'end', 'guided', 'positions', 'tutoring'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['communicate complex statistical concepts', 'enabling product teams
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['drawn', 'driven', 'emphasis', 'its', 'monzo'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['contribute immediately', 'engineering', 'product'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['apply my quantitative expertise'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['opportunity'].
+
+==========================================================================
+VJ-02  Machine Learning Engineer II (Underwriting ML) @ Affirm (Remote US)
+url=https://job-boards.greenhouse.io/affirm/jobs/7822387003  retrieved=2026-10-07
+==========================================================================
+REQUIREMENTS (25):
+   [SKILL     ] REQUIRED Python
+   [SKILL     ] REQUIRED Machine Learning
+   [SKILL     ] REQUIRED Classification modeling
+   [SKILL     ] REQUIRED Deep learning
+   [SKILL     ] REQUIRED Distributed data processing
+   [SKILL     ] REQUIRED ML lifecycle tooling
+   [SKILL     ] REQUIRED AI-powered developer tools
+   [SKILL     ] REQUIRED Software engineering
+   [SKILL     ] REQUIRED Code reviews
+   [SKILL     ] REQUIRED Communication
+   [SKILL     ] PREFERRED LightGBM
+   [SKILL     ] PREFERRED XGBoost
+   [SKILL     ] PREFERRED CatBoost
+   [SKILL     ] PREFERRED PyTorch
+   [SKILL     ] PREFERRED Spark
+   [SKILL     ] PREFERRED Ray
+   [SKILL     ] PREFERRED Dask
+   [SKILL     ] PREFERRED Kubeflow
+   [SKILL     ] PREFERRED Airflow
+   [SKILL     ] PREFERRED MLflow
+   [SKILL     ] PREFERRED Claude Code
+   [SKILL     ] PREFERRED Cursor
+   [EXPERIENCE] REQUIRED Machine Learning Engineer experience
+   [EDUCATION ] REQUIRED Bachelor's degree
+   [LOCATION  ] REQUIRED Remote (US)
+MATCH 54.4 -> SKIP (conf 0.95)
+   components {'technical': 19.8, 'experience': 100.0, 'education': 90.0, 'location': 20.0, 'other': 70.0}
+   matched  ['Python', 'Machine Learning', 'Machine Learning Engineer experience']
+   gaps     ['Classification modeling', 'Deep learning', 'Distributed data processing', 'ML lifecycle tooling', 'AI-powered developer tools', 'Software engineering', 'Code reviews', 'Communication', 'Location']
+   blockers ['Location']
+   unknowns ['LightGBM', 'XGBoost', 'CatBoost', 'PyTorch', 'Spark', 'Ray', 'Dask', 'Kubeflow', 'Airflow', 'MLflow', 'Claude Code', 'Cursor', "Bachelor's degree", 'Work mode', 'Salary']
+   explanation: Machine Learning Engineer II (Underwriting ML) at Affirm scores 54/100 overall, which maps to SKIP. A hard blocker is present (Location), so the recommendation is SKIP regardless of the numeric score. Review the blockers below.
+TAILORED-CV http=200
+   status=VALIDATION_FAILED  issues=14
+      [error] UNSUPPORTED_TECHNOLOGY: 'Classification modeling' appears in the skills section but is not supported by your confirmed profile.
+      [error] UNSUPPORTED_TECHNOLOGY: 'Regression modeling' appears in the skills section but is not supported by your confirmed profile.
+      [error] UNSUPPORTED_TECHNOLOGY: 'Automated data pipelines' appears in the skills section but is not supported by your confirmed profile.
+      [error] UNSUPPORTED_TECHNOLOGY: 'Mentoring' appears in the skills section but is not supported by your confirmed profile.
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: [
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: [
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: [
+      [error] UNSUPPORTED_CLIENT: Claim in 'Self‑Directed Professional Development @ Independent AI & Data Science Development' strengthens or invents detail beyond evidence: introduces uneviden
+      [error] UNSUPPORTED_CLIENT: Claim in 'Self‑Directed Professional Development @ Independent AI & Data Science Development' strengthens or invents detail beyond evidence: introduces uneviden
+      [error] UNSUPPORTED_CLAIM: Claim in the summary is not supported by confirmed evidence: terms absent from evidence: ['6+', 'end', 'modeling', 'workflow'].
+      [error] UNSUPPORTED_CLIENT: Claim in the summary strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['clean'].
+      [error] UNSUPPORTED_CLIENT: Claim in the summary strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['functional teams'].
+   summary: Data Scientist and Machine Learning Engineer with 6+ years of quantitative analysis, statistical modeling, and end‑to‑end ML workflow experience. Proven ability to clean and transform data, engineer f
+   SKILLS: ['Python', 'Data cleaning', 'Data validation', 'Data transformation', 'Feature engineering', 'Classification modeling', 'Regression modeling', 'Automated data pipelines', 'Statistical analysis', 'Hypothesis testing', 'Machine learning', 'Git', 'Technical documentation', 'Cross‑functional collaboration', 'Mentoring']
+   EXP Data Glacier | Data Scientist & Machine Learning Engineer Intern
+       - Conducted quantitative analysis of complex datasets for classification and regression use cases
+       - Cleaned, transformed, and engineered data to improve quality and analytical outcomes
+       - Applied statistical and machine learning techniques to generate predictive insights
+       - Built automated data pipelines for repeatable data preparation, analysis, and validation
+       - Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making
+   EXP Youverify | Data Scientist & Machine Learning Engineer Intern
+       - Built an AI‑assisted information extraction pipeline for regulatory compliance investigations
+       - Integrated data retrieval, structured extraction, and deterministic validation to improve accuracy and consistency
+       - Collaborated with cross‑functional teams to enhance analytical and technical workflows
+       - Produced technical documentation to ensure reproducibility and knowledge sharing
+   EXP Independent AI & Data Science Development | Self‑Directed Professional Development
+       - Completed structured hands‑on projects in Python, data science, statistical analysis, machine learning, and AI/LLM engineering
+       - Applied software‑engineering best practices to develop reproducible analytical code
+COVER-LETTER http=200
+   status=VALIDATION_FAILED  issues=11
+      [warning] ROLE_NOT_NAMED: The cover letter does not mention the role 'Machine Learning Engineer II (Underwriting ML)'.
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['affirm', 'express', 'ii', 'position', 'underwriting'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['six years of experience in data science'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['communicate insights'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['need'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['ensure reliability'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['engineering'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['additionally', 'control', 'emphasizing', 'monitoring', 'retraining'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['both technical'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['contribute effectively', 'engineering'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['affirm', 'background', 'discussing', 'goals', 'how'].
+
+==========================================================================
+VJ-03  Data Analyst @ SEAhub Asia (Kuala Lumpur, Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia)
+url=https://remoteOK.com/remote-jobs/remote-data-analyst-seahub-asia-1136222  retrieved=2026-10-07
+==========================================================================
+REQUIREMENTS (10):
+   [SKILL     ] REQUIRED SQL
+   [SKILL     ] REQUIRED Excel
+   [SKILL     ] REQUIRED Power BI
+   [SKILL     ] REQUIRED Tableau
+   [SKILL     ] PREFERRED Python
+   [EXPERIENCE] REQUIRED Data analysis experience
+   [OTHER     ] SOFT_SIGNAL Strong communication skills
+   [OTHER     ] SOFT_SIGNAL Detail-oriented
+   [OTHER     ] SOFT_SIGNAL Proactive mindset
+   [OTHER     ] SOFT_SIGNAL Well-organized
+MATCH 79.3 -> APPLY_WITH_TAILORING (conf 0.95)
+   components {'technical': 77.5, 'experience': 100.0, 'education': 70.0, 'location': 55.0, 'other': 71.7}
+   matched  ['SQL', 'Excel', 'Power BI', 'Python', 'Data analysis experience']
+   gaps     ['Tableau', 'Location']
+   blockers []
+   unknowns ['Work mode', 'Salary', 'Strong communication skills', 'Detail-oriented', 'Proactive mindset', 'Well-organized']
+   explanation: Data Analyst at SEAhub Asia scores 79/100 overall, which maps to APPLY_WITH_TAILORING. Strongest dimension is Experience at 100/100. Weakest dimension is Location at 55/100.
+TAILORED-CV http=200
+   status=VALIDATION_FAILED  issues=9
+      [error] UNSUPPORTED_TECHNOLOGY: 'Report Generation' appears in the skills section but is not supported by your confirmed profile.
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties
+      [error] UNSUPPORTED_CLAIM: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' is not supported by confirmed evidence: terms absent from evidence: ['output', 'perform
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: [
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: [
+      [error] UNSUPPORTED_CLIENT: Claim in 'Data Science, AI & ML Mentor @ DSN / WESOnline' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['methodological
+      [error] UNSUPPORTED_CLIENT: Claim in 'Industrial Trainee @ Nigerian Institute for Social and Economic Research (NISER)' strengthens or invents detail beyond evidence: introduces unevidence
+      [error] UNSUPPORTED_CLIENT: Claim in the summary strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['strong communication'].
+   summary: Data professional with 6 years of experience in data cleaning, validation, transformation, and analysis. Proven ability to build automated pipelines, develop Power BI dashboards, and generate clear re
+   SKILLS: ['Python', 'SQL', 'Microsoft Excel', 'Power BI', 'Data Cleaning', 'Data Validation', 'Data Transformation', 'Data Visualization', 'Dashboard Development', 'Report Generation', 'Statistical Analysis', 'Exploratory Data Analysis', 'Feature Engineering', 'Git', 'Technical Documentation', 'Cross‑Functional Collaboration', 'Mentoring & Training']
+   EXP Data Glacier | Data Scientist & Machine Learning Engineer Intern
+       - Cleaned, transformed, and validated complex datasets to improve analytical quality.
+       - Built automated data pipelines that supported repeatable data preparation and validation workflows.
+       - Performed quantitative analysis for classification and regression use cases.
+       - Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making.
+       - Utilized Python libraries (Pandas, NumPy, Matplotlib, Seaborn) for data analysis and visualization.
+   EXP Youverify | Data Scientist & Machine Learning Engineer Intern
+       - Constructed an AI‑assisted information extraction pipeline for regulatory compliance investigations.
+       - Performed data retrieval, structured extraction, and deterministic validation to ensure output accuracy.
+       - Produced technical documentation to support reproducibility and knowledge sharing.
+       - Collaborated with cross‑functional teams to refine analytical and technical workflows.
+   EXP 5Seas Consults | Marketing Executive
+       - Collected, cleaned, and validated student recruitment data from field marketers across Nigeria.
+       - Analyzed recruitment patterns, channel performance, and geographic opportunities using Excel, Power BI, and Python.
+       - Prepared reports and actionable recommendations for senior stakeholders.
+       - Delivered practical training sessions in Excel, Power BI, and Python for team members.
+COVER-LETTER http=200
+   status=VALIDATION_FAILED  issues=15
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['analyst', 'asia', 'express', 'position', 'seahub'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['exactly', 'raw', 'record', 'six', 'track'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['multiple dashboards'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['stakeholder'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['aligns', 'directly', 'maintenance', 'need'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['concise', 'guided', 'identified', 'outreach', 'strategic'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['documenting', 'frequent', 'interaction', 'match', 'outlined'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['background', 'emphasized', 'proper'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['convey technical results'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['approach', 'asia', 'foundation', 's', 'seahub'].
+      [error] UNSUPPORTED_CLIENT: Claim strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['contributing'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['builds', 'part', 's', 'what'].
+      [error] UNSUPPORTED_CLAIM: Claim is not supported by confirmed evidence: terms absent from evidence: ['#rmtm3lji1ns4xnzcumtu3', 'brightest'].
+      [error] SUSPICIOUS_OUTPUT: Document contains a base64-encoded IP address (decodes to 137.255.177.157).
+      [error] SUSPICIOUS_OUTPUT: Document contains a suspicious tracking/promotion marker ('BRIGHTEST').

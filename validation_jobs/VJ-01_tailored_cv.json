@@ -1,0 +1,156 @@
+{
+  "id": 13,
+  "validation_status": "VALIDATION_FAILED",
+  "issues": [
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_TECHNOLOGY",
+      "message": "'Power BI dashboard development' appears in the skills section but is not supported by your confirmed profile.",
+      "detail": "Power BI dashboard development"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_TECHNOLOGY",
+      "message": "'Quantitative analysis' appears in the skills section but is not supported by your confirmed profile.",
+      "detail": "Quantitative analysis"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_TECHNOLOGY",
+      "message": "'Data management' appears in the skills section but is not supported by your confirmed profile.",
+      "detail": "Data management"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLAIM",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' is not supported by confirmed evidence: terms absent from evidence: ['integrated', 'steps'].",
+      "detail": "Integrated data retrieval, structured extraction, and deterministic validation steps"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLAIM",
+      "message": "Claim in the summary is not supported by confirmed evidence: terms absent from evidence: ['analysts', 'delivering', 'producing'].",
+      "detail": "Experienced in mentoring analysts, delivering technical training, and producing reproducible analytical documentation."
+    }
+  ],
+  "changes": [
+    "Reordered experience entries to prioritize data‑science and machine‑learning roles",
+    "Condensed and omitted teaching and customer‑care positions to focus on analytical relevance",
+    "Rewrote bullet points to highlight quantitative analysis, pipeline automation, dashboard development, and cross‑functional collaboration",
+    "Aligned skill list with confirmed competencies from the candidate profile and removed any unsupported terms",
+    "Kept project section empty as no projects were recorded in the profile"
+  ],
+  "summary": "Data professional with 6+ years of experience in quantitative and statistical analysis, data cleaning, transformation, and visualization. Proven ability to build automated data pipelines, develop interactive Power BI dashboards, and apply machine learning techniques using Python. Experienced in mentoring analysts, delivering technical training, and producing reproducible analytical documentation.",
+  "content": {
+    "summary": "Data professional with 6+ years of experience in quantitative and statistical analysis, data cleaning, transformation, and visualization. Proven ability to build automated data pipelines, develop interactive Power BI dashboards, and apply machine learning techniques using Python. Experienced in mentoring analysts, delivering technical training, and producing reproducible analytical documentation.",
+    "skills": [
+      "Python",
+      "SQL",
+      "Data cleaning",
+      "Data transformation",
+      "Data validation",
+      "Statistical analysis",
+      "Machine learning",
+      "Feature engineering",
+      "Data visualization",
+      "Power BI dashboard development",
+      "Quantitative analysis",
+      "Cross‑functional collaboration",
+      "Stakeholder reporting",
+      "Technical documentation",
+      "Git",
+      "Reproducible analysis",
+      "Anomaly identification",
+      "Exploratory data analysis",
+      "Descriptive statistics",
+      "Inferential statistics",
+      "Regression",
+      "Performance analysis",
+      "Trend analysis",
+      "Mentoring & training",
+      "Dashboard development",
+      "Data collection",
+      "Data management"
+    ],
+    "experience": [
+      {
+        "company": "Data Glacier",
+        "title": "Data Scientist & Machine Learning Engineer Intern",
+        "start_date": "Feb 2023",
+        "end_date": "Oct 2024",
+        "bullets": [
+          "Performed quantitative analysis of complex datasets for classification and regression use cases",
+          "Cleaned, transformed, and engineered data to improve analytical outcomes",
+          "Applied statistical and machine learning techniques to generate predictive insights",
+          "Built automated data pipelines supporting repeatable preparation, analysis, and validation workflows",
+          "Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making",
+          "Utilized Python, Pandas, NumPy, Matplotlib, and Seaborn for analysis and visualization"
+        ]
+      },
+      {
+        "company": "Youverify",
+        "title": "Data Scientist & Machine Learning Engineer Intern",
+        "start_date": "Dec 2025",
+        "end_date": "Jun 2026",
+        "bullets": [
+          "Built an AI‑assisted information extraction pipeline for regulatory‑compliance investigations",
+          "Integrated data retrieval, structured extraction, and deterministic validation steps",
+          "Processed and validated information from multiple sources to improve output reliability",
+          "Collaborated with cross‑functional teams to refine analytical and technical workflows",
+          "Authored technical documentation to ensure reproducibility and knowledge sharing"
+        ]
+      },
+      {
+        "company": "5Seas Consults",
+        "title": "Marketing Executive",
+        "start_date": "May 2021",
+        "end_date": "Nov 2023",
+        "bullets": [
+          "Collected and consolidated student recruitment data from field marketers across Nigeria",
+          "Processed, cleaned, and validated data using Excel, Power BI, and Python",
+          "Analyzed recruitment patterns, channel performance, and geographic opportunities",
+          "Translated analytical findings into actionable recommendations for senior stakeholders",
+          "Delivered practical training sessions in Excel, Power BI, and Python for team members"
+        ]
+      },
+      {
+        "company": "Independent AI & Data Science Development",
+        "title": "Self‑Directed Professional Development",
+        "start_date": "Nov 2024",
+        "end_date": "Feb 2025",
+        "bullets": [
+          "Completed structured hands‑on projects in Python, statistical analysis, machine learning, and AI/LLM engineering",
+          "Applied analytical and software‑engineering practices to real‑world datasets"
+        ]
+      },
+      {
+        "company": "DSN / WESOnline",
+        "title": "Data Science, AI & ML Mentor",
+        "start_date": "Jul 2026",
+        "end_date": "Present",
+        "bullets": [
+          "Mentor fellows through a fraud‑detection capstone covering data exploration, statistical analysis, model evaluation, interpretation, and deployment",
+          "Review analytical work for methodological soundness and clarity",
+          "Guide learners in Python, data analysis, statistical reasoning, and machine learning techniques",
+          "Structure collaborative workflows using GitHub, modular development practices, and documented processes"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Federal University of Agriculture, Abeokuta",
+        "degree": "B.Sc.",
+        "field": "Statistics",
+        "end_date": null
+      }
+    ],
+    "projects": [],
+    "changes_summary": [
+      "Reordered experience entries to prioritize data‑science and machine‑learning roles",
+      "Condensed and omitted teaching and customer‑care positions to focus on analytical relevance",
+      "Rewrote bullet points to highlight quantitative analysis, pipeline automation, dashboard development, and cross‑functional collaboration",
+      "Aligned skill list with confirmed competencies from the candidate profile and removed any unsupported terms",
+      "Kept project section empty as no projects were recorded in the profile"
+    ]
+  }
+}

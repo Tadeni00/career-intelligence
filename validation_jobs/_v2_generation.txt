@@ -1,0 +1,27 @@
+# V2 generation integration (Gate G)
+============================================================
+
+STRATEGY CONSTRAINTS PASSED TO THE PROMPTS:
+  Prioritise this confirmed evidence: professional summary, SQL, 5Seas Consults, Marketing Executive, Nigerian Institute for Social and Economic Research (NISER). Do NOT claim or imply any of the following, because they are not established in the candidate's confirmed evidence: Tableau, Strong communication skills, Detail-oriented, Proactive mindset, Well-organized.
+  constraint text length: 366
+  strategy version: v1 CURRENT
+
+FRESH GENERATION THROUGH THE STRATEGY-AWARE PATH
+  tailored CV  status=VALIDATION_FAILED issues=3
+      [error/INFORMATIONAL] UNSUPPORTED_TECHNOLOGY
+      [error/INFORMATIONAL] UNSUPPORTED_TECHNOLOGY
+      [warning/LOW] CLAIM_UNVERIFIED
+  cover letter status=VALIDATION_FAILED issues=9
+      [warning/LOW] CLAIM_UNVERIFIED
+      [error/HIGH] CLAIM_STRENGTHENING
+      [error/HIGH] CLAIM_STRENGTHENING
+      [warning/LOW] CLAIM_UNVERIFIED
+      [warning/LOW] CLAIM_UNVERIFIED
+      [error/HIGH] CLAIM_STRENGTHENING
+
+  restricted subjects asserted in the letter: none
+  injected payload present: ['BRIGHTEST', '#RMTM']
+  safety findings: ['SUSPICIOUS_OUTPUT', 'SUSPICIOUS_OUTPUT']
+  document reached VALID: False
+
+GATE G: PASS

@@ -1,0 +1,539 @@
+{
+  "version": "3.0",
+  "status": "INCOMPLETE - human labels pending",
+  "engine_baseline": {
+    "weights": {
+      "technical": 0.4,
+      "experience": 0.25,
+      "education": 0.1,
+      "location": 0.1,
+      "other": 0.15
+    },
+    "thresholds": {
+      "apply": 80.0,
+      "apply_with_tailoring": 65.0,
+      "stretch": 50.0
+    }
+  },
+  "counts": {
+    "cases": 26,
+    "human_labelled": 3,
+    "pending_human_label": 23
+  },
+  "metrics": {
+    "agreement": "2/3",
+    "false_skip": 0,
+    "false_apply": 0,
+    "severe_yes_no_disagreement": 0,
+    "near_disagreement": 1,
+    "sample_size_sufficient_for_calibration": false
+  },
+  "false_skip_cases": [],
+  "false_apply_cases": [],
+  "severe_disagreement_cases": [],
+  "near_disagreement_cases": [
+    "VJ-01"
+  ],
+  "disagreement_analysis": [
+    {
+      "job_id": "VJ-01",
+      "human_decisive_factor": "Strong technical and experience match, but the role is restricted to UK-based candidates and the candidate is in Lagos.",
+      "engine_decisive_factor": "blockers=['Location']",
+      "same_job_requirements": true,
+      "same_candidate_evidence": true,
+      "blocker_present": true,
+      "suspected_cause": "recommendation policy / suitability-vs-action conflation (H7)"
+    }
+  ],
+  "cases": [
+    {
+      "job_id": "VJ-01",
+      "human_decision": "MAYBE",
+      "human_source": "pre-V3 frozen label",
+      "human_reason": "Strong technical and experience match, but the role is restricted to UK-based candidates and the candidate is in Lagos.",
+      "system_recommendation": "SKIP",
+      "system_score": 80.5,
+      "components": {
+        "technical": 100.0,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 20.0,
+        "other": 70.0
+      },
+      "blockers": [
+        "Location"
+      ],
+      "required_coverage": 0.333,
+      "requirements_extracted": 4
+    },
+    {
+      "job_id": "VJ-02",
+      "human_decision": "NO",
+      "human_source": "pre-V3 frozen label",
+      "human_reason": "Remote (US) only, and the candidate lacks the core ML stack the role is built around.",
+      "system_recommendation": "SKIP",
+      "system_score": 49.55,
+      "components": {
+        "technical": 14.6,
+        "experience": 100.0,
+        "education": 62.07,
+        "location": 20.0,
+        "other": 70.0
+      },
+      "blockers": [
+        "Location"
+      ],
+      "required_coverage": 0.5,
+      "requirements_extracted": 18
+    },
+    {
+      "job_id": "VJ-03",
+      "human_decision": "YES",
+      "human_source": "pre-V3 frozen label",
+      "human_reason": "Directly aligned with the candidate's confirmed data analysis experience.",
+      "system_recommendation": "APPLY_WITH_TAILORING",
+      "system_score": 74.92,
+      "components": {
+        "technical": 77.53,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 42.73
+      },
+      "blockers": [],
+      "required_coverage": 0.444,
+      "requirements_extracted": 10
+    },
+    {
+      "job_id": "VJ-B01",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 55.87,
+      "components": {
+        "technical": 18.35,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 43.53
+      },
+      "blockers": [],
+      "required_coverage": 0.385,
+      "requirements_extracted": 14
+    },
+    {
+      "job_id": "VJ-B02",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 56.86,
+      "components": {
+        "technical": 20.0,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 45.72
+      },
+      "blockers": [],
+      "required_coverage": 0.333,
+      "requirements_extracted": 16
+    },
+    {
+      "job_id": "VJ-B03",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 51.65,
+      "components": {
+        "technical": 15.91,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 48.57
+      },
+      "blockers": [],
+      "required_coverage": 0.0,
+      "requirements_extracted": 14
+    },
+    {
+      "job_id": "VJ-B04",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 51.0,
+      "components": {
+        "technical": 17.5,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 70.0
+      },
+      "blockers": [],
+      "required_coverage": 0.0,
+      "requirements_extracted": 14
+    },
+    {
+      "job_id": "VJ-B05",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 50.35,
+      "components": {
+        "technical": 23.92,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 48.57
+      },
+      "blockers": [],
+      "required_coverage": 0.158,
+      "requirements_extracted": 22
+    },
+    {
+      "job_id": "VJ-B06",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 42.41,
+      "components": {
+        "technical": 30.32,
+        "experience": 84.0,
+        "education": 0.0,
+        "location": 20.0,
+        "other": 48.57
+      },
+      "blockers": [
+        "Bachelor's and Master's degree",
+        "Location"
+      ],
+      "required_coverage": 0.25,
+      "requirements_extracted": 24
+    },
+    {
+      "job_id": "VJ-B07",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 47.05,
+      "components": {
+        "technical": 33.16,
+        "experience": 84.0,
+        "education": 0.0,
+        "location": 55.0,
+        "other": 48.57
+      },
+      "blockers": [],
+      "required_coverage": 0.16,
+      "requirements_extracted": 32
+    },
+    {
+      "job_id": "VJ-B08",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 44.34,
+      "components": {
+        "technical": 10.14,
+        "experience": 84.0,
+        "education": 100.0,
+        "location": 20.0,
+        "other": 48.57
+      },
+      "blockers": [
+        "Location"
+      ],
+      "required_coverage": 0.167,
+      "requirements_extracted": 7
+    },
+    {
+      "job_id": "VJ-B09",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 49.29,
+      "components": {
+        "technical": 21.25,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 48.57
+      },
+      "blockers": [],
+      "required_coverage": 0.091,
+      "requirements_extracted": 11
+    },
+    {
+      "job_id": "VJ-B10",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 44.04,
+      "components": {
+        "technical": 16.88,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 20.0,
+        "other": 48.57
+      },
+      "blockers": [
+        "Location"
+      ],
+      "required_coverage": 0.067,
+      "requirements_extracted": 15
+    },
+    {
+      "job_id": "VJ-B11",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 41.8,
+      "components": {
+        "technical": 12.01,
+        "experience": 84.0,
+        "education": 0.0,
+        "location": 55.0,
+        "other": 70.0
+      },
+      "blockers": [
+        "PhD or strong MSc in a relevant field"
+      ],
+      "required_coverage": 0.1,
+      "requirements_extracted": 23
+    },
+    {
+      "job_id": "VJ-B12",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 45.79,
+      "components": {
+        "technical": 12.5,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 48.57
+      },
+      "blockers": [],
+      "required_coverage": 0.067,
+      "requirements_extracted": 15
+    },
+    {
+      "job_id": "VJ-B13",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 49.4,
+      "components": {
+        "technical": 13.5,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 70.0
+      },
+      "blockers": [],
+      "required_coverage": 0.059,
+      "requirements_extracted": 17
+    },
+    {
+      "job_id": "VJ-B14",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 61.04,
+      "components": {
+        "technical": 32.61,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 70.0
+      },
+      "blockers": [],
+      "required_coverage": 0.5,
+      "requirements_extracted": 26
+    },
+    {
+      "job_id": "VJ-B15",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 36.95,
+      "components": {
+        "technical": 16.67,
+        "experience": 84.0,
+        "education": 0.0,
+        "location": 20.0,
+        "other": 48.57
+      },
+      "blockers": [
+        "STEM Degree",
+        "Location"
+      ],
+      "required_coverage": 0.091,
+      "requirements_extracted": 12
+    },
+    {
+      "job_id": "VJ-B16",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 61.38,
+      "components": {
+        "technical": 32.2,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 70.0
+      },
+      "blockers": [],
+      "required_coverage": 0.333,
+      "requirements_extracted": 15
+    },
+    {
+      "job_id": "VJ-B17",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 57.54,
+      "components": {
+        "technical": 41.88,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 48.57
+      },
+      "blockers": [],
+      "required_coverage": 0.2,
+      "requirements_extracted": 15
+    },
+    {
+      "job_id": "VJ-B18",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 48.74,
+      "components": {
+        "technical": 6.86,
+        "experience": 84.0,
+        "education": 90.0,
+        "location": 55.0,
+        "other": 70.0
+      },
+      "blockers": [],
+      "required_coverage": 0.0,
+      "requirements_extracted": 21
+    },
+    {
+      "job_id": "VJ-B19",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 36.29,
+      "components": {
+        "technical": 0.0,
+        "experience": 80.0,
+        "education": 70.0,
+        "location": 20.0,
+        "other": 48.57
+      },
+      "blockers": [
+        "Location"
+      ],
+      "required_coverage": 0.0,
+      "requirements_extracted": 34
+    },
+    {
+      "job_id": "VJ-B20",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "APPLY_WITH_TAILORING",
+      "system_score": 76.96,
+      "components": {
+        "technical": 70.0,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 73.1
+      },
+      "blockers": [],
+      "required_coverage": null,
+      "requirements_extracted": 1
+    },
+    {
+      "job_id": "VJ-B21",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 52.62,
+      "components": {
+        "technical": 8.33,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 48.57
+      },
+      "blockers": [],
+      "required_coverage": 0.174,
+      "requirements_extracted": 24
+    },
+    {
+      "job_id": "VJ-B23",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "SKIP",
+      "system_score": 73.75,
+      "components": {
+        "technical": 80.0,
+        "experience": 100.0,
+        "education": 0.0,
+        "location": 100.0,
+        "other": 45.0
+      },
+      "blockers": [
+        "Master's degree in quantitative field",
+        "PhD in quantitative field"
+      ],
+      "required_coverage": 0.545,
+      "requirements_extracted": 11
+    },
+    {
+      "job_id": "VJ-B28",
+      "human_decision": null,
+      "human_source": "PENDING",
+      "human_reason": null,
+      "system_recommendation": "STRETCH",
+      "system_score": 51.76,
+      "components": {
+        "technical": 16.19,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 48.57
+      },
+      "blockers": [],
+      "required_coverage": 0.077,
+      "requirements_extracted": 23
+    }
+  ]
+}

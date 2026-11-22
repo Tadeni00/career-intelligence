@@ -1,0 +1,202 @@
+{
+  "id": 11,
+  "validation_status": "VALIDATION_FAILED",
+  "issues": [
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_TECHNOLOGY",
+      "message": "'Classification modeling' appears in the skills section but is not supported by your confirmed profile.",
+      "detail": "Classification modeling"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_TECHNOLOGY",
+      "message": "'Regression modeling' appears in the skills section but is not supported by your confirmed profile.",
+      "detail": "Regression modeling"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_TECHNOLOGY",
+      "message": "'Automated data pipelines' appears in the skills section but is not supported by your confirmed profile.",
+      "detail": "Automated data pipelines"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_TECHNOLOGY",
+      "message": "'Mentoring' appears in the skills section but is not supported by your confirmed profile.",
+      "detail": "Mentoring"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['improve quality'].",
+      "detail": "Cleaned, transformed, and engineered data to improve quality and analytical outcomes"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Data Glacier' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['stakeholder'].",
+      "detail": "Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['improve accuracy'].",
+      "detail": "Integrated data retrieval, structured extraction, and deterministic validation to improve accuracy and consistency"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['enhance analytical'].",
+      "detail": "Collaborated with cross‑functional teams to enhance analytical and technical workflows"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Data Scientist & Machine Learning Engineer Intern @ Youverify' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['ensure reproducibility'].",
+      "detail": "Produced technical documentation to ensure reproducibility and knowledge sharing"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Self‑Directed Professional Development @ Independent AI & Data Science Development' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['engineering'].",
+      "detail": "Completed structured hands‑on projects in Python, data science, statistical analysis, machine learning, and AI/LLM engineering"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in 'Self‑Directed Professional Development @ Independent AI & Data Science Development' strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['engineering'].",
+      "detail": "Applied software‑engineering best practices to develop reproducible analytical code"
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLAIM",
+      "message": "Claim in the summary is not supported by confirmed evidence: terms absent from evidence: ['6+', 'end', 'modeling', 'workflow'].",
+      "detail": "Data Scientist and Machine Learning Engineer with 6+ years of quantitative analysis, statistical modeling, and end‑to‑end ML workflow experience."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in the summary strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['clean'].",
+      "detail": "Proven ability to clean and transform data, engineer features, build classification and regression models, and develop automated pipelines using Python."
+    },
+    {
+      "severity": "error",
+      "code": "UNSUPPORTED_CLIENT",
+      "message": "Claim in the summary strengthens or invents detail beyond evidence: introduces unevidenced counterparties: ['functional teams'].",
+      "detail": "Experienced in mentoring data‑science projects, producing technical documentation, and collaborating across functional teams to deliver actionable insights."
+    }
+  ],
+  "changes": [
+    "Reordered experience to prioritize ML‑focused roles",
+    "Condensed bullets to highlight data cleaning, feature engineering, model building, and pipeline automation",
+    "Added project entries derived from mentorship and internship work",
+    "Trimmed non‑ML roles while retaining them for completeness",
+    "Focused skills list on Python‑centric ML competencies"
+  ],
+  "summary": "Data Scientist and Machine Learning Engineer with 6+ years of quantitative analysis, statistical modeling, and end‑to‑end ML workflow experience. Proven ability to clean and transform data, engineer features, build classification and regression models, and develop automated pipelines using Python. Experienced in mentoring data‑science projects, producing technical documentation, and collaborating across functional teams to deliver actionable insights.",
+  "content": {
+    "summary": "Data Scientist and Machine Learning Engineer with 6+ years of quantitative analysis, statistical modeling, and end‑to‑end ML workflow experience. Proven ability to clean and transform data, engineer features, build classification and regression models, and develop automated pipelines using Python. Experienced in mentoring data‑science projects, producing technical documentation, and collaborating across functional teams to deliver actionable insights.",
+    "skills": [
+      "Python",
+      "Data cleaning",
+      "Data validation",
+      "Data transformation",
+      "Feature engineering",
+      "Classification modeling",
+      "Regression modeling",
+      "Automated data pipelines",
+      "Statistical analysis",
+      "Hypothesis testing",
+      "Machine learning",
+      "Git",
+      "Technical documentation",
+      "Cross‑functional collaboration",
+      "Mentoring"
+    ],
+    "experience": [
+      {
+        "company": "Data Glacier",
+        "title": "Data Scientist & Machine Learning Engineer Intern",
+        "start_date": "Feb 2023",
+        "end_date": "Oct 2024",
+        "bullets": [
+          "Conducted quantitative analysis of complex datasets for classification and regression use cases",
+          "Cleaned, transformed, and engineered data to improve quality and analytical outcomes",
+          "Applied statistical and machine learning techniques to generate predictive insights",
+          "Built automated data pipelines for repeatable data preparation, analysis, and validation",
+          "Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making"
+        ]
+      },
+      {
+        "company": "Youverify",
+        "title": "Data Scientist & Machine Learning Engineer Intern",
+        "start_date": "Dec 2025",
+        "end_date": "Jun 2026",
+        "bullets": [
+          "Built an AI‑assisted information extraction pipeline for regulatory compliance investigations",
+          "Integrated data retrieval, structured extraction, and deterministic validation to improve accuracy and consistency",
+          "Collaborated with cross‑functional teams to enhance analytical and technical workflows",
+          "Produced technical documentation to ensure reproducibility and knowledge sharing"
+        ]
+      },
+      {
+        "company": "Independent AI & Data Science Development",
+        "title": "Self‑Directed Professional Development",
+        "start_date": "Nov 2024",
+        "end_date": "Feb 2025",
+        "bullets": [
+          "Completed structured hands‑on projects in Python, data science, statistical analysis, machine learning, and AI/LLM engineering",
+          "Applied software‑engineering best practices to develop reproducible analytical code"
+        ]
+      },
+      {
+        "company": "DSN / WESOnline",
+        "title": "Data Science, AI & ML Mentor",
+        "start_date": "Jul 2026",
+        "end_date": "Present",
+        "bullets": [
+          "Mentor fellows through a fraud‑detection capstone covering data exploration, statistical analysis, model evaluation, interpretation, and deployment",
+          "Guide learners in Python, data analysis, statistical reasoning, and machine learning",
+          "Structure collaborative workflows using GitHub, modular development practices, and documented analytical processes"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Federal University of Agriculture, Abeokuta",
+        "degree": "B.Sc.",
+        "field": "Statistics",
+        "end_date": null
+      }
+    ],
+    "projects": [
+      {
+        "name": "Fraud detection capstone (DSN/WESOnline)",
+        "description": "End‑to‑end data‑science project where participants explore data, perform statistical analysis, evaluate models, interpret results, and deploy a fraud‑detection solution",
+        "technologies": [
+          "Python",
+          "Pandas",
+          "NumPy",
+          "Git"
+        ]
+      },
+      {
+        "name": "AI‑assisted information extraction pipeline (Youverify)",
+        "description": "Pipeline that retrieves data from multiple sources, extracts structured information, and applies deterministic validation to support regulatory compliance investigations",
+        "technologies": [
+          "Python",
+          "SQL",
+          "Git"
+        ]
+      }
+    ],
+    "changes_summary": [
+      "Reordered experience to prioritize ML‑focused roles",
+      "Condensed bullets to highlight data cleaning, feature engineering, model building, and pipeline automation",
+      "Added project entries derived from mentorship and internship work",
+      "Trimmed non‑ML roles while retaining them for completeness",
+      "Focused skills list on Python‑centric ML competencies"
+    ]
+  }
+}

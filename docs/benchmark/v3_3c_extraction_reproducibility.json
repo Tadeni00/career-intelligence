@@ -1,0 +1,639 @@
+{
+  "version": "3.3c",
+  "experiment": "v3.3c_multi_window_frozen_execution",
+  "run_metadata": {
+    "experiment": "v3.3_deterministic_extraction",
+    "contract_version": "v3.3",
+    "provider": "openai",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.1,
+    "seed": null,
+    "seed_used": false,
+    "schema_version": "ExtractedJobRequirements@2",
+    "system_prompt_sha256": "43d20b8be806e7ba",
+    "schema_sha256": "02352f634679b0e5",
+    "profile_sha256": "a88420034c38a12d",
+    "runs_per_job": 3,
+    "api_key_recorded": false,
+    "note": "API key rotation is an operational credential change, not an experimental configuration difference."
+  },
+  "implementation_identifier": "dcc4f506965d57e99bf0bb54bdd1c429",
+  "harness_sha256": "715be9a26725a131a35cc715df3bc40d208c1085327b96ba995c0e678ba2f31f",
+  "frozen_artifact_sha256": {
+    "matching_benchmark_v3.json": "4199f5d386e1fb8b9be1a6c053c0c9cc6f2e6e8afeadc31112e650c34f37345f",
+    "human_labels_v3.json": "292841efc8b16f5d1569cf015bffba9ecfd2ef80d4b98387e7078f9d53fe0f12",
+    "blind_review_pack_v3.json": "d70aace7ae28b52196604464dceff9313a325fe82e24292b539e384baebdaf9a"
+  },
+  "execution": {
+    "planned": 78,
+    "attempted": 13,
+    "successful": 12,
+    "failed": 1,
+    "failure_codes": {
+      "PROVIDER_ERROR": 1
+    },
+    "failure_reason": "Groq tokens-per-day quota exhaustion (429). No Groq call was made outside this experiment.",
+    "jobs_started": 5,
+    "job_triplets_complete": 4,
+    "tokens_per_call_estimate": 4276,
+    "tokens_observed_successful_calls": 51312
+  },
+  "windows": [
+    {
+      "window": 1,
+      "jobs": "VJ-B01..VJ-B12",
+      "planned_calls": 36,
+      "successful_calls": 12,
+      "triplets_completed": 4,
+      "outcome": "quota exhausted at VJ-B05"
+    },
+    {
+      "window": 2,
+      "jobs": "VJ-B13..VJ-B24",
+      "planned_calls": 36,
+      "successful_calls": 0,
+      "triplets_completed": 0,
+      "outcome": "quota already exhausted; VJ-B13 run1 failed"
+    },
+    {
+      "window": 3,
+      "jobs": "VJ-B25..VJ-B26",
+      "planned_calls": 6,
+      "successful_calls": 0,
+      "triplets_completed": 0,
+      "outcome": "quota already exhausted; VJ-B25 run1 failed"
+    }
+  ],
+  "stability": {
+    "structural_gate_required": 26,
+    "triplets_measurable": 4,
+    "structurally_stable": 0,
+    "structurally_unstable": 4,
+    "structural_gate_passed": false,
+    "decision_gate_required": 26,
+    "decision_stable": 4,
+    "decision_unstable": 0,
+    "decision_gate_passed": false
+  },
+  "requirement_counts": {
+    "mean": 14.67,
+    "median": 17,
+    "min": 6,
+    "max": 24
+  },
+  "score_stability": {
+    "mean_score_range": 1.2,
+    "median_score_range": 1.41,
+    "max_score_range": 1.68,
+    "jobs_with_score_variation": 4,
+    "jobs_crossing_recommendation_threshold": 0,
+    "jobs_with_score_variation_but_stable_decision": [
+      "VJ-B01",
+      "VJ-B02",
+      "VJ-B03",
+      "VJ-B04"
+    ]
+  },
+  "difference_counts": {
+    "ADDED": 47,
+    "REMOVED": 37,
+    "MODIFIED": 5,
+    "RECLASSIFIED": 6,
+    "REORDERED_ONLY": 84
+  },
+  "importance_stability": {
+    "reclassified_events": 6,
+    "transitions": [
+      {
+        "job_id": "VJ-B01",
+        "requirement": "strong self-organizational skills",
+        "from": "PREFERRED",
+        "to": "SOFT_SIGNAL",
+        "run_1": 1,
+        "run_2": 2
+      },
+      {
+        "job_id": "VJ-B01",
+        "requirement": "reliability",
+        "from": "PREFERRED",
+        "to": "SOFT_SIGNAL",
+        "run_1": 1,
+        "run_2": 2
+      },
+      {
+        "job_id": "VJ-B01",
+        "requirement": "strong self-organizational skills",
+        "from": "PREFERRED",
+        "to": "SOFT_SIGNAL",
+        "run_1": 1,
+        "run_2": 3
+      },
+      {
+        "job_id": "VJ-B01",
+        "requirement": "reliability",
+        "from": "PREFERRED",
+        "to": "SOFT_SIGNAL",
+        "run_1": 1,
+        "run_2": 3
+      },
+      {
+        "job_id": "VJ-B02",
+        "requirement": "databricks",
+        "from": "PREFERRED",
+        "to": "REQUIRED",
+        "run_1": 1,
+        "run_2": 2
+      },
+      {
+        "job_id": "VJ-B02",
+        "requirement": "reliability",
+        "from": "PREFERRED",
+        "to": "SOFT_SIGNAL",
+        "run_1": 1,
+        "run_2": 2
+      }
+    ]
+  },
+  "source_evidence": {
+    "requirements_with_valid_evidence": 123,
+    "requirements_with_invalid_evidence": 0,
+    "requirements_stripped_due_to_invalid_evidence": 0
+  },
+  "jobs": {
+    "VJ-B01": {
+      "successful_runs": 3,
+      "triplet_complete": true,
+      "structurally_stable": false,
+      "decision_stable": true,
+      "canonical_counts": [
+        18,
+        17,
+        17
+      ],
+      "raw_counts": [
+        18,
+        17,
+        17
+      ],
+      "scores": [
+        58.14,
+        56.73,
+        57.38
+      ],
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "score_range": 1.41,
+      "differences": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "added": [
+            "langchain experience",
+            "llm/vllm experience",
+            "rag/openai experience",
+            "strong technical skills"
+          ],
+          "removed": [
+            "full-time remote availability",
+            "strong technical skills and deep understanding of application architecture"
+          ],
+          "modified": [
+            {
+              "name": "rag or openai",
+              "from": 2.0,
+              "to": null
+            },
+            {
+              "name": "large language models (llms) or vllms",
+              "from": 2.0,
+              "to": null
+            }
+          ],
+          "reclassified": [
+            {
+              "name": "strong self-organizational skills",
+              "from": "PREFERRED",
+              "to": "SOFT_SIGNAL"
+            },
+            {
+              "name": "reliability",
+              "from": "PREFERRED",
+              "to": "SOFT_SIGNAL"
+            }
+          ],
+          "reordered_only": [
+            "full-time remote availability",
+            "langchain experience",
+            "llm/vllm experience",
+            "rag/openai experience",
+            "strong technical skills",
+            "strong technical skills and deep understanding of application architecture"
+          ]
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "added": [
+            "langchain experience",
+            "large language model (llm) experience",
+            "rag or openai experience",
+            "strong technical skills and application architecture understanding"
+          ],
+          "removed": [
+            "full-time remote availability",
+            "strong technical skills and deep understanding of application architecture"
+          ],
+          "modified": [
+            {
+              "name": "rag or openai",
+              "from": 2.0,
+              "to": null
+            },
+            {
+              "name": "large language models (llms) or vllms",
+              "from": 2.0,
+              "to": null
+            }
+          ],
+          "reclassified": [
+            {
+              "name": "strong self-organizational skills",
+              "from": "PREFERRED",
+              "to": "SOFT_SIGNAL"
+            },
+            {
+              "name": "reliability",
+              "from": "PREFERRED",
+              "to": "SOFT_SIGNAL"
+            }
+          ],
+          "reordered_only": [
+            "full-time remote availability",
+            "langchain experience",
+            "large language model (llm) experience",
+            "rag or openai experience",
+            "strong technical skills and application architecture understanding",
+            "strong technical skills and deep understanding of application architecture"
+          ]
+        }
+      ]
+    },
+    "VJ-B02": {
+      "successful_runs": 3,
+      "triplet_complete": true,
+      "structurally_stable": false,
+      "decision_stable": true,
+      "canonical_counts": [
+        16,
+        15,
+        16
+      ],
+      "raw_counts": [
+        16,
+        15,
+        16
+      ],
+      "scores": [
+        60.8,
+        62.48,
+        60.8
+      ],
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "score_range": 1.68,
+      "differences": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "added": [
+            "adaptability and flexibility; ability to onboard promptly and deliver results quickly",
+            "commercial experience as a data scientist",
+            "commercial experience with databricks",
+            "commercial experience with python",
+            "experience with rag and llm",
+            "good self-presentation for client calls",
+            "remote work",
+            "strong self-organizational skills; ability to work full-time remotely with no supervision",
+            "strong technical skills and application architecture understanding"
+          ],
+          "removed": [
+            "adaptability and flexibility",
+            "data scientist",
+            "good self-presentation",
+            "remote",
+            "strong self-organizational skills",
+            "strong technical skills: ability to create projects from scratch and deep understanding of application architecture"
+          ],
+          "modified": [
+            {
+              "name": "python",
+              "from": 3.0,
+              "to": null
+            }
+          ],
+          "reclassified": [
+            {
+              "name": "databricks",
+              "from": "PREFERRED",
+              "to": "REQUIRED"
+            },
+            {
+              "name": "reliability",
+              "from": "PREFERRED",
+              "to": "SOFT_SIGNAL"
+            }
+          ],
+          "reordered_only": [
+            "adaptability and flexibility",
+            "adaptability and flexibility; ability to onboard promptly and deliver results quickly",
+            "commercial experience as a data scientist",
+            "commercial experience with databricks",
+            "commercial experience with python",
+            "data scientist",
+            "experience with rag and llm",
+            "good self-presentation",
+            "good self-presentation for client calls",
+            "remote",
+            "remote work",
+            "strong self-organizational skills",
+            "strong self-organizational skills; ability to work full-time remotely with no supervision",
+            "strong technical skills and application architecture understanding",
+            "strong technical skills: ability to create projects from scratch and deep understanding of application architecture"
+          ]
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "added": [
+            "ability to create projects from scratch and deep understanding of application architecture"
+          ],
+          "removed": [
+            "strong technical skills: ability to create projects from scratch and deep understanding of application architecture"
+          ],
+          "modified": [],
+          "reclassified": [],
+          "reordered_only": [
+            "ability to create projects from scratch and deep understanding of application architecture",
+            "strong technical skills: ability to create projects from scratch and deep understanding of application architecture"
+          ]
+        }
+      ]
+    },
+    "VJ-B03": {
+      "successful_runs": 3,
+      "triplet_complete": true,
+      "structurally_stable": false,
+      "decision_stable": true,
+      "canonical_counts": [
+        7,
+        6,
+        6
+      ],
+      "raw_counts": [
+        7,
+        6,
+        6
+      ],
+      "scores": [
+        76.15,
+        76.58,
+        76.58
+      ],
+      "recommendations": [
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING"
+      ],
+      "blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "score_range": 0.43,
+      "differences": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "added": [
+            "not developers focused primarily on simple ai wrappers or templated implementations",
+            "not early-career engineers",
+            "not small gig seekers",
+            "production ai experience (must not be without production ai experience)",
+            "remote work in americas, europe, or israel",
+            "track record of building and shipping ai systems into production"
+          ],
+          "removed": [
+            "deployed ai systems into production",
+            "production ai experience",
+            "remote work from americas, europe, or israel",
+            "shipped ai systems into production",
+            "track record of building and shipping",
+            "turn technical complexity into business value",
+            "understand the tradeoffs behind the hype"
+          ],
+          "modified": [],
+          "reclassified": [],
+          "reordered_only": [
+            "deployed ai systems into production",
+            "not developers focused primarily on simple ai wrappers or templated implementations",
+            "not early-career engineers",
+            "not small gig seekers",
+            "production ai experience",
+            "production ai experience (must not be without production ai experience)",
+            "remote work from americas, europe, or israel",
+            "remote work in americas, europe, or israel",
+            "shipped ai systems into production",
+            "track record of building and shipping",
+            "track record of building and shipping ai systems into production",
+            "turn technical complexity into business value",
+            "understand the tradeoffs behind the hype"
+          ]
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "added": [
+            "must have production ai experience (not early-career)",
+            "not a fit for early-career engineers, small gig seekers, or developers focused on simple ai wrappers",
+            "remote work in americas, europe, or israel",
+            "senior independent ai engineer / architect level",
+            "track record of building and shipping ai products"
+          ],
+          "removed": [
+            "production ai experience",
+            "remote work from americas, europe, or israel",
+            "shipped ai systems into production",
+            "track record of building and shipping",
+            "turn technical complexity into business value",
+            "understand the tradeoffs behind the hype"
+          ],
+          "modified": [],
+          "reclassified": [],
+          "reordered_only": [
+            "must have production ai experience (not early-career)",
+            "not a fit for early-career engineers, small gig seekers, or developers focused on simple ai wrappers",
+            "production ai experience",
+            "remote work from americas, europe, or israel",
+            "remote work in americas, europe, or israel",
+            "senior independent ai engineer / architect level",
+            "shipped ai systems into production",
+            "track record of building and shipping",
+            "track record of building and shipping ai products",
+            "turn technical complexity into business value",
+            "understand the tradeoffs behind the hype"
+          ]
+        }
+      ]
+    },
+    "VJ-B04": {
+      "successful_runs": 3,
+      "triplet_complete": true,
+      "structurally_stable": false,
+      "decision_stable": true,
+      "canonical_counts": [
+        17,
+        17,
+        24
+      ],
+      "raw_counts": [
+        17,
+        17,
+        24
+      ],
+      "scores": [
+        54.25,
+        54.25,
+        52.96
+      ],
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "score_range": 1.29,
+      "differences": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "added": [
+            "a desire to build something strategically important and make decisions that matter",
+            "a strong track record of owning systems or products end-to-end, not just contributing to 1 part of them",
+            "an ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+            "excellent taste and technical judgment - you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+            "hybrid work in berlin-mitte office, typically 4 days per week",
+            "operational workflows"
+          ],
+          "removed": [
+            "desire to build strategically important products and make decisions that matter",
+            "ex-founder mentality or early-engineer mindset focused on ownership and responsibility",
+            "excellent taste and technical judgment",
+            "hybrid work in berlin office, typically 4 days per week",
+            "scalable reliable systems",
+            "strong track record of owning systems or products end-to-end"
+          ],
+          "modified": [],
+          "reclassified": [],
+          "reordered_only": [
+            "a desire to build something strategically important and make decisions that matter",
+            "a strong track record of owning systems or products end-to-end, not just contributing to 1 part of them",
+            "an ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+            "desire to build strategically important products and make decisions that matter",
+            "ex-founder mentality or early-engineer mindset focused on ownership and responsibility",
+            "excellent taste and technical judgment",
+            "excellent taste and technical judgment - you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+            "hybrid work in berlin office, typically 4 days per week",
+            "hybrid work in berlin-mitte office, typically 4 days per week",
+            "operational workflows",
+            "scalable reliable systems",
+            "strong track record of owning systems or products end-to-end"
+          ]
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "added": [
+            "a desire to build something strategically important and make decisions that matter",
+            "a strong track record of owning systems or products end-to-end, not just contributing to 1 part of them",
+            "an ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+            "desire to build something strategically important and make decisions that matter",
+            "ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+            "excellent taste and technical judgment - you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+            "hybrid work in berlin-mitte office, typically 4 days per week",
+            "operational workflows",
+            "reliable systems",
+            "scalable systems",
+            "senior, highly autonomous, and unusually strong at turning ambiguity into working systems",
+            "strong backend engineering skills and good judgment around scalable, reliable systems"
+          ],
+          "removed": [
+            "desire to build strategically important products and make decisions that matter",
+            "ex-founder mentality or early-engineer mindset focused on ownership and responsibility",
+            "excellent taste and technical judgment",
+            "founders, very early startup engineers, senior builders who have owned messy systems with real business impact",
+            "hybrid work in berlin office, typically 4 days per week",
+            "scalable reliable systems",
+            "strong track record of owning systems or products end-to-end"
+          ],
+          "modified": [],
+          "reclassified": [],
+          "reordered_only": [
+            "a desire to build something strategically important and make decisions that matter",
+            "a strong track record of owning systems or products end-to-end, not just contributing to 1 part of them",
+            "an ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+            "desire to build something strategically important and make decisions that matter",
+            "desire to build strategically important products and make decisions that matter",
+            "ex-founder mentality or early-engineer mindset focused on ownership and responsibility",
+            "ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+            "excellent taste and technical judgment",
+            "excellent taste and technical judgment - you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+            "founders, very early startup engineers, senior builders who have owned messy systems with real business impact",
+            "hybrid work in berlin office, typically 4 days per week",
+            "hybrid work in berlin-mitte office, typically 4 days per week",
+            "operational workflows",
+            "reliable systems",
+            "scalable reliable systems",
+            "scalable systems",
+            "senior, highly autonomous, and unusually strong at turning ambiguity into working systems",
+            "strong backend engineering skills and good judgment around scalable, reliable systems",
+            "strong track record of owning systems or products end-to-end"
+          ]
+        }
+      ]
+    },
+    "VJ-B05": {
+      "successful_runs": 0,
+      "triplet_complete": false,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "score_range": null,
+      "differences": []
+    }
+  },
+  "disposition": "V3.3 INCOMPLETE - EXPERIMENT NOT COMPLETED"
+}

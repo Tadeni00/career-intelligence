@@ -1,0 +1,8622 @@
+{
+  "artifact": "V3.3 final stability analysis (derived)",
+  "frozen_question": "Is requirement extraction reproducible across repeated runs on the same frozen job postings under the frozen extraction contract?",
+  "prerequisites": {
+    "ledger_records": 81,
+    "ledger_sha256": "6f8f6a1ee5f54acb1bd9d9270f89edf8c244c72118381c21931feb20740557c0",
+    "benchmark_members": 26,
+    "members_with_three_successes": 26,
+    "partial_triplets": [],
+    "ledger_conflicts": [],
+    "preserved_failures": [
+      [
+        "VJ-B05",
+        1
+      ],
+      [
+        "VJ-B07",
+        3
+      ],
+      [
+        "VJ-B14",
+        1
+      ]
+    ],
+    "successful_runs": 78,
+    "runs_with_raw_extraction": 66,
+    "runs_with_coerced_extraction": 66,
+    "runs_with_measured_usage": 66
+  },
+  "metric_definitions": {
+    "identity_tuple": "(name, type, importance, category, years_required, evidence_status, work_condition) as persisted by canonical_requirements[].identity",
+    "identity_set_stability": "all three runs' full 7-field identity sets are equal",
+    "name_set_stability": "all three runs' field-0 sets are equal (selection unit)",
+    "jaccard": "J(A,B)=|A n B|/|A u B|; empty union returns None (undefined)",
+    "selection_denominator": "two distinct denominators reported and never mixed: UNIQUE identities per job, and total run-level requirement occurrences (sum of the three counts)",
+    "classification_alignment": "exact field-0 name match; a name must appear in >=2 of 3 runs to be classified as aligned",
+    "evidence_audit": "mechanical quote-correspondence only: normalised substring check of requirement source_text inside the frozen posting. PRELIMINARY -- does not adjudicate semantic support",
+    "missing_data": "runs without persisted raw/coerced extraction or usage are reported as null/absent; never imputed"
+  },
+  "A_structural": {
+    "counts_all_equal_jobs": 2,
+    "identity_sets_identical_jobs": 0,
+    "name_sets_identical_jobs": 0,
+    "counts_equal_but_identity_differs": 2,
+    "denominator_jobs": 26,
+    "jaccard_identity": {
+      "n_pairs": 78,
+      "mean": 0.3078,
+      "median": 0.3161,
+      "min": 0.0,
+      "max": 0.8824
+    },
+    "jaccard_name": {
+      "n_pairs": 78,
+      "mean": 0.3509,
+      "median": 0.3333,
+      "min": 0.0,
+      "max": 0.9259
+    },
+    "count_range": {
+      "mean": 5.462,
+      "median": 3.5,
+      "max": 23,
+      "min": 0,
+      "zero_range_jobs": 2
+    },
+    "lowest_identity_jaccard_jobs": [
+      {
+        "job_id": "VJ-B03",
+        "min_pair_jaccard": 0.0,
+        "counts": [
+          7,
+          6,
+          6
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "min_pair_jaccard": 0.0,
+        "counts": [
+          23,
+          32,
+          9
+        ]
+      },
+      {
+        "job_id": "VJ-B20",
+        "min_pair_jaccard": 0.0,
+        "counts": [
+          20,
+          2,
+          1
+        ]
+      },
+      {
+        "job_id": "VJ-B28",
+        "min_pair_jaccard": 0.0,
+        "counts": [
+          19,
+          16,
+          19
+        ]
+      },
+      {
+        "job_id": "VJ-B09",
+        "min_pair_jaccard": 0.05,
+        "counts": [
+          12,
+          9,
+          9
+        ]
+      },
+      {
+        "job_id": "VJ-B12",
+        "min_pair_jaccard": 0.0769,
+        "counts": [
+          17,
+          9,
+          19
+        ]
+      },
+      {
+        "job_id": "VJ-B15",
+        "min_pair_jaccard": 0.1111,
+        "counts": [
+          10,
+          10,
+          13
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "min_pair_jaccard": 0.1389,
+        "counts": [
+          16,
+          19,
+          25
+        ]
+      }
+    ],
+    "greatest_count_variation_jobs": [
+      {
+        "job_id": "VJ-B11",
+        "count_range": 23,
+        "counts": [
+          23,
+          32,
+          9
+        ]
+      },
+      {
+        "job_id": "VJ-B20",
+        "count_range": 19,
+        "counts": [
+          20,
+          2,
+          1
+        ]
+      },
+      {
+        "job_id": "VJ-B12",
+        "count_range": 10,
+        "counts": [
+          17,
+          9,
+          19
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "count_range": 9,
+        "counts": [
+          16,
+          19,
+          25
+        ]
+      },
+      {
+        "job_id": "VJ-B13",
+        "count_range": 9,
+        "counts": [
+          11,
+          19,
+          10
+        ]
+      },
+      {
+        "job_id": "VJ-B14",
+        "count_range": 9,
+        "counts": [
+          24,
+          31,
+          33
+        ]
+      },
+      {
+        "job_id": "VJ-B05",
+        "count_range": 8,
+        "counts": [
+          19,
+          22,
+          27
+        ]
+      },
+      {
+        "job_id": "VJ-B23",
+        "count_range": 8,
+        "counts": [
+          8,
+          11,
+          16
+        ]
+      }
+    ]
+  },
+  "B_selection": {
+    "unique_identity_tuples_union_all_jobs": 814,
+    "unique_names_union_all_jobs": 759,
+    "unique_names_in_all_three": 164,
+    "unique_names_in_exactly_two": 138,
+    "unique_names_in_exactly_one": 457,
+    "denominator_unique_name_union": 759,
+    "denominator_run_level_occurrences": 1248,
+    "partition_check": true,
+    "pair_additions_total": 602,
+    "pair_removals_total": 588
+  },
+  "C_classification": {
+    "aligned_requirements": 302,
+    "aligned_consistent": 257,
+    "aligned_inconsistent": 45,
+    "denominator_aligned": 302,
+    "importance_values_observed": {
+      "REQUIRED": 532,
+      "SOFT_SIGNAL": 202,
+      "PREFERRED": 514
+    },
+    "category_values_observed": {
+      "SKILL": 633,
+      "LOCATION": 63,
+      "OTHER": 268,
+      "EXPERIENCE": 268,
+      "EDUCATION": 16
+    },
+    "INFORMATIONAL_observed": 0,
+    "presence_stable_classification_changed": 24,
+    "importance_transitions": [
+      {
+        "job_id": "VJ-02",
+        "name": "airflow",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "name": "catboost",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "name": "claude code",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "name": "cursor",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "name": "kubeflow",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "name": "lightgbm",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "name": "mlflow",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "name": "xgboost",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-03",
+        "name": "python",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B01",
+        "name": "reliability",
+        "from_to": [
+          "PREFERRED",
+          "SOFT_SIGNAL"
+        ]
+      },
+      {
+        "job_id": "VJ-B01",
+        "name": "strong self-organizational skills",
+        "from_to": [
+          "PREFERRED",
+          "SOFT_SIGNAL"
+        ]
+      },
+      {
+        "job_id": "VJ-B02",
+        "name": "reliability",
+        "from_to": [
+          "PREFERRED",
+          "SOFT_SIGNAL"
+        ]
+      },
+      {
+        "job_id": "VJ-B04",
+        "name": "a desire to build something strategically important and make decisions that matter",
+        "from_to": [
+          "PREFERRED",
+          "SOFT_SIGNAL"
+        ]
+      },
+      {
+        "job_id": "VJ-B04",
+        "name": "excellent taste and technical judgment - you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+        "from_to": [
+          "PREFERRED",
+          "SOFT_SIGNAL"
+        ]
+      },
+      {
+        "job_id": "VJ-B05",
+        "name": "metabase",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B05",
+        "name": "n8n",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B05",
+        "name": "power bi",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B05",
+        "name": "python",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B05",
+        "name": "sql",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "batching",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "capacity planning",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "distributed serving",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "latency vs throughput optimization",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "lora",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "model distillation",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "multi-gpu serving",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "multi-node serving",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "python",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "quantization",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "reinforcement learning (rlhf, rlvr)",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "name": "speculative decoding",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B14",
+        "name": "results-driven approach and rapid iteration",
+        "from_to": [
+          "PREFERRED",
+          "SOFT_SIGNAL"
+        ]
+      },
+      {
+        "job_id": "VJ-B15",
+        "name": "edge deployment optimization",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B16",
+        "name": "activation modeling",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B16",
+        "name": "lifecycle analytics",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B16",
+        "name": "retention modeling",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B19",
+        "name": "ai-assisted software development",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B19",
+        "name": "github copilot",
+        "from_to": [
+          "PREFERRED",
+          "REQUIRED"
+        ]
+      },
+      {
+        "job_id": "VJ-B20",
+        "name": "ai fluency",
+        "from_to": [
+          "PREFERRED",
+          "SOFT_SIGNAL"
+        ]
+      }
+    ],
+    "category_transitions": [
+      {
+        "job_id": "VJ-B01",
+        "name": "large language models (llms) or vllms",
+        "from_to": [
+          "EXPERIENCE",
+          "SKILL"
+        ]
+      },
+      {
+        "job_id": "VJ-B01",
+        "name": "rag or openai",
+        "from_to": [
+          "EXPERIENCE",
+          "SKILL"
+        ]
+      },
+      {
+        "job_id": "VJ-B02",
+        "name": "python",
+        "from_to": [
+          "EXPERIENCE",
+          "SKILL"
+        ]
+      },
+      {
+        "job_id": "VJ-B04",
+        "name": "a desire to build something strategically important and make decisions that matter",
+        "from_to": [
+          "EXPERIENCE",
+          "OTHER"
+        ]
+      },
+      {
+        "job_id": "VJ-B04",
+        "name": "an ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+        "from_to": [
+          "EXPERIENCE",
+          "OTHER"
+        ]
+      },
+      {
+        "job_id": "VJ-B04",
+        "name": "excellent taste and technical judgment - you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+        "from_to": [
+          "EXPERIENCE",
+          "OTHER"
+        ]
+      },
+      {
+        "job_id": "VJ-B05",
+        "name": "sql",
+        "from_to": [
+          "EXPERIENCE",
+          "SKILL"
+        ]
+      },
+      {
+        "job_id": "VJ-B09",
+        "name": "solid foundation in mathematical statistics",
+        "from_to": [
+          "EXPERIENCE",
+          "OTHER"
+        ]
+      },
+      {
+        "job_id": "VJ-B15",
+        "name": "edge deployment optimization",
+        "from_to": [
+          "EXPERIENCE",
+          "SKILL"
+        ]
+      },
+      {
+        "job_id": "VJ-B19",
+        "name": "healthcare and/or claims adjudication experience",
+        "from_to": [
+          "EXPERIENCE",
+          "OTHER"
+        ]
+      }
+    ]
+  },
+  "D_evidence": {
+    "status": "PRELIMINARY_MECHANICAL_AUDIT",
+    "requirement_instances_examined": 1248,
+    "carrying_an_evidence_quote": 615,
+    "no_evidence_quote_at_all": 633,
+    "quote_found_verbatim_in_source": 572,
+    "quote_not_found_verbatim": 43,
+    "quote_found_rate_among_evidence_bearing": 0.9301,
+    "quote_found_rate_denominator_evidence_bearing": 615,
+    "quote_found_rate_overall": 0.4583,
+    "no_evidence_rate_overall": 0.5072,
+    "no_evidence_by_requirement_type": {
+      "SKILL": {
+        "without_quote": 633,
+        "total": 633,
+        "rate": 1.0
+      },
+      "EXPERIENCE": {
+        "without_quote": 0,
+        "total": 268,
+        "rate": 0.0
+      },
+      "OTHER": {
+        "without_quote": 0,
+        "total": 268,
+        "rate": 0.0
+      },
+      "LOCATION": {
+        "without_quote": 0,
+        "total": 63,
+        "rate": 0.0
+      },
+      "EDUCATION": {
+        "without_quote": 0,
+        "total": 16,
+        "rate": 0.0
+      }
+    },
+    "root_cause_of_missing_evidence": "The extraction schema binds source_text to the structured requirement lists (experience/education/location/other) but not to required_skills or preferred_skills, which are list[str]. SKILL-type requirements are therefore unevidenced by construction, not by model omission. Persisted raw extraction confirms the model emitted 580 bare-string skill items and 492 dict items carrying source_text.",
+    "semantic_support_adjudication": "NOT PERFORMED -- cannot be established mechanically",
+    "denominator": 1248,
+    "stripped_note_events": 0
+  },
+  "E_score": {
+    "jobs_identical_scores": 0,
+    "jobs_identical_scores_identity_differs": 0,
+    "score_range": {
+      "mean": 5.788,
+      "median": 2.25,
+      "max": 27.75,
+      "min": 0.34,
+      "zero_range_jobs": 0
+    },
+    "largest_score_range_jobs": [
+      {
+        "job_id": "VJ-B20",
+        "score_range": 27.75,
+        "scores": [
+          48.4,
+          76.15,
+          76.08
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "score_range": 24.82,
+        "scores": [
+          52.57,
+          44.38,
+          69.2
+        ]
+      },
+      {
+        "job_id": "VJ-B12",
+        "score_range": 23.71,
+        "scores": [
+          52.58,
+          76.29,
+          52.77
+        ]
+      },
+      {
+        "job_id": "VJ-B15",
+        "score_range": 11.87,
+        "scores": [
+          61.45,
+          61.45,
+          49.58
+        ]
+      },
+      {
+        "job_id": "VJ-02",
+        "score_range": 8.02,
+        "scores": [
+          55.7,
+          56.37,
+          48.35
+        ]
+      },
+      {
+        "job_id": "VJ-B14",
+        "score_range": 7.11,
+        "scores": [
+          72.12,
+          65.78,
+          65.01
+        ]
+      },
+      {
+        "job_id": "VJ-B06",
+        "score_range": 5.55,
+        "scores": [
+          48.68,
+          53.63,
+          54.23
+        ]
+      },
+      {
+        "job_id": "VJ-B13",
+        "score_range": 5.45,
+        "scores": [
+          53.71,
+          52.7,
+          58.15
+        ]
+      }
+    ],
+    "causality": "correlation between extraction change and score change is reported as co-occurrence only; no causal claim is made"
+  },
+  "F_recommendation": {
+    "jobs_stable": 19,
+    "denominator_jobs": 26,
+    "jobs_decision_changing": 7,
+    "transitions": [
+      {
+        "job_id": "VJ-02",
+        "recommendations": [
+          "STRETCH",
+          "STRETCH",
+          "SKIP"
+        ],
+        "scores": [
+          55.7,
+          56.37,
+          48.35
+        ],
+        "counts": [
+          16,
+          19,
+          25
+        ]
+      },
+      {
+        "job_id": "VJ-B06",
+        "recommendations": [
+          "SKIP",
+          "STRETCH",
+          "STRETCH"
+        ],
+        "scores": [
+          48.68,
+          53.63,
+          54.23
+        ],
+        "counts": [
+          17,
+          19,
+          18
+        ]
+      },
+      {
+        "job_id": "VJ-B07",
+        "recommendations": [
+          "STRETCH",
+          "STRETCH",
+          "APPLY_WITH_TAILORING"
+        ],
+        "scores": [
+          60.52,
+          59.86,
+          65.06
+        ],
+        "counts": [
+          20,
+          21,
+          19
+        ]
+      },
+      {
+        "job_id": "VJ-B11",
+        "recommendations": [
+          "STRETCH",
+          "SKIP",
+          "APPLY_WITH_TAILORING"
+        ],
+        "scores": [
+          52.57,
+          44.38,
+          69.2
+        ],
+        "counts": [
+          23,
+          32,
+          9
+        ]
+      },
+      {
+        "job_id": "VJ-B12",
+        "recommendations": [
+          "STRETCH",
+          "APPLY_WITH_TAILORING",
+          "STRETCH"
+        ],
+        "scores": [
+          52.58,
+          76.29,
+          52.77
+        ],
+        "counts": [
+          17,
+          9,
+          19
+        ]
+      },
+      {
+        "job_id": "VJ-B15",
+        "recommendations": [
+          "STRETCH",
+          "STRETCH",
+          "SKIP"
+        ],
+        "scores": [
+          61.45,
+          61.45,
+          49.58
+        ],
+        "counts": [
+          10,
+          10,
+          13
+        ]
+      },
+      {
+        "job_id": "VJ-B20",
+        "recommendations": [
+          "SKIP",
+          "APPLY_WITH_TAILORING",
+          "APPLY_WITH_TAILORING"
+        ],
+        "scores": [
+          48.4,
+          76.15,
+          76.08
+        ],
+        "counts": [
+          20,
+          2,
+          1
+        ]
+      }
+    ],
+    "labels_preserved": [
+      "APPLY",
+      "APPLY_WITH_TAILORING",
+      "SKIP",
+      "STRETCH"
+    ],
+    "stable_jobs_score_range_mean": 2.293,
+    "unstable_jobs_score_range_mean": 15.274,
+    "stable_jobs_mean_jaccard": 0.3528,
+    "unstable_jobs_mean_jaccard": 0.1857
+  },
+  "G_execution_anomalies": {
+    "http_400_json_validate_failed_events": 3,
+    "preserved_failed_records": [
+      [
+        "VJ-B05",
+        1
+      ],
+      [
+        "VJ-B07",
+        3
+      ],
+      [
+        "VJ-B14",
+        1
+      ]
+    ],
+    "successful_runs_recovered_after_retry": "none",
+    "runs_with_missing_usage": [
+      [
+        "VJ-B07",
+        3
+      ],
+      [
+        "VJ-B14",
+        1
+      ]
+    ],
+    "measured_usage_denominator": 66,
+    "measured_total_tokens": 317537,
+    "measured_mean_total": 4811.2,
+    "runs_at_3072_output_tokens": 21,
+    "connection_to_extraction_variability": "NOT ESTABLISHED -- no persisted evidence links provider execution anomalies to extraction variability; reported separately"
+  },
+  "H_case_studies": {
+    "VJ-B04": {
+      "counts": [
+        17,
+        17,
+        24
+      ],
+      "scores": [
+        54.25,
+        54.25,
+        52.96
+      ],
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.4782608695652174,
+        "1_3": 0.3225806451612903,
+        "2_3": 0.5185185185185185
+      },
+      "names_in_all_three": 10,
+      "names_in_exactly_two": 7,
+      "names_in_exactly_one": 12,
+      "aligned_requirements": 17,
+      "aligned_inconsistent": 3,
+      "distinct_source_quotes": 17,
+      "source_quotes_reused_within_job": 10,
+      "recovery_history": []
+    },
+    "VJ-B11": {
+      "counts": [
+        23,
+        32,
+        9
+      ],
+      "scores": [
+        52.57,
+        44.38,
+        69.2
+      ],
+      "recommendations": [
+        "STRETCH",
+        "SKIP",
+        "APPLY_WITH_TAILORING"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.018518518518518517,
+        "1_3": 0.0,
+        "2_3": 0.05128205128205128
+      },
+      "names_in_all_three": 0,
+      "names_in_exactly_two": 15,
+      "names_in_exactly_one": 34,
+      "aligned_requirements": 15,
+      "aligned_inconsistent": 12,
+      "distinct_source_quotes": 17,
+      "source_quotes_reused_within_job": 5,
+      "recovery_history": []
+    },
+    "VJ-B14": {
+      "counts": [
+        24,
+        31,
+        33
+      ],
+      "scores": [
+        72.12,
+        65.78,
+        65.01
+      ],
+      "recommendations": [
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.30952380952380953,
+        "1_3": 0.3902439024390244,
+        "2_3": 0.4883720930232558
+      },
+      "names_in_all_three": 12,
+      "names_in_exactly_two": 15,
+      "names_in_exactly_one": 22,
+      "aligned_requirements": 27,
+      "aligned_inconsistent": 1,
+      "distinct_source_quotes": 15,
+      "source_quotes_reused_within_job": 11,
+      "recovery_history": [
+        "VJ-B14/run1"
+      ]
+    },
+    "VJ-B15": {
+      "counts": [
+        10,
+        10,
+        13
+      ],
+      "scores": [
+        61.45,
+        61.45,
+        49.58
+      ],
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "SKIP"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.1111111111111111,
+        "1_3": 0.15,
+        "2_3": 0.2777777777777778
+      },
+      "names_in_all_three": 2,
+      "names_in_exactly_two": 5,
+      "names_in_exactly_one": 17,
+      "aligned_requirements": 7,
+      "aligned_inconsistent": 1,
+      "distinct_source_quotes": 11,
+      "source_quotes_reused_within_job": 8,
+      "recovery_history": []
+    },
+    "VJ-B20": {
+      "counts": [
+        20,
+        2,
+        1
+      ],
+      "scores": [
+        48.4,
+        76.15,
+        76.08
+      ],
+      "recommendations": [
+        "SKIP",
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.0,
+        "1_3": 0.0,
+        "2_3": 0.0
+      },
+      "names_in_all_three": 0,
+      "names_in_exactly_two": 1,
+      "names_in_exactly_one": 21,
+      "aligned_requirements": 1,
+      "aligned_inconsistent": 1,
+      "distinct_source_quotes": 3,
+      "source_quotes_reused_within_job": 1,
+      "recovery_history": []
+    },
+    "VJ-B23": {
+      "counts": [
+        8,
+        11,
+        16
+      ],
+      "scores": [
+        70.6,
+        70.75,
+        65.99
+      ],
+      "recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.46153846153846156,
+        "1_3": 0.2,
+        "2_3": 0.2857142857142857
+      },
+      "names_in_all_three": 4,
+      "names_in_exactly_two": 4,
+      "names_in_exactly_one": 15,
+      "aligned_requirements": 8,
+      "aligned_inconsistent": 0,
+      "distinct_source_quotes": 14,
+      "source_quotes_reused_within_job": 4,
+      "recovery_history": []
+    },
+    "VJ-B28": {
+      "counts": [
+        19,
+        16,
+        19
+      ],
+      "scores": [
+        53.27,
+        55.26,
+        57.91
+      ],
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.0,
+        "1_3": 0.11764705882352941,
+        "2_3": 0.0
+      },
+      "names_in_all_three": 0,
+      "names_in_exactly_two": 4,
+      "names_in_exactly_one": 46,
+      "aligned_requirements": 4,
+      "aligned_inconsistent": 0,
+      "distinct_source_quotes": 15,
+      "source_quotes_reused_within_job": 2,
+      "recovery_history": []
+    },
+    "VJ-02": {
+      "counts": [
+        16,
+        19,
+        25
+      ],
+      "scores": [
+        55.7,
+        56.37,
+        48.35
+      ],
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "SKIP"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.5217391304347826,
+        "1_3": 0.1388888888888889,
+        "2_3": 0.3333333333333333
+      },
+      "names_in_all_three": 13,
+      "names_in_exactly_two": 5,
+      "names_in_exactly_one": 11,
+      "aligned_requirements": 18,
+      "aligned_inconsistent": 8,
+      "distinct_source_quotes": 13,
+      "source_quotes_reused_within_job": 6,
+      "recovery_history": []
+    },
+    "VJ-03": {
+      "counts": [
+        11,
+        11,
+        11
+      ],
+      "scores": [
+        84.25,
+        83.26,
+        82.05
+      ],
+      "recommendations": [
+        "APPLY",
+        "APPLY",
+        "APPLY"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.375,
+        "1_3": 0.375,
+        "2_3": 0.375
+      },
+      "names_in_all_three": 6,
+      "names_in_exactly_two": 1,
+      "names_in_exactly_one": 13,
+      "aligned_requirements": 7,
+      "aligned_inconsistent": 1,
+      "distinct_source_quotes": 7,
+      "source_quotes_reused_within_job": 6,
+      "recovery_history": []
+    },
+    "VJ-01": {
+      "counts": [
+        9,
+        13,
+        9
+      ],
+      "scores": [
+        88.29,
+        88.63,
+        88.29
+      ],
+      "recommendations": [
+        "APPLY",
+        "APPLY",
+        "APPLY"
+      ],
+      "identity_sets_identical": false,
+      "jaccard_identity": {
+        "1_2": 0.5714285714285714,
+        "1_3": 0.6363636363636364,
+        "2_3": 0.375
+      },
+      "names_in_all_three": 6,
+      "names_in_exactly_two": 3,
+      "names_in_exactly_one": 7,
+      "aligned_requirements": 9,
+      "aligned_inconsistent": 0,
+      "distinct_source_quotes": 14,
+      "source_quotes_reused_within_job": 7,
+      "recovery_history": []
+    }
+  },
+  "per_job": [
+    {
+      "job_id": "VJ-01",
+      "member_class": "FROZEN_REGRESSION",
+      "source_origin": "validation_jobs/VJ-01_job*.json (archived capture)",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "9f16157c97d1cd4c1df43256601279050f6db6ff59b00a8e6dc676b57fdcddb7",
+      "counts": [
+        9,
+        13,
+        9
+      ],
+      "count_min": 9,
+      "count_max": 13,
+      "count_range": 4,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.5714285714285714,
+        "1_3": 0.6363636363636364,
+        "2_3": 0.375
+      },
+      "jaccard_name": {
+        "1_2": 0.5714285714285714,
+        "1_3": 0.6363636363636364,
+        "2_3": 0.375
+      },
+      "union_identity_size": 16,
+      "intersection_identity_size": 6,
+      "names_union": 16,
+      "names_in_all_three": 6,
+      "names_in_exactly_two": 3,
+      "names_in_exactly_one": 7,
+      "pair_additions": {
+        "1_2": 5,
+        "1_3": 2,
+        "2_3": 3
+      },
+      "pair_removals": {
+        "1_2": 1,
+        "1_3": 2,
+        "2_3": 7
+      },
+      "aligned_requirements": 9,
+      "aligned_consistent": 9,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        88.29,
+        88.63,
+        88.29
+      ],
+      "score_min": 88.29,
+      "score_max": 88.63,
+      "score_range": 0.34,
+      "score_mean": 88.4,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "APPLY",
+        "APPLY",
+        "APPLY"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-02",
+      "member_class": "FROZEN_REGRESSION",
+      "source_origin": "validation_jobs/VJ-02_job*.json (archived capture)",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "a88b8bb9254710b9236612410b7a6afea23b9ee34af7ecfc2d9d2c4bdd2605f3",
+      "counts": [
+        16,
+        19,
+        25
+      ],
+      "count_min": 16,
+      "count_max": 25,
+      "count_range": 9,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.5217391304347826,
+        "1_3": 0.1388888888888889,
+        "2_3": 0.3333333333333333
+      },
+      "jaccard_name": {
+        "1_2": 0.75,
+        "1_3": 0.4642857142857143,
+        "2_3": 0.5714285714285714
+      },
+      "union_identity_size": 37,
+      "intersection_identity_size": 5,
+      "names_union": 29,
+      "names_in_all_three": 13,
+      "names_in_exactly_two": 5,
+      "names_in_exactly_one": 11,
+      "pair_additions": {
+        "1_2": 4,
+        "1_3": 12,
+        "2_3": 9
+      },
+      "pair_removals": {
+        "1_2": 1,
+        "1_3": 3,
+        "2_3": 3
+      },
+      "aligned_requirements": 18,
+      "aligned_consistent": 10,
+      "aligned_inconsistent": 8,
+      "presence_stable_classification_changed": [
+        {
+          "name": "airflow",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "catboost",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "claude code",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "cursor",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "kubeflow",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "lightgbm",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "mlflow",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "xgboost",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        }
+      ],
+      "scores": [
+        55.7,
+        56.37,
+        48.35
+      ],
+      "score_min": 48.35,
+      "score_max": 56.37,
+      "score_range": 8.02,
+      "score_mean": 53.47,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "SKIP"
+      ],
+      "recommendation_stable": false,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-03",
+      "member_class": "FROZEN_REGRESSION",
+      "source_origin": "validation_jobs/VJ-03_job*.json (archived capture)",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "45fb6961c84e22c6ec870609bf1cf70488323e5ed05151520eba8f4c4e95d383",
+      "counts": [
+        11,
+        11,
+        11
+      ],
+      "count_min": 11,
+      "count_max": 11,
+      "count_range": 0,
+      "counts_all_equal": true,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": true,
+      "jaccard_identity": {
+        "1_2": 0.375,
+        "1_3": 0.375,
+        "2_3": 0.375
+      },
+      "jaccard_name": {
+        "1_2": 0.4666666666666667,
+        "1_3": 0.375,
+        "2_3": 0.375
+      },
+      "union_identity_size": 21,
+      "intersection_identity_size": 6,
+      "names_union": 20,
+      "names_in_all_three": 6,
+      "names_in_exactly_two": 1,
+      "names_in_exactly_one": 13,
+      "pair_additions": {
+        "1_2": 4,
+        "1_3": 5,
+        "2_3": 5
+      },
+      "pair_removals": {
+        "1_2": 4,
+        "1_3": 5,
+        "2_3": 5
+      },
+      "aligned_requirements": 7,
+      "aligned_consistent": 6,
+      "aligned_inconsistent": 1,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        84.25,
+        83.26,
+        82.05
+      ],
+      "score_min": 82.05,
+      "score_max": 84.25,
+      "score_range": 2.2,
+      "score_mean": 83.19,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "APPLY",
+        "APPLY",
+        "APPLY"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "SAME_COUNTS_DIFFERENT_IDENTITIES"
+    },
+    {
+      "job_id": "VJ-B01",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "d65ce92c91fd62e4b7fa92af63838baa2ddfa47da283810803158adabfed62dc",
+      "counts": [
+        18,
+        17,
+        17
+      ],
+      "count_min": 17,
+      "count_max": 18,
+      "count_range": 1,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.4583333333333333,
+        "1_3": 0.4583333333333333,
+        "2_3": 0.7
+      },
+      "jaccard_name": {
+        "1_2": 0.6842105263157895,
+        "1_3": 0.6842105263157895,
+        "2_3": 0.7
+      },
+      "union_identity_size": 27,
+      "intersection_identity_size": 11,
+      "names_union": 22,
+      "names_in_all_three": 13,
+      "names_in_exactly_two": 1,
+      "names_in_exactly_one": 8,
+      "pair_additions": {
+        "1_2": 4,
+        "1_3": 4,
+        "2_3": 3
+      },
+      "pair_removals": {
+        "1_2": 2,
+        "1_3": 2,
+        "2_3": 3
+      },
+      "aligned_requirements": 14,
+      "aligned_consistent": 10,
+      "aligned_inconsistent": 4,
+      "presence_stable_classification_changed": [
+        {
+          "name": "large language models (llms) or vllms",
+          "importance": [
+            "REQUIRED"
+          ],
+          "category": [
+            "EXPERIENCE",
+            "SKILL"
+          ]
+        },
+        {
+          "name": "rag or openai",
+          "importance": [
+            "REQUIRED"
+          ],
+          "category": [
+            "EXPERIENCE",
+            "SKILL"
+          ]
+        },
+        {
+          "name": "reliability",
+          "importance": [
+            "PREFERRED",
+            "SOFT_SIGNAL"
+          ],
+          "category": [
+            "OTHER"
+          ]
+        },
+        {
+          "name": "strong self-organizational skills",
+          "importance": [
+            "PREFERRED",
+            "SOFT_SIGNAL"
+          ],
+          "category": [
+            "OTHER"
+          ]
+        }
+      ],
+      "scores": [
+        58.14,
+        56.73,
+        57.38
+      ],
+      "score_min": 56.73,
+      "score_max": 58.14,
+      "score_range": 1.41,
+      "score_mean": 57.42,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B02",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "dd4945b8596cd307e7ad87fad0f16c38d82c4463b5cc49fb814f8227204b5154",
+      "counts": [
+        16,
+        15,
+        16
+      ],
+      "count_min": 15,
+      "count_max": 16,
+      "count_range": 1,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.19230769230769232,
+        "1_3": 0.8823529411764706,
+        "2_3": 0.19230769230769232
+      },
+      "jaccard_name": {
+        "1_2": 0.2857142857142857,
+        "1_3": 0.8461538461538461,
+        "2_3": 0.2857142857142857
+      },
+      "union_identity_size": 27,
+      "intersection_identity_size": 5,
+      "names_union": 22,
+      "names_in_all_three": 6,
+      "names_in_exactly_two": 5,
+      "names_in_exactly_one": 11,
+      "pair_additions": {
+        "1_2": 9,
+        "1_3": 1,
+        "2_3": 6
+      },
+      "pair_removals": {
+        "1_2": 6,
+        "1_3": 1,
+        "2_3": 9
+      },
+      "aligned_requirements": 11,
+      "aligned_consistent": 9,
+      "aligned_inconsistent": 2,
+      "presence_stable_classification_changed": [
+        {
+          "name": "python",
+          "importance": [
+            "REQUIRED"
+          ],
+          "category": [
+            "EXPERIENCE",
+            "SKILL"
+          ]
+        },
+        {
+          "name": "reliability",
+          "importance": [
+            "PREFERRED",
+            "SOFT_SIGNAL"
+          ],
+          "category": [
+            "OTHER"
+          ]
+        }
+      ],
+      "scores": [
+        60.8,
+        62.48,
+        60.8
+      ],
+      "score_min": 60.8,
+      "score_max": 62.48,
+      "score_range": 1.68,
+      "score_mean": 61.36,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B03",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "32ba036997e8773d364314261d56ff21ebe1183aa775e8a7dcd16898b1bdacd6",
+      "counts": [
+        7,
+        6,
+        6
+      ],
+      "count_min": 6,
+      "count_max": 7,
+      "count_range": 1,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.0,
+        "1_3": 0.08333333333333333,
+        "2_3": 0.09090909090909091
+      },
+      "jaccard_name": {
+        "1_2": 0.0,
+        "1_3": 0.08333333333333333,
+        "2_3": 0.09090909090909091
+      },
+      "union_identity_size": 17,
+      "intersection_identity_size": 0,
+      "names_union": 17,
+      "names_in_all_three": 0,
+      "names_in_exactly_two": 2,
+      "names_in_exactly_one": 15,
+      "pair_additions": {
+        "1_2": 6,
+        "1_3": 5,
+        "2_3": 5
+      },
+      "pair_removals": {
+        "1_2": 7,
+        "1_3": 6,
+        "2_3": 5
+      },
+      "aligned_requirements": 2,
+      "aligned_consistent": 2,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        76.15,
+        76.58,
+        76.58
+      ],
+      "score_min": 76.15,
+      "score_max": 76.58,
+      "score_range": 0.43,
+      "score_mean": 76.44,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B04",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "982d5a335f15d9aedfd10f68fada9c89bea3b609580817e4e28fd374c0cccaf8",
+      "counts": [
+        17,
+        17,
+        24
+      ],
+      "count_min": 17,
+      "count_max": 24,
+      "count_range": 7,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.4782608695652174,
+        "1_3": 0.3225806451612903,
+        "2_3": 0.5185185185185185
+      },
+      "jaccard_name": {
+        "1_2": 0.4782608695652174,
+        "1_3": 0.3448275862068966,
+        "2_3": 0.6956521739130435
+      },
+      "union_identity_size": 33,
+      "intersection_identity_size": 10,
+      "names_union": 29,
+      "names_in_all_three": 10,
+      "names_in_exactly_two": 7,
+      "names_in_exactly_one": 12,
+      "pair_additions": {
+        "1_2": 6,
+        "1_3": 12,
+        "2_3": 6
+      },
+      "pair_removals": {
+        "1_2": 6,
+        "1_3": 7,
+        "2_3": 1
+      },
+      "aligned_requirements": 17,
+      "aligned_consistent": 14,
+      "aligned_inconsistent": 3,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        54.25,
+        54.25,
+        52.96
+      ],
+      "score_min": 52.96,
+      "score_max": 54.25,
+      "score_range": 1.29,
+      "score_mean": 53.82,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B05",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "6c0f262137c7cdc61371a501bf78212cb2336e0a0f2dfe699246d6f2b43265c0",
+      "counts": [
+        19,
+        22,
+        27
+      ],
+      "count_min": 19,
+      "count_max": 27,
+      "count_range": 8,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.782608695652174,
+        "1_3": 0.5333333333333333,
+        "2_3": 0.48484848484848486
+      },
+      "jaccard_name": {
+        "1_2": 0.782608695652174,
+        "1_3": 0.7619047619047619,
+        "2_3": 0.6666666666666666
+      },
+      "union_identity_size": 34,
+      "intersection_identity_size": 16,
+      "names_union": 25,
+      "names_in_all_three": 16,
+      "names_in_exactly_two": 2,
+      "names_in_exactly_one": 7,
+      "pair_additions": {
+        "1_2": 4,
+        "1_3": 2,
+        "2_3": 2
+      },
+      "pair_removals": {
+        "1_2": 1,
+        "1_3": 3,
+        "2_3": 6
+      },
+      "aligned_requirements": 18,
+      "aligned_consistent": 13,
+      "aligned_inconsistent": 5,
+      "presence_stable_classification_changed": [
+        {
+          "name": "metabase",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "n8n",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "power bi",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "python",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "sql",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "EXPERIENCE",
+            "SKILL"
+          ]
+        }
+      ],
+      "scores": [
+        59.43,
+        59.58,
+        58.87
+      ],
+      "score_min": 58.87,
+      "score_max": 59.58,
+      "score_range": 0.71,
+      "score_mean": 59.29,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B06",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "1f737ef82fd440e3bb803e9e26c6f0e0f9d68dd947ea5472e9f9c1fea9e4e6eb",
+      "counts": [
+        17,
+        19,
+        18
+      ],
+      "count_min": 17,
+      "count_max": 19,
+      "count_range": 2,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.2,
+        "1_3": 0.20689655172413793,
+        "2_3": 0.1935483870967742
+      },
+      "jaccard_name": {
+        "1_2": 0.2,
+        "1_3": 0.20689655172413793,
+        "2_3": 0.1935483870967742
+      },
+      "union_identity_size": 39,
+      "intersection_identity_size": 3,
+      "names_union": 39,
+      "names_in_all_three": 3,
+      "names_in_exactly_two": 9,
+      "names_in_exactly_one": 27,
+      "pair_additions": {
+        "1_2": 13,
+        "1_3": 12,
+        "2_3": 12
+      },
+      "pair_removals": {
+        "1_2": 11,
+        "1_3": 11,
+        "2_3": 13
+      },
+      "aligned_requirements": 12,
+      "aligned_consistent": 12,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        48.68,
+        53.63,
+        54.23
+      ],
+      "score_min": 48.68,
+      "score_max": 54.23,
+      "score_range": 5.55,
+      "score_mean": 52.18,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "SKIP",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": false,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B07",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "6c0f262137c7cdc61371a501bf78212cb2336e0a0f2dfe699246d6f2b43265c0",
+      "counts": [
+        20,
+        21,
+        19
+      ],
+      "count_min": 19,
+      "count_max": 21,
+      "count_range": 2,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.5185185185185185,
+        "1_3": 0.3,
+        "2_3": 0.3333333333333333
+      },
+      "jaccard_name": {
+        "1_2": 0.5185185185185185,
+        "1_3": 0.3,
+        "2_3": 0.3333333333333333
+      },
+      "union_identity_size": 36,
+      "intersection_identity_size": 9,
+      "names_union": 36,
+      "names_in_all_three": 9,
+      "names_in_exactly_two": 6,
+      "names_in_exactly_one": 21,
+      "pair_additions": {
+        "1_2": 7,
+        "1_3": 10,
+        "2_3": 9
+      },
+      "pair_removals": {
+        "1_2": 6,
+        "1_3": 11,
+        "2_3": 11
+      },
+      "aligned_requirements": 15,
+      "aligned_consistent": 15,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        60.52,
+        59.86,
+        65.06
+      ],
+      "score_min": 59.86,
+      "score_max": 65.06,
+      "score_range": 5.2,
+      "score_mean": 61.81,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "APPLY_WITH_TAILORING"
+      ],
+      "recommendation_stable": false,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B08",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "b0c1584fb44323fa162c4549e290cb5b8e9c11e28613f4381751f69478c0770c",
+      "counts": [
+        9,
+        9,
+        10
+      ],
+      "count_min": 9,
+      "count_max": 10,
+      "count_range": 1,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.38461538461538464,
+        "1_3": 0.1875,
+        "2_3": 0.1875
+      },
+      "jaccard_name": {
+        "1_2": 0.38461538461538464,
+        "1_3": 0.2,
+        "2_3": 0.2
+      },
+      "union_identity_size": 20,
+      "intersection_identity_size": 3,
+      "names_union": 19,
+      "names_in_all_three": 3,
+      "names_in_exactly_two": 2,
+      "names_in_exactly_one": 14,
+      "pair_additions": {
+        "1_2": 4,
+        "1_3": 6,
+        "2_3": 6
+      },
+      "pair_removals": {
+        "1_2": 4,
+        "1_3": 6,
+        "2_3": 6
+      },
+      "aligned_requirements": 5,
+      "aligned_consistent": 5,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        46.11,
+        47.07,
+        46.53
+      ],
+      "score_min": 46.11,
+      "score_max": 47.07,
+      "score_range": 0.96,
+      "score_mean": 46.57,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B09",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "dc53cc732fc18ec5a184dd22897f9f7e515057efabae0bd35f19f14aeb5f24a9",
+      "counts": [
+        12,
+        9,
+        9
+      ],
+      "count_min": 9,
+      "count_max": 12,
+      "count_range": 3,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.4,
+        "1_3": 0.05,
+        "2_3": 0.058823529411764705
+      },
+      "jaccard_name": {
+        "1_2": 0.5,
+        "1_3": 0.05,
+        "2_3": 0.058823529411764705
+      },
+      "union_identity_size": 23,
+      "intersection_identity_size": 1,
+      "names_union": 22,
+      "names_in_all_three": 1,
+      "names_in_exactly_two": 6,
+      "names_in_exactly_one": 15,
+      "pair_additions": {
+        "1_2": 2,
+        "1_3": 8,
+        "2_3": 8
+      },
+      "pair_removals": {
+        "1_2": 5,
+        "1_3": 11,
+        "2_3": 8
+      },
+      "aligned_requirements": 7,
+      "aligned_consistent": 6,
+      "aligned_inconsistent": 1,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        86.84,
+        85.97,
+        85.17
+      ],
+      "score_min": 85.17,
+      "score_max": 86.84,
+      "score_range": 1.67,
+      "score_mean": 85.99,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "APPLY",
+        "APPLY",
+        "APPLY"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B10",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "af388123cc482f6aa91d80ccaaa8341ed47926c9fd6ffc139d5e83ce39f8fdd0",
+      "counts": [
+        12,
+        14,
+        16
+      ],
+      "count_min": 12,
+      "count_max": 16,
+      "count_range": 4,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.4444444444444444,
+        "1_3": 0.3333333333333333,
+        "2_3": 0.25
+      },
+      "jaccard_name": {
+        "1_2": 0.4444444444444444,
+        "1_3": 0.3333333333333333,
+        "2_3": 0.25
+      },
+      "union_identity_size": 27,
+      "intersection_identity_size": 6,
+      "names_union": 27,
+      "names_in_all_three": 6,
+      "names_in_exactly_two": 3,
+      "names_in_exactly_one": 18,
+      "pair_additions": {
+        "1_2": 6,
+        "1_3": 9,
+        "2_3": 10
+      },
+      "pair_removals": {
+        "1_2": 4,
+        "1_3": 5,
+        "2_3": 8
+      },
+      "aligned_requirements": 9,
+      "aligned_consistent": 9,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        56.45,
+        54.15,
+        56.45
+      ],
+      "score_min": 54.15,
+      "score_max": 56.45,
+      "score_range": 2.3,
+      "score_mean": 55.68,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B11",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "6120e2e3d934406ceaf2d81dec77fff94ee143a01d2328ce64fcae40169ae559",
+      "counts": [
+        23,
+        32,
+        9
+      ],
+      "count_min": 9,
+      "count_max": 32,
+      "count_range": 23,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.018518518518518517,
+        "1_3": 0.0,
+        "2_3": 0.05128205128205128
+      },
+      "jaccard_name": {
+        "1_2": 0.30952380952380953,
+        "1_3": 0.0,
+        "2_3": 0.05128205128205128
+      },
+      "union_identity_size": 61,
+      "intersection_identity_size": 0,
+      "names_union": 49,
+      "names_in_all_three": 0,
+      "names_in_exactly_two": 15,
+      "names_in_exactly_one": 34,
+      "pair_additions": {
+        "1_2": 19,
+        "1_3": 9,
+        "2_3": 7
+      },
+      "pair_removals": {
+        "1_2": 10,
+        "1_3": 23,
+        "2_3": 30
+      },
+      "aligned_requirements": 15,
+      "aligned_consistent": 3,
+      "aligned_inconsistent": 12,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        52.57,
+        44.38,
+        69.2
+      ],
+      "score_min": 44.38,
+      "score_max": 69.2,
+      "score_range": 24.82,
+      "score_mean": 55.38,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "SKIP",
+        "APPLY_WITH_TAILORING"
+      ],
+      "recommendation_stable": false,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B12",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "6961c826f737f6162dac6dd2658b7f98ca359247ff479cba7a836aac97c4b102",
+      "counts": [
+        17,
+        9,
+        19
+      ],
+      "count_min": 9,
+      "count_max": 19,
+      "count_range": 10,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.18181818181818182,
+        "1_3": 0.2857142857142857,
+        "2_3": 0.07692307692307693
+      },
+      "jaccard_name": {
+        "1_2": 0.18181818181818182,
+        "1_3": 0.2857142857142857,
+        "2_3": 0.07692307692307693
+      },
+      "union_identity_size": 33,
+      "intersection_identity_size": 2,
+      "names_union": 33,
+      "names_in_all_three": 2,
+      "names_in_exactly_two": 8,
+      "names_in_exactly_one": 23,
+      "pair_additions": {
+        "1_2": 5,
+        "1_3": 11,
+        "2_3": 17
+      },
+      "pair_removals": {
+        "1_2": 13,
+        "1_3": 9,
+        "2_3": 7
+      },
+      "aligned_requirements": 10,
+      "aligned_consistent": 10,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        52.58,
+        76.29,
+        52.77
+      ],
+      "score_min": 52.58,
+      "score_max": 76.29,
+      "score_range": 23.71,
+      "score_mean": 60.55,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "APPLY_WITH_TAILORING",
+        "STRETCH"
+      ],
+      "recommendation_stable": false,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B13",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "a299c02c9c8033009ab68f0c5aa1089c964aae9457e1a24b036060dbb9643576",
+      "counts": [
+        11,
+        19,
+        10
+      ],
+      "count_min": 10,
+      "count_max": 19,
+      "count_range": 9,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.15384615384615385,
+        "1_3": 0.23529411764705882,
+        "2_3": 0.2608695652173913
+      },
+      "jaccard_name": {
+        "1_2": 0.15384615384615385,
+        "1_3": 0.23529411764705882,
+        "2_3": 0.2608695652173913
+      },
+      "union_identity_size": 29,
+      "intersection_identity_size": 3,
+      "names_union": 29,
+      "names_in_all_three": 3,
+      "names_in_exactly_two": 5,
+      "names_in_exactly_one": 21,
+      "pair_additions": {
+        "1_2": 15,
+        "1_3": 6,
+        "2_3": 4
+      },
+      "pair_removals": {
+        "1_2": 7,
+        "1_3": 7,
+        "2_3": 13
+      },
+      "aligned_requirements": 8,
+      "aligned_consistent": 8,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        53.71,
+        52.7,
+        58.15
+      ],
+      "score_min": 52.7,
+      "score_max": 58.15,
+      "score_range": 5.45,
+      "score_mean": 54.85,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B14",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "277139ad608c92e55920bd13f5a92109621a3cdd6db882cfb1a7ea5a75aca8b8",
+      "counts": [
+        24,
+        31,
+        33
+      ],
+      "count_min": 24,
+      "count_max": 33,
+      "count_range": 9,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.30952380952380953,
+        "1_3": 0.3902439024390244,
+        "2_3": 0.4883720930232558
+      },
+      "jaccard_name": {
+        "1_2": 0.34146341463414637,
+        "1_3": 0.3902439024390244,
+        "2_3": 0.4883720930232558
+      },
+      "union_identity_size": 50,
+      "intersection_identity_size": 12,
+      "names_union": 49,
+      "names_in_all_three": 12,
+      "names_in_exactly_two": 15,
+      "names_in_exactly_one": 22,
+      "pair_additions": {
+        "1_2": 17,
+        "1_3": 17,
+        "2_3": 12
+      },
+      "pair_removals": {
+        "1_2": 10,
+        "1_3": 8,
+        "2_3": 10
+      },
+      "aligned_requirements": 27,
+      "aligned_consistent": 26,
+      "aligned_inconsistent": 1,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        72.12,
+        65.78,
+        65.01
+      ],
+      "score_min": 65.01,
+      "score_max": 72.12,
+      "score_range": 7.11,
+      "score_mean": 67.64,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B15",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "b71092951b6cb2a060ce1cd81b117a996adb24723494e83ffa2edae89e4eb8d8",
+      "counts": [
+        10,
+        10,
+        13
+      ],
+      "count_min": 10,
+      "count_max": 13,
+      "count_range": 3,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.1111111111111111,
+        "1_3": 0.15,
+        "2_3": 0.2777777777777778
+      },
+      "jaccard_name": {
+        "1_2": 0.1111111111111111,
+        "1_3": 0.15,
+        "2_3": 0.35294117647058826
+      },
+      "union_identity_size": 25,
+      "intersection_identity_size": 2,
+      "names_union": 24,
+      "names_in_all_three": 2,
+      "names_in_exactly_two": 5,
+      "names_in_exactly_one": 17,
+      "pair_additions": {
+        "1_2": 8,
+        "1_3": 10,
+        "2_3": 7
+      },
+      "pair_removals": {
+        "1_2": 8,
+        "1_3": 7,
+        "2_3": 4
+      },
+      "aligned_requirements": 7,
+      "aligned_consistent": 6,
+      "aligned_inconsistent": 1,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        61.45,
+        61.45,
+        49.58
+      ],
+      "score_min": 49.58,
+      "score_max": 61.45,
+      "score_range": 11.87,
+      "score_mean": 57.49,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "SKIP"
+      ],
+      "recommendation_stable": false,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B16",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "3a72f59a946be27b0713f9bd7d9d1349f9cd8765f04944a00e8b4765ff90d052",
+      "counts": [
+        18,
+        19,
+        19
+      ],
+      "count_min": 18,
+      "count_max": 19,
+      "count_range": 1,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.4230769230769231,
+        "1_3": 0.48,
+        "2_3": 0.5833333333333334
+      },
+      "jaccard_name": {
+        "1_2": 0.6086956521739131,
+        "1_3": 0.48,
+        "2_3": 0.8095238095238095
+      },
+      "union_identity_size": 28,
+      "intersection_identity_size": 9,
+      "names_union": 25,
+      "names_in_all_three": 12,
+      "names_in_exactly_two": 7,
+      "names_in_exactly_one": 6,
+      "pair_additions": {
+        "1_2": 5,
+        "1_3": 7,
+        "2_3": 2
+      },
+      "pair_removals": {
+        "1_2": 4,
+        "1_3": 6,
+        "2_3": 2
+      },
+      "aligned_requirements": 19,
+      "aligned_consistent": 16,
+      "aligned_inconsistent": 3,
+      "presence_stable_classification_changed": [
+        {
+          "name": "activation modeling",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "lifecycle analytics",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "retention modeling",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        }
+      ],
+      "scores": [
+        59.46,
+        57.6,
+        59.46
+      ],
+      "score_min": 57.6,
+      "score_max": 59.46,
+      "score_range": 1.86,
+      "score_mean": 58.84,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B17",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "441f82c1f695b18a89ec769eafb25c27890c23fbed45dbfee9341dde78b8cb72",
+      "counts": [
+        12,
+        18,
+        19
+      ],
+      "count_min": 12,
+      "count_max": 19,
+      "count_range": 7,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.36363636363636365,
+        "1_3": 0.34782608695652173,
+        "2_3": 0.37037037037037035
+      },
+      "jaccard_name": {
+        "1_2": 0.36363636363636365,
+        "1_3": 0.34782608695652173,
+        "2_3": 0.37037037037037035
+      },
+      "union_identity_size": 31,
+      "intersection_identity_size": 8,
+      "names_union": 31,
+      "names_in_all_three": 8,
+      "names_in_exactly_two": 2,
+      "names_in_exactly_one": 21,
+      "pair_additions": {
+        "1_2": 10,
+        "1_3": 11,
+        "2_3": 9
+      },
+      "pair_removals": {
+        "1_2": 4,
+        "1_3": 4,
+        "2_3": 8
+      },
+      "aligned_requirements": 10,
+      "aligned_consistent": 10,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        64.75,
+        61.69,
+        60.43
+      ],
+      "score_min": 60.43,
+      "score_max": 64.75,
+      "score_range": 4.32,
+      "score_mean": 62.29,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B18",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "8c144949edd042e36578f7f051a74e6e624a5067e019fd1d96b8bf3cea8665cf",
+      "counts": [
+        15,
+        16,
+        12
+      ],
+      "count_min": 12,
+      "count_max": 16,
+      "count_range": 4,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.14814814814814814,
+        "1_3": 0.17391304347826086,
+        "2_3": 0.21739130434782608
+      },
+      "jaccard_name": {
+        "1_2": 0.14814814814814814,
+        "1_3": 0.17391304347826086,
+        "2_3": 0.21739130434782608
+      },
+      "union_identity_size": 34,
+      "intersection_identity_size": 4,
+      "names_union": 34,
+      "names_in_all_three": 4,
+      "names_in_exactly_two": 1,
+      "names_in_exactly_one": 29,
+      "pair_additions": {
+        "1_2": 12,
+        "1_3": 8,
+        "2_3": 7
+      },
+      "pair_removals": {
+        "1_2": 11,
+        "1_3": 11,
+        "2_3": 11
+      },
+      "aligned_requirements": 5,
+      "aligned_consistent": 5,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        55.6,
+        55.9,
+        54.79
+      ],
+      "score_min": 54.79,
+      "score_max": 55.9,
+      "score_range": 1.11,
+      "score_mean": 55.43,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B19",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "f588a7750e755ec34201816bc18afd57529e6c78552f4a23f62f9d51934a8ecf",
+      "counts": [
+        25,
+        27,
+        24
+      ],
+      "count_min": 24,
+      "count_max": 27,
+      "count_range": 3,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.7931034482758621,
+        "1_3": 0.53125,
+        "2_3": 0.5454545454545454
+      },
+      "jaccard_name": {
+        "1_2": 0.9259259259259259,
+        "1_3": 0.6333333333333333,
+        "2_3": 0.59375
+      },
+      "union_identity_size": 35,
+      "intersection_identity_size": 17,
+      "names_union": 32,
+      "names_in_all_three": 19,
+      "names_in_exactly_two": 6,
+      "names_in_exactly_one": 7,
+      "pair_additions": {
+        "1_2": 2,
+        "1_3": 5,
+        "2_3": 5
+      },
+      "pair_removals": {
+        "1_2": 0,
+        "1_3": 6,
+        "2_3": 8
+      },
+      "aligned_requirements": 25,
+      "aligned_consistent": 22,
+      "aligned_inconsistent": 3,
+      "presence_stable_classification_changed": [
+        {
+          "name": "github copilot",
+          "importance": [
+            "PREFERRED",
+            "REQUIRED"
+          ],
+          "category": [
+            "SKILL"
+          ]
+        },
+        {
+          "name": "healthcare and/or claims adjudication experience",
+          "importance": [
+            "PREFERRED"
+          ],
+          "category": [
+            "EXPERIENCE",
+            "OTHER"
+          ]
+        }
+      ],
+      "scores": [
+        47.65,
+        48.03,
+        47.42
+      ],
+      "score_min": 47.42,
+      "score_max": 48.03,
+      "score_range": 0.61,
+      "score_mean": 47.7,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B20",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "9f0554d857973cf8374a6d5e57d2f254c5083dfee38002d215555880f82bf218",
+      "counts": [
+        20,
+        2,
+        1
+      ],
+      "count_min": 1,
+      "count_max": 20,
+      "count_range": 19,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.0,
+        "1_3": 0.0,
+        "2_3": 0.0
+      },
+      "jaccard_name": {
+        "1_2": 0.047619047619047616,
+        "1_3": 0.0,
+        "2_3": 0.0
+      },
+      "union_identity_size": 23,
+      "intersection_identity_size": 0,
+      "names_union": 22,
+      "names_in_all_three": 0,
+      "names_in_exactly_two": 1,
+      "names_in_exactly_one": 21,
+      "pair_additions": {
+        "1_2": 1,
+        "1_3": 1,
+        "2_3": 1
+      },
+      "pair_removals": {
+        "1_2": 19,
+        "1_3": 20,
+        "2_3": 2
+      },
+      "aligned_requirements": 1,
+      "aligned_consistent": 0,
+      "aligned_inconsistent": 1,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        48.4,
+        76.15,
+        76.08
+      ],
+      "score_min": 48.4,
+      "score_max": 76.15,
+      "score_range": 27.75,
+      "score_mean": 66.88,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "SKIP",
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING"
+      ],
+      "recommendation_stable": false,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B21",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "7dc2ab87eb4e2658b3270df3cefddaec820a4f7c77be26fc94d2c3c7b9fadb6e",
+      "counts": [
+        20,
+        20,
+        20
+      ],
+      "count_min": 20,
+      "count_max": 20,
+      "count_range": 0,
+      "counts_all_equal": true,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": true,
+      "jaccard_identity": {
+        "1_2": 0.3793103448275862,
+        "1_3": 0.3333333333333333,
+        "2_3": 0.3333333333333333
+      },
+      "jaccard_name": {
+        "1_2": 0.3793103448275862,
+        "1_3": 0.3333333333333333,
+        "2_3": 0.3333333333333333
+      },
+      "union_identity_size": 35,
+      "intersection_identity_size": 6,
+      "names_union": 35,
+      "names_in_all_three": 6,
+      "names_in_exactly_two": 13,
+      "names_in_exactly_one": 16,
+      "pair_additions": {
+        "1_2": 9,
+        "1_3": 10,
+        "2_3": 10
+      },
+      "pair_removals": {
+        "1_2": 9,
+        "1_3": 10,
+        "2_3": 10
+      },
+      "aligned_requirements": 19,
+      "aligned_consistent": 19,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        57.15,
+        57.25,
+        57.86
+      ],
+      "score_min": 57.15,
+      "score_max": 57.86,
+      "score_range": 0.71,
+      "score_mean": 57.42,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "SAME_COUNTS_DIFFERENT_IDENTITIES"
+    },
+    {
+      "job_id": "VJ-B23",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "96eeed2bc4e7fe3a167e8213336793c99421fe190f46d49be2406f9c076c928d",
+      "counts": [
+        8,
+        11,
+        16
+      ],
+      "count_min": 8,
+      "count_max": 16,
+      "count_range": 8,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.46153846153846156,
+        "1_3": 0.2,
+        "2_3": 0.2857142857142857
+      },
+      "jaccard_name": {
+        "1_2": 0.46153846153846156,
+        "1_3": 0.2,
+        "2_3": 0.2857142857142857
+      },
+      "union_identity_size": 23,
+      "intersection_identity_size": 4,
+      "names_union": 23,
+      "names_in_all_three": 4,
+      "names_in_exactly_two": 4,
+      "names_in_exactly_one": 15,
+      "pair_additions": {
+        "1_2": 5,
+        "1_3": 12,
+        "2_3": 10
+      },
+      "pair_removals": {
+        "1_2": 2,
+        "1_3": 4,
+        "2_3": 5
+      },
+      "aligned_requirements": 8,
+      "aligned_consistent": 8,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        70.6,
+        70.75,
+        65.99
+      ],
+      "score_min": 65.99,
+      "score_max": 70.75,
+      "score_range": 4.76,
+      "score_mean": 69.11,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    },
+    {
+      "job_id": "VJ-B28",
+      "member_class": "COLLECTED_BACKED",
+      "source_origin": "validation_jobs/postings/collected.json",
+      "provenance_status": "VERIFIED",
+      "source_sha256": "b2d58a93f3b8486ea1e0f340a6b40666a40f79c71e4080543affb9a18b769fe0",
+      "counts": [
+        19,
+        16,
+        19
+      ],
+      "count_min": 16,
+      "count_max": 19,
+      "count_range": 3,
+      "counts_all_equal": false,
+      "identity_sets_identical": false,
+      "name_sets_identical": false,
+      "counts_equal_but_identity_differs": false,
+      "jaccard_identity": {
+        "1_2": 0.0,
+        "1_3": 0.11764705882352941,
+        "2_3": 0.0
+      },
+      "jaccard_name": {
+        "1_2": 0.0,
+        "1_3": 0.11764705882352941,
+        "2_3": 0.0
+      },
+      "union_identity_size": 50,
+      "intersection_identity_size": 0,
+      "names_union": 50,
+      "names_in_all_three": 0,
+      "names_in_exactly_two": 4,
+      "names_in_exactly_one": 46,
+      "pair_additions": {
+        "1_2": 16,
+        "1_3": 15,
+        "2_3": 19
+      },
+      "pair_removals": {
+        "1_2": 19,
+        "1_3": 15,
+        "2_3": 16
+      },
+      "aligned_requirements": 4,
+      "aligned_consistent": 4,
+      "aligned_inconsistent": 0,
+      "presence_stable_classification_changed": [],
+      "scores": [
+        53.27,
+        55.26,
+        57.91
+      ],
+      "score_min": 53.27,
+      "score_max": 57.91,
+      "score_range": 4.64,
+      "score_mean": 55.48,
+      "scores_identical": false,
+      "scores_identical_identity_differs": false,
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "recommendation_stable": true,
+      "structural_stability": "UNSTABLE"
+    }
+  ],
+  "alignment_detail": [
+    {
+      "job_id": "VJ-01",
+      "name": "based in london office or distributed within the uk",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-01",
+      "name": "comfortable hands-on and strategic thinking",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-01",
+      "name": "commercially minded",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-01",
+      "name": "experience conducting large scale a/b experiments",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-01",
+      "name": "impact driven",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-01",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-01",
+      "name": "self-starter mindset",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-01",
+      "name": "sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-01",
+      "name": "team player",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "ai-powered developer tools proficiency",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "airflow",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "catboost",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "claude code",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "cursor",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "dask",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "deep learning framework experience",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "distributed data processing experience",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "kubeflow",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "lightgbm",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "machine learning engineering experience",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "ml lifecycle tooling experience",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "mlflow",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "python",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "pytorch",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "ray",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "spark",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-02",
+      "name": "xgboost",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-03",
+      "name": "data analysis experience",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-03",
+      "name": "microsoft excel",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-03",
+      "name": "power bi",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-03",
+      "name": "python",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-03",
+      "name": "remote-first",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-03",
+      "name": "sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-03",
+      "name": "tableau",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "adaptability and flexibility",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "clear and effective communication in english",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "commercial ai experience",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "good self-presentation",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "langchain",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "langchain experience",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "large language models (llms) or vllms",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "other programming languages commonly used in ai",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "rag or openai",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "reliability",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "remote work",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "strong self-organizational skills",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B01",
+      "name": "vector databases (pinecone, weaviate)",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "adaptability and flexibility",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "clear and effective communication in english",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "data scientist",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "databricks",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "good self-presentation",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "llm",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "rag",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "reliability",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "remote",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "name": "strong self-organizational skills",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B03",
+      "name": "deployed ai systems into production",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B03",
+      "name": "remote work in americas, europe, or israel",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "a desire to build something strategically important and make decisions that matter",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "a strong track record of owning systems or products end-to-end, not just contributing to 1 part of them",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "agent-driven development",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "an ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "automation",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "backend engineering",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "coding-agent workflows",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "data pipelines",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "deep hands-on experience with agent-driven development or coding-agent workflows",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "excellent taste and technical judgment - you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "founders, very early startup engineers, senior builders who have owned messy systems with real business impact",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "high agency, strong prioritization skills, and the ability to operate with very little structure",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "hybrid work in berlin-mitte office, typically 4 days per week",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "operational workflows",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "scraping",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "name": "significant experience as a software engineer in a startup or similarly high-ownership environment",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "csv",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "experience with relational databases (mysql, postgresql, ms sql)",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "javascript",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "json",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "looker studio",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "make",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "metabase",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "microsoft excel",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "ms sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "mysql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "n8n",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "postgresql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "power bi",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "rest apis",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "xml",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "name": "zapier",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "artificial intelligence experience or interest",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "bachelor and master degree with strong quantitative background",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EDUCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "cloud infrastructure development and management",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "consulting industry experience",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "docker",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "frontend technologies",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "java",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "kubernetes",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "munich or berlin",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "python",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "relational databases and sql knowledge",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "name": "spark",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "csv",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "javascript",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "json",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "looker studio",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "make",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "metabase",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "microsoft excel",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "n8n",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "power bi",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "remote work from anywhere in europe",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "rest apis",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "xml",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "name": "zapier",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B08",
+      "name": "alteryx",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B08",
+      "name": "based in munich or willing to relocate",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B08",
+      "name": "clear and confident communication in written and spoken english",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B08",
+      "name": "proactive, collaborative approach and motivation to see work through to delivery",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B08",
+      "name": "valid eu work permit",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B09",
+      "name": "ability to think end-to-end across users, products, and technology, not just individual metrics",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B09",
+      "name": "clear analytical judgment: understanding why a metric exists, how it evolves, and when it should be retired",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B09",
+      "name": "experience operating in ambiguous environments and driving solutions independently",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B09",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B09",
+      "name": "senior-level experience solving search or search-adjacent analytical problems",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B09",
+      "name": "solid foundation in mathematical statistics",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B09",
+      "name": "strong communication skills and the ability to align product, engineering, and client perspectives",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "ai tools",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "audio/music content understanding",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "flexibility to work from home with some in-person meetings",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "london or stockholm",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "machine learning",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "natural language processing",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "recommender systems",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "strategic thinking, clear communication, and balancing long-term bets with near-term delivery",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "name": "track record of managing engineering teams while delivering complex, cross-functional initiatives",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "batching",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "capacity planning",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "distributed serving",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "experience with post-training llms",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "first principles thinking",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "founder or founding engineer experience",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "latency vs throughput optimization",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "lora",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "model distillation",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "multi-gpu serving",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "multi-node serving",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "python",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "quantization",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "reinforcement learning (rlhf, rlvr)",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "name": "speculative decoding",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "fraud detection",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "generative ai",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "hands-on experience building and shipping generative ai systems in production",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "london (hybrid, 3 days in office)",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "machine learning",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "monitoring",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "production deployment",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "significant commercial experience delivering end-to-end machine learning solutions",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "statistical modeling",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "name": "strong statistical and modeling foundation with experience in risk-based decisioning under uncertainty",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "name": "end-to-end machine learning solutions delivery",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "name": "generative ai",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "name": "london hybrid (3 days in office)",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "name": "machine learning",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "name": "production deployment",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "name": "risk-based decisioning",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "name": "statistical and modeling foundation with risk-based decisioning",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "name": "statistical modeling",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "affordability",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "amazon sagemaker",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "automated decisioning systems",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "ci/cd pipelines",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "data scientist experience",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "dbt",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "dbt and looker experience",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "decision engines",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "decision science",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "decision science and automated decisioning experience",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "deep learning",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "explainability",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "fairness",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "git",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "github actions",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "looker",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "machine learning model development and deployment experience",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "neural networks",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "neural networks / deep learning experience",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "numpy",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "pandas",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "results-driven approach and rapid iteration",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "risk model governance",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "risk model governance familiarity",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "scikit-learn",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "name": "sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B15",
+      "name": "c++",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B15",
+      "name": "edge deployment optimization",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B15",
+      "name": "embedded algorithmic expertise",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B15",
+      "name": "highly structured, analytical, task-aligned, and research-oriented",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B15",
+      "name": "location",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B15",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B15",
+      "name": "stem degree",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EDUCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "a/b testing",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "ability to translate ambiguous product questions into clear, reusable analysis and defensible metrics",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "activation / retention modeling or lifecycle analytics",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "activation modeling",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "ai tools",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "comfort working directly with product and growth stakeholders, and pushing back on ill-defined asks",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "data scientist embedded with product or growth team",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "dbt",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "experience using ai tools or agents",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "experience with dbt or modern warehouse",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "hands-on experience in experimentation (a/b testing) and product analytics",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "lifecycle analytics",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "modern data warehouse",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "product analytics",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "remote-first",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "retention modeling",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "name": "structured thinker who can move fast without sacrificing rigour",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "ai tools",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "azure",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "databricks",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "dax",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "direct customer contact experience",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "microsoft fabric",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "power bi",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "power query",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "name": "sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B18",
+      "name": "apis",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B18",
+      "name": "git",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B18",
+      "name": "hands-on experience with german commercial contracts (drafting, reviewing, negotiating)",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B18",
+      "name": "other eu languages",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B18",
+      "name": "scripting",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "agentic ai",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "ai-assisted software development",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "architectural thinking",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "azure",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "based in switzerland",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "ci/cd",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "claude",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "claude code",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "communication skills",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "designing and building production-grade llm or agentic ai solutions",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "devops",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "github copilot",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED",
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "healthcare and/or claims adjudication experience",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE",
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "java/j2ee",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "langchain",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "langgraph",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "llms",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "multi-agent ai systems",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "problem-solving",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "react",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "retrieval-augmented generation (rag)",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "software engineering and/or devops experience",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "spring boot",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "technical leadership",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "name": "typescript",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B20",
+      "name": "ai fluency",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED",
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": false
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "artificial intelligence",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "backend and/or full-stack engineering experience",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "building and shipping ai-powered features or products in a production environment",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "collaborate cross-functionally and translate product requirements into technical solutions",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "deep understanding of llms and ai models",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "developing evaluation frameworks and metrics for ai features",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "elasticsearch",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "excellent communication and mentorship skills",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "experience with elasticsearch or other related technologies",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "experience with postgresdb, mysql, or other related dbs",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "familiarity with ai privacy, security, and compliance best practices",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "javascript/typescript",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "llms",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "mysql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "passion for staying updated with the latest ai research and applying it to solve real-world user problems",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "postgresdb",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "remote work",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "LOCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "name": "setting up production-ready observability and logging",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "name": "advanced degree in a quantitative field",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EDUCATION"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "name": "clear communication of business impact",
+      "runs_present": [
+        1,
+        2
+      ],
+      "importance": [
+        "SOFT_SIGNAL"
+      ],
+      "category": [
+        "OTHER"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "name": "data science driving enterprise value",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "EXPERIENCE"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "name": "machine learning packages",
+      "runs_present": [
+        0,
+        1
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "name": "probability",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "name": "python",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "name": "sql",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "name": "statistics",
+      "runs_present": [
+        0,
+        1,
+        2
+      ],
+      "importance": [
+        "REQUIRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B28",
+      "name": "building and delivering products in a dynamic startup-like environment",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B28",
+      "name": "developing large distributed systems or high-load web services",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B28",
+      "name": "open-source inference engines (vllm, sglang, tensorrt-llm)",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    },
+    {
+      "job_id": "VJ-B28",
+      "name": "open-source projects showcasing engineering prowess",
+      "runs_present": [
+        0,
+        2
+      ],
+      "importance": [
+        "PREFERRED"
+      ],
+      "category": [
+        "SKILL"
+      ],
+      "consistent": true
+    }
+  ],
+  "evidence_detail": [
+    {
+      "job_id": "VJ-01",
+      "requirements": 31,
+      "quote_in_source": 10,
+      "quote_not_found": 15,
+      "no_source_text": 6,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-01",
+          "run_id": 1,
+          "name": "impact driven",
+          "quote": "You're impact driven and eager to have a real positive impact on the company, product, users and very importan"
+        },
+        {
+          "job_id": "VJ-01",
+          "run_id": 1,
+          "name": "commercially minded",
+          "quote": "You're commercially minded and can put numbers into business perspective"
+        },
+        {
+          "job_id": "VJ-01",
+          "run_id": 1,
+          "name": "comfortable hands-on and strategic thinking",
+          "quote": "You’re as comfortable getting hands‑on as taking a step back and thinking strategically"
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 3,
+        "LOCATION": 3,
+        "OTHER": 19,
+        "SKILL": 6
+      },
+      "by_type_without_quote": {
+        "SKILL": 6
+      }
+    },
+    {
+      "job_id": "VJ-02",
+      "requirements": 60,
+      "quote_in_source": 22,
+      "quote_not_found": 0,
+      "no_source_text": 38,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 15,
+        "SKILL": 38,
+        "EDUCATION": 2,
+        "LOCATION": 1,
+        "OTHER": 4
+      },
+      "by_type_without_quote": {
+        "SKILL": 38
+      }
+    },
+    {
+      "job_id": "VJ-03",
+      "requirements": 33,
+      "quote_in_source": 18,
+      "quote_not_found": 0,
+      "no_source_text": 15,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 3,
+        "LOCATION": 3,
+        "OTHER": 12,
+        "SKILL": 15
+      },
+      "by_type_without_quote": {
+        "SKILL": 15
+      }
+    },
+    {
+      "job_id": "VJ-B01",
+      "requirements": 52,
+      "quote_in_source": 34,
+      "quote_not_found": 0,
+      "no_source_text": 18,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 12,
+        "LOCATION": 4,
+        "OTHER": 18,
+        "SKILL": 18
+      },
+      "by_type_without_quote": {
+        "SKILL": 18
+      }
+    },
+    {
+      "job_id": "VJ-B02",
+      "requirements": 47,
+      "quote_in_source": 35,
+      "quote_not_found": 0,
+      "no_source_text": 12,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 14,
+        "LOCATION": 3,
+        "OTHER": 18,
+        "SKILL": 12
+      },
+      "by_type_without_quote": {
+        "SKILL": 12
+      }
+    },
+    {
+      "job_id": "VJ-B03",
+      "requirements": 19,
+      "quote_in_source": 19,
+      "quote_not_found": 0,
+      "no_source_text": 0,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 8,
+        "LOCATION": 3,
+        "OTHER": 8
+      },
+      "by_type_without_quote": {}
+    },
+    {
+      "job_id": "VJ-B04",
+      "requirements": 58,
+      "quote_in_source": 31,
+      "quote_not_found": 4,
+      "no_source_text": 23,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B04",
+          "run_id": 1,
+          "name": "deep hands-on experience with agent-driven development or coding-agent workflows",
+          "quote": "Deep hands‑on experience with agent‑driven development or coding‑agent workflows"
+        },
+        {
+          "job_id": "VJ-B04",
+          "run_id": 1,
+          "name": "hybrid work in berlin office, typically 4 days per week",
+          "quote": "We believe in the value of in‑person collaboration and work in a hybrid setup, with the team coming together i"
+        },
+        {
+          "job_id": "VJ-B04",
+          "run_id": 1,
+          "name": "excellent taste and technical judgment",
+          "quote": "Excellent taste and technical judgment — you know when something is robust, when it is fragile, and when agent"
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 19,
+        "LOCATION": 3,
+        "OTHER": 13,
+        "SKILL": 23
+      },
+      "by_type_without_quote": {
+        "SKILL": 23
+      }
+    },
+    {
+      "job_id": "VJ-B05",
+      "requirements": 68,
+      "quote_in_source": 9,
+      "quote_not_found": 0,
+      "no_source_text": 59,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 6,
+        "SKILL": 59,
+        "LOCATION": 1,
+        "OTHER": 2
+      },
+      "by_type_without_quote": {
+        "SKILL": 59
+      }
+    },
+    {
+      "job_id": "VJ-B06",
+      "requirements": 54,
+      "quote_in_source": 33,
+      "quote_not_found": 0,
+      "no_source_text": 21,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 20,
+        "EDUCATION": 3,
+        "LOCATION": 3,
+        "OTHER": 7,
+        "SKILL": 21
+      },
+      "by_type_without_quote": {
+        "SKILL": 21
+      }
+    },
+    {
+      "job_id": "VJ-B07",
+      "requirements": 60,
+      "quote_in_source": 19,
+      "quote_not_found": 1,
+      "no_source_text": 40,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B07",
+          "run_id": 3,
+          "name": "collaboration with project leads and it",
+          "quote": "Du arbeitest eng mit unseren Projektleitungen und unserer IT zusammen"
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 7,
+        "LOCATION": 3,
+        "OTHER": 10,
+        "SKILL": 40
+      },
+      "by_type_without_quote": {
+        "SKILL": 40
+      }
+    },
+    {
+      "job_id": "VJ-B08",
+      "requirements": 28,
+      "quote_in_source": 21,
+      "quote_not_found": 4,
+      "no_source_text": 3,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B08",
+          "run_id": 1,
+          "name": "valid eu work permit",
+          "quote": "A valid EU work permit is required."
+        },
+        {
+          "job_id": "VJ-B08",
+          "run_id": 1,
+          "name": "aviation industry finance and cost modeling",
+          "quote": "You’ll build and take ownership of specific finance and cost models within our digital twin of the global avia"
+        },
+        {
+          "job_id": "VJ-B08",
+          "run_id": 2,
+          "name": "hands-on data skills",
+          "quote": "Hands‑on data skills; experience with Alteryx is a plus"
+        }
+      ],
+      "by_type_total": {
+        "LOCATION": 3,
+        "OTHER": 21,
+        "SKILL": 3,
+        "EXPERIENCE": 1
+      },
+      "by_type_without_quote": {
+        "SKILL": 3
+      }
+    },
+    {
+      "job_id": "VJ-B09",
+      "requirements": 30,
+      "quote_in_source": 26,
+      "quote_not_found": 1,
+      "no_source_text": 3,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B09",
+          "run_id": 3,
+          "name": "strong exposure to quality metrics in at least 1 of the following areas: search relevance (web, geo, product, offers), ranking and freshness, ads quality or feed ranking.",
+          "quote": "Strong exposure to quality metrics in at least one of the following areas: search relevance (web, geo, product"
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 11,
+        "OTHER": 16,
+        "SKILL": 3
+      },
+      "by_type_without_quote": {
+        "SKILL": 3
+      }
+    },
+    {
+      "job_id": "VJ-B10",
+      "requirements": 42,
+      "quote_in_source": 24,
+      "quote_not_found": 1,
+      "no_source_text": 17,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B10",
+          "run_id": 3,
+          "name": "deep machine learning expertise",
+          "quote": "You have deep machine learning expertise and Staff-level technical judgement, and you're comfortable getting h"
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 11,
+        "LOCATION": 3,
+        "OTHER": 11,
+        "SKILL": 17
+      },
+      "by_type_without_quote": {
+        "SKILL": 17
+      }
+    },
+    {
+      "job_id": "VJ-B11",
+      "requirements": 64,
+      "quote_in_source": 21,
+      "quote_not_found": 0,
+      "no_source_text": 43,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 11,
+        "SKILL": 43,
+        "EDUCATION": 2,
+        "OTHER": 8
+      },
+      "by_type_without_quote": {
+        "SKILL": 43
+      }
+    },
+    {
+      "job_id": "VJ-B12",
+      "requirements": 45,
+      "quote_in_source": 23,
+      "quote_not_found": 1,
+      "no_source_text": 21,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B12",
+          "run_id": 2,
+          "name": "stakeholder management skills",
+          "quote": "Strong stakeholder management skills, with confidence communicating trade‑offs and pushing back constructively"
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 9,
+        "LOCATION": 3,
+        "OTHER": 12,
+        "SKILL": 21
+      },
+      "by_type_without_quote": {
+        "SKILL": 21
+      }
+    },
+    {
+      "job_id": "VJ-B13",
+      "requirements": 40,
+      "quote_in_source": 17,
+      "quote_not_found": 0,
+      "no_source_text": 23,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 9,
+        "LOCATION": 3,
+        "SKILL": 23,
+        "OTHER": 5
+      },
+      "by_type_without_quote": {
+        "SKILL": 23
+      }
+    },
+    {
+      "job_id": "VJ-B14",
+      "requirements": 88,
+      "quote_in_source": 29,
+      "quote_not_found": 1,
+      "no_source_text": 58,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B14",
+          "run_id": 2,
+          "name": "cross-functional collaboration",
+          "quote": "This role will involve close collaboration with cross-functional teams, including product managers, engineers,"
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 21,
+        "OTHER": 9,
+        "SKILL": 58
+      },
+      "by_type_without_quote": {
+        "SKILL": 58
+      }
+    },
+    {
+      "job_id": "VJ-B15",
+      "requirements": 33,
+      "quote_in_source": 23,
+      "quote_not_found": 1,
+      "no_source_text": 9,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B15",
+          "run_id": 3,
+          "name": "edge deployment optimization experience",
+          "quote": "Technical Competence: Experience with optimizing code for edge deployment."
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 6,
+        "EDUCATION": 3,
+        "LOCATION": 3,
+        "OTHER": 12,
+        "SKILL": 9
+      },
+      "by_type_without_quote": {
+        "SKILL": 9
+      }
+    },
+    {
+      "job_id": "VJ-B16",
+      "requirements": 56,
+      "quote_in_source": 23,
+      "quote_not_found": 3,
+      "no_source_text": 30,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B16",
+          "run_id": 2,
+          "name": "hands-on experience in experimentation (a/b testing) and product analytics",
+          "quote": "Strong SQL and Python , with hands‑on experience in experimentation (A/B testing) and product analytics."
+        },
+        {
+          "job_id": "VJ-B16",
+          "run_id": 2,
+          "name": "experience using ai tools or agents",
+          "quote": "Experience using AI tools or agents to speed up analysis or enable self‑serve data access."
+        },
+        {
+          "job_id": "VJ-B16",
+          "run_id": 2,
+          "name": "remote-first",
+          "quote": "This role is remote‑first."
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 14,
+        "LOCATION": 3,
+        "OTHER": 9,
+        "SKILL": 30
+      },
+      "by_type_without_quote": {
+        "SKILL": 30
+      }
+    },
+    {
+      "job_id": "VJ-B17",
+      "requirements": 49,
+      "quote_in_source": 20,
+      "quote_not_found": 0,
+      "no_source_text": 29,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 6,
+        "LOCATION": 5,
+        "SKILL": 29,
+        "OTHER": 9
+      },
+      "by_type_without_quote": {
+        "SKILL": 29
+      }
+    },
+    {
+      "job_id": "VJ-B18",
+      "requirements": 43,
+      "quote_in_source": 17,
+      "quote_not_found": 8,
+      "no_source_text": 18,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B18",
+          "run_id": 1,
+          "name": "experience with german commercial contracts",
+          "quote": "You have worked hands‑on with German commercial contracts, drafting, reviewing, and negotiating them"
+        },
+        {
+          "job_id": "VJ-B18",
+          "run_id": 1,
+          "name": "law degree with commercial-contracts focus (german-qualified or equivalent)",
+          "quote": "A law degree with a commercial‑contracts focus: German‑qualified (Bachelor, Master, or Staatsexamen) or an equ"
+        },
+        {
+          "job_id": "VJ-B18",
+          "run_id": 2,
+          "name": "hands-on experience with german commercial contracts (drafting, reviewing, negotiating)",
+          "quote": "You have worked hands‑on with German commercial contracts, drafting, reviewing, and negotiating them, and you "
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 13,
+        "EDUCATION": 3,
+        "LOCATION": 3,
+        "OTHER": 6,
+        "SKILL": 18
+      },
+      "by_type_without_quote": {
+        "SKILL": 18
+      }
+    },
+    {
+      "job_id": "VJ-B19",
+      "requirements": 76,
+      "quote_in_source": 25,
+      "quote_not_found": 0,
+      "no_source_text": 51,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 10,
+        "LOCATION": 5,
+        "OTHER": 10,
+        "SKILL": 51
+      },
+      "by_type_without_quote": {
+        "SKILL": 51
+      }
+    },
+    {
+      "job_id": "VJ-B20",
+      "requirements": 23,
+      "quote_in_source": 4,
+      "quote_not_found": 0,
+      "no_source_text": 19,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "OTHER": 4,
+        "SKILL": 19
+      },
+      "by_type_without_quote": {
+        "SKILL": 19
+      }
+    },
+    {
+      "job_id": "VJ-B21",
+      "requirements": 60,
+      "quote_in_source": 37,
+      "quote_not_found": 0,
+      "no_source_text": 23,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "EXPERIENCE": 26,
+        "LOCATION": 3,
+        "OTHER": 8,
+        "SKILL": 23
+      },
+      "by_type_without_quote": {
+        "SKILL": 23
+      }
+    },
+    {
+      "job_id": "VJ-B23",
+      "requirements": 35,
+      "quote_in_source": 16,
+      "quote_not_found": 3,
+      "no_source_text": 16,
+      "stripped_notes": 0,
+      "examples": [
+        {
+          "job_id": "VJ-B23",
+          "run_id": 2,
+          "name": "leading large-scale initiatives from concept to impact",
+          "quote": "You are comfortable leading projects and have experience taking large‑scale initiatives from concept to measur"
+        },
+        {
+          "job_id": "VJ-B23",
+          "run_id": 2,
+          "name": "remote-first work environment",
+          "quote": "We embrace a remote‑first culture that supports collaboration and flexibility, allowing our team members to th"
+        },
+        {
+          "job_id": "VJ-B23",
+          "run_id": 2,
+          "name": "clear communication of business impact",
+          "quote": "You can clearly communicate how your work contributes to business goals, ensuring alignment with top‑level com"
+        }
+      ],
+      "by_type_total": {
+        "EXPERIENCE": 6,
+        "EDUCATION": 3,
+        "SKILL": 16,
+        "LOCATION": 2,
+        "OTHER": 8
+      },
+      "by_type_without_quote": {
+        "SKILL": 16
+      }
+    },
+    {
+      "job_id": "VJ-B28",
+      "requirements": 54,
+      "quote_in_source": 16,
+      "quote_not_found": 0,
+      "no_source_text": 38,
+      "stripped_notes": 0,
+      "examples": [],
+      "by_type_total": {
+        "OTHER": 9,
+        "SKILL": 38,
+        "EXPERIENCE": 7
+      },
+      "by_type_without_quote": {
+        "SKILL": 38
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+# V1.2 human audit - no VALID document contains a critical violation
+
+  AD-001   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-002   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-003   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-010   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-011   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-012   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-013   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-020   STRENGTHENED                 -> VALIDATION_FAILED
+  AD-021   STRENGTHENED                 -> VALIDATION_FAILED
+  AD-022   STRENGTHENED                 -> VALIDATION_FAILED
+  AD-030   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-031   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-032   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-040   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-041   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-042   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-050   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-051   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-060   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-061   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-062   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-070   NON_FACTUAL                  -> REVIEW_REQUIRED
+  AD-071   NON_FACTUAL                  -> REVIEW_REQUIRED
+  AD-072   NON_FACTUAL                  -> REVIEW_REQUIRED
+  AD-080   SUPPORTED_BY_NORMALIZATION   -> REVIEW_REQUIRED
+  AD-081   SUPPORTED_BY_NORMALIZATION   -> REVIEW_REQUIRED
+  AD-082   SUPPORTED_BY_NORMALIZATION   -> REVIEW_REQUIRED
+  AD-083   SUPPORTED_BY_NORMALIZATION   -> REVIEW_REQUIRED
+  AD-084   SUPPORTED_BY_ALIAS           -> REVIEW_REQUIRED
+  AD-085   SUPPORTED_BY_ALIAS           -> REVIEW_REQUIRED
+  AD-086   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-087   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-088   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-089   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-090   SUPPORTED                    -> REVIEW_REQUIRED
+  AD-091   STRENGTHENED                 -> VALIDATION_FAILED
+  AD-092   STRENGTHENED                 -> VALIDATION_FAILED
+  AD-093   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-094   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-095   UNSUPPORTED                  -> VALIDATION_FAILED
+  AD-100   payload                      -> VALIDATION_FAILED
+  AD-101   payload                      -> VALIDATION_FAILED
+  AD-102   payload                      -> VALIDATION_FAILED
+  AD-103   payload                      -> VALIDATION_FAILED
+  AD-104   payload                      -> VALIDATION_FAILED
+  AD-105   payload                      -> VALIDATION_FAILED
+  AD-106   payload                      -> VALIDATION_FAILED
+  AD-107   payload                      -> VALIDATION_FAILED
+  AD-108   payload                      -> VALIDATION_FAILED
+  AD-109   payload                      -> VALIDATION_FAILED
+  AD-110   payload                      -> REVIEW_REQUIRED
+  AD-111   payload                      -> REVIEW_REQUIRED
+
+captured artifacts:
+  VJ-01    Monzo            -> VALIDATION_FAILED (20 findings, 3 critical)
+  VJ-02    Affirm           -> VALIDATION_FAILED (15 findings, 2 critical)
+  VJ-03    SEAhub Asia      -> VALIDATION_FAILED (16 findings, 3 critical)
+  FRESH    SEAhub Asia      -> VALIDATION_FAILED (20 findings, 4 critical)
+
+documents that reached VALID: 0
+critical violations found in VALID documents: 0
+
+HUMAN AUDIT: PASS

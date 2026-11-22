@@ -1,0 +1,276 @@
+{
+  "version": "3.0",
+  "status": "PENDING_INDEPENDENT_HUMAN_REVIEW",
+  "instructions": "These labels must be completed by an independent human reviewer who has not seen any system score, recommendation, component score, blocker, V3 finding or calibration hypothesis. Labels were deliberately NOT inferred from system output, keyword coverage or previous analysis.",
+  "label_form": "Job ID:\n\nDecision:\nYES | MAYBE | NO\n\nPrimary reason:\n<1-3 sentences. Explain what actually drove the decision.>\n\nMaterial strengths:\n- ...\n- ...\n\nMaterial concerns:\n- ...\n- ...\n\nHard blocker:\nYES | NO\n\nIf YES, specify:\n<the specific objective condition that makes an application unreasonable>\n\nWould I personally apply?\nYES | NO\n\nConfidence:\nHIGH | MEDIUM | LOW\n",
+  "guidance": [
+    "Label from the candidate's ACTUAL recorded evidence and the job posting.",
+    "Judge this job only. Do not consider any other job or the overall picture.",
+    "NO means: given this evidence and this opportunity, you would not recommend applying. It does NOT mean the candidate is incapable of the work.",
+    "YES means: you would consider this sufficiently viable to apply.",
+    "MAYBE means: genuinely balanced, or a real condition that could be resolved.",
+    "A skill absent from the candidate's evidence is an EVIDENCE BOUNDARY. It is not proof the candidate lacks it. Say so in the reason.",
+    "Do not infer work authorisation, relocation feasibility or salary expectations. They are not recorded.",
+    "A label of 'YES - good fit' is insufficient. State the reason."
+  ],
+  "decision_semantics": {
+    "YES": "would consider this sufficiently viable to apply",
+    "MAYBE": "genuinely balanced, or a real condition that could be resolved",
+    "NO": "would not recommend applying; NOT a statement about capability"
+  },
+  "labels": [
+    {
+      "job_id": "VJ-B01",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B02",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B03",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B04",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B05",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B06",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B07",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B08",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B09",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B10",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B11",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B12",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B13",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B14",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B15",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B16",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B17",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B18",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B19",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B20",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B21",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B23",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    },
+    {
+      "job_id": "VJ-B28",
+      "decision": null,
+      "primary_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": null,
+      "hard_blocker_detail": null,
+      "would_apply": null,
+      "confidence": null
+    }
+  ]
+}

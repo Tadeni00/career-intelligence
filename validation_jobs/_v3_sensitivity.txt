@@ -1,0 +1,56 @@
+# V3 — Extraction Sensitivity by Mutation Class
+
+Each mutation is one class of variation the extraction prompt
+permits. Applied to all 26 frozen requirement sets.
+
+ID   mutation                                       n   score   blk   rec    maxΔ  level
+M1   reordering only                               25       0     0     0     0.0  LEVEL 0 - cosmetic
+M2   alias/surface renaming                         9       0     0     0     0.0  LEVEL 0/1 - cosmetic or score-neutral
+M3   REQUIRED -> PREFERRED (one skill)             25      23     0     3    3.96  LEVEL 2 - score-changing
+M4   PREFERRED -> REQUIRED (one skill)             14      12     0     0    1.68  LEVEL 2 - score-changing
+M5   add an absent REQUIRED skill                  26      25     0     2    28.0  LEVEL 2 - score-changing
+M6   remove a held REQUIRED skill                  25      23     0     3     8.0  LEVEL 2 - score-changing
+M7   attach years_required to an EXPERIENCE req    26      19     0     6     5.0  LEVEL 2 - score-changing
+M8   add a hard LOCATION requirement               26      19    19     9     3.5  LEVEL 3 - decision-changing
+M9   drop an existing LOCATION requirement         19       7     7     2     3.5  LEVEL 3 - decision-changing
+M10  add a REQUIRED degree above level             26      21    26     9     7.0  LEVEL 3 - decision-changing
+M11  entire extraction lost (parse failure)        26      26     9    24   35.71  LEVEL 3 - decision-changing
+
+## Observed decision flips
+
+- M3 REQUIRED -> PREFERRED (one skill): VJ-B01: STRETCH -> SKIP (score 51.4 -> 47.7, blockers 0 -> 0)
+- M3 REQUIRED -> PREFERRED (one skill): VJ-B02: STRETCH -> SKIP (score 52.4 -> 48.4, blockers 0 -> 0)
+- M3 REQUIRED -> PREFERRED (one skill): VJ-B05: STRETCH -> SKIP (score 50.4 -> 49.4, blockers 0 -> 0)
+- M5 add an absent REQUIRED skill: VJ-B05: STRETCH -> SKIP (score 50.4 -> 49.8, blockers 0 -> 0)
+- M5 add an absent REQUIRED skill: VJ-B20: APPLY_WITH_TAILORING -> SKIP (score 72.5 -> 44.5, blockers 0 -> 0)
+- M6 remove a held REQUIRED skill: VJ-B01: STRETCH -> SKIP (score 51.4 -> 44.0, blockers 0 -> 0)
+- M6 remove a held REQUIRED skill: VJ-B02: STRETCH -> SKIP (score 52.4 -> 44.4, blockers 0 -> 0)
+- M6 remove a held REQUIRED skill: VJ-B05: STRETCH -> SKIP (score 50.4 -> 48.5, blockers 0 -> 0)
+- M7 attach years_required to an EXPERIENCE req: VJ-B03: SKIP -> STRETCH (score 47.1 -> 51.1, blockers 0 -> 0)
+- M7 attach years_required to an EXPERIENCE req: VJ-B07: SKIP -> STRETCH (score 47.0 -> 51.0, blockers 0 -> 0)
+- M7 attach years_required to an EXPERIENCE req: VJ-B09: SKIP -> STRETCH (score 49.3 -> 53.3, blockers 0 -> 0)
+- M8 add a hard LOCATION requirement: VJ-03: APPLY_WITH_TAILORING -> SKIP (score 74.9 -> 71.4, blockers 0 -> 1)
+- M8 add a hard LOCATION requirement: VJ-B01: STRETCH -> SKIP (score 51.4 -> 47.9, blockers 0 -> 1)
+- M8 add a hard LOCATION requirement: VJ-B02: STRETCH -> SKIP (score 52.4 -> 48.9, blockers 0 -> 1)
+- M9 drop an existing LOCATION requirement: VJ-01: SKIP -> APPLY (score 80.5 -> 84.0, blockers 1 -> 0)
+- M9 drop an existing LOCATION requirement: VJ-02: SKIP -> STRETCH (score 49.5 -> 53.0, blockers 1 -> 0)
+- M10 add a REQUIRED degree above level: VJ-03: APPLY_WITH_TAILORING -> SKIP (score 74.9 -> 67.9, blockers 0 -> 1)
+- M10 add a REQUIRED degree above level: VJ-B01: STRETCH -> SKIP (score 51.4 -> 44.4, blockers 0 -> 1)
+- M10 add a REQUIRED degree above level: VJ-B02: STRETCH -> SKIP (score 52.4 -> 45.4, blockers 0 -> 1)
+- M11 entire extraction lost (parse failure): VJ-01: SKIP -> APPLY_WITH_TAILORING (score 80.5 -> 72.0, blockers 1 -> 0)
+- M11 entire extraction lost (parse failure): VJ-02: SKIP -> APPLY_WITH_TAILORING (score 49.5 -> 72.0, blockers 1 -> 0)
+- M11 entire extraction lost (parse failure): VJ-B01: STRETCH -> APPLY_WITH_TAILORING (score 51.4 -> 72.0, blockers 0 -> 0)
+
+## Measured severity
+
+- M1 reordering only: score changed in 0/25, recommendation changed in 0/25
+- M2 alias/surface renaming: score changed in 0/9, recommendation changed in 0/9
+- M3 REQUIRED -> PREFERRED (one skill): score changed in 23/25, recommendation changed in 3/25
+- M4 PREFERRED -> REQUIRED (one skill): score changed in 12/14, recommendation changed in 0/14
+- M5 add an absent REQUIRED skill: score changed in 25/26, recommendation changed in 2/26
+- M6 remove a held REQUIRED skill: score changed in 23/25, recommendation changed in 3/25
+- M7 attach years_required to an EXPERIENCE req: score changed in 19/26, recommendation changed in 6/26
+- M8 add a hard LOCATION requirement: score changed in 19/26, recommendation changed in 9/26
+- M9 drop an existing LOCATION requirement: score changed in 7/19, recommendation changed in 2/19
+- M10 add a REQUIRED degree above level: score changed in 21/26, recommendation changed in 9/26
+- M11 entire extraction lost (parse failure): score changed in 26/26, recommendation changed in 24/26

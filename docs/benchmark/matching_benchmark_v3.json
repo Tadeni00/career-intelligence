@@ -1,0 +1,4189 @@
+{
+  "version": "3.0",
+  "description": "V3 matching benchmark. 3 frozen regression cases with human labels recorded before V3, plus real job postings collected from public job boards. Human decision labels for the expanded set are PENDING: they must be supplied by an independent human reviewer before any calibration is justified (spec section 10, Gate D).",
+  "candidate_profile": "val_profile_fixed.json (unchanged since V1)",
+  "engine_baseline": {
+    "weights": {
+      "technical": 0.4,
+      "experience": 0.25,
+      "education": 0.1,
+      "location": 0.1,
+      "other": 0.15
+    },
+    "thresholds": {
+      "apply": 80.0,
+      "apply_with_tailoring": 65.0,
+      "stretch": 50.0
+    }
+  },
+  "counts": {
+    "total": 26,
+    "human_labelled": 3,
+    "pending_human_label": 23
+  },
+  "cases": [
+    {
+      "job_id": "VJ-01",
+      "title": "Data Scientist",
+      "company": "Monzo",
+      "location": "Cardiff, London or Remote (UK)",
+      "remote_status": null,
+      "source_url": "https://job-boards.greenhouse.io/monzo/jobs/8242603",
+      "frozen_regression_case": true,
+      "human_decision": "MAYBE",
+      "human_reason": "Strong technical and experience match, but the role is restricted to UK-based candidates and the candidate is in Lagos.",
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 4,
+      "required_requirements": 3,
+      "preferred_requirements": 1,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 80.5,
+        "technical": 100.0,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 20.0,
+        "other": 70.0,
+        "confidence": 0.95,
+        "blockers": [
+          "Location"
+        ],
+        "blocker_sources": [
+          "engine._is_hard_location_block -> _score_location"
+        ],
+        "diagnostic_states": {
+          "F_SUPPORTED": 2,
+          "A_HARD_BLOCKER": 1,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.333,
+        "preferred_coverage": 1.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Required: SQL"
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Python"
+        },
+        {
+          "name": "A/B experiment experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Conducting large‑scale A/B experiments"
+        },
+        {
+          "name": "UK location",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Based in London office or remote within the UK (visa sponsorship available)"
+        }
+      ]
+    },
+    {
+      "job_id": "VJ-02",
+      "title": "Machine Learning Engineer II (Underwriting ML)",
+      "company": "Affirm",
+      "location": "Remote US",
+      "remote_status": null,
+      "source_url": "https://job-boards.greenhouse.io/affirm/jobs/7822387003",
+      "frozen_regression_case": true,
+      "human_decision": "NO",
+      "human_reason": "Remote (US) only, and the candidate lacks the core ML stack the role is built around.",
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 18,
+      "required_requirements": 4,
+      "preferred_requirements": 14,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 49.55,
+        "technical": 14.6,
+        "experience": 100.0,
+        "education": 62.07,
+        "location": 20.0,
+        "other": 70.0,
+        "confidence": 0.95,
+        "blockers": [
+          "Location"
+        ],
+        "blocker_sources": [
+          "engine._is_hard_location_block -> _score_location"
+        ],
+        "diagnostic_states": {
+          "F_SUPPORTED": 2,
+          "E_EVIDENCE_UNKNOWN": 15,
+          "D_TAILORING_GAP": 1,
+          "A_HARD_BLOCKER": 1
+        },
+        "required_coverage": 0.5,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Required: Python"
+        },
+        {
+          "name": "LightGBM",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: LightGBM"
+        },
+        {
+          "name": "XGBoost",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: XGBoost"
+        },
+        {
+          "name": "CatBoost",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: CatBoost"
+        },
+        {
+          "name": "gradient‑boosted decision trees",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: gradient‑boosted decision trees"
+        },
+        {
+          "name": "PyTorch",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: PyTorch"
+        },
+        {
+          "name": "Spark",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Spark"
+        },
+        {
+          "name": "Ray",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Ray"
+        },
+        {
+          "name": "Dask",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Dask"
+        },
+        {
+          "name": "Kubeflow",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Kubeflow"
+        },
+        {
+          "name": "Airflow",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Airflow"
+        },
+        {
+          "name": "MLflow",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: MLflow"
+        },
+        {
+          "name": "Claude Code",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Claude Code"
+        },
+        {
+          "name": "Cursor",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Cursor"
+        },
+        {
+          "name": "Machine Learning Engineer experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 2.0,
+          "description": "2+ years of experience as a machine learning engineer or a PhD in a relevant field"
+        },
+        {
+          "name": "Bachelor's degree",
+          "type": "EDUCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Bachelor’s degree in a related field (or equivalent practical experience)"
+        },
+        {
+          "name": "PhD",
+          "type": "EDUCATION",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "PhD in a relevant field"
+        },
+        {
+          "name": "Remote (US)",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Remote‑first role, can be performed from anywhere within the United States; occasional in‑person meetings may be required"
+        }
+      ]
+    },
+    {
+      "job_id": "VJ-03",
+      "title": "Data Analyst",
+      "company": "SEAhub Asia",
+      "location": "Kuala Lumpur, Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "remote_status": null,
+      "source_url": "https://remoteOK.com/remote-jobs/remote-data-analyst-seahub-asia-1136222",
+      "frozen_regression_case": true,
+      "human_decision": "YES",
+      "human_reason": "Directly aligned with the candidate's confirmed data analysis experience; tooling gap is manageable.",
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 10,
+      "required_requirements": 9,
+      "preferred_requirements": 1,
+      "system": {
+        "recommendation": "APPLY_WITH_TAILORING",
+        "overall_score": 74.92,
+        "technical": 77.53,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 42.73,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 5,
+          "B_MATERIAL_GAP": 5,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.444,
+        "preferred_coverage": 1.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Required: SQL"
+        },
+        {
+          "name": "Excel",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Required: Excel"
+        },
+        {
+          "name": "Power BI",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Required: Power BI"
+        },
+        {
+          "name": "Tableau",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Required: Tableau"
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Preferred: Python"
+        },
+        {
+          "name": "Data analysis experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 0.0,
+          "description": "0-1 year of experience in data analysis or a related field."
+        },
+        {
+          "name": "Strong communication skills",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to present findings and insights clearly."
+        },
+        {
+          "name": "Detail-oriented",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong focus on maintaining data quality and accuracy."
+        },
+        {
+          "name": "Proactive mindset",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Willingness to learn new tools, technologies, and analytical techniques."
+        },
+        {
+          "name": "Well-organized",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to prioritize and manage multiple tasks effectively."
+        }
+      ]
+    },
+    {
+      "job_id": "VJ-B01",
+      "title": "Senior AI Engineer",
+      "company": "Lemon.io",
+      "location": "Northern America, LATAM, Europe, APAC",
+      "remote_status": "REMOTE",
+      "source_url": "https://remotive.com/remote-jobs/artificial-intelligence/senior-ai-engineer-2091131",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 14,
+      "required_requirements": 13,
+      "preferred_requirements": 1,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 55.87,
+        "technical": 18.35,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 43.53,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 5,
+          "B_MATERIAL_GAP": 7,
+          "E_EVIDENCE_UNKNOWN": 2
+        },
+        "required_coverage": 0.385,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Vector Databases (Pinecone or Weaviate)",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LangChain",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Large Language Models (LLMs) or vLLMs",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "RAG or OpenAI",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Other AI programming languages",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Commercial AI experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 3.0,
+          "description": "Applying AI to practical technology solutions"
+        },
+        {
+          "name": "LangChain experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 2.0,
+          "description": ""
+        },
+        {
+          "name": "Large language model experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 2.0,
+          "description": "LLMs or vLLMs"
+        },
+        {
+          "name": "RAG/OpenAI experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 2.0,
+          "description": ""
+        },
+        {
+          "name": "Vector Database experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Pinecone or Weaviate"
+        },
+        {
+          "name": "English communication",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Advanced ability to discuss business tasks, justify decisions, and communicate issues"
+        },
+        {
+          "name": "Reliability",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Trusted to not let the client or company down"
+        },
+        {
+          "name": "Adaptability and Flexibility",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to onboard projects promptly and start delivering results quickly"
+        }
+      ],
+      "source": "remotive",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B02",
+      "title": "Senior Data Scientist",
+      "company": "Lemon.io",
+      "location": "Northern America, LATAM, Europe, APAC",
+      "remote_status": "REMOTE",
+      "source_url": "https://remotive.com/remote-jobs/data/senior-data-scientist-2091129",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 16,
+      "required_requirements": 15,
+      "preferred_requirements": 1,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 56.86,
+        "technical": 20.0,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 45.72,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 4,
+          "B_MATERIAL_GAP": 8,
+          "E_EVIDENCE_UNKNOWN": 2
+        },
+        "required_coverage": 0.333,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Databricks",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "RAG",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LLM",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "English communication",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Data Scientist experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 4.0,
+          "description": "4+ years of commercial experience as a Data Scientist"
+        },
+        {
+          "name": "Python",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 3.0,
+          "description": "3+ years of commercial experience with Python"
+        },
+        {
+          "name": "Databricks",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 3.0,
+          "description": "3+ years of commercial experience with Databricks"
+        },
+        {
+          "name": "RAG",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience with Retrieval Augmented Generation"
+        },
+        {
+          "name": "LLM",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience with Large Language Models"
+        },
+        {
+          "name": "Remote",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to work full-time remotely with no supervision"
+        },
+        {
+          "name": "English communication",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Advanced ability to discuss business tasks, justify decisions, and communicate issues in English"
+        },
+        {
+          "name": "Self-presentation",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Good self-presentation essential for client calls"
+        },
+        {
+          "name": "Reliability",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Trusted to not let down the client or company"
+        },
+        {
+          "name": "Adaptability and Flexibility",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to onboard promptly and start delivering results quickly"
+        },
+        {
+          "name": "No visa assistance",
+          "type": "OTHER",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Company does not provide visa assistance"
+        }
+      ],
+      "source": "remotive",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B03",
+      "title": "Senior Independent AI Engineer / Architect",
+      "company": "A.Team",
+      "location": "Americas, Europe, Israel",
+      "remote_status": "REMOTE",
+      "source_url": "https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 14,
+      "required_requirements": 14,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 51.65,
+        "technical": 15.91,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "C_COMPETITIVE_DISADVANTAGE": 3,
+          "B_MATERIAL_GAP": 9,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.0,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "AI engineering",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Machine Learning engineering",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "AI architecture",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Production deployment of AI systems",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Large Language Model (LLM) workflows",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Agent architectures",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Orchestration systems",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Enterprise AI deployment",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Retrieval and evaluation infrastructure",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Reliability infrastructure",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Machine learning platforms at scale",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Production AI experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Shipped AI systems into production and built AI‑native products"
+        },
+        {
+          "name": "Remote (Americas, Europe, Israel)",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Work from any location within the Americas, Europe, or Israel"
+        },
+        {
+          "name": "Senior level",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Senior independent AI engineer/architect role"
+        }
+      ],
+      "source": "remotive",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B04",
+      "title": "Senior AI Engineer",
+      "company": "Rematiq Gmbh",
+      "location": "Berlin",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.com/jobs/companies/rematiq-gmbh/senior-ai-engineer-berlin-378169",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 14,
+      "required_requirements": 14,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 51.0,
+        "technical": 17.5,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 70.0,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "C_COMPETITIVE_DISADVANTAGE": 4,
+          "B_MATERIAL_GAP": 4,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.0,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Backend engineering",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Agent-driven development",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Coding-agent workflows",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Scalable system design",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Automation",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Web scraping",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Data pipelines",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Operational workflow engineering",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Software engineering experience in a startup or high‑ownership environment",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Significant experience as a software engineer in a startup or similarly high‑ownership environment"
+        },
+        {
+          "name": "End‑to‑end product ownership",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong track record of owning systems or products end‑to‑end"
+        },
+        {
+          "name": "Agent‑driven development experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Deep hands‑on experience with agent‑driven development or coding‑agent workflows"
+        },
+        {
+          "name": "Backend engineering skills",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong backend engineering skills and good judgment around scalable, reliable systems"
+        },
+        {
+          "name": "Experience with brittle external dependencies, automation, scraping, data pipelines, or operational workflows",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows"
+        },
+        {
+          "name": "Berlin, Germany",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Hybrid in‑person collaboration, office in Berlin‑Mitte, typically four days per week"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B05",
+      "title": "Werkstudent Data Analyst & Automation Engineer (m/w/d) | 100 % remote",
+      "company": "hey contact heroes GmbH",
+      "location": "Hamburg",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.com/jobs/companies/hey-contact-heroes-gmbh/werkstudent-data-analyst-automation-engineer-100-remote-hamburg-111403",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 22,
+      "required_requirements": 19,
+      "preferred_requirements": 3,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 50.35,
+        "technical": 23.92,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 4,
+          "B_MATERIAL_GAP": 13,
+          "C_COMPETITIVE_DISADVANTAGE": 1,
+          "E_EVIDENCE_UNKNOWN": 3
+        },
+        "required_coverage": 0.158,
+        "preferred_coverage": 0.333,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "MySQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "PostgreSQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "MS SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "CSV",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "JSON",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "XML",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Excel",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "REST APIs",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "JavaScript",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "n8n",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Make",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Zapier",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "German (C1/C2)",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "English",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Power BI",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Looker Studio",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Metabase",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Data analysis",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to evaluate data, create reports and dashboards"
+        },
+        {
+          "name": "Location",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "100 % remote, can be performed from anywhere in Europe"
+        },
+        {
+          "name": "Work style",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Self‑organized, structured work with clear documentation"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B06",
+      "title": "Machine Learning Consultant (m/w/d)",
+      "company": "Machine Learning Reply",
+      "location": "Munich, Bayern, Germany",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.com/jobs/companies/machine-learning-reply/machine-learning-consultant-munich-202028",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 24,
+      "required_requirements": 12,
+      "preferred_requirements": 12,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 42.41,
+        "technical": 30.32,
+        "experience": 84.0,
+        "education": 0.0,
+        "location": 20.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [
+          "Bachelor's and Master's degree",
+          "Location"
+        ],
+        "blocker_sources": [
+          "engine._is_hard_location_block -> _score_location",
+          "engine._score_education: required level above recorded level"
+        ],
+        "diagnostic_states": {
+          "B_MATERIAL_GAP": 4,
+          "F_SUPPORTED": 3,
+          "E_EVIDENCE_UNKNOWN": 7,
+          "D_TAILORING_GAP": 1,
+          "A_HARD_BLOCKER": 2
+        },
+        "required_coverage": 0.25,
+        "preferred_coverage": 0.083,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Artificial Intelligence",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Java",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LLMs",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Data Visualization",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Frontend Technologies",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Cloud Infrastructure Development",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Cloud Management",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Kubernetes",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Docker",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Spark",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Agile Project Management",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Artificial Intelligence",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience and/or interest in the area of artificial intelligence"
+        },
+        {
+          "name": "SQL",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience in relational databases and knowledge of SQL"
+        },
+        {
+          "name": "Programming Language (Python, Java)",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience in at least one additional programming language such as Python or Java"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience using LLMs (Agents, RAG, VectorDBs, etc.)"
+        },
+        {
+          "name": "Cloud Infrastructure Development",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Experience in cloud infrastructure development and management"
+        },
+        {
+          "name": "Consulting Industry Experience",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Experience in the consulting industry"
+        },
+        {
+          "name": "Kubernetes/Docker/Spark",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Knowledge of technologies like Kubernetes, Docker, or Spark"
+        },
+        {
+          "name": "Agile Project Management",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Interest in (agile) project management"
+        },
+        {
+          "name": "Bachelor's and Master's degree",
+          "type": "EDUCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Bachelor’s and Master’s degree with a strong quantitative background (e.g., Business Informatics, Business Science, Computer Science, Data Science)"
+        },
+        {
+          "name": "Location",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Position based in Munich or Berlin"
+        },
+        {
+          "name": "Language Proficiency",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Fluent in English and German at C1 level"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B07",
+      "title": "Data Analyst & Automation Engineer (m/w/d) | 100 % remote",
+      "company": "hey contact heroes GmbH",
+      "location": "Hamburg",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.com/jobs/companies/hey-contact-heroes-gmbh/data-analyst-automation-engineer-100-remote-hamburg-331696",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 32,
+      "required_requirements": 25,
+      "preferred_requirements": 7,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 47.05,
+        "technical": 33.16,
+        "experience": 84.0,
+        "education": 0.0,
+        "location": 55.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 5,
+          "B_MATERIAL_GAP": 10,
+          "C_COMPETITIVE_DISADVANTAGE": 3,
+          "E_EVIDENCE_UNKNOWN": 6,
+          "D_TAILORING_GAP": 1
+        },
+        "required_coverage": 0.16,
+        "preferred_coverage": 0.143,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "MySQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "PostgreSQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "MS SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "CSV",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "JSON",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "XML",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Excel",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "REST APIs",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "JavaScript",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Data analysis",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Reporting",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Dashboard creation",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "German (C1/C2)",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "English",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Power BI",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Looker Studio",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Metabase",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "n8n",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Make",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Zapier",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "SQL proficiency",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Secure handling of SQL queries"
+        },
+        {
+          "name": "Relational database experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience with MySQL, PostgreSQL or MS SQL"
+        },
+        {
+          "name": "Data analysis and reporting",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to evaluate data and create reports/dashboards"
+        },
+        {
+          "name": "Programming",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to program in Python or JavaScript"
+        },
+        {
+          "name": "Automation workflow creation",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience building workflows with n8n, Make, Zapier or custom scripts"
+        },
+        {
+          "name": "German language proficiency",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Native level or C1/C2"
+        },
+        {
+          "name": "English language proficiency",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Good English"
+        },
+        {
+          "name": "Degree in Computer Science, Mathematics, Business Informatics or Statistics",
+          "type": "EDUCATION",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Formal education in relevant field"
+        },
+        {
+          "name": "Remote work from anywhere in Europe",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Position can be performed remotely within Europe"
+        },
+        {
+          "name": "Self‑organized and structured work style",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Works independently, documents clearly"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B08",
+      "title": "Aviation Finance & Data Analyst (d/f/m)",
+      "company": "Skailark",
+      "location": "Munich",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.com/jobs/companies/skailark/aviation-finance-data-analyst-munich-253996",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 7,
+      "required_requirements": 6,
+      "preferred_requirements": 1,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 44.34,
+        "technical": 10.14,
+        "experience": 84.0,
+        "education": 100.0,
+        "location": 20.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [
+          "Location"
+        ],
+        "blocker_sources": [
+          "engine._is_hard_location_block -> _score_location"
+        ],
+        "diagnostic_states": {
+          "B_MATERIAL_GAP": 3,
+          "C_COMPETITIVE_DISADVANTAGE": 1,
+          "E_EVIDENCE_UNKNOWN": 2,
+          "F_SUPPORTED": 1,
+          "A_HARD_BLOCKER": 1
+        },
+        "required_coverage": 0.167,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Analytical thinking",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "English communication",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Financial analysis",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Alteryx",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "University degree",
+          "type": "EDUCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Include university certificates with grades"
+        },
+        {
+          "name": "Location",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Based in Munich or willing to relocate"
+        },
+        {
+          "name": "EU work permit",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Valid EU work permit required"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B09",
+      "title": "Data Analyst (Agentic Search)",
+      "company": "Nebius",
+      "location": "London",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.co.uk/jobs/companies/nebius/data-analyst-agentic-search-london-279572",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 11,
+      "required_requirements": 11,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 49.29,
+        "technical": 21.25,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 1,
+          "C_COMPETITIVE_DISADVANTAGE": 1,
+          "B_MATERIAL_GAP": 7,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.091,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Mathematical statistics",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Search relevance",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Ranking",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Freshness",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Ads quality",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Feed ranking",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Communication",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Senior-level experience solving search or search‑adjacent analytical problems",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Experience operating in ambiguous environments and driving solutions independently",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Work authorization",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Applicants must be authorized to work in the country in which they apply and provide proof of employment eligibility"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B10",
+      "title": "Senior Machine Learning Engineering Manager",
+      "company": "Spotify",
+      "location": "London",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.co.uk/jobs/companies/spotify/senior-machine-learning-engineering-manager-london-363741",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 15,
+      "required_requirements": 15,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 44.04,
+        "technical": 16.88,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 20.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [
+          "Location"
+        ],
+        "blocker_sources": [
+          "engine._is_hard_location_block -> _score_location"
+        ],
+        "diagnostic_states": {
+          "F_SUPPORTED": 1,
+          "B_MATERIAL_GAP": 7,
+          "C_COMPETITIVE_DISADVANTAGE": 1,
+          "A_HARD_BLOCKER": 1,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.067,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Machine Learning",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "NLP",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Audio/Music Content Understanding",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Recommender Systems",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "AI Tools",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Technical Strategy",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Team Leadership",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Coaching",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Deep Machine Learning Expertise",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Demonstrated expertise in machine learning, including NLP, audio/music understanding, and recommender systems."
+        },
+        {
+          "name": "Staff‑level Technical Judgment",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to make high‑impact technical decisions and guide architecture."
+        },
+        {
+          "name": "Engineering Management Experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Proven track record managing engineering teams and delivering complex cross‑functional initiatives."
+        },
+        {
+          "name": "Coaching Senior Engineers",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience coaching senior and staff engineers to grow their impact."
+        },
+        {
+          "name": "Strategic Leadership",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience setting technical strategy and aligning with product and design stakeholders."
+        },
+        {
+          "name": "Location",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Based in London or Stockholm with flexibility for remote work and occasional in‑person meetings"
+        },
+        {
+          "name": "Remote Work Flexibility",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Allows remote work with occasional in‑person meetings"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B11",
+      "title": "Applied Machine Learning Engineer, EMEA",
+      "company": "Fireworks",
+      "location": "London",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.co.uk/jobs/companies/fireworks/applied-machine-learning-engineer-emea-london-117330",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 23,
+      "required_requirements": 10,
+      "preferred_requirements": 13,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 41.8,
+        "technical": 12.01,
+        "experience": 84.0,
+        "education": 0.0,
+        "location": 55.0,
+        "other": 70.0,
+        "confidence": 0.95,
+        "blockers": [
+          "PhD or strong MSc in a relevant field"
+        ],
+        "blocker_sources": [
+          "engine._score_education: required level above recorded level"
+        ],
+        "diagnostic_states": {
+          "F_SUPPORTED": 1,
+          "B_MATERIAL_GAP": 5,
+          "D_TAILORING_GAP": 2,
+          "E_EVIDENCE_UNKNOWN": 10,
+          "A_HARD_BLOCKER": 1
+        },
+        "required_coverage": 0.1,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Systems programming language",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "GPU programming",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LLM fine‑tuning",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Distributed serving",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Inference optimization",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "AI‑assisted engineering",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Reinforcement learning (RLHF, RLVR)",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Distillation",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Quantization",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Speculative decoding",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Batching",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "KV‑cache optimization",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Multi‑GPU serving",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Multi‑node serving",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Capacity planning",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Customer engagement",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Spikes in at least two technical areas (Software engineering, Machine Learning, Infrastructure)",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Demonstrated expertise in at least two of the three spikes"
+        },
+        {
+          "name": "Founder or founding engineer experience",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Previous experience as a founder or early engineer in a startup"
+        },
+        {
+          "name": "Startup or fast‑paced environment experience",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Worked in a startup or similarly rapid development setting"
+        },
+        {
+          "name": "LLM post‑training experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Hands‑on experience fine‑tuning, LoRA, RLHF, or distillation of large language models"
+        },
+        {
+          "name": "GPU infrastructure and distributed serving experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience with GPU clusters, multi‑GPU or multi‑node serving, inference engines"
+        },
+        {
+          "name": "PhD or strong MSc in a relevant field",
+          "type": "EDUCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Formal training in machine learning or a related discipline"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B12",
+      "title": "Staff Data Scientist",
+      "company": "Marshmallow",
+      "location": "London",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.co.uk/jobs/companies/marshmallow/staff-data-scientist-london-484746",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 15,
+      "required_requirements": 15,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 45.79,
+        "technical": 12.5,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 1,
+          "B_MATERIAL_GAP": 8,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.067,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Machine Learning",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Generative AI",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LLM",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Statistical modeling",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Risk decisioning",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Fraud detection",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Stakeholder management",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Communication",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "End-to-end Machine Learning delivery",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Significant commercial experience delivering end-to-end ML solutions from problem framing through production deployment and monitoring"
+        },
+        {
+          "name": "Generative AI production experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Hands‑on experience building and shipping Generative AI/LLM systems in production, including evaluation, safety/quality and workflow integration"
+        },
+        {
+          "name": "Statistical and modelling foundation",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong statistical and modelling background with experience in risk‑based decisioning under uncertainty (e.g., fraud, credit, insurance)"
+        },
+        {
+          "name": "Technical leadership influence",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Proven ability to influence technical direction across Data Science and Engineering, shaping scalable model/service integration patterns"
+        },
+        {
+          "name": "Stakeholder management",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong stakeholder management and communication skills, able to convey trade‑offs and push back constructively with Product and Engineering"
+        },
+        {
+          "name": "Location",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "London, hybrid (3 days in office)"
+        },
+        {
+          "name": "Visa sponsorship",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Employer will sponsor visa for this position"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B13",
+      "title": "Principal Data Scientist",
+      "company": "Marshmallow",
+      "location": "London",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.co.uk/jobs/companies/marshmallow/principal-data-scientist-london-22288",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 17,
+      "required_requirements": 17,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 49.4,
+        "technical": 13.5,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 70.0,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 1,
+          "B_MATERIAL_GAP": 8,
+          "C_COMPETITIVE_DISADVANTAGE": 1,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.059,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Machine Learning",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Generative AI",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LLM systems",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Statistical modelling",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Risk decisioning",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Fraud detection",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Stakeholder management",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Technical leadership",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Production deployment",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Model monitoring",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Machine Learning experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Deliver end‑to‑end ML solutions from problem framing to production deployment and monitoring"
+        },
+        {
+          "name": "Generative AI production experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Hands‑on experience building and shipping Generative AI/LLM systems in production, including evaluation and safety considerations"
+        },
+        {
+          "name": "Statistical modelling",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong statistical and modelling foundation, especially for risk‑based decisioning"
+        },
+        {
+          "name": "Risk decisioning experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience in fraud, credit, insurance or other regulated domains involving risk‑based decisioning under uncertainty"
+        },
+        {
+          "name": "Technical leadership",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Proven ability to influence technical direction across Data Science and Engineering teams"
+        },
+        {
+          "name": "Stakeholder management",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong stakeholder management and communication skills to influence senior product and engineering partners"
+        },
+        {
+          "name": "London hybrid (3 days in office)",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Work location in London with a hybrid schedule requiring three days per week in the office"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B14",
+      "title": "Senior Data Scientist",
+      "company": "Zilch",
+      "location": "Zilch UK",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.co.uk/jobs/companies/zilch/senior-data-scientist-london-40791",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 26,
+      "required_requirements": 12,
+      "preferred_requirements": 14,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 61.04,
+        "technical": 32.61,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 70.0,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 6,
+          "B_MATERIAL_GAP": 5,
+          "E_EVIDENCE_UNKNOWN": 13,
+          "D_TAILORING_GAP": 2
+        },
+        "required_coverage": 0.5,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "NumPy",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Pandas",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Scikit-Learn",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Amazon SageMaker",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Git",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "GitHub Actions",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "DBT",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Looker",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Credit risk modelling",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Collections optimisation",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Fraud detection",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Risk strategy",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Risk model governance",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Model explainability",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Fairness",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Affordability",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Regulatory considerations in financial services",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Decision science",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Automated decisioning systems",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Decision engines",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Neural networks",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Deep learning",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Data Scientist experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 3.0,
+          "description": "3+ years hands‑on experience as a data scientist building and deploying models, preferably in credit risk, collections, fraud, financial services or related decision‑intensive domains"
+        },
+        {
+          "name": "United Kingdom",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Job location"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B15",
+      "title": "Computer Vision Engineer - Tracker",
+      "company": "Harmattan Ai",
+      "location": "Zurich",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.ch/jobs/companies/harmattan-ai/computer-vision-engineer-tracker-zurich-499979",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 12,
+      "required_requirements": 11,
+      "preferred_requirements": 1,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 36.95,
+        "technical": 16.67,
+        "experience": 84.0,
+        "education": 0.0,
+        "location": 20.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [
+          "STEM Degree",
+          "Location"
+        ],
+        "blocker_sources": [
+          "engine._is_hard_location_block -> _score_location",
+          "engine._score_education: required level above recorded level"
+        ],
+        "diagnostic_states": {
+          "B_MATERIAL_GAP": 6,
+          "F_SUPPORTED": 1,
+          "A_HARD_BLOCKER": 2,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.091,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "C++",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Computer Vision",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Sensor Fusion",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Edge Optimization",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Real-time Systems",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Embedded Algorithmic Expertise",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Proven track record in research, development, and productization of Computer Vision and Sensor-Fusion algorithms in hardware-constrained environments"
+        },
+        {
+          "name": "Edge Deployment Optimization Experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience optimizing code for edge deployment on low-compute platforms"
+        },
+        {
+          "name": "Mentorship",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Ability to manage or mentor junior engineers depending on seniority"
+        },
+        {
+          "name": "STEM Degree",
+          "type": "EDUCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Degree in Computer Science, Robotics, Engineering, Mathematics or related field"
+        },
+        {
+          "name": "Location",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Based in Lausanne, Paris, or Zurich"
+        },
+        {
+          "name": "Commitment",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Full dedication to Harmattan AI’s mission, vision, and growth plans"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B16",
+      "title": "Data Scientist - Product Analytics",
+      "company": "ElevenLabs",
+      "location": "Remote",
+      "remote_status": "REMOTE",
+      "source_url": "https://www.arbeitnow.ch/jobs/companies/elevenlabs/remote-data-scientist-product-analytics-364885",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 15,
+      "required_requirements": 6,
+      "preferred_requirements": 9,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 61.38,
+        "technical": 32.2,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 70.0,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 2,
+          "B_MATERIAL_GAP": 2,
+          "E_EVIDENCE_UNKNOWN": 6,
+          "D_TAILORING_GAP": 1
+        },
+        "required_coverage": 0.333,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "A/B testing",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "product analytics",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "activation/retention modelling",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "lifecycle analytics",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "dbt",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "modern data warehouse",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "AI tools",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "AI agents",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Data scientist embedded with product or growth team",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Demonstrated experience as a data scientist embedded with a product or growth team, ideally at a product‑led company"
+        },
+        {
+          "name": "Activation/retention modelling or lifecycle analytics",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Experience with activation / retention modelling or lifecycle analytics at a consumer or prosumer product"
+        },
+        {
+          "name": "dbt or modern data warehouse",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Experience with dbt or a modern warehouse, partnering directly with analytics engineers"
+        },
+        {
+          "name": "AI tools or agents",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Experience using AI tools or agents to speed up analysis or enable self‑serve data access"
+        },
+        {
+          "name": "Remote",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Remote‑first role, location independent"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B17",
+      "title": "AI First Data Engineer",
+      "company": "isolutions",
+      "location": "Zürich",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.ch/jobs/companies/isolutions/ai-first-data-engineer-zurich-402283",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 15,
+      "required_requirements": 15,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 57.54,
+        "technical": 41.88,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 55.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "B_MATERIAL_GAP": 5,
+          "F_SUPPORTED": 3,
+          "C_COMPETITIVE_DISADVANTAGE": 1,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.2,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Databricks",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Microsoft Fabric",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Power BI",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "DAX",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Power Query",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Azure",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Data Engineering with Databricks or Microsoft Fabric",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Practical experience in data engineering using Databricks or Microsoft Fabric"
+        },
+        {
+          "name": "SQL and Python proficiency",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Solid knowledge of SQL and Python programming"
+        },
+        {
+          "name": "Power BI expertise",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience with Power BI, including data modeling, DAX, and Power Query"
+        },
+        {
+          "name": "Customer-facing experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience in direct customer contact and ability to convey technical concepts"
+        },
+        {
+          "name": "AI-first mindset and agent workflow experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Ability to think in AI agents and workflows, experiment with new tools"
+        },
+        {
+          "name": "German-speaking Switzerland",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Willingness to work on‑site with customers in German‑speaking regions of Switzerland"
+        },
+        {
+          "name": "High self‑ownership",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Demonstrated ability to work independently, ask the right questions, and drive tasks to completion"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B18",
+      "title": "Legal AI Engineer (Zurich)",
+      "company": "Legartis",
+      "location": "Zurich",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.ch/jobs/companies/legartis/legal-ai-engineer-zurich-309794",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 21,
+      "required_requirements": 12,
+      "preferred_requirements": 9,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 48.74,
+        "technical": 6.86,
+        "experience": 84.0,
+        "education": 90.0,
+        "location": 55.0,
+        "other": 70.0,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "B_MATERIAL_GAP": 8,
+          "E_EVIDENCE_UNKNOWN": 6,
+          "F_SUPPORTED": 1,
+          "D_TAILORING_GAP": 2
+        },
+        "required_coverage": 0.0,
+        "preferred_coverage": 0.111,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "German",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "English",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LLM fluency",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Legal drafting",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Contract review",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Commercial contracts",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Spec writing",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Acceptance criteria",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Scripting",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Git",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "APIs",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Prompt engineering",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Evaluation frameworks",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Playbook development",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Other EU languages",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Technical track record with LLMs and AI tooling",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Built and shipped agent skills, playbooks, evaluation frameworks; fluent with LLMs, scripting, Git, and APIs"
+        },
+        {
+          "name": "Legal experience with German commercial contracts",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Hands‑on drafting, reviewing, and negotiating German commercial contracts; able to converse with General Counsel as a peer"
+        },
+        {
+          "name": "Commercial/entrepreneurial experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Carried commercial responsibility for own product/client base or supported enterprise sales teams in demos, pilots, and expert calls"
+        },
+        {
+          "name": "Customer‑facing / sales engineering experience",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Participate in sales calls, demos, and pilots; translate customer needs into technical specifications"
+        },
+        {
+          "name": "Law degree with commercial‑contracts focus",
+          "type": "EDUCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "German‑qualified (Bachelor, Master, or Staatsexamen) or equivalent qualification from another jurisdiction"
+        },
+        {
+          "name": "European location with flexibility for hybrid work",
+          "type": "LOCATION",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Offices in Berlin, Leipzig, and Zurich; flexible hybrid setup"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B19",
+      "title": "AI Architect / AI engineering lead",
+      "company": "Jobgether",
+      "location": "Switzerland",
+      "remote_status": "ONSITE",
+      "source_url": "https://www.arbeitnow.ch/jobs/companies/jobgether/ai-architect-ai-engineering-lead-switzerland-226484",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 34,
+      "required_requirements": 31,
+      "preferred_requirements": 3,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 36.29,
+        "technical": 0.0,
+        "experience": 80.0,
+        "education": 70.0,
+        "location": 20.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [
+          "Location"
+        ],
+        "blocker_sources": [
+          "engine._is_hard_location_block -> _score_location"
+        ],
+        "diagnostic_states": {
+          "B_MATERIAL_GAP": 19,
+          "E_EVIDENCE_UNKNOWN": 3,
+          "A_HARD_BLOCKER": 1
+        },
+        "required_coverage": 0.0,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Java",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "J2EE",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Spring Boot",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "React",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "TypeScript",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Azure",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "CI/CD",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "DevOps",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LLM",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "RAG",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Agentic AI",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Multi-agent AI",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LangGraph",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LangChain",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Claude",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Claude Code",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "GitHub Copilot",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Healthcare industry experience",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Claims adjudication experience",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Software engineering experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 10.0,
+          "description": "10+ years of experience in software engineering and/or DevOps"
+        },
+        {
+          "name": "Production‑grade LLM or agentic AI solutions",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Hands‑on experience designing and building production‑grade LLM or agentic AI solutions"
+        },
+        {
+          "name": "Java/J2EE and Spring Boot",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong Java/J2EE and Spring Boot development experience"
+        },
+        {
+          "name": "React and TypeScript",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience with React and TypeScript"
+        },
+        {
+          "name": "Agentic AI and multi‑agent AI systems",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong understanding of agentic AI and multi‑agent AI systems"
+        },
+        {
+          "name": "LLM and RAG expertise",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Practical expertise with LLMs and Retrieval‑Augmented Generation (RAG)"
+        },
+        {
+          "name": "LangGraph and LangChain",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience with LangGraph and LangChain"
+        },
+        {
+          "name": "Claude and Claude Code",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience working with Claude and Claude Code"
+        },
+        {
+          "name": "GitHub Copilot",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Familiarity with GitHub Copilot (GHCP) and AI‑assisted software development"
+        },
+        {
+          "name": "Azure cloud experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong Azure experience and understanding of cloud‑based AI architectures"
+        },
+        {
+          "name": "CI/CD and DevOps",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Solid CI/CD and DevOps experience"
+        },
+        {
+          "name": "Architectural thinking and leadership",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong architectural thinking, technical leadership, problem‑solving, and communication skills"
+        },
+        {
+          "name": "Healthcare and claims adjudication experience",
+          "type": "EXPERIENCE",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": "Healthcare and/or claims adjudication experience"
+        },
+        {
+          "name": "Switzerland",
+          "type": "LOCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Based in Switzerland (remote contract)"
+        },
+        {
+          "name": "Remote work",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Fully remote contract position"
+        }
+      ],
+      "source": "arbeitnow",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B20",
+      "title": "Senior AI Engineer, Voice Platform",
+      "company": "ClickUp",
+      "location": "Remote",
+      "remote_status": "REMOTE",
+      "source_url": "https://jobicy.com/jobs/152648-senior-ai-engineer-voice-platform",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 1,
+      "required_requirements": 0,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "APPLY_WITH_TAILORING",
+        "overall_score": 76.96,
+        "technical": 70.0,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 73.1,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "E_EVIDENCE_UNKNOWN": 2
+        },
+        "required_coverage": null,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Visa sponsorship",
+          "type": "OTHER",
+          "importance": "UNKNOWN",
+          "years_required": null,
+          "description": "Sponsorship for engineering and product roles is not guaranteed and based on business needs"
+        }
+      ],
+      "source": "jobicy",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B21",
+      "title": "Staff AI Engineer - AI Product",
+      "company": "ClickUp",
+      "location": "Remote",
+      "remote_status": "REMOTE",
+      "source_url": "https://jobicy.com/jobs/152640-staff-ai-engineer-ai-product",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 24,
+      "required_requirements": 23,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 52.62,
+        "technical": 8.33,
+        "experience": 100.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 4,
+          "B_MATERIAL_GAP": 12,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.174,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "JavaScript",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "TypeScript",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "PostgreSQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "MySQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Elasticsearch",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "AI",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Orchestration frameworks",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Evaluation frameworks",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Observability",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Logging",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Backend/full‑stack engineering experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 5.0,
+          "description": "5+ years of backend and/or full‑stack engineering experience"
+        },
+        {
+          "name": "Database experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 5.0,
+          "description": "5+ years with PostgreSQL, MySQL, or related databases"
+        },
+        {
+          "name": "Elasticsearch experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 5.0,
+          "description": "5+ years with Elasticsearch or related technologies"
+        },
+        {
+          "name": "AI‑powered product delivery",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Proven experience building and shipping AI‑powered features or products in production"
+        },
+        {
+          "name": "LLM expertise",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Deep understanding of large language models and AI model integration strategies"
+        },
+        {
+          "name": "Orchestration framework experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience working with orchestration frameworks to integrate multiple AI models"
+        },
+        {
+          "name": "Evaluation framework experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience developing evaluation frameworks and metrics for AI features"
+        },
+        {
+          "name": "Observability and logging",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience setting up production‑ready observability and logging"
+        },
+        {
+          "name": "Cross‑functional collaboration",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Demonstrated ability to collaborate across product, design, and engineering teams"
+        },
+        {
+          "name": "Communication and mentorship",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Excellent communication and mentorship skills with a track record of influencing product direction"
+        },
+        {
+          "name": "Remote work",
+          "type": "LOCATION",
+          "importance": "UNKNOWN",
+          "years_required": null,
+          "description": "Position is remote (LI-REMOTE)"
+        },
+        {
+          "name": "Work authorization",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Visa sponsorship is not guaranteed; candidates must have appropriate work authorization"
+        }
+      ],
+      "source": "jobicy",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B23",
+      "title": "Senior Data Scientist",
+      "company": "Clover Health",
+      "location": "Remote",
+      "remote_status": "REMOTE",
+      "source_url": "https://jobicy.com/jobs/142519-senior-data-scientist-3",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 11,
+      "required_requirements": 11,
+      "preferred_requirements": 0,
+      "system": {
+        "recommendation": "SKIP",
+        "overall_score": 73.75,
+        "technical": 80.0,
+        "experience": 100.0,
+        "education": 0.0,
+        "location": 100.0,
+        "other": 45.0,
+        "confidence": 0.95,
+        "blockers": [
+          "Master's degree in quantitative field",
+          "PhD in quantitative field"
+        ],
+        "blocker_sources": [
+          "engine._score_education: required level above recorded level"
+        ],
+        "diagnostic_states": {
+          "F_SUPPORTED": 6,
+          "B_MATERIAL_GAP": 3,
+          "A_HARD_BLOCKER": 2,
+          "E_EVIDENCE_UNKNOWN": 1
+        },
+        "required_coverage": 0.545,
+        "preferred_coverage": null,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "SQL",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Machine Learning",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Statistics",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Probability",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Master's degree with 3‑4 years experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 3.0,
+          "description": "Advanced degree (Master's) plus 3‑4 years of relevant experience"
+        },
+        {
+          "name": "PhD with 2+ years experience",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": 2.0,
+          "description": "Doctorate degree plus at least 2 years of relevant experience"
+        },
+        {
+          "name": "Master's degree in quantitative field",
+          "type": "EDUCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Advanced degree (Master's) in a quantitative discipline such as statistics, computer science, engineering, etc."
+        },
+        {
+          "name": "PhD in quantitative field",
+          "type": "EDUCATION",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Doctorate degree in a quantitative discipline"
+        },
+        {
+          "name": "E‑Verify participation",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Company is an E‑Verify employer"
+        },
+        {
+          "name": "Fair Chance Ordinance compliance",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Considers qualified applicants with arrest and conviction records per San Francisco Fair Chance Ordinance"
+        }
+      ],
+      "source": "jobicy",
+      "frozen_regression_case": false
+    },
+    {
+      "job_id": "VJ-B28",
+      "title": "Senior ML Engineer (Token Factory)",
+      "company": "Nebius",
+      "location": "Remote",
+      "remote_status": "REMOTE",
+      "source_url": "https://jobicy.com/jobs/148667-senior-ml-engineer-token-factory",
+      "human_decision": null,
+      "human_reason": null,
+      "material_strengths": [],
+      "material_concerns": [],
+      "hard_blocker": false,
+      "requirements_extracted": 23,
+      "required_requirements": 13,
+      "preferred_requirements": 10,
+      "system": {
+        "recommendation": "STRETCH",
+        "overall_score": 51.76,
+        "technical": 16.19,
+        "experience": 84.0,
+        "education": 70.0,
+        "location": 100.0,
+        "other": 48.57,
+        "confidence": 0.95,
+        "blockers": [],
+        "blocker_sources": [],
+        "diagnostic_states": {
+          "F_SUPPORTED": 1,
+          "B_MATERIAL_GAP": 4,
+          "C_COMPETITIVE_DISADVANTAGE": 2,
+          "E_EVIDENCE_UNKNOWN": 11
+        },
+        "required_coverage": 0.077,
+        "preferred_coverage": 0.0,
+        "audit_verified": true
+      },
+      "requirements": [
+        {
+          "name": "Python",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "GPU profiling (Nsight, PyTorch profiler)",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Understanding of GPU memory hierarchy",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "LLM concepts (MHA, RoPE, KV-cache, Flash Attention, quantisation)",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Deep learning frameworks (e.g., PyTorch)",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Software engineering (CI/CD, version control, unit testing)",
+          "type": "SKILL",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "vLLM",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "SGLang",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "TensorRT-LLM",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Triton",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Cute",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "CUTLASS",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "CUDA",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Experience building large distributed systems",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Open‑source contributions",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Excellent English communication",
+          "type": "SKILL",
+          "importance": "PREFERRED",
+          "years_required": null,
+          "description": ""
+        },
+        {
+          "name": "Machine learning theory and transformer architecture",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Profound understanding of theoretical foundations of ML and transformer models"
+        },
+        {
+          "name": "GPU workload profiling",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Experience using Nsight, PyTorch profiler or similar tools"
+        },
+        {
+          "name": "Software engineering in Python",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong software engineering skills, primarily using Python"
+        },
+        {
+          "name": "Deep learning frameworks",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Deep experience with modern frameworks such as PyTorch"
+        },
+        {
+          "name": "CI/CD and version control",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Proficiency with contemporary software engineering approaches including CI/CD, version control, unit testing"
+        },
+        {
+          "name": "Communication and leadership",
+          "type": "EXPERIENCE",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Strong communication and leadership abilities"
+        },
+        {
+          "name": "Work authorization",
+          "type": "OTHER",
+          "importance": "REQUIRED",
+          "years_required": null,
+          "description": "Applicants must be authorized to work in the country they apply and provide proof of employment eligibility"
+        }
+      ],
+      "source": "jobicy",
+      "frozen_regression_case": false
+    }
+  ]
+}

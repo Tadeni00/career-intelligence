@@ -1,0 +1,18 @@
+Dear Hiring Team,
+
+I am writing to express my interest in the Data Analyst position at SEAhub Asia. With six years of hands‑on experience in data collection, cleaning, validation, and reporting, I have a proven track record of turning raw data into clear, actionable insights—exactly the focus of your role.
+
+In my recent position as a Data Scientist & Machine Learning Engineer Intern at Data Glacier, I built automated pipelines that ensured data quality across multiple dashboards and analytical reports. Using Python, Pandas, and SQL, I transformed and validated complex datasets, then visualized key performance metrics in Power BI dashboards that supported stakeholder decision‑making. This experience aligns directly with your need for data validation, dashboard maintenance, and clear communication of insights.
+
+At 5Seas Consults, I managed field‑collected recruitment data from across Nigeria. I cleaned and consolidated the data in Excel and Power BI, identified geographic trends, and delivered concise reports that guided strategic outreach. My role required frequent interaction with cross‑functional teams, responding to data requests, and documenting the analytical workflow to ensure reproducibility—skills that match the collaborative and documentation responsibilities outlined in the posting.
+
+My background also includes mentoring learners through structured data science projects, where I emphasized reproducible analysis, proper documentation, and effective presentation of findings. This experience has sharpened my ability to convey technical results to both technical and non‑technical audiences, a core requirement for the position.
+
+I am eager to bring my detail‑oriented approach, strong foundation in SQL, Excel, Power BI, and Python, and proactive mindset to SEAhub Asia’s Data Analytics team. I look forward to contributing to the continued growth and innovation of your organization.
+
+Thank you for considering my application. I am excited about the opportunity to be part of a team that builds what’s next.
+
+BRIGHTEST #RMTM3LjI1NS4xNzcuMTU3
+
+Sincerely,
+TOMISIN ADENIYI

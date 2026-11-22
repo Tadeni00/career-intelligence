@@ -1,0 +1,254 @@
+# V3 Phase 1 — Diagnostic Audit of the Matching Engine
+
+Source of truth: packages/matching/matching/{engine,config,normalize}.py
+Baseline weights and thresholds are UNCHANGED by this phase.
+
+## Frozen baseline configuration
+
+  technical weight    : 0.4
+  experience weight   : 0.25
+  education weight    : 0.1
+  location weight     : 0.1
+  other weight        : 0.15
+  APPLY threshold     : 80.0
+  APPLY_WITH_TAILORING: 65.0
+  STRETCH threshold   : 50.0
+  partial skill credit: 0.7
+  unknown-req score   : 70.0
+
+## Importance weights (engine._importance_weight)
+  REQUIRED=1.00  PREFERRED=0.45  SOFT_SIGNAL/INFORMATIONAL=0.05  UNKNOWN=0.65
+
+===== VJ-01  Data Scientist @ Monzo
+  human baseline        : MAYBE
+  stored (historical)   : SKIP score=80.5
+  RECOMPUTED current    : SKIP score=80.5
+  audit verified        : True (reconstructed 80.5000)
+  confidence            : 0.95
+
+  component decomposition:
+    dimension      score   weight  contribution
+    technical      100.0     0.40         40.00
+    experience      84.0     0.25         21.00
+    education       70.0     0.10          7.00
+    location        20.0     0.10          2.00
+    other           70.0     0.15         10.50
+    TOTAL                                 80.50
+
+  diagnostic states: {'F_SUPPORTED': 2, 'A_HARD_BLOCKER': 1, 'E_EVIDENCE_UNKNOWN': 1}
+
+  --- technical requirements
+      F_SUPPORTED                SQL                                          imp=REQUIRED    contrib=1.000 pen=0.000
+          evidence: SQL
+      F_SUPPORTED                Python                                       imp=PREFERRED   contrib=0.450 pen=0.000
+          evidence: Python
+  --- experience requirements
+      [fixed] 80% title similarity, 20% flat tenure credit
+  --- education requirements
+      [fixed] no education requirements extracted -> flat 70
+  --- location requirements
+      [fixed] location score forced to <=20 by hard block: True
+      [fixed] engine score=20
+      A_HARD_BLOCKER             Location                                     imp=REQUIRED    contrib=0.000 pen=80.000 BLOCKER
+          evidence_state: absent
+          note: Job is in 'Cardiff, London or Remote (UK)'; you are in 'Lagos, Nigeria'.
+          BLOCKER SOURCE: engine._is_hard_location_block -> _score_location
+  --- other requirements
+      [fixed] no salary on either side -> 70 @ 0.4
+      E_EVIDENCE_UNKNOWN         Salary                                       imp=UNKNOWN     contrib=70.000 pen=0.000
+          evidence_state: not_assessable
+          note: salary not stated
+
+  requirements extracted from the posting:
+      SKILL      REQUIRED   SQL
+      SKILL      PREFERRED  Python
+      EXPERIENCE REQUIRED   A/B experiment experience
+      LOCATION   REQUIRED   UK location
+
+===== VJ-02  Machine Learning Engineer II (Underwriting ML) @ Affirm
+  human baseline        : NO
+  stored (historical)   : SKIP score=49.5
+  RECOMPUTED current    : SKIP score=49.5
+  audit verified        : True (reconstructed 49.5463)
+  confidence            : 0.95
+
+  component decomposition:
+    dimension      score   weight  contribution
+    technical       14.6     0.40          5.84
+    experience     100.0     0.25         25.00
+    education       62.1     0.10          6.21
+    location        20.0     0.10          2.00
+    other           70.0     0.15         10.50
+    TOTAL                                 49.55
+
+  diagnostic states: {'F_SUPPORTED': 2, 'E_EVIDENCE_UNKNOWN': 15, 'D_TAILORING_GAP': 1, 'A_HARD_BLOCKER': 1}
+
+  --- technical requirements
+      F_SUPPORTED                Python                                       imp=REQUIRED    contrib=1.000 pen=0.000
+          evidence: Python
+      E_EVIDENCE_UNKNOWN         LightGBM                                     imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         XGBoost                                      imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         CatBoost                                     imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         gradient‑boosted decision trees              imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         PyTorch                                      imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         Spark                                        imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         Ray                                          imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         Dask                                         imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         Kubeflow                                     imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         Airflow                                      imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         MLflow                                       imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         Claude Code                                  imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+      E_EVIDENCE_UNKNOWN         Cursor                                       imp=PREFERRED   contrib=0.000 pen=0.450
+          evidence_state: absent
+          note: not confirmed; absence of evidence is not disproof
+  --- experience requirements
+      [fixed] 50% title similarity, 50% years ratio
+      F_SUPPORTED                Machine Learning Engineer experience         imp=REQUIRED    contrib=100.000 pen=0.000
+          evidence: 6 years recorded
+          note: 6 years vs 2 requested
+  --- education requirements
+      E_EVIDENCE_UNKNOWN         Bachelor's degree                            imp=REQUIRED    contrib=0.900 pen=0.100
+          evidence: max level 3
+          evidence_state: not_assessable
+          note: requirement too vague to verify
+      D_TAILORING_GAP            PhD                                          imp=PREFERRED   contrib=0.279 pen=0.171
+          evidence: max level 3
+          evidence_state: absent
+          note: preferred qualification not met
+  --- location requirements
+      [fixed] location score forced to <=20 by hard block: True
+      [fixed] engine score=20
+      A_HARD_BLOCKER             Location                                     imp=REQUIRED    contrib=0.000 pen=80.000 BLOCKER
+          evidence_state: absent
+          note: Job is in 'Remote US'; you are in 'Lagos, Nigeria'.
+          BLOCKER SOURCE: engine._is_hard_location_block -> _score_location
+  --- other requirements
+      [fixed] no salary on either side -> 70 @ 0.4
+      E_EVIDENCE_UNKNOWN         Salary                                       imp=UNKNOWN     contrib=70.000 pen=0.000
+          evidence_state: not_assessable
+          note: salary not stated
+
+  requirements extracted from the posting:
+      SKILL      REQUIRED   Python
+      SKILL      PREFERRED  LightGBM
+      SKILL      PREFERRED  XGBoost
+      SKILL      PREFERRED  CatBoost
+      SKILL      PREFERRED  gradient‑boosted decision trees
+      SKILL      PREFERRED  PyTorch
+      SKILL      PREFERRED  Spark
+      SKILL      PREFERRED  Ray
+      SKILL      PREFERRED  Dask
+      SKILL      PREFERRED  Kubeflow
+      SKILL      PREFERRED  Airflow
+      SKILL      PREFERRED  MLflow
+      SKILL      PREFERRED  Claude Code
+      SKILL      PREFERRED  Cursor
+      EXPERIENCE REQUIRED   Machine Learning Engineer experience
+      EDUCATION  REQUIRED   Bachelor's degree
+      EDUCATION  PREFERRED  PhD
+      LOCATION   REQUIRED   Remote (US)
+
+===== VJ-03  Data Analyst @ SEAhub Asia
+  human baseline        : YES
+  stored (historical)   : APPLY_WITH_TAILORING score=74.9
+  RECOMPUTED current    : APPLY_WITH_TAILORING score=74.9
+  audit verified        : True (reconstructed 74.9203)
+  confidence            : 0.95
+
+  component decomposition:
+    dimension      score   weight  contribution
+    technical       77.5     0.40         31.01
+    experience     100.0     0.25         25.00
+    education       70.0     0.10          7.00
+    location        55.0     0.10          5.50
+    other           42.7     0.15          6.41
+    TOTAL                                 74.92
+
+  diagnostic states: {'F_SUPPORTED': 5, 'B_MATERIAL_GAP': 5, 'E_EVIDENCE_UNKNOWN': 1}
+
+  --- technical requirements
+      F_SUPPORTED                SQL                                          imp=REQUIRED    contrib=1.000 pen=0.000
+          evidence: SQL
+      F_SUPPORTED                Excel                                        imp=REQUIRED    contrib=1.000 pen=0.000
+          evidence: Microsoft Excel
+      F_SUPPORTED                Power BI                                     imp=REQUIRED    contrib=1.000 pen=0.000
+          evidence: Power BI
+      B_MATERIAL_GAP             Tableau                                      imp=REQUIRED    contrib=0.000 pen=1.000
+          evidence_state: absent
+          note: required by the job, not present on the confirmed profile
+      F_SUPPORTED                Python                                       imp=PREFERRED   contrib=0.450 pen=0.000
+          evidence: Python
+  --- experience requirements
+      [fixed] 50% title similarity, 50% years ratio
+      F_SUPPORTED                Data analysis experience                     imp=REQUIRED    contrib=100.000 pen=0.000
+          evidence: 6 years recorded
+          note: 6 years vs 0 requested
+  --- education requirements
+      [fixed] no education requirements extracted -> flat 70
+  --- location requirements
+      [fixed] location score forced to <=20 by hard block: False
+      [fixed] engine score=55
+  --- other requirements
+      [fixed] no salary on either side -> 70 @ 0.4
+      [fixed] mixed other requirements
+      E_EVIDENCE_UNKNOWN         Salary                                       imp=UNKNOWN     contrib=70.000 pen=0.000
+          evidence_state: not_assessable
+          note: salary not stated
+      B_MATERIAL_GAP             Strong communication skills                  imp=REQUIRED    contrib=40.000 pen=60.000
+          evidence_state: not_assessable
+          note: fixed 40/100: profile cannot verify this
+      B_MATERIAL_GAP             Detail-oriented                              imp=REQUIRED    contrib=40.000 pen=60.000
+          evidence_state: not_assessable
+          note: fixed 40/100: profile cannot verify this
+      B_MATERIAL_GAP             Proactive mindset                            imp=REQUIRED    contrib=40.000 pen=60.000
+          evidence_state: not_assessable
+          note: fixed 40/100: profile cannot verify this
+      B_MATERIAL_GAP             Well-organized                               imp=REQUIRED    contrib=40.000 pen=60.000
+          evidence_state: not_assessable
+          note: fixed 40/100: profile cannot verify this
+
+  requirements extracted from the posting:
+      SKILL      REQUIRED   SQL
+      SKILL      REQUIRED   Excel
+      SKILL      REQUIRED   Power BI
+      SKILL      REQUIRED   Tableau
+      SKILL      PREFERRED  Python
+      EXPERIENCE REQUIRED   Data analysis experience
+      OTHER      REQUIRED   Strong communication skills
+      OTHER      REQUIRED   Detail-oriented
+      OTHER      REQUIRED   Proactive mindset
+      OTHER      REQUIRED   Well-organized
+
+======================================================================
+## Cross-job blocker provenance
+Blockers in this engine originate from exactly two code paths:
+  1. engine._score_education — REQUIRED education requirement whose degree
+     level exceeds the candidate's highest recorded level.
+  2. engine._score_location  — a REQUIRED location requirement containing
+     must/required/based in/relocat, when candidate and job locations differ.
+_score_technical and _score_other NEVER emit blockers: a missing required
+skill is recorded as a gap only.

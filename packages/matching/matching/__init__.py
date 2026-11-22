@@ -1,0 +1,71 @@
+"""Explainable, deterministic matching for the Career Intelligence Platform."""
+
+from .config import (
+    DEFAULT_SETTINGS,
+    DEFAULT_SKILL_ALIASES,
+    MatchSettings,
+    MatchWeights,
+    RecommendationPolicy,
+)
+from .diagnostics import (
+    DimensionAudit,
+    MatchAudit,
+    RequirementAudit,
+    RequirementState,
+    audit_match,
+    state_counts,
+)
+from .engine import MatchingEngine, match_candidate_to_job
+from .types import (
+    EDUCATION,
+    EXPERIENCE,
+    LOCATION,
+    OTHER,
+    PREFERRED,
+    REQUIRED,
+    SKILL,
+    UNKNOWN_IMPORTANCE,
+    CandidateEducation,
+    CandidateExperience,
+    CandidateProfile,
+    CandidateSkill,
+    DimensionScore,
+    JobProfile,
+    MatchItem,
+    MatchOutcome,
+    Requirement,
+)
+
+__all__ = [
+    "DEFAULT_SETTINGS",
+    "DEFAULT_SKILL_ALIASES",
+    "MatchSettings",
+    "MatchWeights",
+    "RecommendationPolicy",
+    "MatchingEngine",
+    "match_candidate_to_job",
+    "CandidateProfile",
+    "CandidateSkill",
+    "CandidateExperience",
+    "CandidateEducation",
+    "JobProfile",
+    "Requirement",
+    "MatchOutcome",
+    "MatchItem",
+    "DimensionScore",
+    "SKILL",
+    "EXPERIENCE",
+    "EDUCATION",
+    "LOCATION",
+    "OTHER",
+    "REQUIRED",
+    "PREFERRED",
+    "UNKNOWN_IMPORTANCE",
+    # V3 diagnostics (explanatory only; no effect on scoring)
+    "audit_match",
+    "state_counts",
+    "DimensionAudit",
+    "MatchAudit",
+    "RequirementAudit",
+    "RequirementState",
+]

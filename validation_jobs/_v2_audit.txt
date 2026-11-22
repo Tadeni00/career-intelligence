@@ -1,0 +1,28 @@
+# V2 human audit
+
+===== Data Scientist @ Monzo  (SKIP)
+  summary words        : 31
+  strengths/gaps       : 2/0
+  blockers/restrictions: 0/0
+  actions/review notes : 2/2
+  evidence grounding   : OK
+
+===== Machine Learning Engineer II (Underwriting ML) @ Affirm  (SKIP)
+  summary words        : 35
+  strengths/gaps       : 2/1
+  blockers/restrictions: 0/1
+  actions/review notes : 2/2
+  evidence grounding   : OK
+
+===== Data Analyst @ SEAhub Asia  (APPLY_WITH_TAILORING)
+  summary words        : 24
+  strengths/gaps       : 4/5
+  blockers/restrictions: 0/5
+  actions/review notes : 7/0
+  evidence grounding   : OK
+
+================ summary
+strategies audited: 3
+findings: 0
+
+HUMAN AUDIT: PASS

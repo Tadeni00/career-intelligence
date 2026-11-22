@@ -1,0 +1,469 @@
+{
+  "version": "3.3b",
+  "experiment": "v3.3b_frozen_reproducibility_execution",
+  "run_metadata": {
+    "experiment": "v3.3_deterministic_extraction",
+    "contract_version": "v3.3",
+    "provider": "openai",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.1,
+    "seed": null,
+    "seed_used": false,
+    "schema_version": "ExtractedJobRequirements@2",
+    "system_prompt_sha256": "43d20b8be806e7ba",
+    "schema_sha256": "02352f634679b0e5",
+    "profile_sha256": "a88420034c38a12d",
+    "runs_per_job": 3,
+    "api_key_recorded": false,
+    "note": "API key rotation is an operational credential change, not an experimental configuration difference."
+  },
+  "implementation_identifier": "dcc4f506965d57e99bf0bb54bdd1c429",
+  "harness_sha256": "c60a7aa4f701e431b1ca8d140605e3a7601b054f2949c9a11a2b9ca3261c0bc5",
+  "frozen_artifact_sha256": {
+    "matching_benchmark_v3.json": "4199f5d386e1fb8b9be1a6c053c0c9cc6f2e6e8afeadc31112e650c34f37345f",
+    "human_labels_v3.json": "292841efc8b16f5d1569cf015bffba9ecfd2ef80d4b98387e7078f9d53fe0f12",
+    "blind_review_pack_v3.json": "d70aace7ae28b52196604464dceff9313a325fe82e24292b539e384baebdaf9a"
+  },
+  "execution": {
+    "planned": 78,
+    "attempted": 78,
+    "successful": 4,
+    "failed": 74,
+    "failure_code": {
+      "PROVIDER_ERROR": 74
+    },
+    "failure_reason": "Groq tokens-per-day quota exhaustion (429). Limit 200000, used 197363 at first denial.",
+    "tokens_per_call_observed": 4276,
+    "tokens_required_for_78": 333528,
+    "daily_budget": 200000,
+    "budget_multiples_required": 1.67
+  },
+  "stability": {
+    "jobs_total": 26,
+    "jobs_with_3_successful_runs": 1,
+    "structurally_stable_measurable": 0,
+    "structurally_unstable_measurable": 26,
+    "decision_stable_measurable": 1,
+    "structural_gate_required": 26,
+    "structural_gate_passed": false,
+    "decision_gate_required": 26,
+    "decision_gate_passed": false
+  },
+  "requirement_counts": {
+    "mean": 16.5,
+    "median": 17,
+    "min": 15,
+    "max": 18,
+    "mean_within_job_spread": 2.0
+  },
+  "difference_counts": {
+    "ADDED": 9,
+    "REMOVED": 9,
+    "MODIFIED": 3,
+    "RECLASSIFIED": 0,
+    "REORDERED_ONLY": 18
+  },
+  "importance_drift": [],
+  "importance_drift_count": 0,
+  "source_evidence": {
+    "requirements_with_valid_evidence": 46,
+    "requirements_with_invalid_evidence": 0,
+    "requirements_stripped_due_to_invalid_evidence": 0
+  },
+  "jobs": {
+    "VJ-B01": {
+      "successful_runs": 3,
+      "structurally_stable": false,
+      "decision_stable": true,
+      "canonical_counts": [
+        17,
+        16,
+        18
+      ],
+      "raw_counts": [
+        17,
+        16,
+        18
+      ],
+      "scores": [
+        56.73,
+        62.49,
+        56.73
+      ],
+      "recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "differences": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "added": [
+            "good self-presentation for client calls",
+            "pinecone",
+            "remote",
+            "strong technical skills: ability to create projects from scratch and deep understanding of application architecture",
+            "vector databases",
+            "weaviate"
+          ],
+          "removed": [
+            "good self-presentation",
+            "langchain experience",
+            "large language model (llm) experience",
+            "rag or openai experience",
+            "remote work",
+            "strong technical skills and architecture understanding",
+            "vector databases (pinecone, weaviate)"
+          ],
+          "modified": [
+            {
+              "name": "langchain",
+              "from": null,
+              "to": 2.0
+            },
+            {
+              "name": "large language models (llms) or vllms",
+              "from": null,
+              "to": 2.0
+            },
+            {
+              "name": "rag or openai",
+              "from": null,
+              "to": 2.0
+            }
+          ],
+          "reclassified": [],
+          "reordered_only": [
+            "good self-presentation",
+            "good self-presentation for client calls",
+            "langchain experience",
+            "large language model (llm) experience",
+            "pinecone",
+            "rag or openai experience",
+            "remote",
+            "remote work",
+            "strong technical skills and architecture understanding",
+            "strong technical skills: ability to create projects from scratch and deep understanding of application architecture",
+            "vector databases",
+            "vector databases (pinecone, weaviate)",
+            "weaviate"
+          ]
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "added": [
+            "large language models (llms) or vllms experience",
+            "strong technical skills",
+            "vector databases experience"
+          ],
+          "removed": [
+            "large language model (llm) experience",
+            "strong technical skills and architecture understanding"
+          ],
+          "modified": [],
+          "reclassified": [],
+          "reordered_only": [
+            "large language model (llm) experience",
+            "large language models (llms) or vllms experience",
+            "strong technical skills",
+            "strong technical skills and architecture understanding",
+            "vector databases experience"
+          ]
+        }
+      ]
+    },
+    "VJ-B02": {
+      "successful_runs": 1,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [
+        15
+      ],
+      "raw_counts": [
+        15
+      ],
+      "scores": [
+        60.04
+      ],
+      "recommendations": [
+        "STRETCH"
+      ],
+      "blocker_counts": [
+        0
+      ],
+      "differences": []
+    },
+    "VJ-B03": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B04": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B05": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B06": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B07": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B08": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B09": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B10": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B11": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B12": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B13": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B14": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B15": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B16": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B17": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B18": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B19": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B20": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B21": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B22": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B23": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B24": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B25": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    },
+    "VJ-B26": {
+      "successful_runs": 0,
+      "structurally_stable": false,
+      "decision_stable": false,
+      "canonical_counts": [],
+      "raw_counts": [],
+      "scores": [],
+      "recommendations": [],
+      "blocker_counts": [],
+      "differences": []
+    }
+  },
+  "disposition": "V3.3b INCOMPLETE - EXPERIMENT NOT COMPLETED"
+}

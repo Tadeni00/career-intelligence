@@ -1,0 +1,18 @@
+Dear Hiring Team,
+
+I am writing to express my interest in the Data Scientist position at Monzo. With six years of experience in quantitative analysis, statistical modelling, and machine‑learning engineering, I have repeatedly turned complex data into clear, actionable insights that drive product and business decisions.
+
+In my recent role as a Data Scientist & Machine Learning Engineer Intern at Data Glacier, I cleaned, transformed, and engineered large datasets to support classification and regression projects. I built automated pipelines that ensured repeatable data preparation and validation, and I delivered interactive Power BI dashboards and analytical reports that enabled stakeholders to monitor performance and make informed choices. My work relied heavily on Python, Pandas, NumPy, and SQL—tools that align directly with Monzo’s technical stack.
+
+At Youverify, I contributed to an AI‑assisted information‑extraction pipeline for regulatory compliance investigations. This required integrating data from multiple sources, applying deterministic validation, and documenting the process to guarantee reproducibility. Collaborating with engineers and product owners sharpened my ability to translate technical requirements into reliable analytical solutions, a skill that will be valuable when liaising with Monzo’s engineering teams to capture the right data for product insights.
+
+My experience as a Marketing Executive at 5Seas Consults further demonstrates my capacity to turn raw field data into strategic recommendations. I consolidated recruitment data from across Nigeria, performed exploratory and descriptive analyses using Excel, Power BI, and Python, and presented findings to non‑technical audiences. The role also involved training colleagues in data‑analysis tools, reinforcing my commitment to mentorship and cross‑functional collaboration.
+
+Through mentoring positions with DSN/WESOnline and tutoring at Unique Success Academy, I have guided learners through end‑to‑end data‑science projects, emphasizing rigorous, reproducible practices and clear technical documentation. These experiences have honed my ability to communicate complex statistical concepts to diverse audiences—a core requirement for enabling product teams to measure what matters.
+
+I am particularly drawn to Monzo’s emphasis on data‑driven decision making and its collaborative squad model. My background in building data pipelines, developing visual analytics, and partnering with product and engineering stakeholders equips me to contribute immediately to product strategy, user‑engagement analysis, and the development of robust measurement frameworks. While I have not yet led large‑scale A/B experiments, I am eager to apply my quantitative expertise to design and evaluate such tests within Monzo’s fast‑moving environment.
+
+Thank you for considering my application. I look forward to the opportunity to discuss how my analytical skills and collaborative mindset can support Monzo’s mission to make money work for everyone.
+
+Sincerely,  
+TOMISIN ADENYI

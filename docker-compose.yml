@@ -1,0 +1,86 @@
+# Career Intelligence full stack.
+#
+# Ports deliberately avoid the thinkbase-* stack (5173/8000/5432/6379):
+#   postgres  -> 5433 (host) -> 5432
+#   api       -> 8011
+#   console   -> 4173 (the only non-5173 origin the API's CORS allows)
+#
+# The api service hard-sets AI_PROVIDER=offline and does NOT read .env, so
+# live provider keys on the host can never leak into the container.
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: career-postgres
+    environment:
+      POSTGRES_USER: career
+      POSTGRES_PASSWORD: career
+      POSTGRES_DB: career
+    ports:
+      # 5433 by default so this does not clash with an existing local postgres.
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - career_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U career -d career"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    container_name: career-api
+    environment:
+      # Inside the compose network postgres is reachable as `postgres:5432`.
+      DATABASE_URL: postgresql+psycopg://career:career@postgres:5432/career
+      # Never remove: the host .env holds live keys; the container must not
+      # use them.
+      AI_PROVIDER: offline
+      # Interpolated from the shell or the repo .env at compose time; only
+      # this key enters the container, never the AI keys. Empty by default,
+      # in which case /jobs/discover stays unavailable (502) by design.
+      JSEARCH_API_KEY: ${JSEARCH_API_KEY:-}
+      STORAGE_DIR: /srv/storage
+      ENVIRONMENT: development
+      API_PREFIX: /api/v1
+    ports:
+      - "8011:8011"
+    volumes:
+      - career_storage:/srv/storage
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8011/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  console:
+    build:
+      context: .
+      dockerfile: apps/console/Dockerfile
+      # No args: console calls the relative /api/v1 and nginx on 4173
+      # proxies it to http://api:8011 inside the compose network. Works from
+      # the same machine, a VM, or an SSH tunnel -- no hostname guessing.
+    container_name: career-console
+    ports:
+      - "4173:4173"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:4173/ || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  # Pinned to the existing volume name so the current database (created by an
+  # earlier `docker compose up` of this file) is reused, never orphaned.
+  career_pgdata:
+    name: careerintelligence_career_pgdata
+  career_storage:

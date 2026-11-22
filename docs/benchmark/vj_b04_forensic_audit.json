@@ -1,0 +1,733 @@
+{
+  "generated_utc": "2026-10-08T05:50:11+00:00",
+  "job_id": "VJ-B04",
+  "provenance": {
+    "implementation_identifier": "dcc4f506965d57e99bf0bb54bdd1c429",
+    "prompt_sha256": "43d20b8be806e7ba",
+    "schema_version": "ExtractedJobRequirements@2",
+    "provider": "openai",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.1,
+    "seed": null,
+    "profile_sha256": "a88420034c38a12d",
+    "experiment_artifact_sha256": "b5219afb275c39830d8ffc3f11594450d6a6dd01a7a5077b3fd853cc0bcaae77",
+    "source_sha256": "982d5a335f15d9aedfd10f68fada9c89bea3b609580817e4e28fd374c0cccaf8",
+    "run_identifiers": [
+      "VJ-B04:run1@2026-10-08T05:25:01+00:00",
+      "VJ-B04:run2@2026-10-08T05:25:23+00:00",
+      "VJ-B04:run3@2026-10-08T05:25:53+00:00"
+    ],
+    "payload_hashes": {
+      "1": "7768c9e1c7489bc2a0d7c6809243c753",
+      "2": "4caa151a9dbc7babad2d9719dd1f19c8",
+      "3": "f0e07334c52c61f3c5ab9cb1c41281d0"
+    }
+  },
+  "run_counts": {
+    "1": 17,
+    "2": 17,
+    "3": 24
+  },
+  "raw_counts": {
+    "1": 17,
+    "2": 17,
+    "3": 24
+  },
+  "scores": {
+    "1": 54.25,
+    "2": 54.25,
+    "3": 52.96
+  },
+  "recommendations": {
+    "1": "STRETCH",
+    "2": "STRETCH",
+    "3": "STRETCH"
+  },
+  "distinct_requirements_across_runs": 29,
+  "run_3_only_requirements": [
+    "desire to build something strategically important and make decisions that matter",
+    "ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+    "reliable systems",
+    "scalable systems",
+    "senior, highly autonomous, and unusually strong at turning ambiguity into working systems",
+    "strong backend engineering skills and good judgment around scalable, reliable systems"
+  ],
+  "absent_from_run_3": [
+    "desire to build strategically important products and make decisions that matter",
+    "ex-founder mentality or early-engineer mindset focused on ownership and responsibility",
+    "excellent taste and technical judgment",
+    "founders, very early startup engineers, senior builders who have owned messy systems with real business impact",
+    "hybrid work in berlin office, typically 4 days per week",
+    "scalable reliable systems",
+    "strong track record of owning systems or products end-to-end"
+  ],
+  "stable_all_runs": [
+    "agent-driven development",
+    "automation",
+    "backend engineering",
+    "coding-agent workflows",
+    "data pipelines",
+    "deep hands-on experience with agent-driven development or coding-agent workflows",
+    "experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows",
+    "high agency, strong prioritization skills, and the ability to operate with very little structure",
+    "scraping",
+    "significant experience as a software engineer in a startup or similarly high-ownership environment"
+  ],
+  "importance_drift_here": [],
+  "run_3_only_source_context_counts": {
+    "AMBIGUOUS": 4,
+    "BEHAVIORAL_EXPECTATION": 1,
+    "EMPLOYER_MARKETING": 1
+  },
+  "matrix": [
+    {
+      "requirement": "a desire to build something strategically important and make decisions that matter",
+      "category": [
+        "EXPERIENCE",
+        "TECHNICAL"
+      ],
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "SOFT_SIGNAL",
+      "run_2_source": "A desire to build something strategically important and make decisions that matter",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "PREFERRED",
+      "run_3_source": "A desire to build something strategically important and make decisions that matter",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "PARTIAL_PRESENCE",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "a strong track record of owning systems or products end-to-end, not just contributing to 1 part of them",
+      "category": "EXPERIENCE",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "PREFERRED",
+      "run_2_source": "A strong track record of owning systems or products end-to-end, not just contributing to one part of them",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "PREFERRED",
+      "run_3_source": "A strong track record of owning systems or products end-to-end, not just contributing to one part of them",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "PARTIAL_PRESENCE",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "agent-driven development",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "REQUIRED",
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "REQUIRED",
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "an ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+      "category": [
+        "EXPERIENCE",
+        "SOFT_SIGNAL"
+      ],
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "SOFT_SIGNAL",
+      "run_2_source": "An ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "SOFT_SIGNAL",
+      "run_3_source": "An ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "PARTIAL_PRESENCE",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "BEHAVIORAL_EXPECTATION",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "automation",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "REQUIRED",
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "REQUIRED",
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "backend engineering",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "REQUIRED",
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "REQUIRED",
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "coding-agent workflows",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "REQUIRED",
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "REQUIRED",
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "data pipelines",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "REQUIRED",
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "REQUIRED",
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "deep hands-on experience with agent-driven development or coding-agent workflows",
+      "category": "EXPERIENCE",
+      "run_1_present": true,
+      "run_1_importance": "PREFERRED",
+      "run_1_source": "Deep hands‑on experience with agent‑driven development or coding‑agent workflows",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": true,
+      "run_2_importance": "PREFERRED",
+      "run_2_source": "Deep hands-on experience with agent-driven development or coding-agent workflows",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "PREFERRED",
+      "run_3_source": "Deep hands-on experience with agent-driven development or coding-agent workflows",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "desire to build something strategically important and make decisions that matter",
+      "category": "TECHNICAL",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "SOFT_SIGNAL",
+      "run_3_source": "A desire to build something strategically important and make decisions that matter",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "RUN_3_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "AMBIGUOUS_SOURCE_LANGUAGE"
+      ]
+    },
+    {
+      "requirement": "desire to build strategically important products and make decisions that matter",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "SOFT_SIGNAL",
+      "run_1_source": "A desire to build something strategically important and make decisions that matter",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": false,
+      "run_3_importance": null,
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "RUN_1_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "ex-founder mentality or early-engineer mindset focused on ownership and responsibility",
+      "category": "SOFT_SIGNAL",
+      "run_1_present": true,
+      "run_1_importance": "SOFT_SIGNAL",
+      "run_1_source": "An ex‑founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": false,
+      "run_3_importance": null,
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "RUN_1_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "BEHAVIORAL_EXPECTATION",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+      "category": "SOFT_SIGNAL",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "SOFT_SIGNAL",
+      "run_3_source": "An ex-founder mentality or the mindset of an early engineer who likes real ownership and responsibility",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "RUN_3_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "BEHAVIORAL_EXPECTATION",
+      "diagnostic_label": [
+        "AMBIGUOUS_SOURCE_LANGUAGE"
+      ]
+    },
+    {
+      "requirement": "excellent taste and technical judgment",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "SOFT_SIGNAL",
+      "run_1_source": "Excellent taste and technical judgment — you know when something is robust, when it is fragile, and when agent‑generated output is just slop",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": false,
+      "run_3_importance": null,
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "RUN_1_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "excellent taste and technical judgment - you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+      "category": "TECHNICAL",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "SOFT_SIGNAL",
+      "run_2_source": "Excellent taste and technical judgment — you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "SOFT_SIGNAL",
+      "run_3_source": "Excellent taste and technical judgment — you know when something is robust, when it is fragile, and when agent-generated output is just slop",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "PARTIAL_PRESENCE",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows",
+      "category": "EXPERIENCE",
+      "run_1_present": true,
+      "run_1_importance": "PREFERRED",
+      "run_1_source": "Experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": true,
+      "run_2_importance": "PREFERRED",
+      "run_2_source": "Experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "PREFERRED",
+      "run_3_source": "Experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "founders, very early startup engineers, senior builders who have owned messy systems with real business impact",
+      "category": "EXPERIENCE",
+      "run_1_present": true,
+      "run_1_importance": "PREFERRED",
+      "run_1_source": "This role is a strong fit for people who have been: founders very early startup engineers senior builders who have owned messy systems with real business impact",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": true,
+      "run_2_importance": "PREFERRED",
+      "run_2_source": "This role is a strong fit for people who have been: founders very early startup engineers senior builders who have owned messy systems with real business impact",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": false,
+      "run_3_importance": null,
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "PARTIAL_PRESENCE",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "high agency, strong prioritization skills, and the ability to operate with very little structure",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "SOFT_SIGNAL",
+      "run_1_source": "High agency, strong prioritization skills, and the ability to operate with very little structure",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": true,
+      "run_2_importance": "SOFT_SIGNAL",
+      "run_2_source": "High agency, strong prioritization skills, and the ability to operate with very little structure",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "SOFT_SIGNAL",
+      "run_3_source": "High agency, strong prioritization skills, and the ability to operate with very little structure",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "hybrid work in berlin office, typically 4 days per week",
+      "category": "WORK_CONDITION",
+      "run_1_present": true,
+      "run_1_importance": "SOFT_SIGNAL",
+      "run_1_source": "We believe in the value of in‑person collaboration and work in a hybrid setup, with the team coming together in our office in the heart of Berlin‑Mitte typically four days per week.",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": false,
+      "run_3_importance": null,
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "RUN_1_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "EMPLOYER_MARKETING",
+      "diagnostic_label": [
+        "POSSIBLE_OVER_EXTRACTION"
+      ]
+    },
+    {
+      "requirement": "hybrid work in berlin-mitte office, typically 4 days per week",
+      "category": "WORK_CONDITION",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "SOFT_SIGNAL",
+      "run_2_source": "We believe in the value of in-person collaboration and work in a hybrid setup, with the team coming together in our office in the heart of Berlin-Mitte typically four days per week.",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "SOFT_SIGNAL",
+      "run_3_source": "We believe in the value of in-person collaboration and work in a hybrid setup, with the team coming together in our office in the heart of Berlin-Mitte typically four days per week.",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "PARTIAL_PRESENCE",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "EMPLOYER_MARKETING",
+      "diagnostic_label": [
+        "POSSIBLE_OVER_EXTRACTION"
+      ]
+    },
+    {
+      "requirement": "operational workflows",
+      "category": "TECHNICAL",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "REQUIRED",
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "PARTIAL_PRESENCE",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "reliable systems",
+      "category": "TECHNICAL",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "RUN_3_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "AMBIGUOUS_SOURCE_LANGUAGE"
+      ]
+    },
+    {
+      "requirement": "scalable reliable systems",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "REQUIRED",
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": false,
+      "run_3_importance": null,
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "RUN_1_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    },
+    {
+      "requirement": "scalable systems",
+      "category": "TECHNICAL",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "RUN_3_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "AMBIGUOUS_SOURCE_LANGUAGE"
+      ]
+    },
+    {
+      "requirement": "scraping",
+      "category": "TECHNICAL",
+      "run_1_present": true,
+      "run_1_importance": "REQUIRED",
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": true,
+      "run_2_importance": "REQUIRED",
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "REQUIRED",
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "senior, highly autonomous, and unusually strong at turning ambiguity into working systems",
+      "category": "TECHNICAL",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "SOFT_SIGNAL",
+      "run_3_source": "We’re looking for someone senior, highly autonomous, and unusually strong at turning ambiguity into working systems.",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "RUN_3_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "EMPLOYER_MARKETING",
+      "diagnostic_label": [
+        "POSSIBLE_OVER_EXTRACTION"
+      ]
+    },
+    {
+      "requirement": "significant experience as a software engineer in a startup or similarly high-ownership environment",
+      "category": "EXPERIENCE",
+      "run_1_present": true,
+      "run_1_importance": "SOFT_SIGNAL",
+      "run_1_source": "Significant experience as a software engineer in a startup or similarly high-ownership environment",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": true,
+      "run_2_importance": "SOFT_SIGNAL",
+      "run_2_source": "Significant experience as a software engineer in a startup or similarly high-ownership environment",
+      "run_2_evidence_in_posting": true,
+      "run_3_present": true,
+      "run_3_importance": "SOFT_SIGNAL",
+      "run_3_source": "Significant experience as a software engineer in a startup or similarly high-ownership environment",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "STABLE_ALL_RUNS",
+      "classification_status": "STABLE_IMPORTANCE",
+      "source_context": "BEHAVIORAL_EXPECTATION",
+      "diagnostic_label": [
+        "STABLE"
+      ]
+    },
+    {
+      "requirement": "strong backend engineering skills and good judgment around scalable, reliable systems",
+      "category": "EXPERIENCE",
+      "run_1_present": false,
+      "run_1_importance": null,
+      "run_1_source": "",
+      "run_1_evidence_in_posting": null,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": true,
+      "run_3_importance": "PREFERRED",
+      "run_3_source": "Strong backend engineering skills and good judgment around scalable, reliable systems",
+      "run_3_evidence_in_posting": true,
+      "selection_status": "RUN_3_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "AMBIGUOUS_SOURCE_LANGUAGE"
+      ]
+    },
+    {
+      "requirement": "strong track record of owning systems or products end-to-end",
+      "category": "EXPERIENCE",
+      "run_1_present": true,
+      "run_1_importance": "PREFERRED",
+      "run_1_source": "A strong track record of owning systems or products end-to-end, not just contributing to one part of them",
+      "run_1_evidence_in_posting": true,
+      "run_2_present": false,
+      "run_2_importance": null,
+      "run_2_source": "",
+      "run_2_evidence_in_posting": null,
+      "run_3_present": false,
+      "run_3_importance": null,
+      "run_3_source": "",
+      "run_3_evidence_in_posting": null,
+      "selection_status": "RUN_1_ONLY",
+      "classification_status": "NOT_APPLICABLE",
+      "source_context": "AMBIGUOUS",
+      "diagnostic_label": [
+        "SELECTION_TRUE_VARIANCE"
+      ]
+    }
+  ],
+  "canonical_notes": {
+    "1": [],
+    "2": [],
+    "3": []
+  }
+}

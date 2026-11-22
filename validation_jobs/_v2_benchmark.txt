@@ -1,0 +1,81 @@
+# V2 real-world benchmark - 3 frozen jobs, unchanged evidence
+
+===== VJ-01  Data Scientist @ Monzo
+  human baseline        : MAYBE
+  frozen recommendation : SKIP (preserved: True)
+  score                 : 80.5
+  strategy version      : v1 CURRENT
+  strengths (2):
+      - SQL  <- professional summary, SQL, SQL
+      - Python  <- professional summary, Independent AI & Data Science Development, Self-Directed Professional Development
+  gaps (0):
+  blockers (0):
+  transferable evidence (0):
+  emphasis: professional summary, SQL, Independent AI & Data Science Development, Self-Directed Professional Development
+  do not claim: none
+  actions:
+      1. Do not spend application effort on this role.
+      2. Review the score breakdown before reconsidering.
+  review notes:
+      - 2 job requirement(s) could not be confidently mapped to the candidate's confirmed evidence (2 not mapped to confirmed evidence: A/B experiment experience, UK location). This is an evidence boundary, not a statement about the candidate's ability. Review before relying on any of them.
+      - This role references eligibility or location conditions. No eligibility evidence is confirmed on the profile, so viability cannot be determined either way. The candidate must confirm their own status; the system must not infer it.
+  grounding             : 6/6 evidence-backed
+
+===== VJ-02  Machine Learning Engineer II (Underwriting ML) @ Affirm
+  human baseline        : NO
+  frozen recommendation : SKIP (preserved: True)
+  score                 : 49.5
+  strategy version      : v1 CURRENT
+  strengths (2):
+      - Python  <- professional summary, Independent AI & Data Science Development, Self-Directed Professional Development
+      - Machine Learning Engineer experience  <- professional title, professional summary, Independent AI & Data Science Development
+  gaps (1):
+      - PhD  [PREFERRED_GAP]
+  blockers (0):
+  transferable evidence (0):
+  emphasis: professional summary, Independent AI & Data Science Development, Self-Directed Professional Development, professional title
+  do not claim: PhD
+  actions:
+      1. Do not spend application effort on this role.
+      2. Review the score breakdown before reconsidering.
+  review notes:
+      - 15 job requirement(s) could not be confidently mapped to the candidate's confirmed evidence (15 not mapped to confirmed evidence: LightGBM, XGBoost, CatBoost, gradient‑boosted decision trees, PyTorch, Spark, Ray, Dask). This is an evidence boundary, not a statement about the candidate's ability. Review before relying on any of them.
+      - This role references eligibility or location conditions. No eligibility evidence is confirmed on the profile, so viability cannot be determined either way. The candidate must confirm their own status; the system must not infer it.
+  grounding             : 6/6 evidence-backed
+
+===== VJ-03  Data Analyst @ SEAhub Asia
+  human baseline        : YES
+  frozen recommendation : APPLY_WITH_TAILORING (preserved: True)
+  score                 : 74.9
+  strategy version      : v1 CURRENT
+  strengths (4):
+      - SQL  <- professional summary, SQL, SQL
+      - Excel  <- 5Seas Consults, Marketing Executive, Nigerian Institute for Social and Economic Research (NISER)
+      - Power BI  <- professional summary, 5Seas Consults, Marketing Executive
+      - Python  <- professional summary, Independent AI & Data Science Development, Self-Directed Professional Development
+  gaps (5):
+      - Tableau  [REQUIRED_GAP]
+      - Strong communication skills  [SOFT_SIGNAL_GAP]
+      - Detail-oriented  [SOFT_SIGNAL_GAP]
+      - Proactive mindset  [SOFT_SIGNAL_GAP]
+      - Well-organized  [SOFT_SIGNAL_GAP]
+  blockers (0):
+  transferable evidence (0):
+  emphasis: professional summary, SQL, 5Seas Consults, Marketing Executive, Nigerian Institute for Social and Economic Research (NISER), Independent AI & Data Science Development
+  do not claim: Tableau, Strong communication skills, Detail-oriented, Proactive mindset, Well-organized
+  actions:
+      1. Lead with your strongest evidenced requirements: SQL, Excel, Power BI, Python
+      2. Do not claim: Tableau, Strong communication skills, Detail-oriented, Proactive mindset, Well-organized
+      3. Address required gaps in your narrative without overstating them: Tableau
+      4. Generate the tailored CV, then review it.
+      5. Generate the cover letter, then review it.
+      6. Confirm contact details and eligibility before submitting.
+      7. Submit the application.
+  grounding             : 10/10 evidence-backed
+
+================ summary
+strategy grounding        : 22/22 (100%)
+critical unsupported      : 0
+false blockers            : 0
+decision preserved        : all jobs
+strategy statuses         : ['CURRENT']

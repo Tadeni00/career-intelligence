@@ -1,0 +1,147 @@
+=== TailoredCV id=1 job=1 status=VALIDATION_FAILED ===
+  [error] INVENTED_POSITION: Position 'Self‑Directed Professional Development' is not on the confirmed profile.
+        detail: Self‑Directed Professional Development
+  [error] INVENTED_POSITION: Position 'Mathematics & Physics Teacher (NYSC)' is not on the confirmed profile.
+        detail: Mathematics & Physics Teacher (NYSC)
+  [error] UNSUPPORTED_SKILL: 'Cross‑functional collaboration' is listed in the skills section but is not supported by your profile.
+        detail: Cross‑functional collaboration
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Data Scientist & Machine Learning Engineer Intern @ Youverify' contains unsupported content: terms not found in the profile: engineers, owners, product.
+        detail: Collaborated with engineers, product owners and analysts to improve data and analytical workflows
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Marketing Executive @ 5Seas Consults' contains unsupported content: terms not found in the profile: informed, outreach, strategy.
+        detail: Translated findings into actionable recommendations that informed outreach strategy
+  [error] UNSUPPORTED_SUMMARY_CLAIM: The summary contains unsupported content: terms not found in the profile: adept, building, clean, communicator, cross, delivering.
+        detail: Data Scientist with 6 years of experience in quantitative analysis, statistical modelling, and machine‑learning engineering. Proven ability to clean, transform, and visualize complex datasets using Py
+  SKILLS: ['Python', 'SQL', 'Statistical analysis', 'Exploratory data analysis', 'Feature engineering', 'Machine learning', 'Data cleaning', 'Data validation', 'Data visualization (Power\u202fBI, Matplotlib, Seaborn)', 'Dashboard development', 'Cross‑functional collaboration', 'Stakeholder reporting', 'Git', 'Technical documentation', 'Mentoring & training']
+  SUMMARY: Data Scientist with 6 years of experience in quantitative analysis, statistical modelling, and machine‑learning engineering. Proven ability to clean, transform, and visualize complex datasets using Python, SQL, Power BI and statistical tool
+  EXP DSN / WESOnline | Data Science, AI & ML Mentor
+      - Mentored fellows through a fraud‑detection capstone covering data exploration, statistical analysis, model evaluation and deployment
+      - Guided use of Python, GitHub, modular development and reproducible workflows
+      - Provided technical documentation and feedback to ensure methodological soundness
+  EXP Youverify | Data Scientist & Machine Learning Engineer Intern
+      - Built an AI‑assisted information extraction pipeline for regulatory‑compliance investigations, integrating data retrieval, structured extraction and d
+      - Collaborated with engineers, product owners and analysts to improve data and analytical workflows
+      - Authored technical documentation to support reproducibility and knowledge sharing
+  EXP Data Glacier | Data Scientist & Machine Learning Engineer Intern
+      - Performed quantitative analysis for classification and regression use‑cases, delivering predictive insights
+      - Engineered features and built automated data pipelines to ensure repeatable data preparation
+      - Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making
+      - Utilised Python, Pandas, NumPy, Matplotlib and Seaborn for analysis and visualisation
+  EXP Independent AI & Data Science Development | Self‑Directed Professional Development
+      - Completed structured hands‑on projects in Python, statistical analysis, machine learning and LLM engineering
+      - Applied software‑engineering best practices, version control and reproducible analysis techniques
+
+=== TailoredCV id=2 job=1 status=VALIDATION_FAILED ===
+  [error] INVENTED_POSITION: Position 'Self‑Directed Professional Development' is not on the confirmed profile.
+        detail: Self‑Directed Professional Development
+  [error] INVENTED_POSITION: Position 'Mathematics & Physics Teacher (NYSC)' is not on the confirmed profile.
+        detail: Mathematics & Physics Teacher (NYSC)
+  [error] UNSUPPORTED_SKILL: 'Cross‑functional collaboration' is listed in the skills section but is not supported by your profile.
+        detail: Cross‑functional collaboration
+  [error] UNSUPPORTED_TECHNOLOGY: 'Excel' is listed in project 'Field recruitment data analysis for 5Seas Consults' but is not supported by your profile.
+        detail: Excel
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Data Scientist & Machine Learning Engineer Intern @ Youverify' contains unsupported content: terms not found in the profile: engineers, managers, product.
+        detail: Collaborated with engineers, product managers and compliance teams to improve analytical workflows
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Data Science, AI & ML Mentor @ DSN / WESOnline' contains unsupported content: terms not found in the profile: clear, communication, reviewed.
+        detail: Reviewed project work for methodological soundness, accuracy and clear communication
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Self‑Directed Professional Development @ Independent AI & Data Science Development' contains unsupported content: terms not found in the profile: best, code, control, version.
+        detail: Applied software‑engineering best practices to data‑science projects, including version control and modular code
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Mathematics & Physics Teacher (NYSC) @ Aderemi Memorial School' contains unsupported content: terms not found in the profile: among, fostering, students, subjects.
+        detail: Taught quantitative subjects, fostering analytical reasoning among students
+  SKILLS: ['Python', 'SQL', 'Data cleaning', 'Data validation', 'Feature engineering', 'Statistical analysis', 'Hypothesis testing', 'Machine learning', 'Data visualization', 'Power BI', 'Matplotlib', 'Seaborn', 'Pandas', 'NumPy', 'Git', 'Technical documentation', 'Mentoring & training', 'Cross‑functional collaboration', 'Stakeholder reporting']
+  SUMMARY: Data Scientist with 6+ years of quantitative and statistical analysis experience, skilled in end‑to‑end data pipelines, feature engineering, and machine‑learning model development. Proven ability to translate complex analytical findings int
+  EXP Data Glacier | Data Scientist & Machine Learning Engineer Intern
+      - Conducted quantitative analysis for classification and regression use cases on complex datasets
+      - Cleaned, transformed, and engineered data to improve model performance
+      - Built automated data pipelines enabling repeatable data preparation and validation
+      - Developed interactive Power BI dashboards and analytical reports for stakeholder decision‑making
+      - Utilised Python, Pandas, NumPy, Matplotlib and Seaborn for analysis and visualisation
+  EXP Youverify | Data Scientist & Machine Learning Engineer Intern
+      - Designed and implemented an AI‑assisted information extraction pipeline supporting regulatory‑compliance investigations
+      - Processed and validated information from multiple sources to enhance accuracy and reliability of outputs
+      - Collaborated with engineers, product managers and compliance teams to improve analytical workflows
+      - Authored technical documentation to ensure reproducibility and knowledge sharing
+      - Applied Python for data retrieval, extraction and deterministic validation
+  EXP 5Seas Consults | Marketing Executive
+      - Collected, cleaned and validated field‑collected student recruitment data across all Nigerian states
+      - Analyzed recruitment patterns, channel performance and geographic opportunities using Excel, Power BI and Python
+      - Translated analytical insights into actionable recommendations for senior leadership
+      - Delivered practical training sessions on Excel, Power BI and Python for team members
+  EXP DSN / WESOnline | Data Science, AI & ML Mentor
+      - Mentored fellows through a fraud‑detection capstone covering data exploration, statistical analysis, model evaluation and deployment
+      - Guided learners in applying rigorous analytical approaches and reproducible Git‑based workflows
+      - Reviewed project work for methodological soundness, accuracy and clear communication
+      - Supported development of Python‑based models and documentation of analytical processes
+
+=== TailoredCV id=3 job=1 status=VALIDATION_FAILED ===
+  [error] INVENTED_POSITION: Position 'Self‑Directed Professional Development' is not on the confirmed profile.
+        detail: Self‑Directed Professional Development
+  [error] UNSUPPORTED_SKILL: 'Git version control' is listed in the skills section but is not supported by your profile.
+        detail: Git version control
+  [error] UNSUPPORTED_SKILL: 'Cross‑functional collaboration' is listed in the skills section but is not supported by your profile.
+        detail: Cross‑functional collaboration
+  [error] UNSUPPORTED_SKILL: 'Self‑starter mindset' is listed in the skills section but is not supported by your profile.
+        detail: Self‑starter mindset
+  [error] UNSUPPORTED_TECHNOLOGY: 'Excel' is listed in project 'Recruitment Data Analysis Dashboard' but is not supported by your profile.
+        detail: Excel
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Data Scientist & Machine Learning Engineer Intern @ Youverify' contains unsupported content: terms not found in the profile: authored, engineers, ensure, owners, product, specialists.
+        detail: Collaborated with engineers, product owners, and compliance specialists; authored technical documentation to ensure reproducibility.
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Self‑Directed Professional Development @ Independent AI & Data Science Development' contains unsupported content: terms not found in the profile: best, code, control, portfolio, version.
+        detail: Applied software‑engineering best practices (version control, modular code) to build a portfolio of analytical solutions.
+  [error] UNSUPPORTED_SUMMARY_CLAIM: The summary contains unsupported content: terms not found in the profile: clean, communicator, cross, end, functional, junior.
+        detail: Data Scientist with 6+ years of quantitative analysis, statistical modelling, and end‑to‑end machine‑learning delivery. Proven ability to clean, transform, and engineer data, build automated pipelines
+  SKILLS: ['Python', 'SQL', 'Data cleaning & validation', 'Data transformation & feature engineering', 'Statistical analysis', 'Hypothesis testing', 'Machine learning (classification, regression)', 'Data visualization (Power\u202fBI, Matplotlib, Seaborn)', 'Dashboard development', 'Git version control', 'Cross‑functional collaboration', 'Stakeholder reporting', 'Mentoring & training', 'Self‑starter mindset']
+  SUMMARY: Data Scientist with 6+ years of quantitative analysis, statistical modelling, and end‑to‑end machine‑learning delivery. Proven ability to clean, transform, and engineer data, build automated pipelines, develop interactive Power BI dashboard
+  EXP DSN / WESOnline | Data Science, AI & ML Mentor
+      - Guide fellows through a fraud‑detection capstone covering data exploration, statistical analysis, model evaluation, and deployment.
+      - Review analytical work for methodological soundness and clear documentation.
+      - Facilitate collaborative workflows using GitHub, modular code structures, and reproducible analysis practices.
+  EXP Youverify | Data Scientist & Machine Learning Engineer Intern
+      - Built an AI‑assisted information extraction pipeline to support regulatory‑compliance investigations, integrating data retrieval, structured extractio
+      - Processed multi‑source data to improve accuracy and consistency of analytical outputs.
+      - Collaborated with engineers, product owners, and compliance specialists; authored technical documentation to ensure reproducibility.
+  EXP Independent AI & Data Science Development | Self‑Directed Professional Development
+      - Completed structured hands‑on projects in Python, statistical analysis, machine learning, and AI/LLM engineering.
+      - Applied software‑engineering best practices (version control, modular code) to build a portfolio of analytical solutions.
+  EXP Data Glacier | Data Scientist & Machine Learning Engineer Intern
+      - Performed quantitative analysis for classification and regression use cases; cleaned, transformed, and engineered features to boost model performance.
+      - Designed and deployed automated data pipelines enabling repeatable data preparation, analysis, and validation.
+      - Created interactive Power BI dashboards and analytical reports to communicate insights to stakeholders.
+
+=== TailoredCV id=4 job=1 status=VALIDATION_FAILED ===
+  [error] INVENTED_POSITION: Position 'Self‑Directed Professional Development' is not on the confirmed profile.
+        detail: Self‑Directed Professional Development
+  [error] INVENTED_POSITION: Position 'Mathematics & Physics Teacher (NYSC)' is not on the confirmed profile.
+        detail: Mathematics & Physics Teacher (NYSC)
+  [error] UNSUPPORTED_SKILL: 'Cross‑Functional Collaboration' is listed in the skills section but is not supported by your profile.
+        detail: Cross‑Functional Collaboration
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Self‑Directed Professional Development @ Independent AI & Data Science Development' contains unsupported content: terms not found in the profile: best, code, control, organization, such, version.
+        detail: Applied software‑engineering best practices such as version control and modular code organization
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Self‑Directed Professional Development @ Independent AI & Data Science Development' contains unsupported content: terms not found in the profile: end, real, world.
+        detail: Delivered end‑to‑end analytical solutions on real‑world datasets
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Mathematics & Physics Teacher (NYSC) @ Aderemi Memorial School' contains unsupported content: terms not found in the profile: designed, lessons, strengthened, students.
+        detail: Designed and delivered quantitative lessons that strengthened students' analytical reasoning
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Mathematics & Physics Teacher (NYSC) @ Aderemi Memorial School' contains unsupported content: terms not found in the profile: criteria, driven.
+        detail: Developed assessments and evaluated performance using data‑driven criteria
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Data Scientist & Machine Learning Engineer Intern @ Youverify' contains unsupported content: terms not found in the profile: engineers, owners, product, streamline.
+        detail: Collaborated with engineers and product owners to streamline analytical workflows
+  [error] UNSUPPORTED_ACHIEVEMENT: Bullet for 'Customer Care Executive @ Outcess Solutions Nigeria Limited' contains unsupported content: terms not found in the profile: customers, service, timely.
+        detail: Provided timely support to customers and maintained accurate service records
+  [error] UNSUPPORTED_SUMMARY_CLAIM: The summary contains unsupported content: terms not found in the profile: assisted, based, building, clean, collaborating, commitment.
+        detail: Data Scientist with 6+ years of experience delivering quantitative analysis, statistical modelling, and machine learning solutions. Proven ability to clean, transform, and engineer data for predictive
+  SKILLS: ['Python', 'SQL', 'Statistical Analysis', 'Machine Learning', 'Data Cleaning', 'Data Validation', 'Feature Engineering', 'Data Visualization', 'Power BI', 'Matplotlib', 'Seaborn', 'Pandas', 'NumPy', 'Git', 'Dashboard Development', 'Quantitative Analysis', 'Cross‑Functional Collaboration', 'Stakeholder Reporting', 'Mentoring & Training', 'Technical Documentation', 'Reproducible Analysis']
+  SUMMARY: Data Scientist with 6+ years of experience delivering quantitative analysis, statistical modelling, and machine learning solutions. Proven ability to clean, transform, and engineer data for predictive insights using Python, SQL, and Excel. 
+  EXP Independent AI & Data Science Development | Self‑Directed Professional Development
+      - Completed structured, hands‑on projects in Python, statistical analysis, machine learning, and AI/LLM engineering
+      - Applied software‑engineering best practices such as version control and modular code organization
+      - Delivered end‑to‑end analytical solutions on real‑world datasets
+  EXP 5Seas Consults | Marketing Executive
+      - Collected, cleaned, and validated nationwide student recruitment data from field marketers
+      - Performed exploratory analysis and pattern detection using Excel, Power BI, and Python
+      - Created visual dashboards that highlighted channel performance and geographic opportunities
+      - Provided actionable recommendations to senior leadership and delivered training in Excel, Power BI, and Python
+  EXP Aderemi Memorial School | Mathematics & Physics Teacher (NYSC)
+      - Designed and delivered quantitative lessons that strengthened students' analytical reasoning
+      - Developed assessments and evaluated performance using data‑driven criteria
+  EXP Nigerian Institute for Social and Economic Research (NISER) | Industrial Trainee
+      - Conducted data collection, coding, and entry for research projects
+      - Performed statistical analysis with SPSS and Excel following structured data‑handling protocols

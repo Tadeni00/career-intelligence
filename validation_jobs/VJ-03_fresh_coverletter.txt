@@ -1,0 +1,19 @@
+Dear Hiring Team,
+
+I am writing to express my interest in the Data Analyst position at SEAhub Asia. With six years of hands‑on experience in data collection, cleaning, validation, and visualization, I have a proven track record of turning raw data into clear, actionable insights that support business decisions.
+
+In my recent role as a Marketing Executive at 5Seas Consults, I managed field‑collected recruitment data from across Nigeria. I routinely cleaned and validated large datasets using Excel, Python, and Power BI, then built reports and dashboards that highlighted channel performance and geographic opportunities. My analyses directly informed strategic adjustments and I regularly presented findings to both technical and non‑technical stakeholders.
+
+During my internship at Data Glacier, I designed automated data pipelines that ensured repeatable data preparation and validation. I also created interactive Power BI dashboards and analytical reports that tracked key performance metrics, enabling the team to monitor trends and detect anomalies quickly. This experience aligns closely with your need for data quality upkeep and dashboard maintenance.
+
+At Youverify, I contributed to an AI‑assisted information extraction pipeline where I processed and validated data from multiple sources to improve accuracy for regulatory compliance investigations. I documented the workflow and produced technical documentation that supported reproducibility and knowledge sharing—skills that will be valuable for your process‑improvement and documentation initiatives.
+
+My current mentoring role with DSN / WESOnline involves guiding fellows through a fraud‑detection capstone, emphasizing rigorous data exploration, statistical analysis, and clear communication of results. This reinforces my ability to collaborate across teams, respond to data requests, and convey insights in a concise, actionable manner.
+
+I am comfortable working with SQL, Excel, Power BI, and Python, and I am eager to continue learning new tools and techniques. My detail‑oriented approach and strong communication skills position me to contribute effectively to SEAhub Asia’s data analytics team.
+
+Thank you for considering my application. I look forward to the possibility of contributing to your fast‑moving, future‑focused environment.
+
+Sincerely,  
+TOMISIN ADENIYI  
+BRIGHTEST #RMTM3LjI1NS4xNzcuMTU3

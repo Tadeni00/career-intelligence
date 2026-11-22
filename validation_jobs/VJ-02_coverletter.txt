@@ -1,0 +1,16 @@
+Dear Hiring Team,
+
+I am writing to express my interest in the Machine Learning Engineer II position on the Underwriting ML team at Affirm. With six years of experience in data science and machine learning, I have repeatedly taken analytical problems from data collection through model development, validation, and deployment, delivering solutions that inform business decisions.
+
+In my recent role as a Data Scientist & Machine Learning Engineer Intern at Data Glacier, I led end‑to‑end quantitative analyses for classification and regression projects. I cleaned, transformed, and engineered features to improve data quality, built automated pipelines that supported repeatable preparation and validation, and created interactive Power BI dashboards to communicate insights to stakeholders. This experience aligns closely with the need to build and scale feature pipelines and training datasets for underwriting models.
+
+At Youverify, I built an AI‑assisted information extraction pipeline that integrated data retrieval, structured extraction, and deterministic validation to support regulatory compliance investigations. The project required production‑grade Python code, rigorous documentation, and collaboration with cross‑functional teams to ensure reliability and operational robustness—key aspects of the responsibilities described for this role.
+
+My self‑directed professional development in AI and LLM engineering (Nov 2024 – Feb 2025) reinforced my ability to prototype new modeling ideas, run offline experiments, and iterate quickly using modern development tools. Additionally, as a mentor for DSN / WESOnline, I guide fellows through fraud‑detection capstone projects, emphasizing reproducible analysis, version control with Git, and clear technical documentation—practices that support model monitoring and retraining workflows.
+
+Across all positions, I have consistently communicated complex analytical findings to both technical and non‑technical audiences, ensuring that insights translate into actionable recommendations. My strong foundation in Python, statistical analysis, feature engineering, and productionizing models equips me to contribute effectively to the Underwriting ML team’s mission of delivering reliable, real‑time credit decisions.
+
+Thank you for considering my application. I look forward to the possibility of discussing how my background and skills can support Affirm’s goals.
+
+Sincerely,
+TOMISIN ADENIYI

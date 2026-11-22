@@ -1,0 +1,5495 @@
+{
+  "version": "3.2",
+  "experiment": "v3.2_extraction_reproducibility",
+  "run_metadata": {
+    "experiment": "v3.2_extraction_reproducibility",
+    "provider": "openai",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.1,
+    "seed": null,
+    "seed_used": false,
+    "schema_version": "ExtractedJobRequirements@1",
+    "response_format": {
+      "type": "json_object"
+    },
+    "max_retries": 1,
+    "system_prompt_sha256": "e661c4987645e692",
+    "user_prompt_sha256": "fe56dbdd31d1793a",
+    "prompt_sha256": "e4ab7e3ece3daeb7",
+    "profile_sha256": "a88420034c38a12d",
+    "runs_per_job": 3,
+    "api_key_recorded": false,
+    "note": "API key rotation is an operational credential change and is deliberately not recorded as an experimental difference."
+  },
+  "run_level": {
+    "planned": 78,
+    "completed": 78,
+    "successful": 78,
+    "failed": 0,
+    "provider_failures": 0,
+    "schema_failures": 0
+  },
+  "case_level": {
+    "jobs": 26,
+    "identical_across_all_3_runs": 0,
+    "with_semantic_differences": 26,
+    "score_changing": 26,
+    "recommendation_changing": 10
+  },
+  "difference_counts": {
+    "ADDED": 408,
+    "REMOVED": 477,
+    "MODIFIED": 5,
+    "RECLASSIFIED": 4,
+    "REORDERED_ONLY": 3
+  },
+  "cases": [
+    {
+      "job_id": "VJ-B01",
+      "source_sha256": "d65ce92c91fd62e4b7fa92af63838baa2ddfa47da283810803158adabfed62dc",
+      "source_stable": true,
+      "run_scores": [
+        52.61,
+        54.92,
+        54.99
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        17,
+        13,
+        13
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "large language models (llms) or vllms"
+              },
+              {
+                "field": "required_skills",
+                "value": "retrieval augmented generation (rag) or openai"
+              },
+              {
+                "field": "required_skills",
+                "value": "vector databases (pinecone, weaviate)"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english communication"
+              },
+              {
+                "field": "other_requirements",
+                "value": "remote work availability"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "large language models (llms)"
+              },
+              {
+                "field": "required_skills",
+                "value": "openai"
+              },
+              {
+                "field": "required_skills",
+                "value": "pinecone"
+              },
+              {
+                "field": "required_skills",
+                "value": "rag"
+              },
+              {
+                "field": "required_skills",
+                "value": "vector databases"
+              },
+              {
+                "field": "required_skills",
+                "value": "vllms"
+              },
+              {
+                "field": "required_skills",
+                "value": "weaviate"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "other ai programming languages"
+              },
+              {
+                "field": "other_requirements",
+                "value": "remote full-time availability"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "vector databases (pinecone, weaviate)"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english communication"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "english (advanced)"
+              },
+              {
+                "field": "required_skills",
+                "value": "pinecone"
+              },
+              {
+                "field": "required_skills",
+                "value": "vector databases"
+              },
+              {
+                "field": "required_skills",
+                "value": "vllms"
+              },
+              {
+                "field": "required_skills",
+                "value": "weaviate"
+              },
+              {
+                "field": "other_requirements",
+                "value": "remote full-time availability"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B02",
+      "source_sha256": "dd4945b8596cd307e7ad87fad0f16c38d82c4463b5cc49fb814f8227204b5154",
+      "source_stable": true,
+      "run_scores": [
+        56.25,
+        56.36,
+        57.91
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        12,
+        14,
+        12
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "commercial data scientist experience"
+              },
+              {
+                "field": "other_requirements",
+                "value": "adaptability and flexibility"
+              },
+              {
+                "field": "other_requirements",
+                "value": "benefits"
+              },
+              {
+                "field": "other_requirements",
+                "value": "reliability"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑organization"
+              },
+              {
+                "field": "other_requirements",
+                "value": "visa assistance"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "data scientist experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "rag and llm experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑organizational skills"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "other_requirements",
+                "value": "adaptability and flexibility"
+              },
+              {
+                "field": "other_requirements",
+                "value": "reliability"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self-organization"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "english"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑organizational skills"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B03",
+      "source_sha256": "32ba036997e8773d364314261d56ff21ebe1183aa775e8a7dcd16898b1bdacd6",
+      "source_stable": true,
+      "run_scores": [
+        52.34,
+        55.45,
+        53.4
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        12,
+        13,
+        13
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai architecture"
+              },
+              {
+                "field": "required_skills",
+                "value": "ai engineering"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation infrastructure"
+              },
+              {
+                "field": "required_skills",
+                "value": "production ai deployment"
+              },
+              {
+                "field": "required_skills",
+                "value": "retrieval infrastructure"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote (americas, europe, israel)"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai system deployment"
+              },
+              {
+                "field": "required_skills",
+                "value": "enterprise ai deployments"
+              },
+              {
+                "field": "required_skills",
+                "value": "retrieval and evaluation infrastructure"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "senior level"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai engineering"
+              },
+              {
+                "field": "required_skills",
+                "value": "enterprise ai deployment"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation infrastructure"
+              },
+              {
+                "field": "required_skills",
+                "value": "large language models"
+              },
+              {
+                "field": "required_skills",
+                "value": "ml platforms at scale"
+              },
+              {
+                "field": "required_skills",
+                "value": "retrieval infrastructure"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "senior-level experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote within americas, europe, or israel"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai system deployment"
+              },
+              {
+                "field": "required_skills",
+                "value": "enterprise ai deployments"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm workflows"
+              },
+              {
+                "field": "required_skills",
+                "value": "machine learning platforms at scale"
+              },
+              {
+                "field": "required_skills",
+                "value": "retrieval and evaluation infrastructure"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "senior level"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B04",
+      "source_sha256": "982d5a335f15d9aedfd10f68fada9c89bea3b609580817e4e28fd374c0cccaf8",
+      "source_stable": true,
+      "run_scores": [
+        54.22,
+        56.0,
+        49.34
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "SKIP"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        15,
+        13,
+        19
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "reliability engineering"
+              },
+              {
+                "field": "required_skills",
+                "value": "scalable system design"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "agent-driven development experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "automation and data pipelines experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend engineering and scalability"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "end-to-end product ownership"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "location"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai"
+              },
+              {
+                "field": "required_skills",
+                "value": "operational workflows"
+              },
+              {
+                "field": "required_skills",
+                "value": "scalable systems"
+              },
+              {
+                "field": "required_skills",
+                "value": "software engineering"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend engineering and scalable, reliable systems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "hands‑on experience with agent‑driven development or coding‑agent workflows"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ownership of systems or products end‑to‑end"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering experience in a startup or high‑ownership environment"
+              },
+              {
+                "field": "location_requirements",
+                "value": "berlin, germany (hybrid)"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "coding-agent workflows"
+              },
+              {
+                "field": "required_skills",
+                "value": "reliable systems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "agent‑driven development experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend engineering skills"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "end‑to‑end product ownership"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with brittle dependencies and automation"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "berlin office presence"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english proficiency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "high agency and prioritization"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "backend engineering and scalable, reliable systems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience building around brittle external dependencies, automation, scraping, data pipelines, or operational workflows"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "hands‑on experience with agent‑driven development or coding‑agent workflows"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ownership of systems or products end‑to‑end"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering experience in a startup or high‑ownership environment"
+              },
+              {
+                "field": "location_requirements",
+                "value": "berlin, germany (hybrid)"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B05",
+      "source_sha256": "6c0f262137c7cdc61371a501bf78212cb2336e0a0f2dfe699246d6f2b43265c0",
+      "source_stable": true,
+      "run_scores": [
+        48.4,
+        57.47,
+        50.56
+      ],
+      "run_recommendations": [
+        "SKIP",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        30,
+        30,
+        28
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "data analysis"
+              },
+              {
+                "field": "required_skills",
+                "value": "english"
+              },
+              {
+                "field": "required_skills",
+                "value": "german (c1/c2)"
+              },
+              {
+                "field": "required_skills",
+                "value": "reporting"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "automation workflow development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "bi tool usage"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data cleaning and structuring"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "deep numerical understanding"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "relational database experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql proficiency"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work in europe"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english proficiency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language proficiency"
+              }
+            ],
+            "removed": [
+              {
+                "field": "preferred_skills",
+                "value": "english"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "german (c1/c2)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "bi‑tools"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "datenformate und etl"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "programmierung"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "relationale datenbanken"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "workflow‑automatisierungstools"
+              },
+              {
+                "field": "education_requirements",
+                "value": "studium in informatik, mathematik, wirtschaftsinformatik oder statistik"
+              },
+              {
+                "field": "location_requirements",
+                "value": "europa"
+              },
+              {
+                "field": "other_requirements",
+                "value": "deutschkenntnisse"
+              },
+              {
+                "field": "other_requirements",
+                "value": "englischkenntnisse"
+              },
+              {
+                "field": "other_requirements",
+                "value": "selbstständige und strukturierte arbeitsweise"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "data analysis"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "javascript"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "python"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "automation workflow creation"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "bi tool usage"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data integration via rest apis"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "relational database experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql proficiency"
+              },
+              {
+                "field": "education_requirements",
+                "value": "degree in computer science, mathematics, business informatics or statistics"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work within europe"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english proficiency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language proficiency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑organized and structured work style"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "javascript"
+              },
+              {
+                "field": "required_skills",
+                "value": "python"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "english"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "german (c1/c2)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "bi‑tools"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "datenformate und etl"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "programmierung"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "relationale datenbanken"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "workflow‑automatisierungstools"
+              },
+              {
+                "field": "education_requirements",
+                "value": "studium in informatik, mathematik, wirtschaftsinformatik oder statistik"
+              },
+              {
+                "field": "location_requirements",
+                "value": "europa"
+              },
+              {
+                "field": "other_requirements",
+                "value": "deutschkenntnisse"
+              },
+              {
+                "field": "other_requirements",
+                "value": "englischkenntnisse"
+              },
+              {
+                "field": "other_requirements",
+                "value": "selbstständige und strukturierte arbeitsweise"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B06",
+      "source_sha256": "1f737ef82fd440e3bb803e9e26c6f0e0f9d68dd947ea5472e9f9c1fea9e4e6eb",
+      "source_stable": true,
+      "run_scores": [
+        44.61,
+        50.33,
+        50.84
+      ],
+      "run_recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "run_blocker_counts": [
+        1,
+        1,
+        1
+      ],
+      "run_requirement_counts": [
+        23,
+        24,
+        31
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "english"
+              },
+              {
+                "field": "required_skills",
+                "value": "german"
+              },
+              {
+                "field": "required_skills",
+                "value": "java"
+              },
+              {
+                "field": "required_skills",
+                "value": "llms"
+              },
+              {
+                "field": "required_skills",
+                "value": "python"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "cloud infrastructure development"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "consulting industry"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "english"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "german"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "java"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "llms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "python"
+              },
+              {
+                "field": "education_requirements",
+                "value": "bachelor's or master's degree"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "large language models"
+              },
+              {
+                "field": "required_skills",
+                "value": "programming language"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "cloud infrastructure"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "agile project management"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cloud infrastructure"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "consulting industry experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "kubernetes/docker/spark"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "large language models"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "programming language"
+              },
+              {
+                "field": "education_requirements",
+                "value": "bachelor's and master's degree"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english language fluency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language proficiency"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "english (c1)"
+              },
+              {
+                "field": "required_skills",
+                "value": "german (c1)"
+              },
+              {
+                "field": "required_skills",
+                "value": "java"
+              },
+              {
+                "field": "required_skills",
+                "value": "llms"
+              },
+              {
+                "field": "required_skills",
+                "value": "python"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "cloud infrastructure development"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "consulting industry experience"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "data visualization"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cloud infrastructure development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data visualization"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "docker"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "english (c1)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "german (c1)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "kubernetes"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "llms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "spark"
+              },
+              {
+                "field": "education_requirements",
+                "value": "bachelor’s and master’s degree"
+              },
+              {
+                "field": "location_requirements",
+                "value": "berlin"
+              },
+              {
+                "field": "location_requirements",
+                "value": "munich"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "large language models"
+              },
+              {
+                "field": "required_skills",
+                "value": "programming language"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "cloud infrastructure"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "visualization"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cloud infrastructure"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "kubernetes/docker/spark"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "large language models"
+              },
+              {
+                "field": "education_requirements",
+                "value": "bachelor's and master's degree"
+              },
+              {
+                "field": "location_requirements",
+                "value": "munich or berlin"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english language fluency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language proficiency"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B07",
+      "source_sha256": "6c0f262137c7cdc61371a501bf78212cb2336e0a0f2dfe699246d6f2b43265c0",
+      "source_stable": true,
+      "run_scores": [
+        54.84,
+        54.65,
+        53.82
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        22,
+        23,
+        24
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "english"
+              },
+              {
+                "field": "required_skills",
+                "value": "german (c1/c2)"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "javascript"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "make"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "n8n"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "python"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "zapier"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "erfahrung mit datenintegration und automatisierung"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "erfahrung mit sql und relationalen datenbanken"
+              },
+              {
+                "field": "other_requirements",
+                "value": "selbstständige und strukturierte arbeitsweise"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "javascript"
+              },
+              {
+                "field": "required_skills",
+                "value": "make"
+              },
+              {
+                "field": "required_skills",
+                "value": "n8n"
+              },
+              {
+                "field": "required_skills",
+                "value": "python"
+              },
+              {
+                "field": "required_skills",
+                "value": "zapier"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong analytical/numerical skills"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english proficiency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language proficiency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑organized and structured work style"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "english"
+              },
+              {
+                "field": "required_skills",
+                "value": "german (c1/c2)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "automation workflow experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data analysis experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote (europe)"
+              },
+              {
+                "field": "other_requirements",
+                "value": "communication skills"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑organized work style"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "strong analytical/numerical skills"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work in europe"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english proficiency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language proficiency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑organized and structured work style"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B08",
+      "source_sha256": "b0c1584fb44323fa162c4549e290cb5b8e9c11e28613f4381751f69478c0770c",
+      "source_stable": true,
+      "run_scores": [
+        55.24,
+        47.25,
+        53.99
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "SKIP",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        18,
+        12,
+        12
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "accounting knowledge"
+              },
+              {
+                "field": "required_skills",
+                "value": "clear communication in english"
+              },
+              {
+                "field": "required_skills",
+                "value": "cost structures knowledge"
+              },
+              {
+                "field": "required_skills",
+                "value": "financial statements knowledge"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "alteryx experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data analysis experience"
+              },
+              {
+                "field": "other_requirements",
+                "value": "english proficiency"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "accounting understanding"
+              },
+              {
+                "field": "required_skills",
+                "value": "cost structures understanding"
+              },
+              {
+                "field": "required_skills",
+                "value": "data analysis"
+              },
+              {
+                "field": "required_skills",
+                "value": "english communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "financial statements understanding"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "alteryx"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "analytical thinking"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "aviation operations knowledge"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data analysis"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "english communication"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "financial statements understanding"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "proactive collaborative approach"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "alteryx experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "eu work permit"
+              },
+              {
+                "field": "location_requirements",
+                "value": "munich location or willingness to relocate"
+              },
+              {
+                "field": "other_requirements",
+                "value": "proactive collaborative approach"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "alteryx"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "analytical thinking"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "aviation operations knowledge"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data analysis"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "english communication"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "financial statements understanding"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "proactive collaborative approach"
+              },
+              {
+                "field": "location_requirements",
+                "value": "munich location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "eu work permit"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B09",
+      "source_sha256": "dc53cc732fc18ec5a184dd22897f9f7e515057efabae0bd35f19f14aeb5f24a9",
+      "source_stable": true,
+      "run_scores": [
+        51.74,
+        56.55,
+        67.45
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "APPLY_WITH_TAILORING"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        20,
+        15,
+        12
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "dashboarding"
+              },
+              {
+                "field": "required_skills",
+                "value": "quality metrics"
+              },
+              {
+                "field": "required_skills",
+                "value": "statistical analysis"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "senior-level experience solving search or search‑adjacent analytical problems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong exposure to quality metrics in at least one area (search relevance, ranking and freshness, ads quality or feed ranking)"
+              },
+              {
+                "field": "location_requirements",
+                "value": "work authorization in the country of application (united kingdom)"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "analytical judgment"
+              },
+              {
+                "field": "required_skills",
+                "value": "communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "dashboards"
+              },
+              {
+                "field": "required_skills",
+                "value": "statistics"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "senior-level experience solving search or search-adjacent analytical problems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong exposure to quality metrics in at least one area (search relevance, ranking, freshness, ads quality, feed ranking)"
+              },
+              {
+                "field": "location_requirements",
+                "value": "united kingdom"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ability to think end-to-end across users, products, and technology"
+              },
+              {
+                "field": "other_requirements",
+                "value": "clear analytical judgment regarding metric lifecycle"
+              },
+              {
+                "field": "other_requirements",
+                "value": "strong communication skills and ability to align product, engineering, and client perspectives"
+              },
+              {
+                "field": "other_requirements",
+                "value": "work authorization in the country of application"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "mathematical statistics"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ability to think end‑to‑end across users, products, and technology"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "clear analytical judgment: understanding why a metric exists, how it evolves, and when it should be retired"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "senior-level experience solving search or search‑adjacent analytical problems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "solid foundation in mathematical statistics"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong communication skills and the ability to align product, engineering, and client perspectives"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong exposure to quality metrics in at least one area (search relevance, ranking and freshness, ads quality or feed ranking)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong python skills and a hands‑on engineering mindset"
+              },
+              {
+                "field": "other_requirements",
+                "value": "work authorization"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ads quality"
+              },
+              {
+                "field": "required_skills",
+                "value": "analytical judgment"
+              },
+              {
+                "field": "required_skills",
+                "value": "analytics pipelines"
+              },
+              {
+                "field": "required_skills",
+                "value": "dashboards"
+              },
+              {
+                "field": "required_skills",
+                "value": "data pipelines"
+              },
+              {
+                "field": "required_skills",
+                "value": "feed ranking"
+              },
+              {
+                "field": "required_skills",
+                "value": "freshness"
+              },
+              {
+                "field": "required_skills",
+                "value": "ranking"
+              },
+              {
+                "field": "required_skills",
+                "value": "search relevance"
+              },
+              {
+                "field": "required_skills",
+                "value": "statistics"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "senior-level experience solving search or search-adjacent analytical problems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong exposure to quality metrics in at least one area (search relevance, ranking, freshness, ads quality, feed ranking)"
+              },
+              {
+                "field": "location_requirements",
+                "value": "united kingdom"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ability to think end-to-end across users, products, and technology"
+              },
+              {
+                "field": "other_requirements",
+                "value": "clear analytical judgment regarding metric lifecycle"
+              },
+              {
+                "field": "other_requirements",
+                "value": "strong communication skills and ability to align product, engineering, and client perspectives"
+              },
+              {
+                "field": "other_requirements",
+                "value": "work authorization in the country of application"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B10",
+      "source_sha256": "af388123cc482f6aa91d80ccaaa8341ed47926c9fd6ffc139d5e83ce39f8fdd0",
+      "source_stable": true,
+      "run_scores": [
+        50.79,
+        54.75,
+        58.44
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        15,
+        11,
+        13
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "audio/music content understanding"
+              },
+              {
+                "field": "required_skills",
+                "value": "team leadership"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "deep machine learning expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "leadership of machine learning engineering teams"
+              },
+              {
+                "field": "location_requirements",
+                "value": "location"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "audio content understanding"
+              },
+              {
+                "field": "required_skills",
+                "value": "leadership"
+              },
+              {
+                "field": "required_skills",
+                "value": "music content understanding"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cross‑functional delivery"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "domain expertise in nlp, audio/music content understanding, and recommender systems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "leadership of ml engineering team"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "machine learning expertise"
+              },
+              {
+                "field": "location_requirements",
+                "value": "london or stockholm"
+              },
+              {
+                "field": "other_requirements",
+                "value": "remote flexibility"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "audio/music content understanding"
+              },
+              {
+                "field": "required_skills",
+                "value": "cross-functional collaboration"
+              },
+              {
+                "field": "required_skills",
+                "value": "natural language processing (nlp)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "domain experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "leadership/management experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "location"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "audio content understanding"
+              },
+              {
+                "field": "required_skills",
+                "value": "music content understanding"
+              },
+              {
+                "field": "required_skills",
+                "value": "nlp"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cross‑functional delivery"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "domain expertise in nlp, audio/music content understanding, and recommender systems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "leadership of ml engineering team"
+              },
+              {
+                "field": "location_requirements",
+                "value": "london or stockholm"
+              },
+              {
+                "field": "other_requirements",
+                "value": "remote flexibility"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B11",
+      "source_sha256": "6120e2e3d934406ceaf2d81dec77fff94ee143a01d2328ce64fcae40169ae559",
+      "source_stable": true,
+      "run_scores": [
+        43.8,
+        54.6,
+        61.0
+      ],
+      "run_recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "run_blocker_counts": [
+        1,
+        1,
+        1
+      ],
+      "run_requirement_counts": [
+        32,
+        12,
+        7
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "gpu infrastructure knowledge"
+              },
+              {
+                "field": "required_skills",
+                "value": "model serving"
+              },
+              {
+                "field": "required_skills",
+                "value": "systems programming language"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "infrastructure spike expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ml spike expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering spike"
+              },
+              {
+                "field": "education_requirements",
+                "value": "formal education in machine learning"
+              },
+              {
+                "field": "location_requirements",
+                "value": "united kingdom"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "batching"
+              },
+              {
+                "field": "required_skills",
+                "value": "c++"
+              },
+              {
+                "field": "required_skills",
+                "value": "capacity planning"
+              },
+              {
+                "field": "required_skills",
+                "value": "customer engagement"
+              },
+              {
+                "field": "required_skills",
+                "value": "distributed systems"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation design"
+              },
+              {
+                "field": "required_skills",
+                "value": "go"
+              },
+              {
+                "field": "required_skills",
+                "value": "gpu programming"
+              },
+              {
+                "field": "required_skills",
+                "value": "kv‑cache optimization"
+              },
+              {
+                "field": "required_skills",
+                "value": "lora"
+              },
+              {
+                "field": "required_skills",
+                "value": "model distillation"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi‑gpu serving"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi‑node serving"
+              },
+              {
+                "field": "required_skills",
+                "value": "quantization"
+              },
+              {
+                "field": "required_skills",
+                "value": "rlhf"
+              },
+              {
+                "field": "required_skills",
+                "value": "rlvr"
+              },
+              {
+                "field": "required_skills",
+                "value": "rust"
+              },
+              {
+                "field": "required_skills",
+                "value": "sft"
+              },
+              {
+                "field": "required_skills",
+                "value": "speculative decoding"
+              },
+              {
+                "field": "required_skills",
+                "value": "technical communication"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "agentic engineering"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "ai‑assisted engineering"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "founder energy"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "startup mindset"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "gpu infrastructure and distributed serving experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "post‑training llm experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "spikes in two or more technical areas"
+              },
+              {
+                "field": "education_requirements",
+                "value": "formal ml training (phd or strong msc)"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "systems programming language"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "gpu infrastructure and serving experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "startup environment experience"
+              },
+              {
+                "field": "education_requirements",
+                "value": "formal education in machine learning"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "batching"
+              },
+              {
+                "field": "required_skills",
+                "value": "c++"
+              },
+              {
+                "field": "required_skills",
+                "value": "capacity planning"
+              },
+              {
+                "field": "required_skills",
+                "value": "customer engagement"
+              },
+              {
+                "field": "required_skills",
+                "value": "distributed systems"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation design"
+              },
+              {
+                "field": "required_skills",
+                "value": "go"
+              },
+              {
+                "field": "required_skills",
+                "value": "gpu programming"
+              },
+              {
+                "field": "required_skills",
+                "value": "kv‑cache optimization"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm fine‑tuning"
+              },
+              {
+                "field": "required_skills",
+                "value": "lora"
+              },
+              {
+                "field": "required_skills",
+                "value": "model distillation"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi‑gpu serving"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi‑node serving"
+              },
+              {
+                "field": "required_skills",
+                "value": "quantization"
+              },
+              {
+                "field": "required_skills",
+                "value": "rlhf"
+              },
+              {
+                "field": "required_skills",
+                "value": "rlvr"
+              },
+              {
+                "field": "required_skills",
+                "value": "rust"
+              },
+              {
+                "field": "required_skills",
+                "value": "sft"
+              },
+              {
+                "field": "required_skills",
+                "value": "speculative decoding"
+              },
+              {
+                "field": "required_skills",
+                "value": "technical communication"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "agentic engineering"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "ai‑assisted engineering"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "founder energy"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "startup mindset"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "gpu infrastructure and distributed serving experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "spikes in two or more technical areas"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "startup or fast‑paced environment experience"
+              },
+              {
+                "field": "education_requirements",
+                "value": "formal ml training (phd or strong msc)"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B12",
+      "source_sha256": "6961c826f737f6162dac6dd2658b7f98ca359247ff479cba7a836aac97c4b102",
+      "source_stable": true,
+      "run_scores": [
+        56.4,
+        56.11,
+        49.79
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "SKIP"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        12,
+        14,
+        16
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "data science"
+              },
+              {
+                "field": "required_skills",
+                "value": "fraud detection"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "end‑to‑end machine learning solutions delivery"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "generative ai production experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "stakeholder management"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "statistical and modelling expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical leadership and influence"
+              },
+              {
+                "field": "location_requirements",
+                "value": "london (hybrid)"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "stakeholder management"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "commercial experience delivering end‑to‑end machine learning solutions"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "hands‑on experience building and shipping generative ai systems in production"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "proven ability to influence technical direction across data science and engineering"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong stakeholder management skills"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong statistical and modelling foundation"
+              },
+              {
+                "field": "location_requirements",
+                "value": "london (hybrid, 3 days in office)"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "fraud detection"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "end-to-end machine learning solutions"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "generative ai production systems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "risk decisioning experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "stakeholder management"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "statistical modeling foundation"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical leadership influence"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "commercial experience delivering end‑to‑end machine learning solutions"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "hands‑on experience building and shipping generative ai systems in production"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "proven ability to influence technical direction across data science and engineering"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong stakeholder management skills"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "strong statistical and modelling foundation"
+              }
+            ],
+            "reclassified": [
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship",
+                "from": "PREFERRED",
+                "to": "REQUIRED"
+              }
+            ],
+            "modified": [],
+            "reordered_only": [
+              {
+                "field": "other_requirements"
+              }
+            ]
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B13",
+      "source_sha256": "a299c02c9c8033009ab68f0c5aa1089c964aae9457e1a24b036060dbb9643576",
+      "source_stable": true,
+      "run_scores": [
+        54.46,
+        52.79,
+        52.84
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        16,
+        13,
+        16
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "end-to-end machine learning solutions delivery"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "risk‑based decisioning experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "statistical and modelling foundation"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical leadership and influence"
+              },
+              {
+                "field": "location_requirements",
+                "value": "london (hybrid, 3 days in office)"
+              },
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm"
+              },
+              {
+                "field": "required_skills",
+                "value": "stakeholder management"
+              },
+              {
+                "field": "required_skills",
+                "value": "technical leadership"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "end‑to‑end machine learning delivery"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "statistical and modelling expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical influence"
+              },
+              {
+                "field": "location_requirements",
+                "value": "location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "work authorization"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "large language models"
+              },
+              {
+                "field": "required_skills",
+                "value": "monitoring"
+              },
+              {
+                "field": "required_skills",
+                "value": "production deployment"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "end‑to‑end machine learning solutions"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "generative ai production"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "statistical modeling and risk decisioning"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical leadership and influence"
+              },
+              {
+                "field": "location_requirements",
+                "value": "london (hybrid)"
+              },
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm"
+              },
+              {
+                "field": "required_skills",
+                "value": "technical leadership"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "end‑to‑end machine learning delivery"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "generative ai production experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "statistical and modelling expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical influence"
+              },
+              {
+                "field": "location_requirements",
+                "value": "location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "work authorization"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B14",
+      "source_sha256": "277139ad608c92e55920bd13f5a92109621a3cdd6db882cfb1a7ea5a75aca8b8",
+      "source_stable": true,
+      "run_scores": [
+        65.04,
+        64.29,
+        64.29
+      ],
+      "run_recommendations": [
+        "APPLY_WITH_TAILORING",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        26,
+        27,
+        28
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ci/cd"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "deep learning"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data science experience"
+              }
+            ],
+            "removed": [
+              {
+                "field": "preferred_skills",
+                "value": "deep learning for risk/fraud"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data scientist experience"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ci/cd"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "deep learning"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "explainability"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "regulatory considerations"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "communication experience"
+              }
+            ],
+            "removed": [
+              {
+                "field": "preferred_skills",
+                "value": "deep learning for risk/fraud"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "model explainability"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "regulatory considerations in financial services"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B15",
+      "source_sha256": "b71092951b6cb2a060ce1cd81b117a996adb24723494e83ffa2edae89e4eb8d8",
+      "source_stable": true,
+      "run_scores": [
+        43.7,
+        44.38,
+        44.45
+      ],
+      "run_recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "run_blocker_counts": [
+        1,
+        1,
+        1
+      ],
+      "run_requirement_counts": [
+        14,
+        15,
+        10
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "embedded systems"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "analytical thinking"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "communication"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "leadership"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "machine learning"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "computer vision and sensor fusion experience"
+              },
+              {
+                "field": "other_requirements",
+                "value": "full-time commitment"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "c++ and python programming"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "computer vision & sensor fusion algorithm development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "edge deployment optimization"
+              },
+              {
+                "field": "other_requirements",
+                "value": "communication skills"
+              },
+              {
+                "field": "other_requirements",
+                "value": "full dedication"
+              },
+              {
+                "field": "other_requirements",
+                "value": "pressure handling"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "embedded algorithmic expertise"
+              },
+              {
+                "field": "other_requirements",
+                "value": "commitment"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "c++ and python programming"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "computer vision & sensor fusion algorithm development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "edge deployment optimization"
+              },
+              {
+                "field": "other_requirements",
+                "value": "communication skills"
+              },
+              {
+                "field": "other_requirements",
+                "value": "full dedication"
+              },
+              {
+                "field": "other_requirements",
+                "value": "pressure handling"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B16",
+      "source_sha256": "3a72f59a946be27b0713f9bd7d9d1349f9cd8765f04944a00e8b4765ff90d052",
+      "source_stable": true,
+      "run_scores": [
+        65.17,
+        61.03,
+        62.76
+      ],
+      "run_recommendations": [
+        "APPLY_WITH_TAILORING",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        21,
+        14,
+        17
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "a/b testing"
+              },
+              {
+                "field": "required_skills",
+                "value": "data science"
+              },
+              {
+                "field": "required_skills",
+                "value": "product analytics"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "ai agents"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "activation/retention modelling or lifecycle analytics"
+              }
+            ],
+            "removed": [
+              {
+                "field": "preferred_skills",
+                "value": "a/b testing"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "product analytics"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "self‑serve data access"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experimentation (a/b testing)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "product analytics"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "python"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql"
+              },
+              {
+                "field": "other_requirements",
+                "value": "activation/retention modelling"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai tools"
+              },
+              {
+                "field": "other_requirements",
+                "value": "dbt"
+              },
+              {
+                "field": "other_requirements",
+                "value": "lifecycle analytics"
+              },
+              {
+                "field": "other_requirements",
+                "value": "modern data warehouse"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "a/b testing"
+              },
+              {
+                "field": "required_skills",
+                "value": "product analytics"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "ai tools for analysis"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "activation/retention modelling or lifecycle analytics"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai tools for analysis"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "dbt or modern data warehouse experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experimentation (a/b testing) experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "product analytics experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote‑first"
+              }
+            ],
+            "removed": [
+              {
+                "field": "preferred_skills",
+                "value": "a/b testing"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "ai tools"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "product analytics"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experimentation (a/b testing)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "product analytics"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "python"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote"
+              },
+              {
+                "field": "other_requirements",
+                "value": "activation/retention modelling"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai tools"
+              },
+              {
+                "field": "other_requirements",
+                "value": "dbt"
+              },
+              {
+                "field": "other_requirements",
+                "value": "lifecycle analytics"
+              },
+              {
+                "field": "other_requirements",
+                "value": "modern data warehouse"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B17",
+      "source_sha256": "441f82c1f695b18a89ec769eafb25c27890c23fbed45dbfee9341dde78b8cb72",
+      "source_stable": true,
+      "run_scores": [
+        61.54,
+        60.78,
+        61.33
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        15,
+        14,
+        18
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "customer‑facing experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data engineering experience with databricks or microsoft fabric"
+              },
+              {
+                "field": "location_requirements",
+                "value": "german‑speaking switzerland"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai‑first mindset"
+              },
+              {
+                "field": "other_requirements",
+                "value": "continuous learning"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑ownership and autonomy"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "ai‑agent team leadership"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "customer interaction experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data engineering experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "power bi expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql and python proficiency"
+              },
+              {
+                "field": "location_requirements",
+                "value": "location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language proficiency"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "data engineering with databricks or microsoft fabric"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "direct customer interaction"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "leadership of ai‑agent teams"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "power bi development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql and python programming"
+              },
+              {
+                "field": "location_requirements",
+                "value": "german‑speaking switzerland"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai‑first mindset"
+              },
+              {
+                "field": "other_requirements",
+                "value": "continuous learning"
+              },
+              {
+                "field": "other_requirements",
+                "value": "flexibility for workation"
+              },
+              {
+                "field": "other_requirements",
+                "value": "self‑ownership"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "ai‑agent team leadership"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "customer interaction experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data engineering experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "power bi expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "sql and python proficiency"
+              },
+              {
+                "field": "location_requirements",
+                "value": "location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "german language proficiency"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B18",
+      "source_sha256": "8c144949edd042e36578f7f051a74e6e624a5067e019fd1d96b8bf3cea8665cf",
+      "source_stable": true,
+      "run_scores": [
+        55.28,
+        53.27,
+        54.1
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        16,
+        21,
+        14
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "acceptance criteria writing"
+              },
+              {
+                "field": "required_skills",
+                "value": "contract review"
+              },
+              {
+                "field": "required_skills",
+                "value": "customer communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "english language"
+              },
+              {
+                "field": "required_skills",
+                "value": "german language"
+              },
+              {
+                "field": "required_skills",
+                "value": "legal drafting"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm fluency"
+              },
+              {
+                "field": "required_skills",
+                "value": "prompt engineering"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "commercial instinct"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "commercial and entrepreneurial track record"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "language proficiency"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "legal foundation"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical track record"
+              },
+              {
+                "field": "education_requirements",
+                "value": "law degree"
+              },
+              {
+                "field": "location_requirements",
+                "value": "work location"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "english"
+              },
+              {
+                "field": "required_skills",
+                "value": "german"
+              },
+              {
+                "field": "required_skills",
+                "value": "german commercial contract law"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm prompt engineering"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "commercial/entrepreneurial experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "enterprise sales support experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "hands-on experience with german commercial contracts"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical track record building ai tools"
+              },
+              {
+                "field": "education_requirements",
+                "value": "law degree with commercial‑contracts focus"
+              },
+              {
+                "field": "location_requirements",
+                "value": "location"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "customer communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm fluency"
+              },
+              {
+                "field": "required_skills",
+                "value": "prompt engineering"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "commercial and entrepreneurial experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical track record"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "german commercial contract law"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm prompt engineering"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "published technical work"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "commercial/entrepreneurial experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "enterprise sales support experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "hands-on experience with german commercial contracts"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "technical track record building ai tools"
+              }
+            ],
+            "reclassified": [
+              {
+                "field": "location_requirements",
+                "value": "location",
+                "from": "PREFERRED",
+                "to": "REQUIRED"
+              }
+            ],
+            "modified": [],
+            "reordered_only": [
+              {
+                "field": "location_requirements"
+              }
+            ]
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B19",
+      "source_sha256": "f588a7750e755ec34201816bc18afd57529e6c78552f4a23f62f9d51934a8ecf",
+      "source_stable": true,
+      "run_scores": [
+        47.0,
+        47.0,
+        48.17
+      ],
+      "run_recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        21,
+        21,
+        29
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "production-grade llm or agentic ai solutions design and build"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering and/or devops experience"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "production‑grade llm or agentic ai solutions design and build"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering and devops experience"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 1,
+          "severity_label": "SEMANTIC_BUT_SCORE_NEUTRAL",
+          "score_changed": false,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "cloud architectures"
+              },
+              {
+                "field": "required_skills",
+                "value": "communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "j2ee"
+              },
+              {
+                "field": "required_skills",
+                "value": "java"
+              },
+              {
+                "field": "required_skills",
+                "value": "problem-solving"
+              },
+              {
+                "field": "required_skills",
+                "value": "rag"
+              },
+              {
+                "field": "required_skills",
+                "value": "retrieval-augmented generation"
+              },
+              {
+                "field": "required_skills",
+                "value": "software engineering"
+              },
+              {
+                "field": "required_skills",
+                "value": "technical leadership"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "claims adjudication experience"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "healthcare domain knowledge"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "healthcare and claims adjudication experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "production-grade llm or agentic ai solutions experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering and/or devops experience"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "java/j2ee"
+              },
+              {
+                "field": "required_skills",
+                "value": "retrieval-augmented generation (rag)"
+              },
+              {
+                "field": "preferred_skills",
+                "value": "healthcare and claims adjudication experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "healthcare and/or claims adjudication experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "production‑grade llm or agentic ai solutions design and build"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "software engineering and devops experience"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B20",
+      "source_sha256": "9f0554d857973cf8374a6d5e57d2f254c5083dfee38002d215555880f82bf218",
+      "source_stable": true,
+      "run_scores": [
+        44.79,
+        76.46,
+        76.46
+      ],
+      "run_recommendations": [
+        "SKIP",
+        "APPLY_WITH_TAILORING",
+        "APPLY_WITH_TAILORING"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        12,
+        1,
+        1
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "other_requirements",
+                "value": "work authorization"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "asr"
+              },
+              {
+                "field": "required_skills",
+                "value": "audio processing"
+              },
+              {
+                "field": "required_skills",
+                "value": "benchmarking"
+              },
+              {
+                "field": "required_skills",
+                "value": "context injection"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm"
+              },
+              {
+                "field": "required_skills",
+                "value": "multimodal ai"
+              },
+              {
+                "field": "required_skills",
+                "value": "speech-to-text"
+              },
+              {
+                "field": "required_skills",
+                "value": "vad"
+              },
+              {
+                "field": "required_skills",
+                "value": "voice-to-action"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "work authorization"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "asr"
+              },
+              {
+                "field": "required_skills",
+                "value": "audio processing"
+              },
+              {
+                "field": "required_skills",
+                "value": "benchmarking"
+              },
+              {
+                "field": "required_skills",
+                "value": "context injection"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm"
+              },
+              {
+                "field": "required_skills",
+                "value": "multimodal ai"
+              },
+              {
+                "field": "required_skills",
+                "value": "speech-to-text"
+              },
+              {
+                "field": "required_skills",
+                "value": "vad"
+              },
+              {
+                "field": "required_skills",
+                "value": "voice-to-action"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "work authorization"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B21",
+      "source_sha256": "7dc2ab87eb4e2658b3270df3cefddaec820a4f7c77be26fc94d2c3c7b9fadb6e",
+      "source_stable": true,
+      "run_scores": [
+        51.45,
+        54.45,
+        55.32
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        25,
+        24,
+        27
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai/llm knowledge"
+              },
+              {
+                "field": "required_skills",
+                "value": "backend development"
+              },
+              {
+                "field": "required_skills",
+                "value": "full-stack development"
+              },
+              {
+                "field": "required_skills",
+                "value": "observability and logging"
+              },
+              {
+                "field": "required_skills",
+                "value": "postgresdb"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend and/or full-stack engineering experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "building and shipping ai-powered features or products in production"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "communication and mentorship skills"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cross-functional collaboration ability"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "developing evaluation frameworks and metrics for ai features"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with elasticsearch"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with relational databases (postgresdb, mysql)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "familiarity with ai privacy, security, and compliance best practices"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "working with orchestration frameworks and integrating multiple ai models"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work"
+              },
+              {
+                "field": "location_requirements",
+                "value": "work authorization without guaranteed visa sponsorship"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai compliance"
+              },
+              {
+                "field": "required_skills",
+                "value": "ai models"
+              },
+              {
+                "field": "required_skills",
+                "value": "ai privacy"
+              },
+              {
+                "field": "required_skills",
+                "value": "ai security"
+              },
+              {
+                "field": "required_skills",
+                "value": "llms"
+              },
+              {
+                "field": "required_skills",
+                "value": "logging"
+              },
+              {
+                "field": "required_skills",
+                "value": "observability"
+              },
+              {
+                "field": "required_skills",
+                "value": "postgresql"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai privacy/security/compliance"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai‑powered feature development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend and/or full‑stack engineering experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "database experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "elasticsearch experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "evaluation frameworks"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "observability and logging"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "orchestration frameworks"
+              },
+              {
+                "field": "location_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai"
+              },
+              {
+                "field": "required_skills",
+                "value": "javascript/typescript"
+              },
+              {
+                "field": "required_skills",
+                "value": "large language models (llms)"
+              },
+              {
+                "field": "required_skills",
+                "value": "postgresdb"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai privacy, security, and compliance"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend and/or full-stack engineering"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "communication and mentorship"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cross‑functional collaboration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "llm expertise"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work"
+              },
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai models"
+              },
+              {
+                "field": "required_skills",
+                "value": "javascript"
+              },
+              {
+                "field": "required_skills",
+                "value": "llms"
+              },
+              {
+                "field": "required_skills",
+                "value": "postgresql"
+              },
+              {
+                "field": "required_skills",
+                "value": "typescript"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai privacy/security/compliance"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend and/or full‑stack engineering experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "visa sponsorship"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B22",
+      "source_sha256": "ed52bf84f79bea21b407b8a0e0da08b72b0fb9374a88ae70dd3fd0be1d089fde",
+      "source_stable": true,
+      "run_scores": [
+        53.29,
+        48.78,
+        51.17
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "SKIP",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        26,
+        30,
+        27
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "ai fluency"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "apply llms to product features"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "collaboration and communication"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "design and build scalable ai/ml platforms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "integrate and manage multiple llms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "programming languages"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work"
+              },
+              {
+                "field": "location_requirements",
+                "value": "visa sponsorship"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai privacy, security, and compliance adherence"
+              },
+              {
+                "field": "other_requirements",
+                "value": "continuous learning in ai infrastructure"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "backend engineering"
+              },
+              {
+                "field": "required_skills",
+                "value": "llm integration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai/ml platform design and building"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "llm application to product features"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "llm integration and management"
+              },
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "applying llms to product features"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cloud platforms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "collaboration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "designing and building scalable ai/ml platforms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "mlops practices"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "llm integration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai/ml platform design and building"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "llm application to product features"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "llm integration and management"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "mlops best practices"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "search technology familiarity"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B23",
+      "source_sha256": "96eeed2bc4e7fe3a167e8213336793c99421fe190f46d49be2406f9c076c928d",
+      "source_stable": true,
+      "run_scores": [
+        69.79,
+        69.25,
+        77.46
+      ],
+      "run_recommendations": [
+        "SKIP",
+        "SKIP",
+        "SKIP"
+      ],
+      "run_blocker_counts": [
+        1,
+        1,
+        1
+      ],
+      "run_requirement_counts": [
+        10,
+        13,
+        9
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "advanced degree with relevant experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "data science impact"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "mentorship and team development"
+              },
+              {
+                "field": "education_requirements",
+                "value": "advanced quantitative degree"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote‑first work environment"
+              },
+              {
+                "field": "other_requirements",
+                "value": "e‑verify employer"
+              },
+              {
+                "field": "other_requirements",
+                "value": "fair chance ordinance compliance"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "data science experience driving enterprise value"
+              },
+              {
+                "field": "education_requirements",
+                "value": "advanced degree in quantitative field"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "work authorization"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "experience_requirements",
+                "value": "relevant data science experience"
+              },
+              {
+                "field": "education_requirements",
+                "value": "advanced degree in a quantitative field"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work"
+              },
+              {
+                "field": "other_requirements",
+                "value": "e‑verify compliance"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "data science experience driving enterprise value"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "leadership of large‑scale initiatives"
+              },
+              {
+                "field": "education_requirements",
+                "value": "advanced degree in quantitative field"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work location"
+              },
+              {
+                "field": "other_requirements",
+                "value": "work authorization"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B24",
+      "source_sha256": "f0fa43124c98d5f287ae6f37060a9369084b120e40ed244f7a3ec626c463a519",
+      "source_stable": true,
+      "run_scores": [
+        54.46,
+        52.21,
+        50.0
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        15,
+        19,
+        15
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai evaluation frameworks"
+              },
+              {
+                "field": "required_skills",
+                "value": "ai privacy and data protection"
+              },
+              {
+                "field": "required_skills",
+                "value": "backend engineering"
+              },
+              {
+                "field": "required_skills",
+                "value": "large language models (llms)"
+              },
+              {
+                "field": "required_skills",
+                "value": "machine learning fundamentals"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi-agent frameworks"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai privacy experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend ai engineering"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "evaluation framework development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "multi-agent systems experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "multiple llms experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "orchestration software expertise"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "search technology integration"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "cross-functional collaboration"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai privacy and data protection handling"
+              },
+              {
+                "field": "required_skills",
+                "value": "backend engineering for ai platforms"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation framework development for ai agents"
+              },
+              {
+                "field": "required_skills",
+                "value": "multiple llm integration (e.g., openai, anthropic, cohere)"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi‑agent framework design and deployment"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience building/deploying multi‑agent frameworks"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience developing evaluation frameworks for ai systems"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with ai privacy and data protection"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with multiple llms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with orchestration frameworks"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with search technology integration"
+              }
+            ],
+            "reclassified": [
+              {
+                "field": "location_requirements",
+                "value": "remote work",
+                "from": "PREFERRED",
+                "to": "UNKNOWN"
+              }
+            ],
+            "modified": [],
+            "reordered_only": [
+              {
+                "field": "location_requirements"
+              }
+            ]
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai privacy"
+              },
+              {
+                "field": "required_skills",
+                "value": "backend engineering"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation frameworks"
+              },
+              {
+                "field": "required_skills",
+                "value": "langgraph"
+              },
+              {
+                "field": "required_skills",
+                "value": "llms"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi-agent systems"
+              },
+              {
+                "field": "required_skills",
+                "value": "search technologies"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend engineering experience with ai/ml"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience handling ai privacy and data protection"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with orchestration software (e.g., langgraph)"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work (visa sponsorship not guaranteed)"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai privacy and data protection handling"
+              },
+              {
+                "field": "required_skills",
+                "value": "backend engineering for ai platforms"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation framework development for ai agents"
+              },
+              {
+                "field": "required_skills",
+                "value": "multiple llm integration (e.g., openai, anthropic, cohere)"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi‑agent framework design and deployment"
+              },
+              {
+                "field": "required_skills",
+                "value": "orchestration frameworks (e.g., langgraph)"
+              },
+              {
+                "field": "required_skills",
+                "value": "search technology integration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with ai privacy and data protection"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with orchestration frameworks"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work"
+              },
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B25",
+      "source_sha256": "e6796574e71c226c9af440b9c343b28d5d7c7e164e00f0eca7277f66d33c3457",
+      "source_stable": true,
+      "run_scores": [
+        54.87,
+        51.95,
+        49.61
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "SKIP"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        28,
+        31,
+        29
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 3,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai privacy"
+              },
+              {
+                "field": "required_skills",
+                "value": "collaboration"
+              },
+              {
+                "field": "required_skills",
+                "value": "communication"
+              },
+              {
+                "field": "required_skills",
+                "value": "data anonymization"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai privacy and security"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai/ml platform design and building"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "collaboration and communication"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "llm application development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "mlops practices"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "orchestration frameworks"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote"
+              }
+            ],
+            "removed": [
+              {
+                "field": "experience_requirements",
+                "value": "ai privacy and security compliance"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "apply llms to product features"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cloud‑native technologies (kubernetes, docker, aws/gcp/azure)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cross‑functional collaboration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "design and build scalable ai/ml platforms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "mlops best practices"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "orchestration frameworks (langgraph, airflow, kubeflow, ray)"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work"
+              }
+            ],
+            "reclassified": [],
+            "modified": [
+              {
+                "field": "experience_requirements",
+                "value": "backend engineering and distributed systems",
+                "from": 5.0,
+                "to": null
+              }
+            ],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai privacy and security"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai privacy and security"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "integrate and manage multiple llms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "orchestration frameworks"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "programming languages"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "search technologies integration"
+              },
+              {
+                "field": "location_requirements",
+                "value": "work authorization"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "llm integration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai privacy and security compliance"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cloud‑native technologies (kubernetes, docker, aws/gcp/azure)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "cross‑functional collaboration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "orchestration frameworks (langgraph, airflow, kubeflow, ray)"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency evaluation"
+              },
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "reclassified": [],
+            "modified": [
+              {
+                "field": "experience_requirements",
+                "value": "backend engineering and distributed systems",
+                "from": 5.0,
+                "to": null
+              },
+              {
+                "field": "experience_requirements",
+                "value": "apply llms to product features",
+                "from": 3.0,
+                "to": null
+              },
+              {
+                "field": "experience_requirements",
+                "value": "design and build scalable ai/ml platforms",
+                "from": 5.0,
+                "to": null
+              },
+              {
+                "field": "experience_requirements",
+                "value": "mlops best practices",
+                "from": 2.0,
+                "to": null
+              }
+            ],
+            "reordered_only": []
+          },
+          "severity": 3,
+          "severity_label": "DECISION_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": true,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    },
+    {
+      "job_id": "VJ-B26",
+      "source_sha256": "4c30bd3f855d2ac33cb94900f0c4476c912da49d3d4f48e891d827dec124406e",
+      "source_stable": true,
+      "run_scores": [
+        50.04,
+        50.46,
+        53.71
+      ],
+      "run_recommendations": [
+        "STRETCH",
+        "STRETCH",
+        "STRETCH"
+      ],
+      "run_blocker_counts": [
+        0,
+        0,
+        0
+      ],
+      "run_requirement_counts": [
+        17,
+        17,
+        17
+      ],
+      "raw_output_identical": false,
+      "canonical_identical": false,
+      "ordered_identical": false,
+      "max_severity": 2,
+      "pairs": [
+        {
+          "run_1": 1,
+          "run_2": 2,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai privacy"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation frameworks"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi-agent frameworks"
+              },
+              {
+                "field": "required_skills",
+                "value": "search technologies"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "multi-agent frameworks"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "multiple llms experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "visa sponsorship"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency evaluation"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai privacy and data protection"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation frameworks for ai agents"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi-agent frameworks / systems"
+              },
+              {
+                "field": "required_skills",
+                "value": "search technologies integration"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with multiple llms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "multi-agent systems experience"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency"
+              },
+              {
+                "field": "other_requirements",
+                "value": "visa sponsorship"
+              }
+            ],
+            "reclassified": [
+              {
+                "field": "location_requirements",
+                "value": "remote work",
+                "from": "REQUIRED",
+                "to": "UNKNOWN"
+              }
+            ],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        },
+        {
+          "run_1": 1,
+          "run_2": 3,
+          "diff": {
+            "added": [
+              {
+                "field": "required_skills",
+                "value": "ai and machine learning fundamentals"
+              },
+              {
+                "field": "required_skills",
+                "value": "ai privacy handling"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation frameworks for ai systems"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi-agent frameworks"
+              },
+              {
+                "field": "required_skills",
+                "value": "orchestration software (langgraph)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "ai/ml fundamentals"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "evaluation frameworks development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "multi-agent frameworks experience"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "multiple llms experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote"
+              }
+            ],
+            "removed": [
+              {
+                "field": "required_skills",
+                "value": "ai privacy and data protection"
+              },
+              {
+                "field": "required_skills",
+                "value": "evaluation frameworks for ai agents"
+              },
+              {
+                "field": "required_skills",
+                "value": "multi-agent frameworks / systems"
+              },
+              {
+                "field": "required_skills",
+                "value": "orchestration software (e.g., langgraph)"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "backend engineering"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "evaluation framework development"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "experience with multiple llms"
+              },
+              {
+                "field": "experience_requirements",
+                "value": "multi-agent systems experience"
+              },
+              {
+                "field": "location_requirements",
+                "value": "remote work"
+              },
+              {
+                "field": "other_requirements",
+                "value": "ai fluency"
+              }
+            ],
+            "reclassified": [],
+            "modified": [],
+            "reordered_only": []
+          },
+          "severity": 2,
+          "severity_label": "SCORE_CHANGING",
+          "score_changed": true,
+          "recommendation_changed": false,
+          "blocker_changed": false
+        }
+      ],
+      "identical_all_runs": false,
+      "semantic_difference": true
+    }
+  ],
+  "root_cause_index": {
+    "D2-B Prompt ambiguity": [
+      "VJ-B01",
+      "VJ-B02",
+      "VJ-B03",
+      "VJ-B04",
+      "VJ-B05",
+      "VJ-B06",
+      "VJ-B07",
+      "VJ-B08",
+      "VJ-B09",
+      "VJ-B10",
+      "VJ-B11",
+      "VJ-B12",
+      "VJ-B13",
+      "VJ-B14",
+      "VJ-B15",
+      "VJ-B16",
+      "VJ-B17",
+      "VJ-B18",
+      "VJ-B19",
+      "VJ-B20",
+      "VJ-B21",
+      "VJ-B22",
+      "VJ-B23",
+      "VJ-B24",
+      "VJ-B25",
+      "VJ-B26"
+    ],
+    "D2-C Classification ambiguity": [
+      "VJ-B12",
+      "VJ-B18",
+      "VJ-B24",
+      "VJ-B26"
+    ]
+  },
+  "root_cause_excluded": {
+    "D2-D Schema/parsing": "V3.1 symmetric coercion; no malformed element observed in 78 runs (all succeeded, all validated).",
+    "D2-E Source instability": "source_sha256 identical across all runs for every job (source_stable true).",
+    "D2-F Provider/model drift": "single provider/model/prompt/schema recorded for all 78 runs; API key rotation is a credential change, not a config difference."
+  }
+}
