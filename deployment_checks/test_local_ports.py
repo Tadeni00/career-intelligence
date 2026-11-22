@@ -4,9 +4,9 @@ Run with: python -m unittest discover -s deployment_checks -v
 This test needs no database, Docker daemon, or third-party modules.
 """
 
-from pathlib import Path
 import re
 import unittest
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 COMPOSE = ROOT / "docker-compose.yml"
