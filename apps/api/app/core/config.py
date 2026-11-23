@@ -89,6 +89,22 @@ class Settings(BaseSettings):
         self.generated_dir.mkdir(parents=True, exist_ok=True)
 
 
+
+def require_supported_runtime(settings: Settings) -> None:
+    """Fail closed until the API has authenticated user and ownership boundaries.
+
+    The current single-candidate API is permitted only in development/test
+    environments. Even a correctly configured production secret or DEBUG=false
+    cannot make the unprotected record-ID routes safe to publish.
+    """
+    if settings.environment == "production":
+        raise RuntimeError(
+            "Career Intelligence production mode is disabled: "
+            "authenticated sessions and per-record authorization are not implemented. "
+            "Use trusted, loopback-only development mode until those controls exist."
+        )
+
+
 @lru_cache
 def get_settings() -> Settings:
     settings = Settings()
