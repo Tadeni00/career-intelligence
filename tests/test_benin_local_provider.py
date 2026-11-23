@@ -100,7 +100,7 @@ def test_benin_routes_without_rapidapi_and_preserves_remote_branch():
         jobs = svc._search_jobs("data analyst", "bj", remote_only=False, location="Cotonou")
         assert jobs == [example_job]
         local.assert_called_once_with(query="data analyst", location="Cotonou", max_results=20)
-        remote.assert_not_called()
+        remote.assert_called_once_with(query="data analyst", country="bj", max_results=20, remote_only=True)
         paid.assert_not_called()
         indeed.assert_not_called()
         svc._search_jobs("data analyst", "bj", remote_only=True)
