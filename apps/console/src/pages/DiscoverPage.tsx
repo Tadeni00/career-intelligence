@@ -574,7 +574,8 @@ export function DiscoverPage() {
                   to use this source. For jobs physically in Benin, a no-key Dev Global Jobs source is checked,
                   with unsupported locations excluded. Its real coverage may be limited.
                   If an approved Optioncarriere publisher connection is configured,
-                  a second source is queried only when the keyless source returns no jobs.
+                  both sources are searched and clear cross-provider duplicates removed.
+                  Vacancies unique to either provider are retained.
                   Remotive and Dev Global Jobs listings retain original source links.
                   Verify the work arrangement and job status with the employer.
                 </Text>
