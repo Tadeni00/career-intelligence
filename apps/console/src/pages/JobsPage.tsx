@@ -56,7 +56,10 @@ export function JobsPage() {
 
   return (
     <Card padding="lg" radius="md">
-      <Title order={2} mb="md">Jobs</Title>
+      <Group justify="space-between" align="center" mb="md">
+        <Title order={2}>Jobs</Title>
+        <Button onClick={() => navigate("/jobs/import")}>Import a vacancy</Button>
+      </Group>
 
       <Group gap="xs" mb="md">
         <Text size="xs" c="dimmed">Matches are calculated against</Text>
@@ -101,7 +104,7 @@ export function JobsPage() {
       {loading ? (
         <Loader size="lg" />
       ) : jobs.length === 0
-        ? <Text c="dimmed">No jobs yet. Create one by pasting a job description.</Text>
+        ? <Text c="dimmed">No jobs yet. Import a vacancy using its description and original link.</Text>
         : <SimpleGrid cols={{ base: 2, md: 3, lg: 4 }}>
             {jobs.map((job) => {
               const match = matches[job.id];
