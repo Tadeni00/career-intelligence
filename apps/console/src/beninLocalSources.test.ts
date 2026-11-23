@@ -1,5 +1,12 @@
 import { BENIN_LOCAL_SOURCES, showBeninLocalSources } from "./beninLocalSources.ts";
-import assert from "node:assert/strict";
+const assert = {
+  equal(actual: unknown, expected: unknown) {
+    if (actual !== expected) throw new Error(`Expected ${String(expected)} but got ${String(actual)}`);
+  },
+  ok(condition: unknown, message = "Assertion failed") {
+    if (!condition) throw new Error(message);
+  },
+};
 
 assert.equal(showBeninLocalSources("bj", false), true);
 assert.equal(showBeninLocalSources(" BJ ", false), true);
