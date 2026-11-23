@@ -1,3 +1,35 @@
+## Live provider coverage and readiness audit (JS-016)
+
+The pull-request CI workflow now includes a **read-only, informational live
+source probe**. It makes at most one bounded API request to each of
+Dev Global Jobs (country `bj`, first 100 records) and Remotive (public
+remote feed). The diagnostic reports the observation time, basic response
+shape, the number of structurally usable Benin-local records in the sampled
+Dev Global Jobs page, and the number of Remotive records whose declared
+geographic restrictions may include Benin. It does **not** print job titles,
+employer names, descriptions, URLs, private profiles or application data, and
+it does not persist vacancies.
+
+If a provider is inaccessible, malformed or its response schema changes,
+its coverage is **unknown**, not zero. A live response sample is **not**
+proof that the application can import those jobs end-to-end, that the full
+market is covered or that the jobs are current. The probe is informational,
+not an application CI gate: provider outages must not block development.
+It only runs for PRs to avoid unnecessary Remotive calls; the Remotive
+public API asks developers to limit use and preserve attribution.
+
+To review results, open the PR's GitHub Actions CI run and check
+**Live source coverage audit (informational)**. If it reports incompatible
+schema, update the provider adapter only after reviewing the actual public
+API's documented fields; do not fabricate missing fields or quietly mark an
+unreachable provider as empty. Final acceptance still needs a browser and
+real candidate-controlled workflow testing.
+
+Sources: https://devglobaljobs.com/developers and
+https://remotive.com/remote-jobs/api
+
+---
+
 ## Unified automatic Benin vacancy discovery (JS-015)
 
 **Discover → Country = BJ → Any work arrangement** now combines jobs
