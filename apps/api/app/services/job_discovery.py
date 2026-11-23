@@ -73,6 +73,7 @@ class JobDiscoveryService:
             country=country,
             max_results=max_results,
             remote_only=remote_only,
+            location=location,
         )
 
         # Limit results
@@ -111,7 +112,7 @@ class JobDiscoveryService:
         return results
 
     def _search_jobs(self, query: str, country: str, max_results: int = 20,
-                     remote_only: bool = False) -> list:
+                     remote_only: bool = False, location: str | None = None) -> list:
         """Search for jobs: JSearch first, Indeed fallback when JSearch is empty.
 
         Indeed.com covers Benin Republic, which JSearch does not. We only call
@@ -132,6 +133,18 @@ class JobDiscoveryService:
             return asyncio.run(search_remotive_jobs(
                 query=query, country=country, max_results=max_results,
                 remote_only=True,
+            ))
+
+        # Personal-use, keyless API with explicitly permitted non-commercial reuse.
+        # Only accept source-confirmed Benin work locations, not remote-only roles.
+        # Unlike the older Indeed fallback, there is no paid provider request.
+        if country.lower() == "bj" and not remote_only:
+            import asyncio
+            from app.services.benin_local import search_benin_local_jobs
+
+            return asyncio.run(search_benin_local_jobs(
+                query=query.split(" in ")[0] if location else query,
+                location=location, max_results=max_results,
             ))
 
         num_pages = max(1, min(JSEARCH_MAX_PAGES, -(-max(1, max_results) // JSEARCH_PAGE_SIZE)))
