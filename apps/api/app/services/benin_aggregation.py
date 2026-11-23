@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
+from itertools import zip_longest
 
 from app.services.jsearch import JSearchJob
 
@@ -36,8 +37,6 @@ def combine_benin_local_jobs(
     # Interleave provider results. If the free source fills the requested
     # page, appending Careerjet after it would still hide every publisher hit.
     # Round-robin keeps both provider pools visible within a shared result cap.
-    from itertools import zip_longest
-
     paired = zip_longest(primary, secondary)
     for pair in paired:
         for job in pair:
