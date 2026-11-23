@@ -37,6 +37,16 @@ export const BENIN_LOCAL_SOURCES = [
     url: "https://emploisbenin.bj/",
     note: "Review Benin job announcements and their original application instructions.",
   },
+  {
+    name: "WabaJob — Benin vacancies",
+    url: "https://www.wabajob.com/",
+    note: "Browse Benin-listed vacancies; confirm employer, deadline and original application instructions before import.",
+  },
+  {
+    name: "Opportafrik — Cotonou vacancies",
+    url: "https://opportafrik.com/benin/cotonou",
+    note: "Review Cotonou listings and follow the original employer posting; confirm availability and eligibility.",
+  },
 ] as const;
 
 export function showBeninLocalSources(country: string, remoteOnly: boolean): boolean {
