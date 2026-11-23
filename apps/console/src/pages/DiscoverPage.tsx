@@ -29,7 +29,12 @@ import {
 } from "../ProfileSelector";
 import { ProvenanceBadge } from "../ProvenanceBadge";
 import { visibleOpportunities, type DiscoverySort } from "../discoveryTriage";
-import type { DiscoveredJobOut, JobSearchResponse } from "../types";
+import type { DiscoveredJobOut, JobSearchResponse, ProfileSummary } from "../types";
+import {
+  MAX_SAVED_SEARCHES, addSavedSearch, readSavedSearches,
+  writeSavedSearches, validCriteria,
+  type SavedSearch, type SearchCriteria,
+} from "../savedSearches";
 
 const COUNTRIES = [
   { value: "ng", label: "Nigeria" },
@@ -272,6 +277,10 @@ export function DiscoverPage() {
   const [location, setLocation] = useState("");
   const [remoteOnly, setRemoteOnly] = useState(false);
   const [maxResults, setMaxResults] = useState(20);
+  const [savedSearches, setSavedSearches] = useState<SavedSearch[]>(readSavedSearches);
+  const [selectedPreset, setSelectedPreset] = useState<string | null>(null);
+  const [presetMessage, setPresetMessage] = useState<string | null>(null);
+  const [usingProfilePrefs, setUsingProfilePrefs] = useState(false);
   const [results, setResults] = useState<JobSearchResponse | null>(null);
   const [sort, setSort] = useState<DiscoverySort>("review");
   const [promisingOnly, setPromisingOnly] = useState(false);
@@ -308,6 +317,92 @@ export function DiscoverPage() {
     () => visibleOpportunities(results?.jobs ?? [], sort, promisingOnly),
     [results, sort, promisingOnly],
   );
+
+  const currentCriteria = (): SearchCriteria | null =>
+    validCriteria({ query, country, location, remoteOnly, maxResults });
+
+  const fillCriteria = (criteria: SearchCriteria) => {
+    setQuery(criteria.query);
+    setCountry(criteria.country);
+    setLocation(criteria.location);
+    setRemoteOnly(criteria.remoteOnly);
+    setMaxResults(criteria.maxResults);
+    setResults(null);
+    setError(null);
+  };
+
+  const saveCurrentSearch = () => {
+    const criteria = currentCriteria();
+    if (!criteria) {
+      setPresetMessage("Enter valid keywords, country and result limit before saving.");
+      return;
+    }
+    const next = addSavedSearch(
+      savedSearches, criteria, `search-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
+    );
+    if (next.length === savedSearches.length) {
+      setPresetMessage("Those search criteria are already saved.");
+      return;
+    }
+    if (!writeSavedSearches(next)) {
+      setPresetMessage("Your browser blocked saving. You can still run this search.");
+      return;
+    }
+    setSavedSearches(next);
+    setSelectedPreset(next[0].id);
+    setPresetMessage("Search saved in this browser. Saving did not contact the job provider.");
+  };
+
+  const loadSavedSearch = (id: string | null) => {
+    setSelectedPreset(id);
+    const saved = savedSearches.find((item) => item.id === id);
+    if (!saved) return;
+    fillCriteria(saved);
+    setPresetMessage("Search fields loaded. Press Search to request fresh vacancies.");
+  };
+
+  const removeSavedSearch = () => {
+    const next = savedSearches.filter((item) => item.id !== selectedPreset);
+    if (!selectedPreset || !writeSavedSearches(next)) {
+      setPresetMessage("Unable to remove this saved search.");
+      return;
+    }
+    setSavedSearches(next);
+    setSelectedPreset(null);
+    setPresetMessage("Saved search removed. This does not delete any tracked jobs.");
+  };
+
+  const fillProfilePreferences = async () => {
+    setUsingProfilePrefs(true);
+    setPresetMessage(null);
+    try {
+      // A selected, confirmed CV profile has its own role/location preferences.
+      // Never silently substitute the shared candidate's preferences for it.
+      const source = profileId !== null
+        ? profiles.find((p) => p.id === profileId)?.confirmed
+        : await api<ProfileSummary>("/candidate");
+      if (!source) {
+        setPresetMessage("The selected CV profile has no confirmed preferences.");
+        return;
+      }
+      const role = source.preferred_roles?.find((value) => value.trim()) ??
+        (source.professional_title?.trim() || "");
+      const place = source.preferred_locations?.find((value) => value.trim()) ?? "";
+      if (!role && !place) {
+        setPresetMessage("No preferred role or location found. Add them on the Profile page or choose another CV.");
+        return;
+      }
+      if (role) setQuery(role);
+      if (place) setLocation(place);
+      setResults(null);
+      setError(null);
+      setPresetMessage("Profile preferences filled the form. Check the country and location, then press Search. No provider request was made.");
+    } catch (error) {
+      setPresetMessage(errorMessage(error, "Could not load profile preferences."));
+    } finally {
+      setUsingProfilePrefs(false);
+    }
+  };
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -409,6 +504,44 @@ export function DiscoverPage() {
         profileId={profileId}
         onChange={setProfileId}
       />
+      <Card withBorder padding="md" radius="md" mb="md">
+        <Title order={4} mb="xs">Start with your preferences</Title>
+        <Text size="sm" c="dimmed" mb="sm">
+          Fill this form using your selected CV profile or shared career profile,
+          or reuse a search saved in this browser. Neither action requests live jobs.
+        </Text>
+        <Group align="flex-end" gap="sm" wrap="wrap">
+          <Button variant="light" onClick={fillProfilePreferences} loading={usingProfilePrefs}>
+            Use profile preferences
+          </Button>
+          <Select
+            label="Saved searches"
+            placeholder="Choose saved criteria"
+            clearable
+            searchable
+            value={selectedPreset}
+            onChange={loadSavedSearch}
+            data={savedSearches.map((item) => ({ value: item.id, label: item.label }))}
+            style={{ minWidth: 220, flexGrow: 1 }}
+          />
+          <Button
+            variant="outline"
+            disabled={!query.trim() || savedSearches.length >= MAX_SAVED_SEARCHES}
+            onClick={saveCurrentSearch}
+          >
+            Save this search
+          </Button>
+          <Button variant="subtle" color="red" disabled={!selectedPreset} onClick={removeSavedSearch}>
+            Remove saved search
+          </Button>
+        </Group>
+        <Text size="xs" c="dimmed" mt="xs">
+          {savedSearches.length}/{MAX_SAVED_SEARCHES} browser-local searches saved. No CV content,
+          selected CV identity or employer data is stored in these presets. Do not use
+          shared or untrusted browser profiles for private search criteria.
+        </Text>
+        {presetMessage && <Alert color="blue" mt="sm">{presetMessage}</Alert>}
+      </Card>
 
       <Card withBorder padding="md" radius="md" mb="md">
         <Title order={4} mb="md">Search</Title>
