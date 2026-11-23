@@ -113,10 +113,10 @@ class JobDiscoveryService:
 
     def _search_jobs(self, query: str, country: str, max_results: int = 20,
                      remote_only: bool = False, location: str | None = None) -> list:
-        """Country-specific provider routing with opt-in publisher fallback.
+        """Country-specific provider routing with complementary Benin sources.
 
-        Benin remote: Remotive; Benin physical: keyless Dev Global Jobs,
-        then optional, properly configured Careerjet publisher search if empty.
+        Benin remote: Remotive; Benin local: keyless Dev Global Jobs and
+        configured Careerjet together, with conservative de-duplication.
         Elsewhere: JSearch followed by Indeed only on empty results.
         """
         from app.services.jsearch import JSEARCH_MAX_PAGES, JSEARCH_PAGE_SIZE
@@ -147,21 +147,24 @@ class JobDiscoveryService:
                 search_careerjet_benin_jobs,
             )
 
-            jobs = asyncio.run(search_benin_local_jobs(
+            from app.services.benin_aggregation import combine_benin_local_jobs
+
+            # A populated first provider does NOT establish search coverage:
+            # Careerjet may have additional local vacancies. Query both when
+            # the publisher is properly configured, even if Dev Global Jobs
+            # already returned jobs. These remain separate provider searches.
+            primary = asyncio.run(search_benin_local_jobs(
                 query=query, location=location, max_results=max_results,
             ))
-            # The no-key feed is preferred. Do not spend a registered
-            # publisher request if it already produced relevant results.
-            # Careerjet is strictly opt-in with genuine requester details.
-            if jobs:
-                return jobs
             credentials = CareerjetCredentials.from_settings(get_settings())
             if credentials is None:
-                return []
-            return asyncio.run(search_careerjet_benin_jobs(
+                return primary
+
+            secondary = asyncio.run(search_careerjet_benin_jobs(
                 query=query, location=location,
                 max_results=max_results, credentials=credentials,
             ))
+            return combine_benin_local_jobs(primary, secondary, max_results)
 
         num_pages = max(1, min(JSEARCH_MAX_PAGES, -(-max(1, max_results) // JSEARCH_PAGE_SIZE)))
         # Use the synchronous version for now
