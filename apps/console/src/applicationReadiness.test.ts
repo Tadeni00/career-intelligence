@@ -27,4 +27,4 @@ check("stale postings require renewed check", stale.find(s => s.key === "availab
 const matched = applicationReadinessSignals(base, { recommendation: "APPLY", overall_score: 90 } as MatchResult);
 check("high match never certifies eligibility", matched.find(s => s.key === "authorization")?.status === "unknown" &&
   matched.find(s => s.key === "qualifications")?.status === "review");
-process.exitCode = failures ? 1 : 0;
+if (failures) throw new Error(`${failures} application readiness checks failed`);
