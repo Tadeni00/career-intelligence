@@ -103,3 +103,5 @@ jobs:
         run: node --experimental-strip-types src/profileEditing.test.ts
       - name: Job metadata accuracy checks
         run: node --experimental-strip-types src/jobMetadataLabels.test.ts
+      - name: Benin local-source discovery checks
+        run: node --experimental-strip-types src/beninLocalSources.test.ts
