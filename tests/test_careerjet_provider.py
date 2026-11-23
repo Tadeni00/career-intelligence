@@ -124,7 +124,39 @@ def test_errors_are_not_misrepresented_as_no_vacancies(status, body, expected):
     assert "test-secret" not in str(e.value)
 
 
-def test_benin_prefers_keyless_and_uses_publisher_only_if_empty():
+def test_benin_queries_both_sources_even_when_keyless_has_jobs():
+    """A single keyless result must not mask unique Careerjet listings."""
+    svc = JobDiscoveryService(db=None)
+    primary = JSearchJob(
+        provider_job_id="one", title="Data Scientist", company="Test Employer",
+        location="Cotonou", description="", apply_url="https://devglobaljobs.com/jobs/one",
+        posted_at=None, salary_min=None, salary_max=None, salary_currency=None,
+        employment_type=None, remote_status=None, source="devglobaljobs",
+    )
+    second = JSearchJob(
+        provider_job_id="two", title="Data Engineer", company="Another Employer",
+        location="Porto-Novo", description="", apply_url="https://jobviewtrack.com/jobs/two",
+        posted_at=None, salary_min=None, salary_max=None, salary_currency=None,
+        employment_type=None, remote_status=None, source="careerjet",
+    )
+    configured = empty_settings(
+        careerjet_publisher_key="abc", careerjet_user_ip="8.8.8.8",
+        careerjet_user_agent="Mozilla/5.0 Test Browser",
+        careerjet_referer="https://publisher.example/jobs",
+    )
+    with (
+        patch("app.services.benin_local.search_benin_local_jobs", return_value=[primary]) as free,
+        patch("app.core.config.get_settings", return_value=configured),
+        patch("app.services.careerjet.search_careerjet_benin_jobs", return_value=[second]) as publisher,
+    ):
+        jobs = svc._search_jobs("analyst", "bj", 10, location="Cotonou")
+        assert jobs == [primary, second]
+        free.assert_called_once()
+        publisher.assert_called_once()
+        assert publisher.call_args.kwargs["location"] == "Cotonou"
+
+
+def test_benin_without_publisher_credentials_only_queries_keyless_source():
     svc = JobDiscoveryService(db=None)
     job = JSearchJob(
         provider_job_id="one", title="Data Scientist", company="Test Employer",
@@ -134,30 +166,24 @@ def test_benin_prefers_keyless_and_uses_publisher_only_if_empty():
     )
     with (
         patch("app.services.benin_local.search_benin_local_jobs", return_value=[job]),
-        patch("app.core.config.get_settings", return_value=empty_settings(
-            careerjet_publisher_key="abc", careerjet_user_ip="8.8.8.8",
-            careerjet_user_agent="Mozilla/5.0 Test Browser",
-            careerjet_referer="https://publisher.example/jobs",
-        )),
-        patch("app.services.careerjet.search_careerjet_benin_jobs") as paid,
+        patch("app.core.config.get_settings", return_value=empty_settings()),
+        patch("app.services.careerjet.search_careerjet_benin_jobs") as publisher,
     ):
-        assert svc._search_jobs("analyst", "bj", 10, location="Cotonou") == [job]
-        paid.assert_not_called()
+        assert svc._search_jobs("analyst", "bj", 10) == [job]
+        publisher.assert_not_called()
+
+
+def test_benin_publisher_is_queried_when_free_source_returns_zero():
+    svc = JobDiscoveryService(db=None)
+    settings = empty_settings(
+        careerjet_publisher_key="abc", careerjet_user_ip="8.8.8.8",
+        careerjet_user_agent="Mozilla/5.0 Test Browser",
+        careerjet_referer="https://publisher.example/jobs",
+    )
     with (
         patch("app.services.benin_local.search_benin_local_jobs", return_value=[]),
-        patch("app.core.config.get_settings", return_value=empty_settings()),
-        patch("app.services.careerjet.search_careerjet_benin_jobs") as paid,
+        patch("app.core.config.get_settings", return_value=settings),
+        patch("app.services.careerjet.search_careerjet_benin_jobs", return_value=[]) as publisher,
     ):
         assert svc._search_jobs("analyst", "bj", 10) == []
-        paid.assert_not_called()
-    with (
-        patch("app.services.benin_local.search_benin_local_jobs", return_value=[]),
-        patch("app.core.config.get_settings", return_value=empty_settings(
-            careerjet_publisher_key="abc", careerjet_user_ip="8.8.8.8",
-            careerjet_user_agent="Mozilla/5.0 Test Browser",
-            careerjet_referer="https://publisher.example/jobs",
-        )),
-        patch("app.services.careerjet.search_careerjet_benin_jobs", return_value=[job]) as paid,
-    ):
-        assert svc._search_jobs("analyst", "bj", 10, location="Cotonou") == [job]
-        paid.assert_called_once()
+        publisher.assert_called_once()
