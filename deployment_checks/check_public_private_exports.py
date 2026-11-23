@@ -1,23 +1,11 @@
-"""Fail CI if public-tracked personal exports expand or change silently.
+"""Block tracked personal CV/profile exports in active tree.
 
-This is a containment gate, NOT remediation of existing public files/history.
-Never print private file content. Approved legacy Git blob IDs are not evidence
-that their contents are safe to share.
+Does not rewrite public history. Never log file contents.
 """
 from __future__ import annotations
 
 import re
 import subprocess
-
-# Explicitly grandfathered for detection only; SEC-003 requires removal
-# through a separate owner-approved remediation plan.
-LEGACY_BLOBS = {
-    "cv/Tomisin_Adeniyi_ML_Engineer.pdf": "c14a83b1905b9e0cb1db336bf7e8dd2f7a7bd009",
-    "cv_text.txt": "08e5c09d43c18a440d5254282e80520287020fad",
-    "val_extraction.json": "71d3ab5019e248e7cc35d775e1755d1e6bda5ebb",
-    "val_profile.json": "1aab0aec5aa0a7c24494badfa0f10fa48691d706",
-    "val_profile_fixed.json": "5bdb48ae7de9456f73f681bb47f1404307abdebc",
-}
 
 def private_export_path(path: str) -> bool:
     """Detect root-level CV and profile exports, including unexpected variants."""
@@ -30,16 +18,12 @@ def private_export_path(path: str) -> bool:
     )
 
 def violations(tracked: dict[str, str]) -> list[str]:
-    problems: list[str] = []
-    for path, sha in tracked.items():
-        if not private_export_path(path):
-            continue
-        allowed = LEGACY_BLOBS.get(path)
-        if allowed is None:
-            problems.append(f"New tracked private-export location: {path}")
-        elif sha != allowed:
-            problems.append(f"Grandfathered private-export blob changed: {path}")
-    return problems
+    return [
+        f"Tracked private-export location: {path}"
+        for path in tracked
+        if private_export_path(path)
+    ]
+
 
 def tracked_blobs() -> dict[str, str]:
     # Git index, not local .gitignore status: detects staged/tracked files.
@@ -61,4 +45,4 @@ if __name__ == "__main__":
         print("PRIVACY-GATE:", finding)
     if findings:
         raise SystemExit("Public repository export safety gate failed. See SEC-003.")
-    print("Public export containment check passed (existing SEC-003 exposure remains unresolved).")
+    print("Public export active-tree check passed (historical SEC-003 exposure remains unresolved).")
