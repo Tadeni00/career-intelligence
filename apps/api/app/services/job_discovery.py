@@ -69,7 +69,7 @@ class JobDiscoveryService:
         # Remote-only search for Benin uses Remotive's public feed. A city
         # should not be appended to the role keywords for global remote roles.
         jobs = self._search_jobs(
-            query=query if country.lower() == "bj" and remote_only else search_query,
+            query=query if country.lower() == "bj" else search_query,
             country=country,
             max_results=max_results,
             remote_only=remote_only,
@@ -143,7 +143,7 @@ class JobDiscoveryService:
             from app.services.benin_local import search_benin_local_jobs
 
             return asyncio.run(search_benin_local_jobs(
-                query=query.split(" in ")[0] if location else query,
+                query=query,
                 location=location, max_results=max_results,
             ))
 
