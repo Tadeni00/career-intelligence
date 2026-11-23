@@ -30,6 +30,7 @@ import {
 import { ProvenanceBadge } from "../ProvenanceBadge";
 import { visibleOpportunities, type DiscoverySort } from "../discoveryTriage";
 import type { DiscoveredJobOut, JobSearchResponse, ProfileSummary } from "../types";
+import { profileRemoteOnly } from "../profileEditing";
 import {
   MAX_SAVED_SEARCHES, addSavedSearch, readSavedSearches,
   writeSavedSearches, validCriteria,
@@ -394,9 +395,10 @@ export function DiscoverPage() {
       }
       if (role) setQuery(role);
       if (place) setLocation(place);
+      setRemoteOnly(profileRemoteOnly(source.remote_preference));
       setResults(null);
       setError(null);
-      setPresetMessage("Profile preferences filled the form. Check the country and location, then press Search. No provider request was made.");
+      setPresetMessage("Profile preferences filled role, location and supported remote-only filter. Check the country, location and work restrictions, then press Search. Hybrid/on-site preferences cannot be enforced by this provider. No provider request was made.");
     } catch (error) {
       setPresetMessage(errorMessage(error, "Could not load profile preferences."));
     } finally {
