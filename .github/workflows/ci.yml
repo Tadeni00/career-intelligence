@@ -112,7 +112,7 @@ jobs:
 
   live-provider-coverage:
     name: Live source coverage audit (informational)
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     continue-on-error: true
     timeout-minutes: 2
