@@ -5,6 +5,15 @@ import { api, errorMessage } from "../api";
 import { extractVacancyDraft } from "../vacancyDraftExtraction";
 
 type ImportedJob = { job_id: number; created: boolean; message: string };
+type JobUrlPreview = {
+  title: string;
+  company: string;
+  location: string;
+  description: string;
+  remote_status: "ONSITE" | "HYBRID" | "REMOTE" | "UNKNOWN";
+  source: string;
+  warnings: string[];
+};
 
 export function ImportVacancyPage() {
   const navigate = useNavigate();
@@ -15,9 +24,37 @@ export function ImportVacancyPage() {
   const [description, setDescription] = useState("");
   const [arrangement, setArrangement] = useState("UNKNOWN");
   const [saving, setSaving] = useState(false);
+  const [previewing, setPreviewing] = useState(false);
+  const [previewNotice, setPreviewNotice] = useState<string | null>(null);
   const [sourceSnippet, setSourceSnippet] = useState("");
   const [extractionNotice, setExtractionNotice] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const previewFromUrl = async () => {
+    setError(null);
+    setPreviewNotice(null);
+    setPreviewing(true);
+    try {
+      const draft = await api<JobUrlPreview>("/jobs/import/preview", {
+        method: "POST",
+        body: JSON.stringify({ url: url.trim() }),
+      });
+      setTitle(draft.title);
+      // Some public ATS APIs do not expose employer names; never infer it.
+      setCompany(draft.company);
+      setLocation(draft.location);
+      setDescription(draft.description);
+      setArrangement(draft.remote_status);
+      setPreviewNotice(
+        `Draft from ${draft.source}. ${draft.warnings.join(" ")} ` +
+        "You must confirm all fields and press Save. No job was saved yet."
+      );
+    } catch (caught) {
+      setError(errorMessage(caught, "This URL is not supported for automatic preview. Paste the description manually instead."));
+    } finally {
+      setPreviewing(false);
+    }
+  };
 
   const previewStructuredData = () => {
     setError(null);
@@ -85,8 +122,9 @@ export function ImportVacancyPage() {
       <Title order={2} mb="xs">Import a job vacancy</Title>
       <Text size="sm" c="dimmed" mb="lg">
         Found a vacancy on ANPE Bénin, an employer website or another job board?
-        Paste its description, confirm the facts and save it to Career Intelligence.
-        No external site is fetched; the URL is a reference to the original posting,
+        For supported public Greenhouse/Lever job URLs, preview details using their official read-only APIs.
+        Other sites require pasted content. Confirm the facts and save to Career Intelligence.
+        The saved URL is a reference to the original posting,
         not proof that it is still open. Requirement extraction and CV matching can
         be run from the saved job's detail page.
       </Text>
@@ -132,6 +170,16 @@ export function ImportVacancyPage() {
           <TextInput label="Original vacancy URL (optional)" value={url}
             onChange={(event) => setUrl(event.currentTarget.value)}
             maxLength={2048} placeholder="https://..." />
+          <Group>
+            <Button variant="light" type="button" loading={previewing}
+              disabled={!url.trim() || previewing} onClick={previewFromUrl}>
+              Preview supported URL
+            </Button>
+            <Text size="xs" c="dimmed">
+              Greenhouse and Lever public job links only. Other sites still use paste-description import.
+            </Text>
+          </Group>
+          {previewNotice && <Alert color="blue">{previewNotice}</Alert>}
           <Textarea label="Paste original job description" required minRows={9}
             autosize maxRows={18} value={description}
             onChange={(event) => setDescription(event.currentTarget.value)}
