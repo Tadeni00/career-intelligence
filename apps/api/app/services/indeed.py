@@ -109,7 +109,8 @@ class IndeedProvider:
             # appropriate status instead of a misleading empty result.
             if resp.status_code in (401, 403):
                 raise IndeedProviderError(
-                    f"Indeed authentication failed (HTTP {resp.status_code})"
+                    f"Indeed authentication failed (HTTP {resp.status_code})",
+                    resp.status_code,
                 )
             if resp.status_code == 429:
                 raise IndeedProviderError(
