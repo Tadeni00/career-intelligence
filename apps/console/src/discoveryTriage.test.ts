@@ -8,7 +8,7 @@ function opportunity(
   id: number,
   relevance: string | null,
   recommendation: string | null,
-  score: number | null,
+  score: number,
   options: { stale?: boolean; duplicate?: boolean; posted?: string | null } = {},
 ): DiscoveredJobOut {
   return {
@@ -39,7 +39,7 @@ const adjacent = opportunity(2, "Adjacent", "APPLY_WITH_TAILORING", 72);
 const mismatch = opportunity(3, "Mismatch", "APPLY", 99, { posted: "2026-11-22T00:00:00Z" });
 const stale = opportunity(4, "Aligned", "APPLY", 95, { stale: true });
 const duplicate = opportunity(5, "Aligned", "APPLY", 95, { duplicate: true });
-const unscored = opportunity(6, null, null, null);
+const unscored = opportunity(6, null, null, 0);
 const all = [mismatch, stale, unscored, adjacent, duplicate, aligned];
 
 check("promising includes aligned/adjacent with APPLY recommendations",
@@ -58,7 +58,7 @@ check("score sorting puts unscored last",
 check("promising filter preserves original array",
   [all.length, visibleOpportunities(all, "review", true).length], [6, 2]);
 check("stable IDs break ties deterministically",
-  visibleOpportunities([opportunity(9, null, null, null), opportunity(7, null, null, null)],
+  visibleOpportunities([opportunity(9, null, null, 0), opportunity(7, null, null, 0)],
     "review", false).map(x => x.job.id), [7, 9]);
 
 process.exit(failures === 0 ? 0 : 1);
