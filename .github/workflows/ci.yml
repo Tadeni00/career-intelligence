@@ -103,6 +103,8 @@ jobs:
         run: node --experimental-strip-types src/savedSearches.test.ts
       - name: Career profile edit and preferences checks
         run: node --experimental-strip-types src/profileEditing.test.ts
+      - name: English job-ad reading aid checks
+        run: node --experimental-strip-types src/jobTranslation.test.ts
       - name: Job metadata accuracy checks
         run: node --experimental-strip-types src/jobMetadataLabels.test.ts
       - name: Benin local-source discovery checks

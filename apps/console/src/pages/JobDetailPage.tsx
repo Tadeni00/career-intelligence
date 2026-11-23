@@ -20,6 +20,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { api, errorMessage } from "../api";
 import { salaryLabel, workArrangementLabel } from "../jobMetadataLabels";
 import { ApplicationReadinessPanel } from "../components/ApplicationReadinessPanel";
+import { JobLanguageHelper } from "../components/JobLanguageHelper";
 import { StrategyPanel } from "../components/StrategyPanel";
 import { useActiveProfile } from "../ProfileSelector";
 import { ProvenanceBadge, ProvenanceSummary, useProfileNames } from "../ProvenanceBadge";
@@ -169,6 +170,8 @@ export function JobDetailPage() {
       </Group>
 
       {job && <ApplicationReadinessPanel key={job.id} job={job} match={match} />}
+
+      <JobLanguageHelper description={job?.description} />
 
       <Card withBorder padding="lg" radius="md" mb="md">
         <Title order={3} mb="md">Requirements</Title>

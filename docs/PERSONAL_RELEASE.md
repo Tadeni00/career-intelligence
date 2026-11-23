@@ -1,3 +1,9 @@
+## English reading aid for French-language job adverts (JS-019)
+
+On discovered-job and saved-job detail pages, **Job description · Original language** now displays the unmodified advertised description. **Read in English** opens an on-demand Google Translate tab with that description (source language auto-detected, English target). Nothing is translated, sent externally or saved until the user clicks. The translated text is a reading aid and does not overwrite original requirements or modify matching evidence. CV and profile information are not included. Google receives the selected job-description text when the link opens; do not click for a description containing sensitive or confidential material. Long descriptions are limited to the first 3,500 characters in the translation link, with a visible warning; the complete original remains on screen. Check critical salary, dates, work eligibility and application instructions against the source.
+
+This version intentionally avoids a translation API, credentials, automated translation, model costs, or a new application language framework. It does **not** validate French-language matching or guarantee accurate translations.
+
 ### Additional verified browsing sources (JS-018)
 
 The Benin local-source directory also links to **WabaJob** and **Opportafrik's Cotonou page**, which displayed Benin-area advertisements during a public-web check on November 23, 2026. These are **links for human browsing and assisted copy/review/import only**. Neither is configured as an automated jobs API; live results, freshness, suitability, permission to reuse, and vacancy counts are not guaranteed. Use the original listing's application instructions and confirm deadline and employer independently. No backend fetch or scraping was added.
