@@ -13,6 +13,7 @@ role mapping below is ``Uncertain``, never a confident verdict.
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass
 
 ALIGNED = "Aligned"
@@ -29,6 +30,10 @@ _ROLE_FAMILIES: dict[str, tuple[str, ...]] = {
         "data scientist",
         "data science",
         "statistician",
+        "scientifique des donnees",
+        "specialiste en science des donnees",
+        "statisticien",
+        "statisticienne",
     ),
     "data_analyst": (
         "data analyst",
@@ -37,6 +42,12 @@ _ROLE_FAMILIES: dict[str, tuple[str, ...]] = {
         "business analyst",
         "reporting analyst",
         "analytics analyst",
+        "analyste de donnees",
+        "analyste des donnees",
+        "analyste de la donnee",
+        "analyste decisionnel",
+        "analyste decisionnelle",
+        "analyste business intelligence",
     ),
     "ml_engineer": (
         "machine learning engineer",
@@ -46,6 +57,12 @@ _ROLE_FAMILIES: dict[str, tuple[str, ...]] = {
         "deep learning engineer",
         "nlp engineer",
         "artificial intelligence engineer",
+        "ingenieur en apprentissage automatique",
+        "ingenieure en apprentissage automatique",
+        "ingenieur machine learning",
+        "ingenieure machine learning",
+        "ingenieur intelligence artificielle",
+        "ingenieure intelligence artificielle",
     ),
 }
 
@@ -66,6 +83,10 @@ _ADJACENT_ROLES: tuple[str, ...] = (
     "bi developer",
     "etl developer",
     "data engineering",
+    "ingenieur des donnees",
+    "ingenieure des donnees",
+    "developpeur logiciel",
+    "developpeuse logiciel",
 )
 
 # Title signals that the record is not an identifiable vacancy at all.
@@ -76,6 +97,9 @@ _NON_VACANCY_MARKERS: tuple[str, ...] = (
     "training course",
     "training program",
     "certification program",
+    "formation",
+    "cours",
+    "certification",
 )
 
 
@@ -83,7 +107,11 @@ def _normalize(text: str | None) -> str:
     """Lowercase, unescape entities, and collapse punctuation to spaces."""
     import html as _html
 
-    cleaned = _html.unescape(text or "").lower()
+    cleaned = _html.unescape(text or "").casefold()
+    cleaned = "".join(
+        char for char in unicodedata.normalize("NFKD", cleaned)
+        if not unicodedata.combining(char)
+    )
     cleaned = re.sub(r"[^a-z0-9+#]+", " ", cleaned)
     return re.sub(r"\s+", " ", cleaned).strip()
 
