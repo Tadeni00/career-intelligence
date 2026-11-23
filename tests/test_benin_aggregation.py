@@ -50,3 +50,17 @@ def test_limit_applied_after_unique_merge():
 def test_without_publisher_jobs_keyless_results_are_unchanged():
     first = job("devglobaljobs", "a", "Analyst", "A", "Cotonou")
     assert combine_benin_local_jobs([first], [], 20) == [first]
+
+def test_full_primary_page_does_not_crowd_out_secondary_provider():
+    free = [
+        job("devglobaljobs", f"free-{i}", f"Free job {i}", "Employer A", "Cotonou")
+        for i in range(20)
+    ]
+    publisher = [
+        job("careerjet", f"paid-{i}", f"Publisher job {i}", "Employer B", "Cotonou")
+        for i in range(20)
+    ]
+    combined = combine_benin_local_jobs(free, publisher, 20)
+    assert len(combined) == 20
+    assert {item.source for item in combined} == {"devglobaljobs", "careerjet"}
+    assert sum(item.source == "careerjet" for item in combined) == 10
