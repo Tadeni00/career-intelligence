@@ -1,4 +1,4 @@
-import { classifyApplicationUrl } from "./applicationUrl";
+import { classifyApplicationUrl } from "./applicationUrl.ts";
 import type { Freshness, Job, MatchResult } from "./types";
 
 export type ReadinessSignal = {
