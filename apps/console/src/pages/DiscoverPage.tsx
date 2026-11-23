@@ -462,7 +462,27 @@ export function DiscoverPage() {
         </form>
       </Card>
 
-      {error && <Alert color="red" mt="md">{error}</Alert>}
+      {error && (
+        <Alert color="red" title="Live job search is unavailable" mt="md">
+          <Stack gap="xs">
+            <Text size="sm">{error}</Text>
+            <Text size="sm">
+              No new vacancies were confirmed by this search. You can review
+              jobs already saved on this device without another provider request,
+              or adjust the country, location or keywords and retry when ready.
+              Results from past searches are not automatically verified as open.
+            </Text>
+            <Group gap="xs">
+              <Button size="xs" variant="outline" color="red" onClick={() => navigate("/jobs")}>
+                Browse saved jobs
+              </Button>
+              <Button size="xs" variant="subtle" color="red" onClick={() => navigate("/applications")}>
+                Review applications
+              </Button>
+            </Group>
+          </Stack>
+        </Alert>
+      )>
 
       {results && (
         <Stack gap="md" mt="md">
@@ -506,7 +526,15 @@ export function DiscoverPage() {
 
           {results.jobs.length === 0 ? (
             <Text c="dimmed" ta="center" pt="lg">
-              No jobs found. Try adjusting your search criteria.
+              No jobs were returned by the configured providers for this search.
+              Try different keywords or country. Provider coverage varies, and
+              an empty response is not proof that no relevant jobs exist.
+            </Text>
+            <Button variant="light" onClick={() => navigate("/jobs")}>
+              Browse previously saved jobs
+            </Button>
+            <Text c="dimmed" ta="center" size="xs">
+              Saved vacancies may be out of date; verify them at the original source before applying.
             </Text>
           ) : visible.length === 0 ? (
             <Alert color="blue" title="No results match this view">
