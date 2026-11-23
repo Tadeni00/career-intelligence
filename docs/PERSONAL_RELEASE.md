@@ -35,10 +35,10 @@ its coverage is **unknown**, not zero. A live response sample is **not**
 proof that the application can import those jobs end-to-end, that the full
 market is covered or that the jobs are current. The probe is informational,
 not an application CI gate: provider outages must not block development.
-It only runs for PRs to avoid unnecessary Remotive calls; the Remotive
+It runs on pull requests and can also be triggered manually through GitHub Actions workflow_dispatch. There is no schedule; avoid repeated manual requests to respect provider limits. The Remotive
 public API asks developers to limit use and preserve attribution.
 
-To review results, open the PR's GitHub Actions CI run and check
+To review results, open the PR's GitHub Actions CI run or launch an opt-in manual CI workflow from Actions (select the intended branch), then check
 **Live source coverage audit (informational)**. If it reports incompatible
 schema, update the provider adapter only after reviewing the actual public
 API's documented fields; do not fabricate missing fields or quietly mark an
