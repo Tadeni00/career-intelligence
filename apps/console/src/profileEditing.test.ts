@@ -15,7 +15,7 @@ const summary = {
   preferred_roles: ["Data Scientist", "ML Engineer"],
   preferred_locations: ["Lagos", "Remote"], remote_preference: "REMOTE",
   skills: [{ id: 8, name: "Python" }], experience: [], education: [], projects: [],
-} as ProfileSummary;
+} as unknown as ProfileSummary;
 const draft = profileToDraft(summary);
 check("all preferred roles editable before save", draft.preferred_roles === "Data Scientist, ML Engineer");
 check("zero salary preserved", draft.minimum_salary === "0");
