@@ -159,7 +159,7 @@ export function JobDetailPage() {
             Employment type:{" "}
             {job?.employment_type ?? "Not stated"}
           </Text>
-          {job && <Text size="sm" c="dimmed">{salaryLabel(job)}</Text>}}
+          {job && <Text size="sm" c="dimmed">{salaryLabel(job)}</Text>}
         </Group>
 
         <Group>
