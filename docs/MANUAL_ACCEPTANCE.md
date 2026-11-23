@@ -24,6 +24,27 @@ Use a **fresh local clone** and a **synthetic CV**. The repository is public, bu
 11. [ ] Verify tracked applications, filtering and status display. Only use **I submitted this application** after an actual external submission; do not fake a submission merely to tick the test.
 12. [ ] Stop the stack with `docker compose down`, without `-v`. Restart and check that previously saved profile/application data remains present.
 
+
+## Benin discovery and vacancy-import acceptance (JS-017)
+
+This section is **not yet executed**. It supplements the smoke test above; a green CI run is not a substitute for browser acceptance.
+
+### Optional remote source audit — no local setup
+
+From GitHub **Actions → CI quality gates → Run workflow**, select the current development branch, then inspect **Live source coverage audit (informational)**. This opt-in workflow makes only bounded read-only requests to the two public sources. Do not rerun it repeatedly: Remotive requests should be infrequent, and the workflow deliberately has no schedule. Report UTC observation time, provider status and counts only; do not copy vacancy descriptions, applicant details or secrets into CI discussions. A provider error yields **UNKNOWN**, never zero. A count from one sampled page does not establish nationwide coverage or end-to-end import success.
+
+### Local/browser acceptance when ready
+
+1. [ ] Select a confirmed synthetic profile, set **Country = BJ** and **Any work arrangement**, and click Search. Record source-specific result counts and errors independently; do not label remote jobs as physically located in Benin.
+2. [ ] Select **Remote only** with BJ. Check that regional eligibility is explicit, not assumed from the word 'remote', and that original source/apply links remain accessible. A listed region is not verification of work authorization.
+3. [ ] Test a directly hosted, public **Greenhouse** vacancy URL and a **Lever** vacancy URL using **Preview supported URL**. Confirm that preview makes no automatic save, matching or application submission; review missing company, salary, workplace and eligibility fields before saving.
+4. [ ] Paste a JobPosting JSON-LD excerpt or copied HTML from an accessible job page. Confirm the extracted fields remain an editable draft; for an unsupported site, verify manual description plus URL entry is possible without arbitrary server-side fetching.
+5. [ ] Use a genuine Benin local-source listing from the directory (where available) to test manual import and source attribution. Do **not** infer a site permits scraping, and do not manufacture a listing when none is available.
+6. [ ] Verify source filters, local-versus-remote labels, conservative duplicate behavior and that provider outages display an error rather than a successful empty result.
+7. [ ] Open an original employer application URL from an imported vacancy, verify safe external navigation and that the application remains unsubmitted until explicitly confirmed by the user.
+
+**Release decision rule:** automated discovery may be marked functioning only for a source with confirmed end-to-end sample evidence; no claim of broad Benin on-site coverage is permitted from the current zero-record Dev Global Jobs observation. Manual Benin vacancy import can be accepted independently of automated discovery. Keep live-provider audit, browser acceptance and third-party terms as separate evidence categories.
+
 ## Report
 
 Copy this concise summary into the release discussion (omit CV content and names):
