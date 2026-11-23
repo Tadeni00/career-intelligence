@@ -162,6 +162,14 @@ function JobCard({
         <Text size="xs" c="dimmed">
           Source: {job.source ?? "Unknown"} {job.source_id ? `(${job.source_id})` : ""}
         </Text>
+        {job.source === "devglobaljobs" && (
+          <Text size="xs">
+            <a href="https://devglobaljobs.com/" target="_blank" rel="noopener noreferrer">
+              Powered by Dev Global Jobs
+            </a>
+            {" "}— local workplace and vacancy status must still be verified.
+          </Text>
+        )}
 
         {relevance && (
           <Group gap="xs">
@@ -557,9 +565,10 @@ export function DiscoverPage() {
                   For remote-only searches, we use Remotive's no-key public listings with
                   geographic restrictions checked conservatively. Remote does not mean
                   worldwide or guaranteed work authorization. Set Remote to "Remote only"
-                  to use this source. For jobs physically in Benin, the existing Indeed
-                  fallback may require an API key and can be rate-limited; no local vacancy
-                  coverage is guaranteed. Remotive listings are attributed and link to Remotive.
+                  to use this source. For jobs physically in Benin, a no-key Dev Global Jobs source is checked,
+                  with unsupported locations excluded. Its real coverage may be limited.
+                  Remotive and Dev Global Jobs listings retain original source links.
+                  Verify the work arrangement and job status with the employer.
                 </Text>
               </Alert>
             )}
@@ -627,9 +636,10 @@ export function DiscoverPage() {
         <Card withBorder padding="md" radius="md" mb="md">
           <Title order={4} mb="xs">Jobs located in Benin — local sources</Title>
           <Text size="sm" c="dimmed" mb="sm">
-            The standard provider may not cover physical jobs in Benin reliably.
-            Browse these Benin-focused sites directly for on-site and hybrid vacancies.
-            These links are discovery shortcuts, not imported job matches or proof
+            The integrated Dev Global Jobs feed can return Benin-located vacancies in
+            the normal search results, but may have limited coverage. These additional
+            Benin-focused sites help you find other on-site and hybrid vacancies.
+            These are browsing shortcuts, not automatically imported records or proof
             that any vacancy is still open. Check location, deadline and application
             requirements on the original posting. You can add a verified vacancy
             manually to track it in Career Intelligence.

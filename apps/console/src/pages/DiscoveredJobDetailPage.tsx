@@ -181,6 +181,13 @@ export function DiscoveredJobDetailPage() {
           <Text size="sm" c="dimmed">
             Source: {job.source ?? "Unknown"}
           </Text>
+          {job.source === "devglobaljobs" && (
+            <Text size="xs">
+              <a href="https://devglobaljobs.com/" target="_blank" rel="noopener noreferrer">
+                Powered by Dev Global Jobs
+              </a>
+            </Text>
+          )}
         </Group>
       </Group>
 

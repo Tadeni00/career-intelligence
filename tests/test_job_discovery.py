@@ -579,7 +579,7 @@ class TestDiscoveryServiceWiring:
     """Service-level wiring hardened by the live smoke test."""
 
     def test_indeed_fallback_on_empty_jsearch(self, db_session, mock_candidate):
-        """JSearch empty -> Indeed.com Indeed returns jobs, provenance says indeed."""
+        """Other countries retain the existing Indeed fallback after JSearch."""
         from app.services.indeed import JSearchJob as IndeedJob
         from app.services.job_discovery import JobDiscoveryService
 
@@ -607,7 +607,7 @@ class TestDiscoveryServiceWiring:
                 "app.services.indeed.search_indeed_jobs", return_value=[indeed_job]
             ) as mock_indeed:
                 results = service.discover_jobs(
-                    candidate_id=1, query="benin dev", country="bj"
+                    candidate_id=1, query="benin dev", country="ng"
                 )
         assert len(results) == 1
         assert results[0]["job"]["title"] == "Benin Dev"
