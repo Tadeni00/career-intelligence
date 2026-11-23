@@ -7,6 +7,7 @@ from __future__ import annotations
 import re
 import subprocess
 
+
 def private_export_path(path: str) -> bool:
     """Detect root-level CV and profile exports, including unexpected variants."""
     normalized = path.replace("\\", "/")
