@@ -25,6 +25,28 @@ Select `bj` in the two-letter country-code field (or enter another ISO 3166-1 al
 
 For **on-site or hybrid jobs in Benin**, Search now requests **Dev Global Jobs** using its documented country/keyword API, without an API key. Only records with an explicit Benin country, an identifiable local location, and a vendor-hosted original listing URL enter the matching and shortlisting pipeline. Provider data may be sparse, partial, stale or incorrectly labeled; the result count is **not proof of comprehensive Benin coverage**. Salary and employment type remain unverified when missing. The provider permits non-commercial personal/research use within its published limits, requires visible **Powered by Dev Global Jobs** attribution and links to its own job pages, and requires written permission for commercial redistribution. See [provider API and terms](https://devglobaljobs.com/developers).
 
+### Import an on-site or hybrid job without a provider API key
+
+The **Jobs → Import a vacancy** form works for any country, including Benin.
+Use Discover's Benin local source directory (ANPE Bénin, government recruitment
+notices, EmploiBenin, etc.) to locate a vacancy. Copy its original description
+and link into the import form. Confirm the job title, employer, workplace and
+work arrangement only if explicitly stated, then save. The new record is
+marked `manual_import` and appears in **Jobs**. Open its detail page to
+extract requirements, run an advisory CV match and use the existing application
+workflow. The original link is preserved; repeating an identical link returns
+the existing job without overwriting it.
+
+**Limits and safety:** importing a bare URL does not automatically download or
+parse that webpage. The user must paste at least 30 characters of description
+and confirm the key fields. This intentionally avoids server-side arbitrary
+web requests (SSRF), unauthorised scraping, browser/CAPTCHA bypass, and
+unverified claims of a vacancy's currency or authenticity. No CV details are
+sent to the vacancy website. The importer accepts HTTPS original links and
+does not treat a saved posting as proof it is still accepting applications.
+A future permissioned fetcher can be added per-source without changing the
+manual workflow. The source directories are not ingested automatically.
+
 ### Optional second Benin source — Optioncarriere/Careerjet publisher API
 
 Career Intelligence supports the official **Optioncarriere/Careerjet** publisher search API for `fr_BJ` as an **additional independent search even when Dev Global Jobs returns vacancies**. An approved publisher account and registration for the referral page are required; this is not the high-volume paid Careerjet Job Data API. Without configuration, no Careerjet API call is made.
