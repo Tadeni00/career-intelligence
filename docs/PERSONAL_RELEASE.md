@@ -1,3 +1,23 @@
+## Evidence checkpoint — November 23, 2026 UTC
+
+A read-only GitHub-hosted probe succeeded at 16:43:47 UTC in
+workflow run 45219737203. **Dev Global Jobs returned a valid response
+containing zero records for `country=bj` in that sampled request**.
+Remotive returned 15 records in its public response; 6 had geographic
+strings potentially compatible with Benin, before role-keyword,
+employment-eligibility, freshness and individual-application checks.
+These are observations at one instant, **not** a prediction of future feed
+availability or proof that no on-site jobs exist. The result confirms an
+important release caveat: keyless automated discovery cannot currently
+be relied on for actual Benin workplace vacancies.
+
+ANPE Bénin's official **SALEC** portal is available as another direct
+directory link; it is not an API or automatically ingested data source.
+ReliefWeb's humanitarian jobs API is a promising later source, but its
+current documentation requires a pre-approved `appname` and applicable
+reuse terms. It is not included in automated job ingestion without
+registration and permission.
+
 ## Live provider coverage and readiness audit (JS-016)
 
 The pull-request CI workflow now includes a **read-only, informational live
