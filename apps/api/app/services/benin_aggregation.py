@@ -33,21 +33,30 @@ def combine_benin_local_jobs(
     seen_ids: set[tuple[str, str]] = set()
     seen_fingerprints: set[tuple[str, str, str]] = set()
 
-    for job in [*primary, *secondary]:
-        identity = (job.source, job.provider_job_id)
-        title = _normalized(job.title)
-        company = _normalized(job.company)
-        city = _city(job.location)
-        fingerprint = (company, title, city)
-        if identity in seen_ids:
-            continue
-        # Never merge on title only; require all three strong fields.
-        if all(fingerprint) and fingerprint in seen_fingerprints:
-            continue
-        unique.append(job)
-        seen_ids.add(identity)
-        if all(fingerprint):
-            seen_fingerprints.add(fingerprint)
-        if len(unique) >= max_results:
-            break
+    # Interleave provider results. If the free source fills the requested
+    # page, appending Careerjet after it would still hide every publisher hit.
+    # Round-robin keeps both provider pools visible within a shared result cap.
+    from itertools import zip_longest
+
+    paired = zip_longest(primary, secondary)
+    for pair in paired:
+        for job in pair:
+            if job is None:
+                continue
+            identity = (job.source, job.provider_job_id)
+            title = _normalized(job.title)
+            company = _normalized(job.company)
+            city = _city(job.location)
+            fingerprint = (company, title, city)
+            if identity in seen_ids:
+                continue
+            if all(fingerprint) and fingerprint in seen_fingerprints:
+                continue
+            unique.append(job)
+            seen_ids.add(identity)
+            if all(fingerprint):
+                seen_fingerprints.add(fingerprint)
+            if len(unique) >= max_results:
+                return unique
     return unique
+
