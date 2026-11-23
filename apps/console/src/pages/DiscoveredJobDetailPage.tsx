@@ -15,6 +15,7 @@ import {
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { notifications } from "@mantine/notifications";
 import { api, errorMessage } from "../api";
+import { ApplicationReadinessPanel } from "../components/ApplicationReadinessPanel";
 import {
   applyActionLabel,
   applyActionNote,
@@ -187,6 +188,8 @@ export function DiscoveredJobDetailPage() {
           </Text>
         </Group>
       </Group>
+
+      <ApplicationReadinessPanel key={job.id} job={job} match={match} freshness={freshness} />
 
       <Card withBorder padding="lg" radius="md" mb="md">
         <Title order={3} mb="md">Requirements</Title>
