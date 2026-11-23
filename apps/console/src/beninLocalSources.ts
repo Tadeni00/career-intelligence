@@ -3,6 +3,16 @@
  */
 export const BENIN_LOCAL_SOURCES = [
   {
+    name: "ANPE Bénin — official job offers",
+    url: "https://sica.anpe.bj/portail-offres",
+    note: "Browse national employment notices; check the original details and deadline.",
+  },
+  {
+    name: "Government of Benin — employment offers",
+    url: "https://www.gouv.bj/opportunites/offres-emploi/",
+    note: "Official recruitment notices; check eligibility and application instructions.",
+  },
+  {
     name: "BeninFindJob — Cotonou",
     url: "https://beninfindjob.com/emploi/cotonou",
     note: "Browse published Cotonou listings; verify the workplace and deadline.",
