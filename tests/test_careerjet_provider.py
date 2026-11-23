@@ -148,6 +148,7 @@ def test_benin_queries_both_sources_even_when_keyless_has_jobs():
         patch("app.services.benin_local.search_benin_local_jobs", return_value=[primary]) as free,
         patch("app.core.config.get_settings", return_value=configured),
         patch("app.services.careerjet.search_careerjet_benin_jobs", return_value=[second]) as publisher,
+        patch("app.services.remotive.search_remotive_jobs", return_value=[]),
     ):
         jobs = svc._search_jobs("analyst", "bj", 10, location="Cotonou")
         assert jobs == [primary, second]
@@ -168,6 +169,7 @@ def test_benin_without_publisher_credentials_only_queries_keyless_source():
         patch("app.services.benin_local.search_benin_local_jobs", return_value=[job]),
         patch("app.core.config.get_settings", return_value=empty_settings()),
         patch("app.services.careerjet.search_careerjet_benin_jobs") as publisher,
+        patch("app.services.remotive.search_remotive_jobs", return_value=[]),
     ):
         assert svc._search_jobs("analyst", "bj", 10) == [job]
         publisher.assert_not_called()
@@ -184,6 +186,7 @@ def test_benin_publisher_is_queried_when_free_source_returns_zero():
         patch("app.services.benin_local.search_benin_local_jobs", return_value=[]),
         patch("app.core.config.get_settings", return_value=settings),
         patch("app.services.careerjet.search_careerjet_benin_jobs", return_value=[]) as publisher,
+        patch("app.services.remotive.search_remotive_jobs", return_value=[]),
     ):
         assert svc._search_jobs("analyst", "bj", 10) == []
         publisher.assert_called_once()
