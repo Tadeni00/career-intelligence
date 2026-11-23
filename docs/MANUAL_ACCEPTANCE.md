@@ -48,4 +48,4 @@ Copy this concise summary into the release discussion (omit CV content and names
 
 **Status:** this is an unexecuted human checklist. Automated CI cannot substitute for it.
 
-**Separate public distribution decisions:** SEC-003 historical CV exposure and issue #16 license remain open until the owner explicitly approves remediation and licensing terms. Removing active files does not remove public Git history or external copies.
+**Public distribution status:** original project code has MIT terms, with separate third-party obligations, including PyMuPDF AGPLv3/commercial. Five CV/profile exports have been removed from the current branch, but SEC-003 historical Git exposure remains open. Removing active files does not remove public Git history or external copies.
