@@ -1,3 +1,35 @@
+## Unified automatic Benin vacancy discovery (JS-015)
+
+**Discover → Country = BJ → Any work arrangement** now combines jobs
+physically advertised as Benin-located by Dev Global Jobs with **Remotive**
+remote jobs whose published geographic restrictions include Benin. If a valid,
+approved Optioncarriere/Careerjet publisher configuration is present, its
+Benin workplace results are also searched independently, even when the other
+sources return jobs. Entries are interleaved, conservatively deduplicated by
+employer, title and city, then limited to the requested result count. Remote
+positions retain their remote source and geographic restriction; they are
+**not** represented as physically located in Benin.
+
+**Remote only** still searches the no-key Remotive feed and preserves the
+original geography and eligibility restrictions. Other countries keep their
+previous provider routing. Results can be filtered on the page by source,
+Benin workplace versus eligible remote, and existing advisory relevance/match
+signals without triggering another provider call. A breakdown reports only
+the records **returned in the current response**, not the number available at
+each provider or complete national vacancy coverage. CV data is not sent
+to providers. The app still requires profile and job evidence review before
+making an application decision.
+
+**Known limitations:** Without approved Careerjet publisher credentials, the
+system never queries Careerjet. ANPE and other Benin job sites have no
+authorized automatic feed and remain navigation/assisted import sources.
+Provider searches can fail and the existing API reports such failures rather
+than fabricating successful empty results. The merge caps total results, so
+use narrower search terms for more targeted discovery; live provider coverage
+is not verified by mocked regression tests.
+
+---
+
 # Career Intelligence — local-first personal release
 
 **Audience:** individuals who clone the public source and run a personal copy on a trusted computer. This is a **MIT-licensed original-code prototype for personal use**, not a hosted SaaS platform, a multi-user server, or a verified job-search service.

@@ -31,6 +31,7 @@ import {
 } from "../ProfileSelector";
 import { ProvenanceBadge } from "../ProvenanceBadge";
 import { visibleOpportunities, type DiscoverySort } from "../discoveryTriage";
+import { filterDiscoveredResults, sourceCounts, sourcesFromResults, type DiscoveryArrangement } from "../discoverySourceFilters";
 import type { DiscoveredJobOut, JobSearchResponse, ProfileSummary } from "../types";
 import { profileRemoteOnly } from "../profileEditing";
 import {
@@ -297,6 +298,8 @@ export function DiscoverPage() {
   const [results, setResults] = useState<JobSearchResponse | null>(null);
   const [sort, setSort] = useState<DiscoverySort>("review");
   const [promisingOnly, setPromisingOnly] = useState(false);
+  const [sourceFilter, setSourceFilter] = useState("all");
+  const [arrangementFilter, setArrangementFilter] = useState<DiscoveryArrangement>("all");
   const [shortlistedIds, setShortlistedIds] = useState<Set<number>>(new Set());
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -326,10 +329,12 @@ export function DiscoverPage() {
     }
   }, []);
 
-  const visible = useMemo(
-    () => visibleOpportunities(results?.jobs ?? [], sort, promisingOnly),
-    [results, sort, promisingOnly],
-  );
+  const sourceSummary = useMemo(() => sourceCounts(results?.jobs ?? []), [results]);
+  const availableSources = useMemo(() => sourcesFromResults(results?.jobs ?? []), [results]);
+  const visible = useMemo(() => visibleOpportunities(
+    filterDiscoveredResults(results?.jobs ?? [], sourceFilter, arrangementFilter),
+    sort, promisingOnly,
+  ), [results, sort, promisingOnly, sourceFilter, arrangementFilter]);
 
   const currentCriteria = (): SearchCriteria | null =>
     validCriteria({ query, country, location, remoteOnly, maxResults });
@@ -341,6 +346,8 @@ export function DiscoverPage() {
     setRemoteOnly(criteria.remoteOnly);
     setMaxResults(criteria.maxResults);
     setResults(null);
+    setSourceFilter("all");
+    setArrangementFilter("all");
     setError(null);
   };
 
@@ -432,6 +439,8 @@ export function DiscoverPage() {
     setLoading(true);
     setError(null);
     setResults(null);
+    setSourceFilter("all");
+    setArrangementFilter("all");
     setShortlistedIds(new Set());
 
     try {
@@ -568,10 +577,11 @@ export function DiscoverPage() {
             {country === "bj" && (
               <Alert color="blue" title="Benin Republic — provider coverage">
                 <Text size="sm">
-                  For remote-only searches, we use Remotive's no-key public listings with
-                  geographic restrictions checked conservatively. Remote does not mean
-                  worldwide or guaranteed work authorization. Set Remote to "Remote only"
-                  to use this source. For jobs physically in Benin, a no-key Dev Global Jobs source is checked,
+                  With Any work arrangement, we combine Benin-located jobs and
+                  geographically eligible remote jobs from supported sources.
+                  Remote only searches Remotive alone, with geographic restrictions
+                  checked conservatively. Remote does not guarantee work authorization.
+                  Benin workplace jobs are checked using a no-key Dev Global Jobs source,
                   with unsupported locations excluded. Its real coverage may be limited.
                   If an approved Optioncarriere publisher connection is configured,
                   both sources are searched and clear cross-provider duplicates removed.
@@ -705,7 +715,24 @@ export function DiscoverPage() {
               {results.total} job{results.total !== 1 ? "s" : ""} returned for &quot;{results.query}&quot; in {results.country.toUpperCase()}
             </Title>
           </Group>
+          <Text size="sm" c="dimmed">
+            Sources in this response: {sourceSummary.length
+              ? sourceSummary.map(({ source, count }) => `${source} (${count})`).join(" · ")
+              : "None"}. Counts are returned listings, not comprehensive provider coverage.
+          </Text>
           <Group gap="md" wrap="wrap">
+            <Select label="Provider source" value={sourceFilter} onChange={(value) => setSourceFilter(value ?? "all")}
+              data={[{ value: "all", label: "All returned providers" },
+                ...availableSources.map((source) => ({ value: source, label: source }))]}
+              style={{ minWidth: 195 }} />
+            <Select label="Workplace type" value={arrangementFilter}
+              onChange={(value) => setArrangementFilter((value ?? "all") as DiscoveryArrangement)}
+              data={[
+                { value: "all", label: "All arrangements" },
+                { value: "local", label: "Benin workplace (not necessarily on-site)" },
+                { value: "remote", label: "Remote eligible for search country" },
+              ]}
+              style={{ minWidth: 245 }} />
             <Select
               label="Order results"
               aria-label="Order results"

@@ -115,8 +115,9 @@ class JobDiscoveryService:
                      remote_only: bool = False, location: str | None = None) -> list:
         """Country-specific provider routing with complementary Benin sources.
 
-        Benin remote: Remotive; Benin local: keyless Dev Global Jobs and
-        configured Careerjet together, with conservative de-duplication.
+        Benin remote-only: Remotive; Benin any-arrangement: keyless
+        Dev Global Jobs, optional configured Careerjet, and Remotive.
+        Conservative cross-provider de-duplication preserves provenance.
         Elsewhere: JSearch followed by Indeed only on empty results.
         """
         from app.services.jsearch import JSEARCH_MAX_PAGES, JSEARCH_PAGE_SIZE
@@ -135,8 +136,9 @@ class JobDiscoveryService:
             ))
 
         # Personal-use, keyless API with explicitly permitted non-commercial reuse.
-        # Only accept source-confirmed Benin work locations, not remote-only roles.
-        # Unlike the older Indeed fallback, there is no paid provider request.
+        # Local sources accept source-confirmed Benin workplaces; eligible
+        # remote roles are added separately from Remotive. Careerjet is only
+        # queried with valid registered publisher configuration.
         if country.lower() == "bj" and not remote_only:
             import asyncio
 
@@ -153,18 +155,31 @@ class JobDiscoveryService:
             # Careerjet may have additional local vacancies. Query both when
             # the publisher is properly configured, even if Dev Global Jobs
             # already returned jobs. These remain separate provider searches.
+            from app.services.remotive import search_remotive_jobs
+
             primary = asyncio.run(search_benin_local_jobs(
                 query=query, location=location, max_results=max_results,
             ))
             credentials = CareerjetCredentials.from_settings(get_settings())
-            if credentials is None:
-                return primary
+            secondary = []
+            if credentials is not None:
+                secondary = asyncio.run(search_careerjet_benin_jobs(
+                    query=query, location=location,
+                    max_results=max_results, credentials=credentials,
+                ))
 
-            secondary = asyncio.run(search_careerjet_benin_jobs(
-                query=query, location=location,
-                max_results=max_results, credentials=credentials,
+            # "Any work arrangement" must include remote opportunities
+            # geographically eligible for Benin, not just local workplace jobs.
+            # The Remotive API is cached and queried at most once per cache
+            # interval; no personal CV data is sent. A city filter is NOT
+            # imposed on global-eligible remote roles.
+            remote = asyncio.run(search_remotive_jobs(
+                query=query, country=country, max_results=max_results,
+                remote_only=True,
             ))
-            return combine_benin_local_jobs(primary, secondary, max_results)
+            return combine_benin_local_jobs(
+                primary, secondary, max_results, tertiary=remote,
+            )
 
         num_pages = max(1, min(JSEARCH_MAX_PAGES, -(-max(1, max_results) // JSEARCH_PAGE_SIZE)))
         # Use the synchronous version for now

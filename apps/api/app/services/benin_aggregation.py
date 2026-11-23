@@ -27,7 +27,8 @@ def _city(location: str) -> str:
 
 
 def combine_benin_local_jobs(
-    primary: list[JSearchJob], secondary: list[JSearchJob], max_results: int
+    primary: list[JSearchJob], secondary: list[JSearchJob], max_results: int,
+    tertiary: list[JSearchJob] | None = None,
 ) -> list[JSearchJob]:
     """Combine, dedupe conservatively, then cap the final unique result set."""
     unique: list[JSearchJob] = []
@@ -36,8 +37,8 @@ def combine_benin_local_jobs(
 
     # Interleave provider results. If the free source fills the requested
     # page, appending Careerjet after it would still hide every publisher hit.
-    # Round-robin keeps both provider pools visible within a shared result cap.
-    paired = zip_longest(primary, secondary)
+    # Round-robin keeps every provider pool visible within a shared result cap.
+    paired = zip_longest(primary, secondary, tertiary or [])
     for pair in paired:
         for job in pair:
             if job is None:
