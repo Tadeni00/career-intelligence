@@ -15,9 +15,15 @@
 
 2. Open **http://127.0.0.1:4173** on the *same machine*. Use a trusted browser profile. API reference: http://127.0.0.1:8011/docs.
 3. Upload and review CV evidence; confirm a CV profile. Edit preferred roles, target locations and remote preferences in **Career Profile**, then explicitly **Save changes**.
-4. Open **Discover Jobs**, select your CV profile, choose **Use profile preferences** or a saved search, check country/remote settings, and press **Search**. Search requests require provider credentials and may consume paid quota. The Docker API defaults to offline AI, which is not the same as validated matching.
+4. Open **Discover Jobs**, select your CV profile, choose **Use profile preferences** or a saved search, check country/remote settings, and press **Search**. JSearch/Indeed requests require configured provider credentials and may consume quota; Benin remote-only Remotive search needs no key. The Docker API defaults to offline AI, which is not the same as validated matching.
 5. Review the role, location restrictions, work authorization, salary units and posting date before applying. **Open the employer site**, submit there, and **manually confirm submission** under **Applications**. Opening the link does *not* send an application.
 6. To shut down without deleting database/storage: `docker compose down`. **Avoid** `docker compose down -v` unless deliberately destroying both named volumes.
+
+### Benin Republic and countries outside the provider's default coverage
+
+Select `bj` in the two-letter country-code field (or enter another ISO 3166-1 alpha-2 code). Set **Remote only** to use the keyless Remotive public feed for Benin. The feed is global rather than locally focused: it only includes vacancies whose declared remote-work region clearly includes Benin (e.g. Worldwide, Africa, West Africa, Benin). Ambiguous restrictions, unverified work authorization and potentially stale postings are not certified matches. Remotive requires attribution and links back to each original listing; displayed Remotive jobs may be delayed by 24 hours. The local API caches the feed for six hours to respect rate limits. [Official Remotive API terms](https://remotive.com/remote-jobs/api).
+
+For **on-site or hybrid jobs in Benin**, the existing Indeed fallback remains but may be rate limited, may require a RapidAPI key, and is **not guaranteed to return local vacancies**. The application also supports adding verified jobs manually. Country code entry now accepts countries beyond the quick-selection list, but data-source coverage still varies; no country coverage is fabricated.
 
 ### Live vacancy provider setup
 
