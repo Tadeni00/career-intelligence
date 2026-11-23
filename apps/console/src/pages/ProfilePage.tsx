@@ -1,167 +1,173 @@
 import { useEffect, useState } from "react";
 import {
-  Card,
-  Group,
-  Title,
-  Text,
-  TextInput,
-  Select,
-  NumberInput,
-  Button,
-  Alert,
-  SimpleGrid,
+  Card, Group, Title, Text, TextInput, Select, Button, Alert, SimpleGrid,
+  Loader, Textarea,
 } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { IconX } from "@tabler/icons-react";
 import { notifications } from "@mantine/notifications";
-import { api } from "../api";
+import { api, errorMessage } from "../api";
 import type { ProfileSummary } from "../types";
+import {
+  profileToDraft, profileUpdatePayload, validateProfileDraft,
+  type ProfileDraft,
+} from "../profileEditing";
 
 export function ProfilePage() {
-  const [profile, setProfile] = useState<ProfileSummary>({
-    id: 0,
-    name: "",
-    professional_title: "",
-    email: "",
-    phone: "",
-    location: "",
-    summary: "",
-    years_of_experience: null,
-    preferred_roles: [],
-    preferred_locations: [],
-    remote_preference: "",
-    minimum_salary: null,
-    skills: [],
-    experience: [],
-    education: [],
-    projects: [],
-  });
-
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [profile, setProfile] = useState<ProfileSummary | null>(null);
+  const [draft, setDraft] = useState<ProfileDraft | null>(null);
+  const [savedDraft, setSavedDraft] = useState<ProfileDraft | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    api<ProfileSummary>("/candidate").then(setProfile).catch((e) =>
-      notifications.show({ title: "Failed", message: e.message, color: "red" })
-    );
+    let active = true;
+    api<ProfileSummary>("/candidate")
+      .then((data) => {
+        if (!active) return;
+        setProfile(data);
+        const initial = profileToDraft(data);
+        setDraft(initial);
+        setSavedDraft(initial);
+      })
+      .catch((e) => {
+        if (active) setError(errorMessage(e, "Could not load your career profile."));
+      })
+      .finally(() => { if (active) setLoading(false); });
+    return () => { active = false; };
   }, []);
 
-  const saveProfile = async (values: any) => {
-    setErrors({});
+  const update = (field: keyof ProfileDraft, value: string) => {
+    setDraft((current) => current ? { ...current, [field]: value } : current);
+    setError(null);
+  };
+
+  const dirty = draft !== null && savedDraft !== null &&
+    JSON.stringify(draft) !== JSON.stringify(savedDraft);
+
+  const saveProfile = async () => {
+    if (!draft || saving || !dirty) return;
+    const validation = validateProfileDraft(draft);
+    if (validation) { setError(validation); return; }
+    setSaving(true);
+    setError(null);
     try {
-      await api("/candidate", {
+      const updated = await api<ProfileSummary>("/candidate", {
         method: "PUT",
-        body: JSON.stringify(values),
+        body: JSON.stringify(profileUpdatePayload(draft)),
       });
-      setProfile({ ...profile, ...values });
-    } catch (e: any) {
-      setErrors(e.response?.data?.detail ?? e.message);
+      setProfile(updated);
+      const committed = profileToDraft(updated);
+      setSavedDraft(committed);
+      setDraft(committed);
+      notifications.show({
+        title: "Career preferences saved",
+        message: "Your updated roles and locations can now be used to fill job searches.",
+        color: "green",
+      });
+    } catch (e) {
+      setError(errorMessage(e, "Could not save your career profile. Changes remain in the editor."));
+    } finally {
+      setSaving(false);
     }
   };
 
+  const removeSkill = async (skillId: number) => {
+    try {
+      await api(`/candidate/skills/${skillId}`, { method: "DELETE" });
+      setProfile((current) => current ? {
+        ...current,
+        skills: current.skills.filter((skill) => skill.id !== skillId),
+      } : current);
+    } catch (e) {
+      notifications.show({
+        title: "Could not remove skill",
+        message: errorMessage(e, "Please try again."),
+        color: "red",
+      });
+    }
+  };
+
+  if (loading) return <Loader size="lg" />;
+  if (!profile || !draft || !savedDraft) {
+    return <Alert color="red">{error ?? "Career profile unavailable. Reload to try again."}</Alert>;
+  }
+
   return (
     <Card padding="lg" radius="md">
-      <Title order={2} mb="md">Career Profile</Title>
+      <Title order={2} mb="xs">Career profile and search preferences</Title>
+      <Text size="sm" c="dimmed" mb="md">
+        Edit your profile and preferred roles, then select Save changes. Nothing
+        is sent to the server while you type. Job discovery only uses these preferences
+        when you explicitly choose Use profile preferences.
+      </Text>
 
-      {Object.keys(errors).length > 0 && (
-        <Alert color="red" title="Save failed">
-          {Object.values(errors).join("; ")}
-        </Alert>
-      )}
+      {error && <Alert color="red" title="Profile update" mb="md">{error}</Alert>}
 
-      <Group gap="md">
-        <TextInput
-          label="Name"
-          value={profile.name}
-          onChange={(e) =>
-            saveProfile({ ...profile, name: e.target.value })
-          }
-        />
-        <TextInput
-          label="Professional title"
-          value={profile.professional_title ?? ""}
-          onChange={(e) =>
-            saveProfile({ ...profile, professional_title: e.target.value })
-          }
-        />
-        <TextInput
-          label="Location"
-          value={profile.location ?? ""}
-          onChange={(e) =>
-            saveProfile({ ...profile, location: e.target.value })
-          }
-        />
-        <TextInput
-          label="Summary"
-          value={profile.summary ?? ""}
-          onChange={(e) =>
-            saveProfile({ ...profile, summary: e.target.value })
-          }
-        />
-        <NumberInput
-          label="Years of experience"
-          value={profile.years_of_experience ?? 0}
-          onChange={(value) =>
-            saveProfile({
-              ...profile,
-              years_of_experience: value === "" ? null : Number(value),
-            })
-          }
-        />
-        <TextInput
-          label="Minimum salary"
-          value={profile.minimum_salary ?? ""}
-          onChange={(e) =>
-            saveProfile({
-              ...profile,
-              minimum_salary: e.target.value
-                ? Number(e.target.value.replace(/[^0-9.-]/g, ""))
-                : null,
-            })
-          }
-        />
-      </Group>
+      <SimpleGrid cols={{ base: 1, md: 2 }} spacing="md" mb="md">
+        <TextInput label="Name" value={draft.name}
+          onChange={(e) => update("name", e.currentTarget.value)} disabled={saving} />
+        <TextInput label="Professional title" value={draft.professional_title}
+          onChange={(e) => update("professional_title", e.currentTarget.value)} disabled={saving} />
+        <TextInput label="Current location" value={draft.location}
+          onChange={(e) => update("location", e.currentTarget.value)} disabled={saving} />
+        <TextInput label="Years of experience" type="number" min={0} max={100}
+          value={draft.years_of_experience}
+          onChange={(e) => update("years_of_experience", e.currentTarget.value)} disabled={saving} />
+        <Textarea label="Professional summary" value={draft.summary} minRows={3}
+          onChange={(e) => update("summary", e.currentTarget.value)} disabled={saving} />
+        <TextInput label="Minimum salary (numeric, currency not specified)"
+          description="An unlabelled number is not used to exclude vacancies or compare currencies."
+          type="number" min={0} value={draft.minimum_salary}
+          onChange={(e) => update("minimum_salary", e.currentTarget.value)} disabled={saving} />
+      </SimpleGrid>
 
-      <Group gap="md">
-        <TextInput
-          label="Preferred roles (comma-separated)"
-          value={profile.preferred_roles.join(", ")}
-          onChange={(e) =>
-            saveProfile({
-              ...profile,
-              preferred_roles: e.target.value
-                .split(",")
-                .map((s: string) => s.trim())
-                .filter((s: string) => s.length > 0),
-            })
-          }
-        />
-        <TextInput
-          label="Preferred locations (comma-separated)"
-          value={profile.preferred_locations.join(", ")}
-          onChange={(e) =>
-            saveProfile({
-              ...profile,
-              preferred_locations: e.target.value
-                .split(",")
-                .map((s: string) => s.trim())
-                .filter((s: string) => s.length > 0),
-            })
-        }
-        />
-        <Select
-          label="Remote preference"
-          value={profile.remote_preference ?? ""}
-          data={[
-            { value: "REMOTE", label: "Remote only" },
-            { value: "HYBRID", label: "Hybrid" },
-            { value: "ONSITE", label: "On-site only" },
-            { value: "ANY", label: "Any" },
-          ]}
-          onChange={(value) =>
-            saveProfile({ ...profile, remote_preference: value })
-          }
-        />
+      <Card withBorder padding="md" radius="md" mb="md">
+        <Title order={4} mb="xs">Job search preferences</Title>
+        <Text size="xs" c="dimmed" mb="md">
+          List multiple target roles or locations separated by commas. When filling
+          a new search, Career Intelligence uses the first preferred role and location;
+          you can adjust them before searching. Remote-only is the only work-arrangement
+          restriction supported by the current provider search.
+        </Text>
+        <SimpleGrid cols={{ base: 1, md: 2 }} spacing="md">
+          <TextInput label="Preferred roles (comma-separated)"
+            placeholder="Data Scientist, Machine Learning Engineer"
+            value={draft.preferred_roles} disabled={saving}
+            onChange={(e) => update("preferred_roles", e.currentTarget.value)} />
+          <TextInput label="Preferred locations (comma-separated)"
+            placeholder="Lagos, Cotonou"
+            value={draft.preferred_locations} disabled={saving}
+            onChange={(e) => update("preferred_locations", e.currentTarget.value)} />
+          <Select label="Preferred work arrangement"
+            value={draft.remote_preference || "ANY"} disabled={saving}
+            allowDeselect={false}
+            data={[
+              { value: "REMOTE", label: "Remote only" },
+              { value: "HYBRID", label: "Prefer hybrid" },
+              { value: "ONSITE", label: "Prefer on-site" },
+              { value: "ANY", label: "Any arrangement" },
+            ]}
+            onChange={(value) => update("remote_preference", value ?? "ANY")} />
+        </SimpleGrid>
+      </Card>
+
+      <Group gap="sm" mb="xl">
+        <Button onClick={saveProfile} disabled={!dirty || saving} loading={saving}>
+          Save changes
+        </Button>
+        <Button variant="default" disabled={!dirty || saving}
+          onClick={() => { setDraft(savedDraft); setError(null); }}>
+          Discard changes
+        </Button>
+        <Button variant="light" disabled={dirty || saving} onClick={() => navigate("/discover")}>
+          Find jobs
+        </Button>
+        <Text size="xs" c={dirty ? "orange" : "dimmed"}>
+          {dirty ? "Unsaved edits — save before leaving this page" : "All profile edits saved"}
+        </Text>
       </Group>
 
       <Card withBorder padding="lg" radius="md" mb="md">
@@ -171,17 +177,10 @@ export function ProfilePage() {
             <Card key={s.id} withBorder padding="xs" radius="xs">
               <Text size="sm">{s.name}</Text>
               <Button
-                variant="bare"
+                variant="subtle"
                 size="xs"
                 rightSection={<IconX size={12} />}
-                onClick={() =>
-                  api(`/candidate/skills/${s.id}`, { method: "DELETE" }).then(
-                    () => setProfile({
-                      ...profile,
-                      skills: profile.skills.filter((sk) => sk.id !== s.id),
-                    })
-                  )
-                }
+                onClick={() => removeSkill(s.id)}
               >
                 Remove
               </Button>
@@ -189,7 +188,7 @@ export function ProfilePage() {
           ))}
         </SimpleGrid>
         <Button
-          variant="contained"
+          variant="filled"
           mb="sm"
           onClick={() => navigate("/cv")}
         >
