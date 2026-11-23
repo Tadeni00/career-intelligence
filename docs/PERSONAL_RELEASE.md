@@ -25,6 +25,30 @@ Select `bj` in the two-letter country-code field (or enter another ISO 3166-1 al
 
 For **on-site or hybrid jobs in Benin**, Search now requests **Dev Global Jobs** using its documented country/keyword API, without an API key. Only records with an explicit Benin country, an identifiable local location, and a vendor-hosted original listing URL enter the matching and shortlisting pipeline. Provider data may be sparse, partial, stale or incorrectly labeled; the result count is **not proof of comprehensive Benin coverage**. Salary and employment type remain unverified when missing. The provider permits non-commercial personal/research use within its published limits, requires visible **Powered by Dev Global Jobs** attribution and links to its own job pages, and requires written permission for commercial redistribution. See [provider API and terms](https://devglobaljobs.com/developers).
 
+### Safe direct URL preview for published Greenhouse and Lever jobs
+
+The import form can now **preview a direct public Greenhouse or Lever job URL**
+by calling those providers' documented read-only job APIs (Greenhouse Job Board
+API and Lever Postings API). This is an explicit action: enter the original
+direct job URL, select **Preview supported URL**, review the returned draft,
+fill any missing information (Lever may not return the employer name), and
+press **Save vacancy and review**. Previews are never auto-saved, do not
+run CV matching and never submit applications.
+
+Security restrictions: strict allowlisting of the original job-page hosts and
+paths, fixed official API destination hosts, HTTPS only, no redirects, no
+arbitrary hostname fetching, and no credentials. The returned content is plain
+text only. Expired and missing jobs must fail visibly. The current supported
+direct URL hosts are `boards.greenhouse.io`,
+`job-boards.greenhouse.io`, `jobs.lever.co` and `jobs.eu.lever.co`.
+Other sources, including ANPE Bénin and local Benin job boards, retain the
+**paste JobPosting HTML / description + review** path until a permitted
+machine-readable feed is confirmed.
+
+References:
+- Greenhouse public Job Board API: https://docs.greenhouse.io/job-board
+- Lever public Postings API: https://github.com/lever/postings-api
+
 ### Assisted extraction without accessing third-party websites
 
 Jobs → Import a vacancy also accepts pasted **JobPosting JSON-LD** or

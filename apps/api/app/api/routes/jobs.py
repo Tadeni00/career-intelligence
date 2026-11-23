@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, status
+from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
@@ -19,6 +20,8 @@ from app.schemas import (
 from app.services import jobs as job_service
 from app.services import matching as matching_service
 from app.services.vacancy_import import VacancyImportRequest, import_verified_vacancy
+from app.services.ats_job_preview import preview_public_job_url
+from app.services.jsearch import JSearchError
 
 router = APIRouter(prefix="/jobs", tags=["jobs"])
 
@@ -96,6 +99,23 @@ def create_job(payload: JobCreate, db: Session = Depends(get_db)) -> JobOut:
     job = job_service.create_job(db, payload)
     job.requirements = job.requirements
     return _mark_review(JobOut.model_validate(job))
+
+
+class VacancyUrlPreviewRequest(BaseModel):
+    url: str = Field(min_length=8, max_length=2048)
+
+
+@router.post("/import/preview")
+async def preview_import_url(
+    payload: VacancyUrlPreviewRequest,
+    candidate=Depends(current_candidate),
+) -> dict:
+    """Preview a supported public ATS job without persistence or CV disclosure."""
+    try:
+        return await preview_public_job_url(payload.url)
+    except JSearchError as exc:
+        code = exc.status_code if exc.status_code in {404, 422, 429, 502, 504} else 502
+        raise HTTPException(status_code=code, detail=str(exc)) from exc
 
 
 @router.post("/import", status_code=status.HTTP_200_OK)
