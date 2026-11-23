@@ -97,3 +97,5 @@ jobs:
         run: node --experimental-strip-types src/applicationReadiness.test.ts
       - name: Saved search criteria checks
         run: node --experimental-strip-types src/savedSearches.test.ts
+      - name: Career profile edit and preferences checks
+        run: node --experimental-strip-types src/profileEditing.test.ts
