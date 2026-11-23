@@ -18,6 +18,7 @@ import {
 import { notifications } from "@mantine/notifications";
 import { useNavigate, useParams } from "react-router-dom";
 import { api, errorMessage } from "../api";
+import { ApplicationReadinessPanel } from "../components/ApplicationReadinessPanel";
 import { StrategyPanel } from "../components/StrategyPanel";
 import { useActiveProfile } from "../ProfileSelector";
 import { ProvenanceBadge, ProvenanceSummary, useProfileNames } from "../ProvenanceBadge";
@@ -171,6 +172,8 @@ export function JobDetailPage() {
           <Text size="sm">{job?.posted_at ?? "Not stated"}</Text>
         </Group>
       </Group>
+
+      {job && <ApplicationReadinessPanel key={job.id} job={job} match={match} />}
 
       <Card withBorder padding="lg" radius="md" mb="md">
         <Title order={3} mb="md">Requirements</Title>
