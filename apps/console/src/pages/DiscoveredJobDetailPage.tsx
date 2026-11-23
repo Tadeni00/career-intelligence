@@ -187,7 +187,7 @@ export function DiscoveredJobDetailPage() {
                 Powered by Dev Global Jobs
               </a>
             </Text>
-          )
+          )}
         </Group>
       </Group>
 
