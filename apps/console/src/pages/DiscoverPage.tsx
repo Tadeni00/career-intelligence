@@ -525,17 +525,19 @@ export function DiscoverPage() {
           </Text>
 
           {results.jobs.length === 0 ? (
-            <Text c="dimmed" ta="center" pt="lg">
-              No jobs were returned by the configured providers for this search.
-              Try different keywords or country. Provider coverage varies, and
-              an empty response is not proof that no relevant jobs exist.
-            </Text>
-            <Button variant="light" onClick={() => navigate("/jobs")}>
-              Browse previously saved jobs
-            </Button>
-            <Text c="dimmed" ta="center" size="xs">
-              Saved vacancies may be out of date; verify them at the original source before applying.
-            </Text>
+            <Stack align="center" gap="sm" py="lg">
+              <Text c="dimmed" ta="center">
+                No jobs were returned by the configured providers for this search.
+                Try different keywords or country. Provider coverage varies, and
+                an empty response is not proof that no relevant jobs exist.
+              </Text>
+              <Button variant="light" onClick={() => navigate("/jobs")}>
+                Browse previously saved jobs
+              </Button>
+              <Text c="dimmed" ta="center" size="xs">
+                Saved vacancies may be out of date; verify them at the original source before applying.
+              </Text>
+            </Stack>
           ) : visible.length === 0 ? (
             <Alert color="blue" title="No results match this view">
               {promisingOnly
