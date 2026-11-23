@@ -8,6 +8,11 @@ export const BENIN_LOCAL_SOURCES = [
     note: "Browse national employment notices; check the original details and deadline.",
   },
   {
+    name: "ANPE Bénin — SALEC 2026",
+    url: "https://salec.anpe.bj/",
+    note: "Official employment fair and vacancy directory; verify actual vacancy status and registration requirements.",
+  },
+  {
     name: "Government of Benin — employment offers",
     url: "https://www.gouv.bj/opportunites/offres-emploi/",
     note: "Official recruitment notices; check eligibility and application instructions.",

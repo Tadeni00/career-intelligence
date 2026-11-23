@@ -1,3 +1,55 @@
+## Evidence checkpoint — November 23, 2026 UTC
+
+A read-only GitHub-hosted probe succeeded at 16:43:47 UTC in
+workflow run 45219737203. **Dev Global Jobs returned a valid response
+containing zero records for `country=bj` in that sampled request**.
+Remotive returned 15 records in its public response; 6 had geographic
+strings potentially compatible with Benin, before role-keyword,
+employment-eligibility, freshness and individual-application checks.
+These are observations at one instant, **not** a prediction of future feed
+availability or proof that no on-site jobs exist. The result confirms an
+important release caveat: keyless automated discovery cannot currently
+be relied on for actual Benin workplace vacancies.
+
+ANPE Bénin's official **SALEC** portal is available as another direct
+directory link; it is not an API or automatically ingested data source.
+ReliefWeb's humanitarian jobs API is a promising later source, but its
+current documentation requires a pre-approved `appname` and applicable
+reuse terms. It is not included in automated job ingestion without
+registration and permission.
+
+## Live provider coverage and readiness audit (JS-016)
+
+The pull-request CI workflow now includes a **read-only, informational live
+source probe**. It makes at most one bounded API request to each of
+Dev Global Jobs (country `bj`, first 100 records) and Remotive (public
+remote feed). The diagnostic reports the observation time, basic response
+shape, the number of structurally usable Benin-local records in the sampled
+Dev Global Jobs page, and the number of Remotive records whose declared
+geographic restrictions may include Benin. It does **not** print job titles,
+employer names, descriptions, URLs, private profiles or application data, and
+it does not persist vacancies.
+
+If a provider is inaccessible, malformed or its response schema changes,
+its coverage is **unknown**, not zero. A live response sample is **not**
+proof that the application can import those jobs end-to-end, that the full
+market is covered or that the jobs are current. The probe is informational,
+not an application CI gate: provider outages must not block development.
+It only runs for PRs to avoid unnecessary Remotive calls; the Remotive
+public API asks developers to limit use and preserve attribution.
+
+To review results, open the PR's GitHub Actions CI run and check
+**Live source coverage audit (informational)**. If it reports incompatible
+schema, update the provider adapter only after reviewing the actual public
+API's documented fields; do not fabricate missing fields or quietly mark an
+unreachable provider as empty. Final acceptance still needs a browser and
+real candidate-controlled workflow testing.
+
+Sources: https://devglobaljobs.com/developers and
+https://remotive.com/remote-jobs/api
+
+---
+
 ## Unified automatic Benin vacancy discovery (JS-015)
 
 **Discover → Country = BJ → Any work arrangement** now combines jobs
