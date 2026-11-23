@@ -4,6 +4,8 @@ Evidence-driven, **single-user** career decision-support prototype. It helps a c
 
 > **Security boundary:** This project currently has **no authenticated user sessions or multi-user authorization**. Run it only on a trusted local machine. Do not publish the web console or API behind a public reverse proxy. See [Local Deployment Security](docs/LOCAL_SECURITY.md).
 
+For the shortest personal-use setup and an honest release acceptance checklist, see [Local-first personal release](docs/PERSONAL_RELEASE.md). The repository being public does **not** make the unauthenticated running app safe to host publicly.
+
 ## Current capabilities
 
 - Upload PDF/DOCX CVs, inspect extraction output, and confirm a candidate profile.
@@ -63,7 +65,7 @@ node --experimental-strip-types src/tailoredCvRouting.test.ts
 
 The frontend's Vite development proxy currently targets port 8000, which differs from the Docker API's port 8011. The supported zero-configuration path is the Docker Compose console on port 4173; adjust the development proxy appropriately when developing services outside Compose.
 
-Continuous integration is defined in [`.github/workflows/ci.yml`](.github/workflows/ci.yml): localhost deployment checks, frontend lint/build/route checks, and Python integration tests with an isolated PostgreSQL service. At the CI-002 merge checkpoint, **890 Python tests passed and one was skipped**. The historical lint scan still reports 64 existing findings and is *temporarily nonblocking*; new deployment-check lint is blocking. This is tracked in [CI-004](https://github.com/Tadeni00/career-intelligence/issues/4), not considered resolved.
+Continuous integration is defined in [`.github/workflows/ci.yml`](.github/workflows/ci.yml): localhost deployment checks, frontend lint/build/route checks, and Python integration tests with an isolated PostgreSQL service. CI runs the current test suite on every PR; see the live GitHub Actions results for the latest exact count. The historical lint scan still reports 64 existing findings and is *temporarily nonblocking*; new deployment-check lint is blocking. This is tracked in [CI-004](https://github.com/Tadeni00/career-intelligence/issues/4), not considered resolved.
 
 ## Repository layout
 
@@ -88,4 +90,4 @@ Continuous integration is defined in [`.github/workflows/ci.yml`](.github/workfl
 
 ## Project direction
 
-The priority is a trustworthy local career workflow, then secure user isolation, followed by evidence-backed, independently evaluated matching and product-level outcome measurement. Improvements should be incremental and verified through GitHub pull requests; governed V3.4 research activities require their separate approvals.
+The current release target is a trustworthy **personal-use, local-first** career workflow, not multi-tenant hosting. Authentication and user isolation become prerequisites only if public hosting is ever pursued; evidence-backed matching improvements need separate evaluation. Improvements should be incremental and verified through GitHub pull requests; governed V3.4 research activities require their separate approvals.

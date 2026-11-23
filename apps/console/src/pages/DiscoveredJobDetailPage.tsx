@@ -15,6 +15,7 @@ import {
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { notifications } from "@mantine/notifications";
 import { api, errorMessage } from "../api";
+import { salaryLabel, workArrangementLabel } from "../jobMetadataLabels";
 import { ApplicationReadinessPanel } from "../components/ApplicationReadinessPanel";
 import {
   applyActionLabel,
@@ -163,19 +164,13 @@ export function DiscoveredJobDetailPage() {
         <Group>
           <Text size="sm" c="dimmed">
             Location:{" "}
-            {job.location ?? "Not stated"} {job.remote_status ?? ""}
+            {job.location ?? "Not stated"} · {workArrangementLabel(job.remote_status)}
           </Text>
           <Text size="sm" c="dimmed">
             Employment type:{" "}
             {job.employment_type ?? "Not stated"}
           </Text>
-          {job.salary_min !== null && (
-            <Text size="sm" c="dimmed">
-              Salary:{" "}
-              {job.salary_min?.toLocaleString()} -{" "}
-              {job.salary_max ?? "not stated"}k
-            </Text>
-          )}
+          <Text size="sm" c="dimmed">{salaryLabel(job)}</Text>
         </Group>
 
         <Group>
