@@ -18,6 +18,7 @@ from app.schemas import (
 )
 from app.services import jobs as job_service
 from app.services import matching as matching_service
+from app.services.vacancy_import import VacancyImportRequest, import_verified_vacancy
 
 router = APIRouter(prefix="/jobs", tags=["jobs"])
 
@@ -95,6 +96,25 @@ def create_job(payload: JobCreate, db: Session = Depends(get_db)) -> JobOut:
     job = job_service.create_job(db, payload)
     job.requirements = job.requirements
     return _mark_review(JobOut.model_validate(job))
+
+
+@router.post("/import", status_code=status.HTTP_200_OK)
+def import_vacancy(
+    payload: VacancyImportRequest,
+    db: Session = Depends(get_db),
+    candidate=Depends(current_candidate),
+) -> dict:
+    """User-confirmed import; never fetch an arbitrary URL from the API server.
+
+    An existing URL returns its existing job_id without changing the record.
+    Requirement extraction and matching require deliberate follow-up actions.
+    """
+    job, created = import_verified_vacancy(db, payload)
+    return {
+        "job_id": job.id,
+        "created": created,
+        "message": "Vacancy saved" if created else "Original vacancy already saved",
+    }
 
 
 @router.get("/{job_id}", response_model=JobOut)

@@ -13,6 +13,7 @@ import { DashboardPage } from "./pages/DashboardPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { CVPage } from "./pages/CVPage";
 import { JobsPage } from "./pages/JobsPage";
+import { ImportVacancyPage } from "./pages/ImportVacancyPage";
 import { JobDetailPage } from "./pages/JobDetailPage";
 import { ApplicationsPage } from "./pages/ApplicationsPage";
 import { TailoredCVPage } from "./pages/TailoredCVPage";
@@ -79,6 +80,7 @@ export function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/cv" element={<CVPage />} />
           <Route path="/jobs" element={<JobsPage />} />
+          <Route path="/jobs/import" element={<ImportVacancyPage />} />
           {/* :jobId must match the param JobDetailPage destructures via useParams */}
           <Route path="/jobs/:jobId" element={<JobDetailPage />} />
           {/* Job-scoped tailored-CV workflow. Separate route so a job id is never

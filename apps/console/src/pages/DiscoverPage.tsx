@@ -666,6 +666,9 @@ export function DiscoverPage() {
             ))}
           </SimpleGrid>
           <Group mt="md">
+            <Button size="sm" onClick={() => navigate("/jobs/import")}>
+              Import a verified vacancy
+            </Button>
             <Button variant="outline" size="sm" onClick={() => navigate("/jobs")}>
               Add or review saved jobs
             </Button>
