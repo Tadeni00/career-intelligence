@@ -24,9 +24,9 @@ def private_export_path(path: str) -> bool:
     normalized = path.replace("\\", "/")
     return (
         normalized.startswith("cv/")
-        or bool(re.fullmatch(r"cv_text(?:[_-].*)?\\.(?:txt|md|json)", normalized, re.I))
-        or bool(re.fullmatch(r"val_(?:profile|extraction)[^/]*\\.(?:json|txt|pdf|docx)", normalized, re.I))
-        or bool(re.fullmatch(r"(?:.*[_-])?(?:resume|curriculum_vitae|personal_cv)[^/]*\\.(?:pdf|docx)", normalized, re.I))
+        or bool(re.fullmatch(r"cv_text(?:[_-].*)?\.(?:txt|md|json)", normalized, re.I))
+        or bool(re.fullmatch(r"val_(?:profile|extraction)[^/]*\.(?:json|txt|pdf|docx)", normalized, re.I))
+        or bool(re.fullmatch(r"(?:.*[_-])?(?:resume|curriculum_vitae|personal_cv)[^/]*\.(?:pdf|docx)", normalized, re.I))
     )
 
 def violations(tracked: dict[str, str]) -> list[str]:
@@ -47,10 +47,10 @@ def tracked_blobs() -> dict[str, str]:
         ["git", "ls-files", "-s", "-z"], check=True, capture_output=True
     ).stdout
     tracked: dict[str, str] = {}
-    for item in data.split(b"\\0"):
+    for item in data.split(b"\0"):
         if not item:
             continue
-        header, raw_path = item.split(b"\\t", 1)
+        header, raw_path = item.split(b"\t", 1)
         sha = header.split()[1].decode("ascii")
         tracked[raw_path.decode("utf-8", errors="replace")] = sha
     return tracked
