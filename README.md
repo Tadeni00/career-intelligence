@@ -4,7 +4,7 @@ Evidence-driven, **single-user** career decision-support prototype. It helps a c
 
 > **Security boundary:** This project currently has **no authenticated user sessions or multi-user authorization**. Run it only on a trusted local machine. Do not publish the web console or API behind a public reverse proxy. See [Local Deployment Security](docs/LOCAL_SECURITY.md).
 
-For the shortest personal-use setup and an honest release acceptance checklist, see [Local-first personal release](docs/PERSONAL_RELEASE.md). The repository being public does **not** make the unauthenticated running app safe to host publicly.
+For the shortest personal-use setup and an honest release acceptance checklist, see [Local-first personal release](docs/PERSONAL_RELEASE.md). To verify a fresh local installation before relying on it, follow the [step-by-step manual acceptance walkthrough](docs/MANUAL_ACCEPTANCE.md). The repository being public does **not** make the unauthenticated running app safe to host publicly.
 
 ## Current capabilities
 
