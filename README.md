@@ -6,6 +6,8 @@ Evidence-driven, **single-user** career decision-support prototype. It helps a c
 
 For the shortest personal-use setup and an honest release acceptance checklist, see [Local-first personal release](docs/PERSONAL_RELEASE.md). To verify a fresh local installation before relying on it, follow the [step-by-step manual acceptance walkthrough](docs/MANUAL_ACCEPTANCE.md). The repository being public does **not** make the unauthenticated running app safe to host publicly.
 
+Original code: [MIT License](LICENSE). Dependencies have separate terms, especially [PyMuPDF AGPLv3/commercial](docs/THIRD_PARTY_LICENSES.md). Check third-party obligations before distributing bundled images.
+
 ## Current capabilities
 
 - Upload PDF/DOCX CVs, inspect extraction output, and confirm a candidate profile.
@@ -83,7 +85,7 @@ Continuous integration is defined in [`.github/workflows/ci.yml`](.github/workfl
 ## Important limits and privacy
 
 - Authentication, cross-user authorization, production secrets management, document retention and external network protection are **not implemented**. Never deploy for untrusted users in this state.
-- The public repository currently contains CV/profile-derived artifacts that may be personal; see [SEC-003](https://github.com/Tadeni00/career-intelligence/issues/3). Removing a file in a later commit does not erase it from Git history.
+- Five tracked personal CV/profile exports were removed from the active tree, but **their past contents remain accessible through public Git history and any earlier copies**. See [SEC-003](https://github.com/Tadeni00/career-intelligence/issues/3); a history rewrite has not been authorized.
 - Recommendations are decision-support signals, not confirmed hiring outcomes or proof of eligibility. Human review is required before an application.
 - Live job-provider calls can consume quota or incur charges. Frozen benchmark tests and their stored evidence should not be rewritten, refreshed, or used to infer authorization for new experiments.
 - Two frozen input checksums from the original Windows environment were reconciled to the LF representation in Git without changing the benchmark files. See [CI-002 forensic note](docs/benchmark/ci_002_frozen_artifact_line_endings.md).

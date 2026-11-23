@@ -1,6 +1,6 @@
 # Career Intelligence — local-first personal release
 
-**Audience:** individuals who clone the public source and run a personal copy on a trusted computer. This is a **source-available prototype for personal use**, not a hosted SaaS platform, a multi-user server, or a verified job-search service.
+**Audience:** individuals who clone the public source and run a personal copy on a trusted computer. This is a **MIT-licensed original-code prototype for personal use**, not a hosted SaaS platform, a multi-user server, or a verified job-search service.
 
 ## Fastest supported start
 
@@ -44,8 +44,11 @@ You can review and prepare a CV, enter vacancies manually, run the offline match
 - [x] Unknown work arrangement does not appear as on-site; salary lacks invented currency, period or thousand-unit suffix
 - [x] Automated frontend, backend, frozen-artifact and local deployment quality checks in GitHub Actions
 - [ ] Manual end-to-end walkthrough on a fresh machine with a non-sensitive test CV and one live provider search; **not evidenced by CI**
-- [ ] Review and remediate historically tracked personal CV/profile data in the public repository and Git history; **[SEC-003](https://github.com/Tadeni00/career-intelligence/issues/3) remains OPEN**. History rewriting requires owner approval, and public copies/caches may persist.
+- [x] Remove five personal CV/profile exports from the current branch and forbid tracking those paths again.
+- [ ] Historical exposure remains: **[SEC-003](https://github.com/Tadeni00/career-intelligence/issues/3) stays OPEN**. History rewriting requires owner approval, and public copies/caches may persist.
 - [ ] Verify actual live-provider coverage, current vacancies, application URLs, and candidate suitability with an independently reviewed sample before making accuracy claims
+
+The original project code is [MIT licensed](../LICENSE). Installed third-party components retain their own terms; **PyMuPDF is AGPLv3/commercial**, so review [third-party licensing notes](THIRD_PARTY_LICENSES.md) before redistributing an integrated application.
 
 ## Non-goals for this personal-use release
 
