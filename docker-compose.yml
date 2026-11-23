@@ -41,8 +41,15 @@ services:
       AI_PROVIDER: offline
       # Interpolated from the shell or the repo .env at compose time; only
       # this key enters the container, never the AI keys. Empty by default,
-      # in which case /jobs/discover stays unavailable (502) by design.
+      # in which case JSearch is unavailable; Benin's keyless sources still work.
       JSEARCH_API_KEY: ${JSEARCH_API_KEY:-}
+      # Optional registered publisher credentials for *Benin-only* fallback.
+      # No publisher call unless every value is provided and no keyless jobs
+      # were returned. Never expose these in the frontend build.
+      CAREERJET_PUBLISHER_KEY: ${CAREERJET_PUBLISHER_KEY:-}
+      CAREERJET_USER_IP: ${CAREERJET_USER_IP:-}
+      CAREERJET_USER_AGENT: ${CAREERJET_USER_AGENT:-}
+      CAREERJET_REFERER: ${CAREERJET_REFERER:-}
       STORAGE_DIR: /srv/storage
       ENVIRONMENT: development
       API_PREFIX: /api/v1

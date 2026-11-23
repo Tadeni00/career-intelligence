@@ -72,6 +72,16 @@ class Settings(BaseSettings):
     # --- Indeed.com Indeed API (alternative source, covers Benin Republic) ---
     indeed_base_url: str = "https://indeed.p.rapidapi.com"
 
+    # --- Optioncarriere/Careerjet optional Benin publisher API ----------------
+    # All four fields must be explicitly configured by a registered publisher.
+    # The IP/agent must represent the real requesting user, not the Docker
+    # bridge or a fabricated placeholder. No user data is uploaded without
+    # a configured publisher connection and a search action.
+    careerjet_publisher_key: str = ""
+    careerjet_user_ip: str = ""
+    careerjet_user_agent: str = ""
+    careerjet_referer: str = ""
+
     # --- candidate ----------------------------------------------------------
     # V1 is single-user: the profile resolved for every request.
     default_candidate_name: str = "Candidate"

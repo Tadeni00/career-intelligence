@@ -162,6 +162,12 @@ function JobCard({
         <Text size="xs" c="dimmed">
           Source: {job.source ?? "Unknown"} {job.source_id ? `(${job.source_id})` : ""}
         </Text>
+        {job.source === "careerjet" && (
+          <Text size="xs" c="dimmed">
+            Optioncarriere / Careerjet publisher result. Confirm work location,
+            arrangement, deadline and eligibility on the source page.
+          </Text>
+        )}
         {job.source === "devglobaljobs" && (
           <Text size="xs">
             <a href="https://devglobaljobs.com/" target="_blank" rel="noopener noreferrer">
@@ -567,6 +573,8 @@ export function DiscoverPage() {
                   worldwide or guaranteed work authorization. Set Remote to "Remote only"
                   to use this source. For jobs physically in Benin, a no-key Dev Global Jobs source is checked,
                   with unsupported locations excluded. Its real coverage may be limited.
+                  If an approved Optioncarriere publisher connection is configured,
+                  a second source is queried only when the keyless source returns no jobs.
                   Remotive and Dev Global Jobs listings retain original source links.
                   Verify the work arrangement and job status with the employer.
                 </Text>

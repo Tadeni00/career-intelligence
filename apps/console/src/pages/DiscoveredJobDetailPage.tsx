@@ -181,6 +181,11 @@ export function DiscoveredJobDetailPage() {
           <Text size="sm" c="dimmed">
             Source: {job.source ?? "Unknown"}
           </Text>
+          {job.source === "careerjet" && (
+            <Text size="xs" c="dimmed">
+              Optioncarriere / Careerjet publisher listing — verify details at source.
+            </Text>
+          )}
           {job.source === "devglobaljobs" && (
             <Text size="xs">
               <a href="https://devglobaljobs.com/" target="_blank" rel="noopener noreferrer">
