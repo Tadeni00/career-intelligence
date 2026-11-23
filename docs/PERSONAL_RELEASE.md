@@ -1,3 +1,7 @@
+### Additional verified browsing sources (JS-018)
+
+The Benin local-source directory also links to **WabaJob** and **Opportafrik's Cotonou page**, which displayed Benin-area advertisements during a public-web check on November 23, 2026. These are **links for human browsing and assisted copy/review/import only**. Neither is configured as an automated jobs API; live results, freshness, suitability, permission to reuse, and vacancy counts are not guaranteed. Use the original listing's application instructions and confirm deadline and employer independently. No backend fetch or scraping was added.
+
 ## Evidence checkpoint — November 23, 2026 UTC
 
 A read-only GitHub-hosted probe succeeded at 16:43:47 UTC in
