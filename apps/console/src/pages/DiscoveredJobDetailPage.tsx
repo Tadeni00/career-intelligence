@@ -17,6 +17,7 @@ import { notifications } from "@mantine/notifications";
 import { api, errorMessage } from "../api";
 import { salaryLabel, workArrangementLabel } from "../jobMetadataLabels";
 import { ApplicationReadinessPanel } from "../components/ApplicationReadinessPanel";
+import { JobLanguageHelper } from "../components/JobLanguageHelper";
 import {
   applyActionLabel,
   applyActionNote,
@@ -197,6 +198,8 @@ export function DiscoveredJobDetailPage() {
       </Group>
 
       <ApplicationReadinessPanel key={job.id} job={job} match={match} freshness={freshness} />
+
+      <JobLanguageHelper description={job?.description} />
 
       <Card withBorder padding="lg" radius="md" mb="md">
         <Title order={3} mb="md">Requirements</Title>
