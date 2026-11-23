@@ -15,9 +15,10 @@ import {
   Stack,
 } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { api, errorMessage } from "../api";
 import { applicationMaterialsTarget } from "../tailoredCvRouting";
+import { applyActionLabel, classifyApplicationUrl } from "../applicationUrl";
 import { ProvenanceBadge, useProfileNames } from "../ProvenanceBadge";
 import type { Application, Job, MatchResult, TailoredCV, CoverLetter } from "../types";
 
@@ -26,7 +27,13 @@ export function ApplicationsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { status } = useParams<{ status?: string }>();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const statusFilter = searchParams.get("status") ?? "";
+  const visibleApplications = applications.filter(
+    (app) => !statusFilter || app.status === statusFilter
+  );
+  const [confirmApplied, setConfirmApplied] = useState<Application | null>(null);
+  const [markingApplied, setMarkingApplied] = useState(false);
   const { profiles } = useProfileNames();
 
   // Create application modal state
@@ -99,6 +106,33 @@ export function ApplicationsPage() {
     }
   }, [selectedJobId, selectedCVId, selectedLetterId]);
 
+  const recordExternalSubmission = async () => {
+    if (!confirmApplied || markingApplied) return;
+    setMarkingApplied(true);
+    try {
+      await api<Application>(`/applications/${confirmApplied.id}`, {
+        method: "PUT",
+        body: JSON.stringify({ status: "APPLIED" }),
+      });
+      const refreshed = await api<Application[]>("/applications");
+      setApplications(refreshed);
+      notifications.show({
+        title: "Application recorded",
+        message: "Marked as applied because you confirmed submitting on the employer's site.",
+        color: "green",
+      });
+      setConfirmApplied(null);
+    } catch (e) {
+      notifications.show({
+        title: "Could not update application",
+        message: errorMessage(e, "Try again from the application list."),
+        color: "red",
+      });
+    } finally {
+      setMarkingApplied(false);
+    }
+  };
+
   const openCreateApplication = () => {
     loadJobsForApplication();
     setCreatingApp(true);
@@ -148,12 +182,16 @@ export function ApplicationsPage() {
 
   return (
     <Card padding="lg" radius="md">
-      <Title order={2} mb="md">Applications</Title>
+      <Title order={2} mb="xs">My applications</Title>
+      <Text size="sm" c="dimmed" mb="md">
+        Shortlist jobs, open their original application pages, and record when
+        you actually submit. Opening an employer link never marks a job as applied.
+      </Text>
 
       <Group gap="md" mb="md">
         <Select
           label="Filter by status"
-          value={status ?? ""}
+          value={statusFilter}
           data={[
             { value: "", label: "All" },
             { value: "INTERESTED", label: "Interested" },
@@ -164,24 +202,37 @@ export function ApplicationsPage() {
             { value: "REJECTED", label: "Rejected" },
             { value: "WITHDRAWN", label: "Withdrawn" },
           ]}
-          onChange={(value) =>
-            navigate({ pathname: "/applications", search: `status=${value ?? ""}` })
-          }
+          onChange={(value) => {
+            const next = value ?? "";
+            setSearchParams(next ? { status: next } : {}, { replace: true });
+          }}
         />
       </Group>
 
+      <Text size="sm" c="dimmed" mb="md">
+        Showing {visibleApplications.length} of {applications.length} tracked applications.
+      </Text>
       {applications.length === 0 ? (
-        <Text c="dimmed">No applications yet. Start by matching a job and creating an application.</Text>
+        <Stack gap="sm" mb="lg">
+          <Text c="dimmed">Nothing tracked yet. Find a vacancy and shortlist it to start.</Text>
+          <Button onClick={() => navigate("/discover")}>Discover jobs</Button>
+        </Stack>
+      ) : visibleApplications.length === 0 ? (
+        <Alert color="blue" mb="md">
+          No applications have this status. Select All to see every tracked vacancy.
+        </Alert>
       ) : (
-        <SimpleGrid cols={{ base: 2, md: 3, lg: 4 }}>
-          {applications.map((app) => {
+        <SimpleGrid cols={{ base: 1, md: 2, lg: 3 }}>
+          {visibleApplications.map((app) => {
             const job = app.job ?? { title: `Job ${app.job_id}`, company: "" };
+            const applyUrl = classifyApplicationUrl(app.job?.url);
+            const canMarkApplied = app.status === "INTERESTED" || app.status === "READY_TO_APPLY";
             return (
               <Card key={app.id} withBorder padding="sm" radius="sm">
                 <Group justify="space-between" align="center">
                   <Group gap="sm">
                     <Text size="sm" fw={600}>
-                      {app.match_id ? `Matched ${app.match_id}` : job.title}
+                      {job.title}
                     </Text>
                     <Text size="xs" c="dimmed">
                       {job.company} {app.job?.location ?? ""}
@@ -205,23 +256,53 @@ export function ApplicationsPage() {
                     prefix="CV"
                   />
                 </Group>
-                <Button
-                  variant="subtle"
-                  size="xs"
-                  onClick={() => {
-                    // Use the application's real tailored-CV id. When it has none,
-                    // open that application's job instead -- never treat the
-                    // application id as a document id.
-                    const target = applicationMaterialsTarget(app);
-                    navigate(
-                      target.kind === "document"
-                        ? `/tailored-cvs/${target.docId}`
-                        : `/jobs/${target.jobId}/tailored-cv`
-                    );
-                  }}
-                >
-                  View materials
-                </Button>
+                <Group gap="xs" mt="sm" wrap="wrap">
+                  <Button
+                    variant="subtle"
+                    size="xs"
+                    onClick={() => navigate(
+                      app.job?.is_discovered
+                        ? `/discovered/${app.job_id}`
+                        : `/jobs/${app.job_id}`
+                    )}
+                  >
+                    View job
+                  </Button>
+                  <Button
+                    variant="subtle"
+                    size="xs"
+                    onClick={() => {
+                      // The application id is never a tailored CV id.
+                      const target = applicationMaterialsTarget(app);
+                      navigate(
+                        target.kind === "document"
+                          ? `/tailored-cvs/${target.docId}`
+                          : `/jobs/${target.jobId}/tailored-cv`
+                      );
+                    }}
+                  >
+                    Prepare materials
+                  </Button>
+                  {applyUrl.kind === "ok" ? (
+                    <Button
+                      component="a"
+                      href={applyUrl.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="outline"
+                      size="xs"
+                    >
+                      {applyActionLabel(app.job?.company)}
+                    </Button>
+                  ) : (
+                    <Text c="dimmed" size="xs">Employer application link unavailable</Text>
+                  )}
+                  {canMarkApplied && (
+                    <Button size="xs" color="teal" onClick={() => setConfirmApplied(app)}>
+                      I submitted this application
+                    </Button>
+                  )}
+                </Group>
               </Card>
             );
           })}
@@ -229,13 +310,40 @@ export function ApplicationsPage() {
       )}
 
       <Group gap="md" mb="md">
-        <Button variant="contained" onClick={() => navigate("/jobs")}>
-          Browse jobs
+        <Button variant="contained" onClick={() => navigate("/discover")}>
+          Discover jobs
         </Button>
         <Button variant="contained" color="teal" onClick={openCreateApplication}>
           Create application
         </Button>
       </Group>
+
+      <Modal
+        opened={confirmApplied !== null}
+        onClose={() => !markingApplied && setConfirmApplied(null)}
+        title="Confirm external application submitted"
+        centered
+      >
+        <Stack gap="md">
+          <Text size="sm">
+            Did you complete the application on the employer's site for{" "}
+            <strong>{confirmApplied?.job?.title ?? "this job"}</strong>?
+            Opening a link or preparing a CV is not the same as submitting.
+          </Text>
+          <Text size="sm" c="dimmed">
+            If confirmed, this job will move to Applied, and the application
+            date will be recorded. You can continue tracking interviews and outcomes later.
+          </Text>
+          <Group justify="flex-end">
+            <Button variant="default" disabled={markingApplied} onClick={() => setConfirmApplied(null)}>
+              Not yet
+            </Button>
+            <Button color="teal" loading={markingApplied} onClick={recordExternalSubmission}>
+              Yes, I submitted it
+            </Button>
+          </Group>
+        </Stack>
+      </Modal>
 
       {creatingApp && (
         <Modal
