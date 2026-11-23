@@ -91,3 +91,5 @@ jobs:
         run: node --experimental-strip-types src/applicationUrl.test.ts
       - name: Tailored-CV route isolation checks
         run: node --experimental-strip-types src/tailoredCvRouting.test.ts
+      - name: Job discovery triage checks
+        run: node --experimental-strip-types src/discoveryTriage.test.ts
