@@ -54,9 +54,8 @@ const COUNTRIES = [
 ];
 
 const REMOTE_OPTIONS = [
-  { value: "", label: "Any" },
+  { value: "false", label: "Any work arrangement" },
   { value: "true", label: "Remote only" },
-  { value: "false", label: "On-site/Hybrid only" },
 ];
 
 function JobCard({
