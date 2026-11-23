@@ -25,6 +25,23 @@ Select `bj` in the two-letter country-code field (or enter another ISO 3166-1 al
 
 For **on-site or hybrid jobs in Benin**, Search now requests **Dev Global Jobs** using its documented country/keyword API, without an API key. Only records with an explicit Benin country, an identifiable local location, and a vendor-hosted original listing URL enter the matching and shortlisting pipeline. Provider data may be sparse, partial, stale or incorrectly labeled; the result count is **not proof of comprehensive Benin coverage**. Salary and employment type remain unverified when missing. The provider permits non-commercial personal/research use within its published limits, requires visible **Powered by Dev Global Jobs** attribution and links to its own job pages, and requires written permission for commercial redistribution. See [provider API and terms](https://devglobaljobs.com/developers).
 
+### Optional second Benin source — Optioncarriere/Careerjet publisher API
+
+Career Intelligence supports the official **Optioncarriere/Careerjet** publisher search API for `fr_BJ` as a fallback **only if the keyless Dev Global Jobs request returned no Benin jobs**. An approved publisher account and registration for the referral page are required; this is not the high-volume paid Careerjet Job Data API. Without configuration, no Careerjet API call is made.
+
+Set these four fields in a **local untracked** `.env` (see `.env.example`):
+
+- `CAREERJET_PUBLISHER_KEY`: your approved Careerjet publisher API key.
+- `CAREERJET_USER_IP`: your **actual public** IPv4/IPv6 address for the person conducting the search, not the Docker container, router LAN address or a placeholder.
+- `CAREERJET_USER_AGENT`: the actual browser user-agent for that same person, not a fabricated bot header.
+- `CAREERJET_REFERER`: the **registered HTTPS publisher search page** on which the request originated. A localhost URL or an unregistered page is not a valid substitute.
+
+The integration is therefore designed for the app's single-person trusted-local deployment, not a shared public backend. It deliberately does not guess IP addresses, spoof user-agent strings or substitute an invented public referral page. If you do not have a legitimate registered publisher site and requester metadata, **leave this provider disabled**. Provider quota and publisher terms remain applicable; approval to use the key cannot be assumed. Only the provider key is transmitted as Basic authentication to the published Careerjet API host. Requester IP, browser agent and referrer are sent to the provider because its official API contract requires them; CV content is not sent. The API may return ambiguous locations, fewer results or errors, which are not treated as verified local vacancies. The provider returns referral links, and actual work arrangements, salaries and employer eligibility require manual validation.
+
+Publisher documentation: https://www.optioncarriere.bj/partners/api/python
+
+**CAPPR/Trouve Ton Emploi** maintains a more Benin-focused database but its structured API requires a paid subscription or special licence. Its public listing directory remains a navigation link, not an unauthorized scraping source: https://skills.capprafrica.org/fr/tarifs
+
 If the keyless provider returns no usable local jobs, Discover still offers BeninFindJob, EmploiBenin, Trouve Ton Emploi and Emplois Bénin as original-source entry points. Those links are **not scraped or automatically imported**. Verified vacancies can still be added manually. Broader local API ingestion (such as licensed CAPPR or Careerjet publisher integrations) requires the corresponding permission or registered key.
 
 ### Live vacancy provider setup
