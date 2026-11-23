@@ -144,7 +144,7 @@ class JobDiscoveryService:
                      query: str = "", cv_profile_id: int | None = None) -> dict | None:
         """Process a single job: persist, extract, match."""
         # Check if job already exists (by provider_job_id)
-        existing_job = self._find_existing_job(job_data.provider_job_id)
+        existing_job = self._find_existing_job(job_data.provider_job_id, getattr(job_data, "source", "jsearch"))
         if existing_job:
             job = existing_job
         else:
@@ -184,25 +184,26 @@ class JobDiscoveryService:
             },
         }
 
-    def _find_existing_job(self, provider_job_id: str) -> Job | None:
-        """Find existing job by provider_job_id using external_id field."""
-        external_id = f"jsearch:{provider_job_id}"
+    def _find_existing_job(self, provider_job_id: str, source: str = "jsearch") -> Job | None:
+        """Match one provider's ID, never collide with another provider's ID."""
+        external_id = f"{source}:{provider_job_id}"
         return self.db.execute(
             select(Job).where(Job.external_id == external_id)
         ).scalars().first()
 
     def _create_job_from_jsearch(self, job_data, search_query: str = "", country: str = "ng") -> Job:
         """Create a Job record from JSearch data."""
-        external_id = f"jsearch:{job_data.provider_job_id}"
+        source = getattr(job_data, "source", "jsearch")
+        external_id = f"{source}:{job_data.provider_job_id}"
 
         job = Job(
             title=job_data.title,
             company=job_data.company,
             location=job_data.location,
             url=job_data.apply_url,
-            source="jsearch",
+            source=source,
             source_id=job_data.provider_job_id,
-            external_id=f"jsearch:{job_data.provider_job_id}",
+            external_id=external_id,
             is_discovered=True,
             description=job_data.description,
             employment_type=job_data.employment_type,

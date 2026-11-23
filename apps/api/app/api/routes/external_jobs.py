@@ -176,11 +176,23 @@ def discover_jobs_endpoint(
             headers={"Retry-After": str(exc.retry_after)} if exc.retry_after else None,
         )
     except JSearchError as exc:
+        # Alternative providers may use JSearchError without its specialized
+        # subclasses. Preserve actionable auth/quota statuses for the UI.
+        if exc.status_code == 429:
+            raise HTTPException(
+                status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+                detail="Job provider rate limit reached. Please try again later.",
+            ) from exc
+        if exc.status_code in (401, 403):
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail="Job provider authentication failed. The service is temporarily unavailable.",
+            ) from exc
         status_code = exc.status_code if exc.status_code in (502, 504) else status.HTTP_502_BAD_GATEWAY
         raise HTTPException(
             status_code=status_code,
             detail="Job provider request failed. Please try again shortly.",
-        )
+        ) from exc
 
     return JobSearchResponse(
         jobs=jobs,
