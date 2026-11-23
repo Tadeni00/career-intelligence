@@ -482,7 +482,7 @@ export function DiscoverPage() {
             </Group>
           </Stack>
         </Alert>
-      )>
+      )}
 
       {results && (
         <Stack gap="md" mt="md">
