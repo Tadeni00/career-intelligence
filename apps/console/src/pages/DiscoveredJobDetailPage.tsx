@@ -170,7 +170,7 @@ export function DiscoveredJobDetailPage() {
             Employment type:{" "}
             {job.employment_type ?? "Not stated"}
           </Text>
-          <Text size="sm" c="dimmed">{salaryLabel(job)}</Text>}
+          <Text size="sm" c="dimmed">{salaryLabel(job)}</Text>
         </Group>
 
         <Group>
