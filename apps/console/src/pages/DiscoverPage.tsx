@@ -16,6 +16,7 @@ import {
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { notifications } from "@mantine/notifications";
 import { api, errorMessage } from "../api";
+import { salaryLabel, workArrangementLabel } from "../jobMetadataLabels";
 import {
   applyActionLabel,
   applyActionNote,
@@ -128,17 +129,13 @@ function JobCard({
             size="xs"
             variant="light"
           >
-            {job.remote_status ?? "On-site"}
+            {workArrangementLabel(job.remote_status)}
           </Badge>
         </Group>
       </Group>
 
       <Stack gap="xs" mt="sm">
-        {job.salary_min !== null || job.salary_max !== null ? (
-          <Text size="sm" c="dimmed">
-            Salary: {job.salary_min ? `${job.salary_min.toLocaleString()}k` : ""} - {job.salary_max ? `${job.salary_max.toLocaleString()}k` : "Not stated"}
-          </Text>
-        ) : null}
+        <Text size="sm" c="dimmed">{salaryLabel(job)}</Text>
 
         {job.posted_at ? (
           <Text size="sm" c="dimmed">
