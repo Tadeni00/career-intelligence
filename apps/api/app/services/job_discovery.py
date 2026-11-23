@@ -66,9 +66,10 @@ class JobDiscoveryService:
         if location:
             search_query = f"{query} in {location}"
 
-        # Search JSearch (Indeed as fallback — see _search_jobs)
+        # Remote-only search for Benin uses Remotive's public feed. A city
+        # should not be appended to the role keywords for global remote roles.
         jobs = self._search_jobs(
-            query=search_query,
+            query=query if country.lower() == "bj" and remote_only else search_query,
             country=country,
             max_results=max_results,
             remote_only=remote_only,
@@ -119,6 +120,19 @@ class JobDiscoveryService:
         subclasses so the /jobs/discover route maps them to proper statuses.
         """
         from app.services.jsearch import JSEARCH_MAX_PAGES, JSEARCH_PAGE_SIZE
+
+        # JSearch doesn't serve Benin. For remote-only roles, search the
+        # no-key Remotive source and filter by declared geographic eligibility.
+        # This does not claim any result is physically in Benin or that the
+        # candidate is legally entitled to accept a position.
+        if country.lower() == "bj" and remote_only:
+            import asyncio
+            from app.services.remotive import search_remotive_jobs
+
+            return asyncio.run(search_remotive_jobs(
+                query=query, country=country, max_results=max_results,
+                remote_only=True,
+            ))
 
         num_pages = max(1, min(JSEARCH_MAX_PAGES, -(-max(1, max_results) // JSEARCH_PAGE_SIZE)))
         # Use the synchronous version for now

@@ -409,6 +409,10 @@ export function DiscoverPage() {
       setError("Please enter a search query");
       return;
     }
+    if (!/^[a-z]{2}$/.test(country)) {
+      setError("Enter a two-letter country code, such as bj for Benin.");
+      return;
+    }
 
     setLoading(true);
     setError(null);
@@ -546,6 +550,18 @@ export function DiscoverPage() {
         <Title order={4} mb="md">Search</Title>
         <form onSubmit={handleSearch}>
           <Stack gap="md">
+            {country === "bj" && (
+              <Alert color="blue" title="Benin Republic — provider coverage">
+                <Text size="sm">
+                  For remote-only searches, we use Remotive's no-key public listings with
+                  geographic restrictions checked conservatively. Remote does not mean
+                  worldwide or guaranteed work authorization. Set Remote to "Remote only"
+                  to use this source. For jobs physically in Benin, the existing Indeed
+                  fallback may require an API key and can be rate-limited; no local vacancy
+                  coverage is guaranteed. Remotive listings are attributed and link to Remotive.
+                </Text>
+              </Alert>
+            )}
             <TextInput
               label="Search keywords"
               placeholder="e.g., data scientist, software engineer"
@@ -554,12 +570,24 @@ export function DiscoverPage() {
               required
             />
             <Group gap="md" wrap="wrap">
-              <Select
-                label="Country"
+              <TextInput
+                label="Country code (ISO 2-letter)"
+                placeholder="bj, ng, gh, fr..."
+                description="Any country code; provider coverage varies."
                 value={country}
-                onChange={(v) => setCountry(v ?? "ng")}
-                data={COUNTRIES}
+                maxLength={2}
+                onChange={(e) => setCountry(e.currentTarget.value.toLowerCase().replace(/[^a-z]/g, ""))}
                 style={{ minWidth: 200 }}
+              />
+              <Select
+                label="Quick country"
+                placeholder="Choose a common country"
+                value={COUNTRIES.some((item) => item.value === country) ? country : null}
+                onChange={(v) => { if (v) setCountry(v); }}
+                data={COUNTRIES}
+                searchable
+                clearable
+                style={{ minWidth: 190 }}
               />
               <TextInput
                 label="Location (city/region)"
