@@ -95,6 +95,8 @@ jobs:
         run: node --experimental-strip-types src/tailoredCvRouting.test.ts
       - name: Job discovery triage checks
         run: node --experimental-strip-types src/discoveryTriage.test.ts
+      - name: Unified source and workplace filter checks
+        run: node --experimental-strip-types src/discoverySourceFilters.test.ts
       - name: Job application readiness checks
         run: node --experimental-strip-types src/applicationReadiness.test.ts
       - name: Saved search criteria checks
