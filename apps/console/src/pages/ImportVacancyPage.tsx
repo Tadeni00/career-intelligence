@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Alert, Button, Card, Group, Select, Stack, Text, Textarea, TextInput, Title } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { api, errorMessage } from "../api";
+import { extractVacancyDraft } from "../vacancyDraftExtraction";
 
 type ImportedJob = { job_id: number; created: boolean; message: string };
 
@@ -14,7 +15,26 @@ export function ImportVacancyPage() {
   const [description, setDescription] = useState("");
   const [arrangement, setArrangement] = useState("UNKNOWN");
   const [saving, setSaving] = useState(false);
+  const [sourceSnippet, setSourceSnippet] = useState("");
+  const [extractionNotice, setExtractionNotice] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const previewStructuredData = () => {
+    setError(null);
+    setExtractionNotice(null);
+    const draft = extractVacancyDraft(sourceSnippet);
+    if (!draft) {
+      setError("No single complete JobPosting record was found. You can still paste the description and fill in the fields manually.");
+      return;
+    }
+    // A draft is never saved automatically; the person verifies it first.
+    setTitle(draft.title);
+    setCompany(draft.company);
+    setLocation(draft.location);
+    setDescription(draft.description);
+    setArrangement(draft.arrangement);
+    setExtractionNotice("Fields were prefilled from pasted structured data. " + draft.warning);
+  };
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -71,6 +91,25 @@ export function ImportVacancyPage() {
         be run from the saved job's detail page.
       </Text>
       {error && <Alert color="red" mb="md" title="Import could not be saved">{error}</Alert>}
+      <Card withBorder padding="md" radius="md" mb="lg">
+        <Title order={4} mb="xs">Assisted extraction (optional)</Title>
+        <Text size="sm" c="dimmed" mb="sm">
+          If the source page includes JobPosting JSON-LD, paste that block or the
+          copied page HTML here. The browser reads it locally without requesting
+          the website or executing its scripts. This is an unverified draft.
+          If unavailable, use the manual fields below instead.
+        </Text>
+        <Textarea label="Paste JobPosting JSON-LD or copied HTML"
+          value={sourceSnippet} onChange={(event) => setSourceSnippet(event.currentTarget.value)}
+          autosize minRows={3} maxRows={7}
+          placeholder='{"@context":"https://schema.org","@type":"JobPosting", ...}' />
+        <Group justify="flex-end" mt="sm">
+          <Button variant="light" onClick={previewStructuredData} disabled={!sourceSnippet.trim()}>
+            Extract draft for review
+          </Button>
+        </Group>
+        {extractionNotice && <Alert color="blue" mt="sm">{extractionNotice}</Alert>}
+      </Card>
       <form onSubmit={submit}>
         <Stack gap="md">
           <TextInput label="Job title" required maxLength={255} value={title}
