@@ -113,12 +113,11 @@ class JobDiscoveryService:
 
     def _search_jobs(self, query: str, country: str, max_results: int = 20,
                      remote_only: bool = False, location: str | None = None) -> list:
-        """Search for jobs: JSearch first, Indeed fallback when JSearch is empty.
+        """Country-specific provider routing with opt-in publisher fallback.
 
-        Indeed.com covers Benin Republic, which JSearch does not. We only call
-        Indeed when JSearch returned nothing, so a populated JSearch result set
-        never costs Indeed quota. The Indeed errors are the JSearch error
-        subclasses so the /jobs/discover route maps them to proper statuses.
+        Benin remote: Remotive; Benin physical: keyless Dev Global Jobs,
+        then optional, properly configured Careerjet publisher search if empty.
+        Elsewhere: JSearch followed by Indeed only on empty results.
         """
         from app.services.jsearch import JSEARCH_MAX_PAGES, JSEARCH_PAGE_SIZE
 
@@ -140,11 +139,28 @@ class JobDiscoveryService:
         # Unlike the older Indeed fallback, there is no paid provider request.
         if country.lower() == "bj" and not remote_only:
             import asyncio
-            from app.services.benin_local import search_benin_local_jobs
 
-            return asyncio.run(search_benin_local_jobs(
-                query=query,
-                location=location, max_results=max_results,
+            from app.core.config import get_settings
+            from app.services.benin_local import search_benin_local_jobs
+            from app.services.careerjet import (
+                CareerjetCredentials,
+                search_careerjet_benin_jobs,
+            )
+
+            jobs = asyncio.run(search_benin_local_jobs(
+                query=query, location=location, max_results=max_results,
+            ))
+            # The no-key feed is preferred. Do not spend a registered
+            # publisher request if it already produced relevant results.
+            # Careerjet is strictly opt-in with genuine requester details.
+            if jobs:
+                return jobs
+            credentials = CareerjetCredentials.from_settings(get_settings())
+            if credentials is None:
+                return []
+            return asyncio.run(search_careerjet_benin_jobs(
+                query=query, location=location,
+                max_results=max_results, credentials=credentials,
             ))
 
         num_pages = max(1, min(JSEARCH_MAX_PAGES, -(-max(1, max_results) // JSEARCH_PAGE_SIZE)))
