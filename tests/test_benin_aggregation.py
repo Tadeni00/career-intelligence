@@ -64,3 +64,23 @@ def test_full_primary_page_does_not_crowd_out_secondary_provider():
     assert len(combined) == 20
     assert {item.source for item in combined} == {"devglobaljobs", "careerjet"}
     assert sum(item.source == "careerjet" for item in combined) == 10
+
+
+def test_three_sources_interleaved_with_bounded_results():
+    local = [job("devglobaljobs", f"l-{i}", f"Local role {i}", "Local Co", "Cotonou") for i in range(20)]
+    publisher = [job("careerjet", f"c-{i}", f"Office role {i}", "Publisher Co", "Porto-Novo") for i in range(20)]
+    remote = [job("remotive", f"r-{i}", f"Remote role {i}", "Remote Co", "Remote — Worldwide") for i in range(20)]
+    for item in remote:
+        item.remote_status = "REMOTE"
+    combined = combine_benin_local_jobs(local, publisher, 20, tertiary=remote)
+    assert len(combined) == 20
+    assert {item.source for item in combined} == {"devglobaljobs", "careerjet", "remotive"}
+    assert len([item for item in combined if item.source == "remotive"]) >= 6
+    assert all(item.remote_status == "REMOTE" for item in combined if item.source == "remotive")
+
+
+def test_eligible_remote_job_not_suppressed_by_local_same_employer_title():
+    local = job("devglobaljobs", "local", "Analyst", "Employer A", "Cotonou")
+    remote = job("remotive", "remote", "Analyst", "Employer A", "Remote — Africa")
+    remote.remote_status = "REMOTE"
+    assert combine_benin_local_jobs([local], [], 20, tertiary=[remote]) == [local, remote]
