@@ -169,7 +169,7 @@ function JobCard({
             </a>
             {" "}— local workplace and vacancy status must still be verified.
           </Text>
-        )
+        )}
 
         {relevance && (
           <Group gap="xs">
