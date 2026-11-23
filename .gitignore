@@ -32,3 +32,10 @@ storage/*
 node_modules/
 dist/
 .vite/
+
+# --- local CV/profile exports (existing tracked history is NOT removed) --------
+/cv/*
+/cv_text.txt
+/val_extraction.json
+/val_profile.json
+/val_profile_fixed.json

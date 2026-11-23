@@ -8,7 +8,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.router import api_router
-from app.core.config import get_settings
+from app.core.config import get_settings, require_supported_runtime
 
 logging.basicConfig(
     level=logging.INFO,
@@ -16,6 +16,7 @@ logging.basicConfig(
 )
 
 settings = get_settings()
+require_supported_runtime(settings)
 
 app = FastAPI(
     title=settings.app_name,
