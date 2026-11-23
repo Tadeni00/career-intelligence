@@ -14,9 +14,9 @@ The API rejects startup when `ENVIRONMENT=production` while session authenticati
 
 ## Public repository data review
 
-The repository contains files that appear to include CV/profile information, including `cv/`, `cv_text.txt`, `val_extraction.json`, `val_profile.json`, and `val_profile_fixed.json`. Before sharing or cloning widely, review whether they include personal contact details or other data that should not be public. If they must be removed, scrub both the current branch **and Git history**, consider copies/forks/caches irrecoverable, and rotate any credentials discovered. Do not assume that adding a `.gitignore` entry or deleting the working-tree file removes data from previous commits.
+Five identified CV/profile export files were removed from the active branch under explicit owner authorization. **They remain in Git history, potentially including public forks and caches.** There has been no history rewrite; [SEC-003](https://github.com/Tadeni00/career-intelligence/issues/3) remains open. Consider whether historical copies require further remediation and whether any exposed credentials must be rotated.
 
-The `.gitignore` file excludes new local files in `cv/` and selected root-level profile export paths from routine Git staging. **Previously tracked files and their historical Git copies are not affected** by ignore rules; [SEC-003](https://github.com/Tadeni00/career-intelligence/issues/3) remains open. Ignore rules are not a defense against an explicit `git add -f` or against past public clones.
+The `.gitignore` file excludes new local files in `cv/` and selected root-level profile export paths from routine Git staging. **Historical Git copies are not affected** by ignore rules or the active-tree deletion; [SEC-003](https://github.com/Tadeni00/career-intelligence/issues/3) remains open. Ignore rules are not a defense against an explicit `git add -f` or against past public clones.
 
 ## Requirements before hosting publicly
 
@@ -26,4 +26,4 @@ The `.gitignore` file excludes new local files in `cv/` and selected root-level 
 - Add rate limiting, safe error handling, document retention/deletion, backups, audit logs, and a threat-model review.
 - Test end-to-end authorization, including cross-user IDOR cases, before any public exposure.
 
-**Scope:** CI-001 reduced default network exposure. SEC-006 adds a production-startup guard and ignore rules for future local exports. Neither implements authentication, removes existing public history, or changes matching/benchmark code. The V3.4 governance gates remain unchanged.
+**Scope:** CI-001 reduced default network exposure. SEC-006 adds a production-startup guard and ignore rules for future local exports. Neither implements authentication or removes existing public history. Five tracked exports were subsequently removed from the active tree; matching and benchmark evidence remain untouched. The V3.4 governance gates remain unchanged.
