@@ -12,7 +12,9 @@ assert.equal(showBeninLocalSources("bj", false), true);
 assert.equal(showBeninLocalSources(" BJ ", false), true);
 assert.equal(showBeninLocalSources("bj", true), false);
 assert.equal(showBeninLocalSources("ng", false), false);
-assert.ok(BENIN_LOCAL_SOURCES.length >= 3);
+assert.ok(BENIN_LOCAL_SOURCES.length >= 9);
+assert.ok(BENIN_LOCAL_SOURCES.some(source => source.url === "https://www.wabajob.com/"));
+assert.ok(BENIN_LOCAL_SOURCES.some(source => source.url === "https://opportafrik.com/benin/cotonou"));
 
 const hosts = new Set<string>();
 for (const source of BENIN_LOCAL_SOURCES) {
