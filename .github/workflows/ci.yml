@@ -105,3 +105,5 @@ jobs:
         run: node --experimental-strip-types src/jobMetadataLabels.test.ts
       - name: Benin local-source discovery checks
         run: node --experimental-strip-types src/beninLocalSources.test.ts
+      - name: Reviewed vacancy structured-data extraction checks
+        run: node --experimental-strip-types src/vacancyDraftExtraction.test.ts

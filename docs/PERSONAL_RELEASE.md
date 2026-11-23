@@ -25,6 +25,20 @@ Select `bj` in the two-letter country-code field (or enter another ISO 3166-1 al
 
 For **on-site or hybrid jobs in Benin**, Search now requests **Dev Global Jobs** using its documented country/keyword API, without an API key. Only records with an explicit Benin country, an identifiable local location, and a vendor-hosted original listing URL enter the matching and shortlisting pipeline. Provider data may be sparse, partial, stale or incorrectly labeled; the result count is **not proof of comprehensive Benin coverage**. Salary and employment type remain unverified when missing. The provider permits non-commercial personal/research use within its published limits, requires visible **Powered by Dev Global Jobs** attribution and links to its own job pages, and requires written permission for commercial redistribution. See [provider API and terms](https://devglobaljobs.com/developers).
 
+### Assisted extraction without accessing third-party websites
+
+Jobs → Import a vacancy also accepts pasted **JobPosting JSON-LD** or
+copied page HTML with an embedded `application/ld+json` block. The browser
+parses exactly one structured job record, prefills title, employer, locality,
+description and explicitly stated remote status, then requires the user to
+review and save the fields using the same existing import endpoint. Missing
+work arrangement is reported as unknown, not assumed on-site. HTML is handled
+as untrusted text and scripts are not executed; the extracted draft is not
+automatically saved. Unsupported or ambiguous HTML falls back to manual entry.
+**No remote URL fetching, ANPE scraping, bypassing access controls or
+automated third-party redistribution is introduced.** A source's presence of
+JSON-LD does not itself grant permission to crawl it.
+
 ### Import an on-site or hybrid job without a provider API key
 
 The **Jobs → Import a vacancy** form works for any country, including Benin.
